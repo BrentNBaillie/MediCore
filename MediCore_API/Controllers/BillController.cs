@@ -47,12 +47,13 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpPost("/Add")]
-		public async Task<ActionResult> PostBill(BillDTO newBill)
+		public async Task<ActionResult> PostBill([FromBody] BillDTO newBill)
 		{
 			newBill.Id = Guid.NewGuid();
 			if (!await context.Patients.AnyAsync(p => p.Id == newBill.PatientId)) return NotFound("Doctor Not Found");
 			if (!await context.Appointments.AnyAsync(d => d.Id == newBill.AppointmentId)) return NotFound("Appointment Not Found");
 			if (!newBill.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
+			if (!BillIsValid(newBill)) return BadRequest("Invalid Bill Data");
 
 			var prescriptions = await context.Prescriptions.Where(p => newBill.Prescriptions.Contains(p.Id)).ToListAsync();
 			if (!prescriptions.Any()) return NotFound("No Prescriptions Found");
@@ -74,7 +75,39 @@ namespace MediCore_API.Controllers
 		[HttpPatch("/{id:Guid}/Update")]
 		public async Task<ActionResult> PatchBill(Guid id, [FromBody] BillDTO dto)
 		{
+			if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
+			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+			if (bill is null) return NotFound("Bill Not Found");
 
+			if (dto.PaymentMethod != string.Empty) bill.PaymentMethod = dto.PaymentMethod;
+			if (dto.Date != null) bill.Date = dto.Date;
+			if (dto.PatientId != Guid.Empty) bill.PatientId = dto.PatientId;
+			if (dto.AppointmentId != Guid.Empty) bill.AppointmentId = dto.AppointmentId;
+
+			await context.SaveChangesAsync();
+			return Ok();
+		}
+
+		[HttpDelete("/{id:Guid}")]
+		public async Task<ActionResult> DeleteBill(Guid id)
+		{
+			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+			if (bill is null) return NotFound("Bill Not Found");
+
+			context.Bills.Remove(bill);
+			await context.SaveChangesAsync();
+			return Ok();
+		}
+
+		public bool BillIsValid(BillDTO bill)
+		{
+			if (bill is null ||  bill.Amount <= 0 || bill.PaymentMethod == string.Empty || 
+				bill.Date is null || bill.PatientId == Guid.Empty ||
+				bill.AppointmentId == Guid.Empty || !bill.Prescriptions.Any())
+			{
+				return false;
+			}
+			return true;
 		}
 	}
 }
