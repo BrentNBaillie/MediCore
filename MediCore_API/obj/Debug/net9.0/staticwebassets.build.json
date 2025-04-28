@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "aN3djsNHyvUuiTIToLxDAiE8PZHyENFI75zSkliexg0=",
+  "Source": "MediCore_API",
+  "BasePath": "_content/MediCore_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

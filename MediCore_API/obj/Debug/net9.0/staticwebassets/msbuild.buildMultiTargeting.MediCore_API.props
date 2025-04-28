@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MediCore_API.props" />
+</Project>
