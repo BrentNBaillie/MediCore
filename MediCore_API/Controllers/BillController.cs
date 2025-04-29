@@ -32,7 +32,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpGet("/Patient/{id:Guid}")]
-		public async Task<ActionResult<List<Bill>>> GetPatientBills(Guid id)
+		public async Task<ActionResult<List<BillDTO>>> GetPatientBills([FromRoute] Guid id)
 		{
 			if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
 			var bills = await context.Bills.Include(b => b.Patient).Include(b => b.Prescriptions).Where(b => b.PatientId == id).ToListAsync();
@@ -49,7 +49,6 @@ namespace MediCore_API.Controllers
 		[HttpPost("/Add")]
 		public async Task<ActionResult> PostBill([FromBody] BillDTO newBill)
 		{
-			newBill.Id = Guid.NewGuid();
 			if (!await context.Patients.AnyAsync(p => p.Id == newBill.PatientId)) return NotFound("Doctor Not Found");
 			if (!await context.Appointments.AnyAsync(d => d.Id == newBill.AppointmentId)) return NotFound("Appointment Not Found");
 			if (!newBill.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
@@ -64,16 +63,16 @@ namespace MediCore_API.Controllers
 
 			foreach (Prescription p in prescriptions)
 			{
-				p.BillId = newBill.Id;
+				p.BillId = bill.Id;
 			}
 
 			await context.Bills.AddAsync(bill);
 			await context.SaveChangesAsync();
-			return Ok();
+			return Created();
 		}
 
 		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchBill(Guid id, [FromBody] BillDTO dto)
+		public async Task<ActionResult> PatchBill([FromRoute] Guid id, [FromBody] BillDTO dto)
 		{
 			if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
@@ -89,7 +88,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpDelete("/{id:Guid}")]
-		public async Task<ActionResult> DeleteBill(Guid id)
+		public async Task<ActionResult> DeleteBill([FromRoute] Guid id)
 		{
 			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
 			if (bill is null) return NotFound("Bill Not Found");
@@ -101,12 +100,12 @@ namespace MediCore_API.Controllers
 
 		public bool BillIsValid(BillDTO bill)
 		{
-			if (bill is null ||  bill.Amount <= 0 || bill.PaymentMethod == string.Empty || 
-				bill.Date is null || bill.PatientId == Guid.Empty ||
-				bill.AppointmentId == Guid.Empty || !bill.Prescriptions.Any())
-			{
-				return false;
-			}
+			if (bill.Amount <= 0) return false;
+			if (string.IsNullOrEmpty(bill.PaymentMethod)) return false;
+			if (bill.Date is null || bill.Date <= new DateTime(2025,1,1)) return false;
+			if (bill.PatientId == Guid.Empty) return false;
+			if (bill.AppointmentId == Guid.Empty) return false;
+			if (!bill.Prescriptions.Any()) return false;
 			return true;
 		}
 	}

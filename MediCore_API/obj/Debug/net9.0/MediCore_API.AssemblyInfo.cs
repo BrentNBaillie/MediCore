@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediCore_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+178acd5081c2e4686e75f184c8f3129da3d176cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7582ee4856d3ca9c117e744231c8d9515f14c835")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediCore_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediCore_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

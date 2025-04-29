@@ -33,7 +33,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpGet("/{id:Guid}")]
-		public async Task<ActionResult<Appointment>> GetAppointment(Guid id)
+		public async Task<ActionResult<AppointmentDTO>> GetAppointment([FromRoute] Guid id)
 		{
 			var appointment = await context.Appointments.FindAsync(id);
 			if (appointment is null) return NotFound("Appointment Not Found");
@@ -41,7 +41,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpGet("/Doctor/{id:Guid}")]
-		public async Task<ActionResult<List<Appointment>>> GetDoctorAppointments(Guid id)
+		public async Task<ActionResult<List<AppointmentDTO>>> GetDoctorAppointments([FromRoute] Guid id)
 		{
 			if (!await context.Doctors.AnyAsync(d => d.Id == id)) return NotFound("Doctor Not Found");
 
@@ -54,7 +54,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpGet("/Patient/{id:Guid}")]
-		public async Task<ActionResult<List<Appointment>>> GetPatientAppointments(Guid id)
+		public async Task<ActionResult<List<AppointmentDTO>>> GetPatientAppointments([FromRoute] Guid id)
 		{
 			if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
 
@@ -71,7 +71,6 @@ namespace MediCore_API.Controllers
 		{
 			if (newAppointment is null) return BadRequest("Appointment Data Null.");
 			if (!AppointmentIsValid(newAppointment)) return BadRequest("Appointment Data Is Invalid.");
-			if (await context.Appointments.AnyAsync(a => a.Id == newAppointment.Id)) return BadRequest("Appointment Already Exists.");
 
 			await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(newAppointment));
 			await context.SaveChangesAsync();
@@ -80,7 +79,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchAppointment(Guid id, [FromBody] AppointmentDTO dto)
+		public async Task<ActionResult> PatchAppointment([FromRoute] Guid id, [FromBody] AppointmentDTO dto)
 		{
 			if(dto is null) return BadRequest("Appointment Data Null.");
 			if (!AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
@@ -98,7 +97,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpDelete("/{id:Guid}")]
-		public async Task<ActionResult> DeleteAppointment(Guid id)
+		public async Task<ActionResult> DeleteAppointment([FromRoute] Guid id)
 		{
 			var appointment = await context.Appointments.FindAsync(id);
 			if (appointment is null) return NotFound("Appointment Not Found");
@@ -109,15 +108,12 @@ namespace MediCore_API.Controllers
 			return Ok();
 		}
 
-		public bool AppointmentIsValid(AppointmentDTO newAppointment)
+		public bool AppointmentIsValid(AppointmentDTO appointment)
 		{
-			if (newAppointment.Status == string.Empty 
-				|| newAppointment.TimeSlotId == Guid.Empty 
-				|| newAppointment.DoctorId == Guid.Empty 
-				|| newAppointment.PatientId == Guid.Empty)
-			{
-				return false;
-			}
+			if (string.IsNullOrEmpty(appointment.Status)) return false;
+			if (appointment.TimeSlotId == Guid.Empty) return false;
+			if (appointment.PatientId == Guid.Empty) return false;
+			if (appointment.DoctorId == Guid.Empty) return false;
 			return true;
 		}
     }
