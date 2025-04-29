@@ -7,7 +7,7 @@ namespace MediCore_API.Models.Entities
 	{
 		[Key]
 		public Guid Id { get; set; } = Guid.NewGuid();
-		public DateTime Date { get; set; } = DateTime.Now;
+		public DateTime? Date { get; set; } = DateTime.Now;
 		public string Details { get; set; } = string.Empty;
 
 		public Guid PatientId { get; set; } = Guid.Empty;

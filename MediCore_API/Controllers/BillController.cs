@@ -31,6 +31,14 @@ namespace MediCore_API.Controllers
 			return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
 		}
 
+		[HttpGet("/{id:Guid}")]
+		public async Task<ActionResult<BillDTO>> GetBill([FromRoute] Guid id)
+		{
+			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+			if (bill is null) return NotFound("Bill Not Found");
+			return Ok(mapper.Map<Bill, BillDTO>(bill));
+		}
+
 		[HttpGet("/Patient/{id:Guid}")]
 		public async Task<ActionResult<List<BillDTO>>> GetPatientBills([FromRoute] Guid id)
 		{
@@ -47,17 +55,17 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpPost("/Add")]
-		public async Task<ActionResult> PostBill([FromBody] BillDTO newBill)
+		public async Task<ActionResult> PostBill([FromBody] BillDTO dto)
 		{
-			if (!await context.Patients.AnyAsync(p => p.Id == newBill.PatientId)) return NotFound("Doctor Not Found");
-			if (!await context.Appointments.AnyAsync(d => d.Id == newBill.AppointmentId)) return NotFound("Appointment Not Found");
-			if (!newBill.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
-			if (!BillIsValid(newBill)) return BadRequest("Invalid Bill Data");
+			if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Doctor Not Found");
+			if (!await context.Appointments.AnyAsync(d => d.Id == dto.AppointmentId)) return NotFound("Appointment Not Found");
+			if (!dto.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
+			if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
-			var prescriptions = await context.Prescriptions.Where(p => newBill.Prescriptions.Contains(p.Id)).ToListAsync();
+			var prescriptions = await context.Prescriptions.Where(p => dto.Prescriptions.Contains(p.Id)).ToListAsync();
 			if (!prescriptions.Any()) return NotFound("No Prescriptions Found");
 
-			Bill bill = mapper.Map<BillDTO, Bill>(newBill);
+			Bill bill = mapper.Map<BillDTO, Bill>(dto);
 
 			bill.Prescriptions = prescriptions;
 

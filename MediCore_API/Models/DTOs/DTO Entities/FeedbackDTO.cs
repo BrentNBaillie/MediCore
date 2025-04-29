@@ -5,7 +5,7 @@ namespace MediCore_API.Models.Entities
 {
 	public class FeedbackDTO
 	{
-		public DateTime Date { get; set; } = DateTime.Now;
+		public DateTime? Date { get; set; } = null;
 		public string Details { get; set; } = string.Empty;
 		public Guid PatientId { get; set; } = Guid.Empty;
 	}

@@ -4,6 +4,7 @@ using MediCore_API.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using MediCore_API.Data;
 using MediCore_API.Models.DTOs;
+using MediCore_API.Interfaces;
 using MediCore_API.Services;
 
 namespace MediCore_API.Controllers
@@ -13,7 +14,7 @@ namespace MediCore_API.Controllers
 	public class DoctorController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly ModelMapper mapper;
+		private readonly IModelMapper mapper;
 
 		public DoctorController(MediCoreContext context)
 		{
@@ -40,13 +41,13 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpPost("/Create")]
-		public async Task<ActionResult> PostDoctor([FromBody] DoctorDTO newDoctor)
+		public async Task<ActionResult> PostDoctor([FromBody] DoctorDTO dto)
 		{
-			if (!DoctorIsValid(newDoctor)) return BadRequest("Invalid Doctor Data");
-			if (await context.Doctors.AnyAsync(d => d.FirstName == newDoctor.FirstName) && 
-				await context.Doctors.AnyAsync(d => d.LastName == newDoctor.LastName)) return BadRequest("Doctor Already Exists");
+			if (!DoctorIsValid(dto)) return BadRequest("Invalid Doctor Data");
+			if (await context.Doctors.AnyAsync(d => d.FirstName == dto.FirstName) && 
+				await context.Doctors.AnyAsync(d => d.LastName == dto.LastName)) return BadRequest("Doctor Already Exists");
 
-			await context.Doctors.AddAsync(mapper.Map<DoctorDTO, Doctor>(newDoctor));
+			await context.Doctors.AddAsync(mapper.Map<DoctorDTO, Doctor>(dto));
 			await context.SaveChangesAsync();
 			return Created();
 		}

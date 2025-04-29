@@ -67,12 +67,12 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpPost("/Add")]
-		public async Task<ActionResult> PostAppointment([FromBody] AppointmentDTO newAppointment)
+		public async Task<ActionResult> PostAppointment([FromBody] AppointmentDTO dto)
 		{
-			if (newAppointment is null) return BadRequest("Appointment Data Null.");
-			if (!AppointmentIsValid(newAppointment)) return BadRequest("Appointment Data Is Invalid.");
+			if (dto is null) return BadRequest("Appointment Data Null.");
+			if (!AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
 
-			await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(newAppointment));
+			await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(dto));
 			await context.SaveChangesAsync();
 
 			return Created();
