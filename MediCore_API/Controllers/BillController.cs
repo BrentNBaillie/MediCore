@@ -25,85 +25,127 @@ namespace MediCore_API.Controllers
 		[HttpGet("/All")]
 		public async Task<ActionResult<List<BillDTO>>> GetAllBills()
 		{
-			var bills = await context.Bills.ToListAsync();
-			if (!bills.Any()) return NotFound("No Bills Found");
+			try
+			{
+				var bills = await context.Bills.ToListAsync();
+				if (!bills.Any()) return NotFound("No Bills Found");
 
-			return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
+				return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpGet("/{id:Guid}")]
 		public async Task<ActionResult<BillDTO>> GetBill([FromRoute] Guid id)
 		{
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
-			if (bill is null) return NotFound("Bill Not Found");
-			return Ok(mapper.Map<Bill, BillDTO>(bill));
+			try
+			{
+				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+				if (bill is null) return NotFound("Bill Not Found");
+				return Ok(mapper.Map<Bill, BillDTO>(bill));
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpGet("/Patient/{id:Guid}")]
 		public async Task<ActionResult<List<BillDTO>>> GetPatientBills([FromRoute] Guid id)
 		{
-			if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
-			var bills = await context.Bills.Include(b => b.Patient).Include(b => b.Prescriptions).Where(b => b.PatientId == id).ToListAsync();
-			if (!bills.Any()) return NotFound("No Bills Found");
-
-			foreach (Bill bill in bills)
+			try
 			{
-				bill.Amount = bill.Prescriptions.Sum(p => p.Quantity * p.Medicine.Price);
-			}
+				if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
+				var bills = await context.Bills.Include(b => b.Patient).Include(b => b.Prescriptions).Where(b => b.PatientId == id).ToListAsync();
+				if (!bills.Any()) return NotFound("No Bills Found");
 
-			return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
+				foreach (Bill bill in bills)
+				{
+					bill.Amount = bill.Prescriptions.Sum(p => p.Quantity * p.Medicine.Price);
+				}
+
+				return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpPost("/Add")]
 		public async Task<ActionResult> PostBill([FromBody] BillDTO dto)
 		{
-			if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Doctor Not Found");
-			if (!await context.Appointments.AnyAsync(d => d.Id == dto.AppointmentId)) return NotFound("Appointment Not Found");
-			if (!dto.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
-			if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
-
-			var prescriptions = await context.Prescriptions.Where(p => dto.Prescriptions.Contains(p.Id)).ToListAsync();
-			if (!prescriptions.Any()) return NotFound("No Prescriptions Found");
-
-			Bill bill = mapper.Map<BillDTO, Bill>(dto);
-
-			bill.Prescriptions = prescriptions;
-
-			foreach (Prescription p in prescriptions)
+			try
 			{
-				p.BillId = bill.Id;
-			}
+				if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Doctor Not Found");
+				if (!await context.Appointments.AnyAsync(d => d.Id == dto.AppointmentId)) return NotFound("Appointment Not Found");
+				if (!dto.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
+				if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
-			await context.Bills.AddAsync(bill);
-			await context.SaveChangesAsync();
-			return Created();
+				var prescriptions = await context.Prescriptions.Where(p => dto.Prescriptions.Contains(p.Id)).ToListAsync();
+				if (!prescriptions.Any()) return NotFound("No Prescriptions Found");
+
+				Bill bill = mapper.Map<BillDTO, Bill>(dto);
+
+				bill.Prescriptions = prescriptions;
+
+				foreach (Prescription p in prescriptions)
+				{
+					p.BillId = bill.Id;
+				}
+
+				await context.Bills.AddAsync(bill);
+				await context.SaveChangesAsync();
+				return Created();
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpPatch("/{id:Guid}/Update")]
 		public async Task<ActionResult> PatchBill([FromRoute] Guid id, [FromBody] BillDTO dto)
 		{
-			if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
-			if (bill is null) return NotFound("Bill Not Found");
+			try
+			{
+				if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
+				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+				if (bill is null) return NotFound("Bill Not Found");
 
-			if (dto.PaymentMethod != string.Empty) bill.PaymentMethod = dto.PaymentMethod;
-			if (dto.Date is not null) bill.Date = dto.Date;
-			if (dto.PatientId != Guid.Empty) bill.PatientId = dto.PatientId;
-			if (dto.AppointmentId != Guid.Empty) bill.AppointmentId = dto.AppointmentId;
+				if (dto.PaymentMethod != string.Empty) bill.PaymentMethod = dto.PaymentMethod;
+				if (dto.Date is not null) bill.Date = dto.Date;
+				if (dto.PatientId != Guid.Empty) bill.PatientId = dto.PatientId;
+				if (dto.AppointmentId != Guid.Empty) bill.AppointmentId = dto.AppointmentId;
 
-			await context.SaveChangesAsync();
-			return Ok();
+				await context.SaveChangesAsync();
+				return Ok();
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpDelete("/{id:Guid}")]
 		public async Task<ActionResult> DeleteBill([FromRoute] Guid id)
 		{
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
-			if (bill is null) return NotFound("Bill Not Found");
+			try
+			{
+				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+				if (bill is null) return NotFound("Bill Not Found");
 
-			context.Bills.Remove(bill);
-			await context.SaveChangesAsync();
-			return Ok();
+				context.Bills.Remove(bill);
+				await context.SaveChangesAsync();
+				return Ok();
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		public bool BillIsValid(BillDTO bill)
