@@ -23,6 +23,7 @@ namespace MediCore_API.Data
 		public DbSet<Schedule> Schedules { get; set; }
 		public DbSet<TimeSlot> TimeSlots { get; set; }
 		public DbSet<Message> Messages { get; set; }	
+		public DbSet<Chat> Chats { get; set; }
 		public DbSet<Medicine> Medicines { get; set; }
 		public DbSet<MedicalRecord> MedicalRecords { get; set; }
 
@@ -172,17 +173,11 @@ namespace MediCore_API.Data
 				.HasForeignKey(x => x.MedicalRecordId)
 				.OnDelete(DeleteBehavior.Restrict);
 			#endregion
-			#region Message
-			modelBuilder.Entity<Message>()
-				.HasOne(m => m.Reciever)
-				.WithMany()
-				.HasForeignKey(m => m.RecieverId)
-				.OnDelete(DeleteBehavior.Restrict);
-
-			modelBuilder.Entity<Message>()
-				.HasOne(m => m.Sender)
-				.WithMany()
-				.HasForeignKey(m => m.SenderId)
+			#region Chat
+			modelBuilder.Entity<Chat>()
+				.HasMany(c => c.Messages)
+				.WithOne(m => m.Chat)
+				.HasForeignKey(m => m.ChatId)
 				.OnDelete(DeleteBehavior.Restrict);
 			#endregion
 			#region Patient

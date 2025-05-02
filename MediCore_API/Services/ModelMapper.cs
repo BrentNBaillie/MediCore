@@ -3,6 +3,8 @@ using AutoMapper;
 using MediCore_API.Models.DTOs;
 using MediCore_API.Models.Entities;
 using MediCore_API.Models.DTOs.DTO_Entities;
+using MediCore_API.Models.Medical_Record_Types;
+using MediCore_API.Models.DTOs.DTO_Medical_Record_Types;
 
 namespace MediCore_API.Services
 {
@@ -24,10 +26,10 @@ namespace MediCore_API.Services
 				cfg.CreateMap<DoctorDTO, Doctor>();
 				cfg.CreateMap<Feedback, FeedbackDTO>();
 				cfg.CreateMap<FeedbackDTO, Feedback>();
-				cfg.CreateMap<MedicalRecord, MedicalRecordDTO>();
-				cfg.CreateMap<MedicalRecordDTO, MedicalRecord>();
 				cfg.CreateMap<Medicine, MedicineDTO>();
 				cfg.CreateMap<MedicineDTO, Medicine>();
+				cfg.CreateMap<Chat, ChatDTO>();
+				cfg.CreateMap<ChatDTO, Chat>();
 				cfg.CreateMap<Message, MessageDTO>();
 				cfg.CreateMap<MessageDTO, Message>();
 				cfg.CreateMap<Patient, PatientDTO>();
@@ -42,6 +44,32 @@ namespace MediCore_API.Services
 				cfg.CreateMap<StaffRoleDTO, StaffRole>();
 				cfg.CreateMap<TimeSlot, TimeSlotDTO>();
 				cfg.CreateMap<TimeSlotDTO, TimeSlot>();
+
+				cfg.CreateMap<AllergyTest, AllergyTestDTO>();
+				cfg.CreateMap<AllergyTestDTO, AllergyTest>();
+				cfg.CreateMap<BodyMeasurement, BodyMeasurementDTO>();
+				cfg.CreateMap<BodyMeasurementDTO, BodyMeasurement>();
+				cfg.CreateMap<CardiacTest, CardiacTestDTO>();
+				cfg.CreateMap<CardiacTestDTO, CardiacTest>();
+				cfg.CreateMap<EndocrineTest, EndocrineTestDTO>();
+				cfg.CreateMap<EndocrineTestDTO, EndocrineTest>();
+				cfg.CreateMap<GeneticTest, GeneticTestDTO>();
+				cfg.CreateMap<GeneticTestDTO, GeneticTest>();
+				cfg.CreateMap<ImagingReport, ImagingReportDTO>();
+				cfg.CreateMap<ImagingReportDTO, ImagingReport>();
+				cfg.CreateMap<InfectiousDiseaseTest, InfectiousDiseaseTestDTO>();
+				cfg.CreateMap<InfectiousDiseaseTestDTO, InfectiousDiseaseTest>();
+				cfg.CreateMap<LaboratoryTest, LaboratoryTestDTO>();
+				cfg.CreateMap<LaboratoryTestDTO, LaboratoryTest>();
+				cfg.CreateMap<NeurologicalTest, NeurologicalTestDTO>();
+				cfg.CreateMap<NeurologicalTestDTO, NeurologicalTest>();
+				cfg.CreateMap<RespiratoryTest, RespiratoryTestDTO>();
+				cfg.CreateMap<RespiratoryTestDTO, RespiratoryTest>();
+				cfg.CreateMap<VitalSign, VitalSignDTO>();
+				cfg.CreateMap<VitalSignDTO, VitalSign>();
+
+				cfg.CreateMap<MedicalRecord, MedicalRecordDTO>();
+				cfg.CreateMap<MedicalRecordDTO, MedicalRecord>();
 			});
 
 			mapper = new Mapper(config); ;

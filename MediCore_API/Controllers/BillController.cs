@@ -87,7 +87,7 @@ namespace MediCore_API.Controllers
 			if (bill is null) return NotFound("Bill Not Found");
 
 			if (dto.PaymentMethod != string.Empty) bill.PaymentMethod = dto.PaymentMethod;
-			if (dto.Date != null) bill.Date = dto.Date;
+			if (dto.Date is not null) bill.Date = dto.Date;
 			if (dto.PatientId != Guid.Empty) bill.PatientId = dto.PatientId;
 			if (dto.AppointmentId != Guid.Empty) bill.AppointmentId = dto.AppointmentId;
 

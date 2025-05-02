@@ -9,13 +9,10 @@ namespace MediCore_API.Models.Entities
 		[Key]
 		public Guid Id { get; set; } = Guid.NewGuid();
 		public string Text { get; set; } = string.Empty;
-
-		[ForeignKey("ApplicationUser")]
+		public DateTime? Date { get; set; } = DateTime.Now;
 		public string SenderId { get; set; } = string.Empty;
-		public IdentityUser? Sender { get; set; } = null;
 
-		[ForeignKey("ApplicationUser")]
-		public string RecieverId { get; set; } = string.Empty;
-		public IdentityUser? Reciever { get; set; } = null;
+		public Guid ChatId { get; set; } = Guid.Empty;
+		public Chat? Chat { get; set; } = null;
 	}
 }

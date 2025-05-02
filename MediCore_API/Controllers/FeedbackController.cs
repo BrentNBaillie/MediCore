@@ -64,7 +64,7 @@ namespace MediCore_API.Controllers
 			var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
 			if (feedback is null) return NotFound("Feedback Not Found");
 
-			if (!(dto.Date is null)) feedback.Date = dto.Date;
+			if (dto.Date is not null) feedback.Date = dto.Date;
 			if (!string.IsNullOrEmpty(dto.Details)) feedback.Details = dto.Details;
 			if (dto.PatientId != Guid.Empty) feedback.PatientId = dto.PatientId;
 
