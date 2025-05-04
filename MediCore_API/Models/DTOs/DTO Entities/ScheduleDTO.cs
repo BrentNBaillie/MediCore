@@ -4,9 +4,9 @@ namespace MediCore_API.Models.DTOs
 {
 	public class ScheduleDTO
 	{
-		public DateOnly? Date { get; set; } = null;
-		public TimeOnly? Start { get; set; } = null;
-		public TimeOnly? End { get; set; } = null;
+		public DateOnly Date { get; set; } = new DateOnly();
+		public TimeOnly Start { get; set; } = new TimeOnly();
+		public TimeOnly End { get; set; } = new TimeOnly();
 		public Guid DoctorId { get; set; } = Guid.Empty;
 	}
 }
