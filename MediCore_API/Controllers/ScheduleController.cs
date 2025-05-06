@@ -25,72 +25,112 @@ namespace MediCore_API.Controllers
         [HttpGet("/All")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetAllSchedules()
         {
-            var schedules = await context.Schedules.ToListAsync();
-            if (!schedules.Any()) return NotFound("No Schedules Found");
-            return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
-        }
+			try
+			{
+				var schedules = await context.Schedules.ToListAsync();
+				return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
 
         [HttpGet("/Doctor/{id:Guid}")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetDoctorSchedules([FromRoute] Guid id)
         {
-            var schedules = await context.Schedules.Where(s => s.DoctorId == id).ToListAsync();
-            if (!schedules.Any()) return NotFound("Schedules Not Found");
-            return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
-        }
+			try
+			{
+				var schedules = await context.Schedules.Where(s => s.DoctorId == id).ToListAsync();
+				return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
 
         [HttpGet("/{id:Guid}")]
         public async Task<ActionResult<ScheduleDTO>> GetSchedule([FromRoute] Guid id)
         {
-            var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
-            if (schedule is null) return NotFound("Shecdule Not Found");
-            return Ok(mapper.Map<Schedule, ScheduleDTO>(schedule));
-        }
+			try
+			{
+				var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
+				if (schedule is null) return NotFound("Shecdule Not Found");
+				return Ok(mapper.Map<Schedule, ScheduleDTO>(schedule));
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
 
         [HttpPost("/Create")]
         public async Task<ActionResult> PostSchedule([FromBody] ScheduleDTO dto)
         {
-            if (dto.Start < dto.End) return BadRequest("Invlading Schedule Times");
-            Schedule schedule = mapper.Map<ScheduleDTO, Schedule>(dto);
-            List<TimeSlot> timeSlots = CreateTimeSlots(schedule);
+			try
+			{
+				if (dto.Start < dto.End) return BadRequest("Invlading Schedule Times");
+				Schedule schedule = mapper.Map<ScheduleDTO, Schedule>(dto);
+				List<TimeSlot> timeSlots = CreateTimeSlots(schedule);
 
-            await context.TimeSlots.AddRangeAsync(timeSlots);
-            await context.SaveChangesAsync();
+				await context.TimeSlots.AddRangeAsync(timeSlots);
+				await context.SaveChangesAsync();
 
-            return Created();
-        }
+				return Created();
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
 
         [HttpDelete("/{id:Guid}")]
         public async  Task<ActionResult> DeleteSchedule([FromRoute] Guid id)
         {
-            var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
-            if (schedule is null) return NotFound("Schedule Not Found");
-            var timeSlots = await context.TimeSlots.Where(t => t.ScheduleId == id).ToListAsync();
+			try
+			{
+				var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
+				if (schedule is null) return NotFound("Schedule Not Found");
+				var timeSlots = await context.TimeSlots.Where(t => t.ScheduleId == id).ToListAsync();
 
-             context.Schedules.Remove(schedule);
-            context.TimeSlots.RemoveRange(timeSlots);
-            await context.SaveChangesAsync(); 
-            return Ok("Schedule Deleted");
-        }
+				context.Schedules.Remove(schedule);
+				context.TimeSlots.RemoveRange(timeSlots);
+				await context.SaveChangesAsync();
+				return Ok("Schedule Deleted");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
 
         public List<TimeSlot> CreateTimeSlots(Schedule schedule)
         {
-            TimeOnly start = schedule.Start;
-            TimeOnly end = start.AddHours(1);
-            int timeSlotCount = (int)(schedule.End.ToTimeSpan() - start.ToTimeSpan()).TotalHours;
-            List<TimeSlot> timeSlots = new List<TimeSlot>();
+			try
+			{
+				TimeOnly start = schedule.Start;
+				TimeOnly end = start.AddHours(1);
+				int timeSlotCount = (int)(schedule.End.ToTimeSpan() - start.ToTimeSpan()).TotalHours;
+				List<TimeSlot> timeSlots = new List<TimeSlot>();
 
-            for (int i = 0; i < timeSlotCount; i++)
-            {
-                timeSlots.Add(new TimeSlot
-                {
-                    Start = start,
-                    End = end,
-                    ScheduleId = schedule.Id
-                });
-                start = start.AddHours(1);
-                end = end.AddHours(1);
-            }
-            return timeSlots;
-        }
+				for (int i = 0; i < timeSlotCount; i++)
+				{
+					timeSlots.Add(new TimeSlot
+					{
+						Start = start,
+						End = end,
+						ScheduleId = schedule.Id
+					});
+					start = start.AddHours(1);
+					end = end.AddHours(1);
+				}
+				return timeSlots;
+			}
+			catch (Exception e)
+			{
+				return new List<TimeSlot>();
+			}
+		}
     }
 }

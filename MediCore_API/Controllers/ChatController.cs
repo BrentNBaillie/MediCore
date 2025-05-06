@@ -33,8 +33,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var chats = await context.Chats.Include(c => c.Messages).ToListAsync();
-				if (!chats.Any()) return NotFound("No Messages Found");
-
 				return Ok(chats.Select(c => mapper.Map<Chat, ChatDTO>(c)).ToList());
 			}
 			catch (Exception e)

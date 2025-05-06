@@ -28,8 +28,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var bills = await context.Bills.ToListAsync();
-				if (!bills.Any()) return NotFound("No Bills Found");
-
 				return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
 			}
 			catch (Exception e)
@@ -85,14 +83,9 @@ namespace MediCore_API.Controllers
 				if (!dto.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
 				if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
-				var prescriptions = await context.Prescriptions.Where(p => dto.Prescriptions.Contains(p.Id)).ToListAsync();
-				if (!prescriptions.Any()) return NotFound("No Prescriptions Found");
-
 				Bill bill = mapper.Map<BillDTO, Bill>(dto);
 
-				bill.Prescriptions = prescriptions;
-
-				foreach (Prescription p in prescriptions)
+				foreach (Prescription p in bill.Prescriptions)
 				{
 					p.BillId = bill.Id;
 				}
@@ -107,13 +100,13 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchBill([FromRoute] Guid id, [FromBody] BillDTO dto)
+		[HttpPatch("/Update")]
+		public async Task<ActionResult> PatchBill([FromBody] BillDTO dto)
 		{
 			try
 			{
 				if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
-				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == dto.Id);
 				if (bill is null) return NotFound("Bill Not Found");
 
 				if (dto.PaymentMethod != string.Empty) bill.PaymentMethod = dto.PaymentMethod;
@@ -140,7 +133,7 @@ namespace MediCore_API.Controllers
 
 				context.Bills.Remove(bill);
 				await context.SaveChangesAsync();
-				return Ok();
+				return Ok("Bill Deleted");
 			}
 			catch (Exception e)
 			{

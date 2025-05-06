@@ -25,8 +25,6 @@ namespace MediCore_API.Controllers
 		public async Task<ActionResult<List<MedicalRecordDTO>>> GetAllMedicalRecords()
 		{
 			var records = await context.MedicalRecords.ToListAsync();
-			if (!records.Any()) return NotFound("No Medical Records Found");
-
 			return Ok(records.Select(r => mapper.Map<MedicalRecord, MedicalRecordDTO>(r)).ToList());
 		}
 

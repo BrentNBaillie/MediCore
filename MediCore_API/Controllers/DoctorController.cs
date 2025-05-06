@@ -6,6 +6,7 @@ using MediCore_API.Data;
 using MediCore_API.Models.DTOs;
 using MediCore_API.Interfaces;
 using MediCore_API.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace MediCore_API.Controllers
 {
@@ -15,11 +16,13 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
+		private readonly UserManager<IdentityUser> userManager;
 
-		public DoctorController(MediCoreContext context)
+		public DoctorController(MediCoreContext context, UserManager<IdentityUser> userManager)
 		{
 			this.context = context;
 			mapper = new ModelMapper();
+			this.userManager = userManager;
 		}
 
 		[HttpGet("/All")]
@@ -28,8 +31,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var doctors = await context.Doctors.ToListAsync();
-				if (!doctors.Any()) return NotFound("Doctors Not Found");
-
 				return Ok(doctors.Select(d => mapper.Map<Doctor, DoctorDTO>(d)).ToList());
 			}
 			catch (Exception e)
@@ -54,13 +55,13 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchDoctor([FromRoute] Guid id, [FromBody] DoctorDTO dto)
+		[HttpPatch("/Update")]
+		public async Task<ActionResult> PatchDoctor([FromBody] DoctorDTO dto)
 		{
 			try
 			{
-				if (!await context.Doctors.AnyAsync(d => d.Id == id)) return NotFound("Doctor Not Found");
-				var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == id);
+				if (!await context.Doctors.AnyAsync(d => d.Id == dto.Id)) return NotFound("Doctor Not Found");
+				var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == dto.Id);
 				if (doctor is null) return NotFound("Doctor Not Found");
 
 				if (!string.IsNullOrEmpty(dto.FirstName)) doctor.FirstName = dto.FirstName;
@@ -86,10 +87,14 @@ namespace MediCore_API.Controllers
 			{
 				var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == id);
 				if (doctor is null) return NotFound("Doctor Not Found");
+				var user = await userManager.FindByIdAsync(doctor.UserId);
+				if (user is null) return NotFound("User Not Found");
 
 				context.Doctors.Remove(doctor);
+				await userManager.DeleteAsync(user);
+
 				await context.SaveChangesAsync();
-				return Ok();
+				return Ok("Doctor Deleted");
 			}
 			catch (Exception e)
 			{

@@ -13,6 +13,6 @@ namespace MediCore_API.Models.Entities
 		public Guid DoctorId { get; set; } = Guid.Empty;
 		public Doctor? Doctor { get; set; } = null;
 
-		public List<TimeSlot> TimeSlots { get; set; } = new List<TimeSlot>();
+		public List<TimeSlot>? TimeSlots { get; set; } = new List<TimeSlot>();
 	}
 }

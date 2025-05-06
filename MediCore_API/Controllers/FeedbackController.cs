@@ -26,8 +26,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var feedbacks = await context.Feedbacks.ToListAsync();
-				if (!feedbacks.Any()) return NotFound("Feedbacks Not Found");
-
 				return Ok(feedbacks.Select(f => mapper.Map<Feedback, FeedbackDTO>(f)).ToList());
 			} 
 			catch (Exception e)
@@ -86,12 +84,12 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchFeedback([FromRoute] Guid id, [FromBody] FeedbackDTO dto)
+		[HttpPatch("/Update")]
+		public async Task<ActionResult> PatchFeedback([FromBody] FeedbackDTO dto)
 		{
 			try
 			{
-				var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
+				var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == dto.Id);
 				if (feedback is null) return NotFound("Feedback Not Found");
 
 				if (dto.Date is not null) feedback.Date = dto.Date;
@@ -117,7 +115,7 @@ namespace MediCore_API.Controllers
 
 				context.Feedbacks.Remove(feedback);
 				await context.SaveChangesAsync();
-				return Ok();
+				return Ok("Feedback Deleted");
 			}
 			catch (Exception e)
 			{

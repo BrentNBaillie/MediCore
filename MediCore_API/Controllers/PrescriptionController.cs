@@ -27,7 +27,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var prescriptions = await context.Prescriptions.ToListAsync();
-				if (!prescriptions.Any()) return NotFound("No Prescriptions Found");
 				return Ok(prescriptions.Select(p => mapper.Map<Prescription, PrescriptionDTO>(p)).ToList());
 			}
 			catch (Exception e)
@@ -97,13 +96,13 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchPrescription([FromRoute] Guid id, [FromBody] PrescriptionDTO dto)
+		[HttpPatch("/Update")]
+		public async Task<ActionResult> PatchPrescription([FromBody] PrescriptionDTO dto)
 		{
 			try
 			{
 				if (dto is null) return BadRequest("Invalid Prescription Data");
-				var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == id);
+				var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == dto.Id);
 				if (prescription is null) return NotFound("Prescription Not Found");
 
 				if (dto.Quantity > 0) prescription.Quantity = dto.Quantity;

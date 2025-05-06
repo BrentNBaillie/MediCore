@@ -29,8 +29,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var appointments = await context.Appointments.ToListAsync();
-				if (!appointments.Any()) return NotFound("No Appointments Found");
-
 				return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
 			}
 			catch (Exception e)
@@ -113,15 +111,15 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/{id:Guid}/Update")]
-		public async Task<ActionResult> PatchAppointment([FromRoute] Guid id, [FromBody] AppointmentDTO dto)
+		[HttpPatch("/Update")]
+		public async Task<ActionResult> PatchAppointment([FromBody] AppointmentDTO dto)
 		{
 			try
 			{
 				if (dto is null) return BadRequest("Appointment Data Null.");
 				if (!AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
 
-				var appointment = await context.Appointments.FirstOrDefaultAsync(a => a.Id == id);
+				var appointment = await context.Appointments.FirstOrDefaultAsync(a => a.Id == dto.Id);
 				if (appointment is null) return NotFound("Appointment Not Found");
 
 				if (dto.Status != string.Empty) appointment.Status = dto.Status;
@@ -149,7 +147,7 @@ namespace MediCore_API.Controllers
 				context.Appointments.Remove(appointment);
 				await context.SaveChangesAsync();
 
-				return Ok();
+				return Ok("Appointment Deleted");
 			}
 			catch (Exception e)
 			{
