@@ -1,8 +1,6 @@
 ﻿using MediCore_API.Models.DTOs.DTO_Medical_Record_Types;
-using MediCore_API.Models.Entities;
-using MediCore_API.Models.Medical_Record_Types;
 
-namespace MediCore_API.Models.DTOs
+namespace MediCore_API.Models.DTOs.DTO_Entities
 {
 	public class MedicalRecordDTO
 	{

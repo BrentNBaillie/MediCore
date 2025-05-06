@@ -3,7 +3,7 @@ using MediCore_API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -13,14 +13,16 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
+		private readonly IModelValidation validate;
 
-		public FeedbackController(MediCoreContext context)
+		public FeedbackController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
+			this.validate = validate;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<FeedbackDTO>>> GetAllFeedback()
 		{
 			try
@@ -34,7 +36,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/{id:Guid}")]
+		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<FeedbackDTO>> GetFeedback([FromRoute] Guid id)
 		{
 			try
@@ -50,12 +52,12 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Patient/{id:Guid}")]
-		public async Task<ActionResult<List<FeedbackDTO>>> GetPatientFeddbacks(Guid id)
+		[HttpGet("Patient/{id:Guid}")]
+		public async Task<ActionResult<List<FeedbackDTO>>> GetPatientFeedbacks(Guid id)
 		{
 			try
 			{
-				var feedbacks = await context.Feedbacks.Where(f => f.Id == id).ToListAsync();
+				var feedbacks = await context.Feedbacks.Where(f => f.PatientId == id).ToListAsync();
 				if (!feedbacks.Any()) return NotFound("Feedback Not Found");
 
 				return Ok(feedbacks.Select(f => mapper.Map<Feedback, FeedbackDTO>(f)).ToList());
@@ -66,12 +68,12 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("/Create")]
+		[HttpPost("Create")]
 		public async Task<ActionResult> PostFeedback([FromBody] FeedbackDTO dto)
 		{
 			try
 			{
-				if (!FeedbackIsValid(dto)) return BadRequest("Invalid Feedback Data");
+				if (!validate.FeedbackIsValid(dto)) return BadRequest("Invalid Feedback Data");
 				Feedback feedback = mapper.Map<FeedbackDTO, Feedback>(dto);
 
 				await context.Feedbacks.AddAsync(feedback);
@@ -84,7 +86,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/Update")]
+		[HttpPatch("Update")]
 		public async Task<ActionResult> PatchFeedback([FromBody] FeedbackDTO dto)
 		{
 			try
@@ -105,7 +107,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpDelete("/{id:Guid}")]
+		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteFeedback([FromRoute] Guid id)
 		{
 			try
@@ -121,13 +123,6 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
-		}
-
-		public bool FeedbackIsValid(FeedbackDTO feedback)
-		{
-			if (string.IsNullOrEmpty(feedback.Details)) return false;
-			if (feedback.PatientId == Guid.Empty) return false;
-			return true;
 		}
 	}
 }

@@ -1,11 +1,11 @@
-﻿namespace MediCore_API.Models.DTOs
+﻿namespace MediCore_API.Models.DTOs.DTO_Entities
 {
     public class AppointmentDTO
     {
 		public Guid Id { get; set; } = Guid.Empty;
 		public string Status {  get; set; } = string.Empty;
-        public Guid TimeSlotId { get; set; } = Guid.Empty;
-        public Guid PatientId { get; set; } = Guid.Empty;
-        public Guid DoctorId { get; set; } = Guid.Empty;
+        public TimeSlotDTO? TimeSlot { get; set; } = null;
+        public PatientDTO? Patient { get; set; } = null;
+        public DoctorDTO? Doctor { get; set; } = null;
     }
 }

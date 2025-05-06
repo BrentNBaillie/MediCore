@@ -1,11 +1,10 @@
-﻿using MediCore_API.Models.DTOs;
-using MediCore_API.Models.Entities;
+﻿using MediCore_API.Models.Entities;
 using MediCore_API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -15,14 +14,16 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
         private readonly IModelMapper mapper;
+		private readonly ITimeSlotHandler timeSlotHandler;
 
-        public ScheduleController(MediCoreContext context)
+        public ScheduleController(MediCoreContext context, IModelMapper mapper, ITimeSlotHandler timeSlotHandler)
         {
             this.context = context;
-            mapper = new ModelMapper();
+            this.mapper = mapper;
+			this.timeSlotHandler = timeSlotHandler;
         }
 
-        [HttpGet("/All")]
+        [HttpGet("All")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetAllSchedules()
         {
 			try
@@ -36,7 +37,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpGet("/Doctor/{id:Guid}")]
+        [HttpGet("Doctor/{id:Guid}")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetDoctorSchedules([FromRoute] Guid id)
         {
 			try
@@ -50,13 +51,13 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpGet("/{id:Guid}")]
+        [HttpGet("{id:Guid}")]
         public async Task<ActionResult<ScheduleDTO>> GetSchedule([FromRoute] Guid id)
         {
 			try
 			{
 				var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
-				if (schedule is null) return NotFound("Shecdule Not Found");
+				if (schedule is null) return NotFound("Schedule Not Found");
 				return Ok(mapper.Map<Schedule, ScheduleDTO>(schedule));
 			}
 			catch (Exception e)
@@ -65,14 +66,14 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpPost("/Create")]
+        [HttpPost("Create")]
         public async Task<ActionResult> PostSchedule([FromBody] ScheduleDTO dto)
         {
 			try
 			{
 				if (dto.Start < dto.End) return BadRequest("Invlading Schedule Times");
 				Schedule schedule = mapper.Map<ScheduleDTO, Schedule>(dto);
-				List<TimeSlot> timeSlots = CreateTimeSlots(schedule);
+				List<TimeSlot> timeSlots = timeSlotHandler.CreateTimeSlots(schedule);
 
 				await context.TimeSlots.AddRangeAsync(timeSlots);
 				await context.SaveChangesAsync();
@@ -85,7 +86,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpDelete("/{id:Guid}")]
+        [HttpDelete("{id:Guid}")]
         public async  Task<ActionResult> DeleteSchedule([FromRoute] Guid id)
         {
 			try
@@ -102,34 +103,6 @@ namespace MediCore_API.Controllers
 			catch (Exception e)
 			{
 				return StatusCode(500, $"Error: {e}");
-			}
-		}
-
-        public List<TimeSlot> CreateTimeSlots(Schedule schedule)
-        {
-			try
-			{
-				TimeOnly start = schedule.Start;
-				TimeOnly end = start.AddHours(1);
-				int timeSlotCount = (int)(schedule.End.ToTimeSpan() - start.ToTimeSpan()).TotalHours;
-				List<TimeSlot> timeSlots = new List<TimeSlot>();
-
-				for (int i = 0; i < timeSlotCount; i++)
-				{
-					timeSlots.Add(new TimeSlot
-					{
-						Start = start,
-						End = end,
-						ScheduleId = schedule.Id
-					});
-					start = start.AddHours(1);
-					end = end.AddHours(1);
-				}
-				return timeSlots;
-			}
-			catch (Exception e)
-			{
-				return new List<TimeSlot>();
 			}
 		}
     }

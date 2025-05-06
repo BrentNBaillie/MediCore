@@ -144,7 +144,7 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpPost("login")]
-		public async Task<ActionResult> Login([FromBody] Login request)
+		public async Task<ActionResult<LoginResponse>> Login([FromBody] Login request)
 		{
 			Guid id = Guid.Empty;
 			var user = await userManager.FindByEmailAsync(request.Email);
@@ -202,7 +202,7 @@ namespace MediCore_API.Controllers
 				}
 			}
 
-			return Ok(new { message = $"{users.Count} users deleted successfully." });
+			return Ok("All Users Deleted");
 		}
     }
 }

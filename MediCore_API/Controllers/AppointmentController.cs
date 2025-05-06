@@ -3,10 +3,8 @@ using MediCore_API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MediCore_API.Models.Identities;
-using MediCore_API.Models.DTOs;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -16,14 +14,16 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
+		private readonly IModelValidation validate;
 
-		public AppointmentController(MediCoreContext context)
+		public AppointmentController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
+			this.validate = validate;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetAllAppointments()
 		{
 			try
@@ -37,14 +37,14 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/{id:Guid}")]
+		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<AppointmentDTO>> GetAppointment([FromRoute] Guid id)
 		{
 			try
 			{
 				var appointment = await context.Appointments.FindAsync(id);
 				if (appointment is null) return NotFound("Appointment Not Found");
-				return Ok(appointment);
+				return Ok(mapper.Map<Appointment, AppointmentDTO>(appointment));
 			}
 			catch (Exception e)
 			{
@@ -52,7 +52,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Doctor/{id:Guid}")]
+		[HttpGet("Doctor/{id:Guid}")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetDoctorAppointments([FromRoute] Guid id)
 		{
 			try
@@ -72,7 +72,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Patient/{id:Guid}")]
+		[HttpGet("Patient/{id:Guid}")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetPatientAppointments([FromRoute] Guid id)
 		{
 			try
@@ -92,13 +92,13 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("/Add")]
+		[HttpPost("Create")]
 		public async Task<ActionResult> PostAppointment([FromBody] AppointmentDTO dto)
 		{
 			try
 			{
 				if (dto is null) return BadRequest("Appointment Data Null.");
-				if (!AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
+				if (!validate.AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
 
 				await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(dto));
 				await context.SaveChangesAsync();
@@ -111,21 +111,20 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/Update")]
+		[HttpPatch("Update")]
 		public async Task<ActionResult> PatchAppointment([FromBody] AppointmentDTO dto)
 		{
 			try
 			{
 				if (dto is null) return BadRequest("Appointment Data Null.");
-				if (!AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
 
 				var appointment = await context.Appointments.FirstOrDefaultAsync(a => a.Id == dto.Id);
 				if (appointment is null) return NotFound("Appointment Not Found");
 
 				if (dto.Status != string.Empty) appointment.Status = dto.Status;
-				if (dto.TimeSlotId != Guid.Empty) appointment.TimeSlotId = dto.TimeSlotId;
-				if (dto.PatientId != Guid.Empty) appointment.PatientId = dto.PatientId;
-				if (dto.DoctorId != Guid.Empty) appointment.DoctorId = dto.DoctorId;
+				if (dto.TimeSlot!.Id != Guid.Empty) appointment.TimeSlotId = dto.TimeSlot.Id;
+				if (dto.Patient!.Id != Guid.Empty) appointment.PatientId = dto.Patient.Id;
+				if (dto.Doctor!.Id != Guid.Empty) appointment.DoctorId = dto.Doctor.Id;
 
 				await context.SaveChangesAsync();
 				return Ok();
@@ -136,7 +135,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpDelete("/{id:Guid}")]
+		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteAppointment([FromRoute] Guid id)
 		{
 			try
@@ -153,15 +152,6 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
-		}
-
-		public bool AppointmentIsValid(AppointmentDTO appointment)
-		{
-			if (string.IsNullOrEmpty(appointment.Status)) return false;
-			if (appointment.TimeSlotId == Guid.Empty) return false;
-			if (appointment.PatientId == Guid.Empty) return false;
-			if (appointment.DoctorId == Guid.Empty) return false;
-			return true;
 		}
     }
 }

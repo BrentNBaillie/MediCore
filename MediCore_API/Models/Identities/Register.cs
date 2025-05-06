@@ -1,5 +1,4 @@
-﻿using MediCore_API.Models.DTOs;
-using MediCore_API.Models.Entities;
+﻿using MediCore_API.Models.DTOs.DTO_Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace MediCore_API.Models.Identities

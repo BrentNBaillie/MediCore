@@ -21,7 +21,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 	options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
 });
 
-builder.Services.AddScoped<IModelMapper, ModelMapper>(); ;
+builder.Services.AddScoped<IModelMapper, ModelMapper>();
+builder.Services.AddScoped<IModelValidation, ModelValidation>();
+builder.Services.AddScoped<ITimeSlotHandler, TimeSlotHandler>();
 
 builder.Services.AddOpenApi();
 
@@ -30,7 +32,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 
 builder.Services.AddDbContext<MediCoreContext>(options =>
-				options.UseSqlServer(builder.Configuration.GetConnectionString("HealthHorizonContext")));
+				options.UseSqlServer(builder.Configuration.GetConnectionString("MediCoreContext")));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 				.AddEntityFrameworkStores<MediCoreContext>()

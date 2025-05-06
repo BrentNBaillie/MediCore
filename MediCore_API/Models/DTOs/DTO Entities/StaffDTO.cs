@@ -1,8 +1,4 @@
-﻿using MediCore_API.Models.Entities;
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace MediCore_API.Models.DTOs
+﻿namespace MediCore_API.Models.DTOs.DTO_Entities
 {
 	public class StaffDTO
 	{

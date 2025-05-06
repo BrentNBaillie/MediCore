@@ -3,10 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using MediCore_API.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using MediCore_API.Data;
-using MediCore_API.Models.DTOs;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
 using Microsoft.AspNetCore.Identity;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -18,14 +17,14 @@ namespace MediCore_API.Controllers
 		private readonly IModelMapper mapper;
 		private readonly UserManager<IdentityUser> userManager;
 
-		public DoctorController(MediCoreContext context, UserManager<IdentityUser> userManager)
+		public DoctorController(MediCoreContext context, UserManager<IdentityUser> userManager, IModelMapper mapper)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
 			this.userManager = userManager;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<DoctorDTO>>> GetAllDoctors()
 		{
 			try
@@ -39,7 +38,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/{id:Guid}")]
+		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<DoctorDTO>> GetDoctor([FromRoute] Guid id)
 		{
 			try
@@ -55,12 +54,11 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/Update")]
+		[HttpPatch("Update")]
 		public async Task<ActionResult> PatchDoctor([FromBody] DoctorDTO dto)
 		{
 			try
 			{
-				if (!await context.Doctors.AnyAsync(d => d.Id == dto.Id)) return NotFound("Doctor Not Found");
 				var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == dto.Id);
 				if (doctor is null) return NotFound("Doctor Not Found");
 
@@ -80,7 +78,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpDelete("/{id:Guid}")]
+		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteDoctor(Guid id)
 		{
 			try
@@ -100,17 +98,6 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
-		}
-
-		public bool DoctorIsValid(DoctorDTO doctor)
-		{
-			if (string.IsNullOrEmpty(doctor.FirstName)) return false;
-			if (string.IsNullOrEmpty(doctor.LastName)) return false;
-			if (string.IsNullOrEmpty(doctor.Specialization)) return false;
-			if (string.IsNullOrEmpty(doctor.PhoneNumber)) return false;
-			if (string.IsNullOrEmpty(doctor.HospitalName)) return false;
-			if (string.IsNullOrEmpty(doctor.ProfessionalBio)) return false;
-			return true;
 		}
     }
 }

@@ -3,9 +3,8 @@ using MediCore_API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
-using MediCore_API.Models.DTOs;
 using Microsoft.AspNetCore.Identity;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -17,14 +16,14 @@ namespace MediCore_API.Controllers
         private readonly IModelMapper mapper;
 		private readonly UserManager<IdentityUser> userManager;
 
-		public PatientController(MediCoreContext context, UserManager<IdentityUser> userManager)
+		public PatientController(MediCoreContext context, UserManager<IdentityUser> userManager, IModelMapper mapper)
         {
             this.context = context;
-            mapper = new ModelMapper();
+            this.mapper = mapper;
 			this.userManager = userManager;
         }
 
-        [HttpGet("/All")]
+        [HttpGet("All")]
         public async Task<ActionResult<List<PatientDTO>>> GetAllPatients()
         {
 			try
@@ -38,7 +37,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpGet("/{id:Guid}")]
+        [HttpGet("{id:Guid}")]
         public async Task<ActionResult<PatientDTO>> GetPatient([FromRoute] Guid id)
         {
 			try
@@ -53,7 +52,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpPatch("/Update")]
+        [HttpPatch("Update")]
         public async Task<ActionResult> PatchPatient([FromBody] PatientDTO dto)
         {
 			try
@@ -77,7 +76,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpDelete("/{id:Guid}/Delete")]
+        [HttpDelete("{id:Guid}")]
         public async Task<ActionResult> DeletePatient([FromRoute] Guid id)
         {
 			try

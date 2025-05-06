@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MediCore",
   "resources": {
-    "hash": "sha256-aq5Exp/4m9+joTyQXh/R39I+K3GydFqr6gQSp2S7sIs=",
+    "hash": "sha256-v/NnqHXfyyrGBBFYGxGz6XRd3VvvLs8uZdet1FHXTro=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.gf26ou9jj9.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.v3fd2n5hlr.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -202,8 +202,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "MediCore.vwx7qy4ikg.wasm": "MediCore.wasm",
-      "MediCore.4nzk74ad05.pdb": "MediCore.pdb"
+      "MediCore.e5dcutwsss.wasm": "MediCore.wasm",
+      "MediCore.hmlshx24j7.pdb": "MediCore.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hvg7u8bimp.js": "sha256-LX9rFEWGVxhkOkAVPG0w5RxPwzPBlEUz6dQNjWS7M+M="
@@ -414,10 +414,10 @@
       "WindowsBase.5lai2eowco.wasm": "sha256-GcDi5293y2A7oSiFYTbBTUe0d+ISbvgeel4ZNd8KkPM=",
       "mscorlib.wzkfrp7u5k.wasm": "sha256-9PjsU0gaxxz5Vyw++p9DeYUWLsaXbaMS2RbX6wmTUmk=",
       "netstandard.d82br99ghv.wasm": "sha256-DS8keXxU4eQpa1kIoiFxOA2Ii2g9hoNWSaVi8F8AnIE=",
-      "MediCore.vwx7qy4ikg.wasm": "sha256-b4l6xQAHUIdwmqd/Far9g7WlfjGJC9UPzdZL7Xrea1k="
+      "MediCore.e5dcutwsss.wasm": "sha256-kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc="
     },
     "pdb": {
-      "MediCore.4nzk74ad05.pdb": "sha256-cMiQ9ihOj3gfc0WrzAs5M5vG/ybyq1Z0pV501kPoPKQ="
+      "MediCore.hmlshx24j7.pdb": "sha256-eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM="
     }
   },
   "cacheBootResources": true,

@@ -1,10 +1,9 @@
-﻿using MediCore_API.Models.DTOs;
-using MediCore_API.Data;
+﻿using MediCore_API.Data;
 using Microsoft.AspNetCore.Mvc;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Models.Entities;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -15,20 +14,20 @@ namespace MediCore_API.Controllers
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
 
-		public MedicalRecordController(MediCoreContext context)
+		public MedicalRecordController(MediCoreContext context, IModelMapper mapper)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<MedicalRecordDTO>>> GetAllMedicalRecords()
 		{
 			var records = await context.MedicalRecords.ToListAsync();
 			return Ok(records.Select(r => mapper.Map<MedicalRecord, MedicalRecordDTO>(r)).ToList());
 		}
 
-		[HttpGet("/{id:Guid}")]
+		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<MedicalRecordDTO>> GetMedicalRecord([FromRoute] Guid id)
 		{
 			var record = await context.MedicalRecords.FirstOrDefaultAsync(r => r.Id == id);
@@ -37,7 +36,7 @@ namespace MediCore_API.Controllers
 			return Ok(mapper.Map<MedicalRecord, MedicalRecordDTO>(record));
 		}
 
-		[HttpGet("/Patient/{id:Guid}")]
+		[HttpGet("Patient/{id:Guid}")]
 		public async Task<ActionResult<MedicalRecordDTO>> GetPatientMedicalRecord([FromRoute] Guid id)
 		{
 			var record = await context.MedicalRecords.FirstOrDefaultAsync(r => r.PatientId == id);

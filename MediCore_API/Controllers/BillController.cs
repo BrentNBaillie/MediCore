@@ -3,8 +3,6 @@ using MediCore_API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
-using MediCore_API.Models.DTOs;
 using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
@@ -15,14 +13,16 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
+		private readonly IModelValidation validate;
 
-		public BillController(MediCoreContext context)
+		public BillController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
+			this.validate = validate;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<BillDTO>>> GetAllBills()
 		{
 			try
@@ -36,7 +36,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/{id:Guid}")]
+		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<BillDTO>> GetBill([FromRoute] Guid id)
 		{
 			try
@@ -51,7 +51,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Patient/{id:Guid}")]
+		[HttpGet("Patient/{id:Guid}")]
 		public async Task<ActionResult<List<BillDTO>>> GetPatientBills([FromRoute] Guid id)
 		{
 			try
@@ -73,22 +73,17 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("/Add")]
+		[HttpPost("Add")]
 		public async Task<ActionResult> PostBill([FromBody] BillDTO dto)
 		{
 			try
 			{
-				if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Doctor Not Found");
+				if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Patient Not Found");
 				if (!await context.Appointments.AnyAsync(d => d.Id == dto.AppointmentId)) return NotFound("Appointment Not Found");
 				if (!dto.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
-				if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
+				if (!validate.BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
 				Bill bill = mapper.Map<BillDTO, Bill>(dto);
-
-				foreach (Prescription p in bill.Prescriptions)
-				{
-					p.BillId = bill.Id;
-				}
 
 				await context.Bills.AddAsync(bill);
 				await context.SaveChangesAsync();
@@ -100,16 +95,15 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/Update")]
+		[HttpPatch("Update")]
 		public async Task<ActionResult> PatchBill([FromBody] BillDTO dto)
 		{
 			try
 			{
-				if (!BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == dto.Id);
 				if (bill is null) return NotFound("Bill Not Found");
 
-				if (dto.PaymentMethod != string.Empty) bill.PaymentMethod = dto.PaymentMethod;
+				if (!string.IsNullOrEmpty(dto.PaymentMethod)) bill.PaymentMethod = dto.PaymentMethod;
 				if (dto.Date is not null) bill.Date = dto.Date;
 				if (dto.PatientId != Guid.Empty) bill.PatientId = dto.PatientId;
 				if (dto.AppointmentId != Guid.Empty) bill.AppointmentId = dto.AppointmentId;
@@ -123,7 +117,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpDelete("/{id:Guid}")]
+		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteBill([FromRoute] Guid id)
 		{
 			try
@@ -139,17 +133,6 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
-		}
-
-		public bool BillIsValid(BillDTO bill)
-		{
-			if (bill.Amount <= 0) return false;
-			if (string.IsNullOrEmpty(bill.PaymentMethod)) return false;
-			if (bill.Date is null || bill.Date <= new DateTime(2025,1,1)) return false;
-			if (bill.PatientId == Guid.Empty) return false;
-			if (bill.AppointmentId == Guid.Empty) return false;
-			if (!bill.Prescriptions.Any()) return false;
-			return true;
 		}
 	}
 }

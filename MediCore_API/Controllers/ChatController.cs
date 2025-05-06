@@ -1,13 +1,9 @@
 ﻿using MediCore_API.Data;
 using MediCore_API.Interfaces;
-using MediCore_API.Models.DTOs;
 using MediCore_API.Models.DTOs.DTO_Entities;
 using MediCore_API.Models.Entities;
-using MediCore_API.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Controllers
@@ -20,14 +16,14 @@ namespace MediCore_API.Controllers
 		private readonly IModelMapper mapper;
 		private readonly UserManager<IdentityUser> userManager;
 
-		public ChatController(MediCoreContext context, UserManager<IdentityUser> userManager)
+		public ChatController(MediCoreContext context, UserManager<IdentityUser> userManager, IModelMapper mapper)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
 			this.userManager = userManager;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<ChatDTO>>> GetAllChats()
 		{
 			try
@@ -41,8 +37,8 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/User/{id}")]
-		public async Task<ActionResult<List<Chat>>> GetUserChats([FromRoute] string id)
+		[HttpGet("User/{id}")]
+		public async Task<ActionResult<List<ChatDTO>>> GetUserChats([FromRoute] string id)
 		{
 			try
 			{
@@ -55,8 +51,8 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/User/DM/{id:Guid}")]
-		public async Task<ActionResult<Chat>> GetChat([FromRoute] Guid id)
+		[HttpGet("User/DM/{id:Guid}")]
+		public async Task<ActionResult<ChatDTO>> GetChat([FromRoute] Guid id)
 		{
 			try
 			{
@@ -77,8 +73,8 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("/User/{sendId}/Send-To/{recieveId}")]
-		public async Task<ActionResult> SendMessage([FromRoute] string sendId, [FromRoute] string recieveId, [FromBody] MessageDTO message)
+		[HttpPost("User/{sendId}/Send-To/{receiveId}")]
+		public async Task<ActionResult> SendMessage([FromRoute] string sendId, [FromRoute] string receiveId, [FromBody] MessageDTO message)
 		{
 			try
 			{
@@ -88,33 +84,22 @@ namespace MediCore_API.Controllers
 					Ids = c.Ids,
 					Names = c.Names,
 					Messages = c.Messages.OrderByDescending(m => m.Date).ToList()
-				}).FirstOrDefaultAsync(c => c.Ids.Contains(sendId) && c.Ids.Contains(recieveId));
-
-				Message newMessage = mapper.Map<MessageDTO, Message>(message);
-				newMessage.SenderId = sendId;
+				}).FirstOrDefaultAsync(c => c.Ids.Contains(sendId) && c.Ids.Contains(receiveId));
 
 				if (chat is null)
 				{
-					Chat newChat = new Chat
+					chat = new Chat
 					{
-						Ids = [sendId, recieveId],
-						Names = [(await userManager.FindByIdAsync(sendId))!.UserName!, (await userManager.FindByIdAsync(recieveId))!.UserName!]
+						Ids = [sendId, receiveId],
+						Names = [(await userManager.FindByIdAsync(sendId))!.UserName!, (await userManager.FindByIdAsync(receiveId))!.UserName!]
 					};
-					await context.Chats.AddAsync(newChat);
+					await context.Chats.AddAsync(chat);
 					await context.SaveChangesAsync();
-
-					newMessage = new Message
-					{
-						Text = message.Text,
-						SenderId = sendId,
-						ChatId = newChat.Id
-					};
-
-					await context.Messages.AddAsync(newMessage);
-					await context.SaveChangesAsync();
-
-					return Created();
 				}
+
+				Message newMessage = mapper.Map<MessageDTO, Message>(message);
+				newMessage.SenderId = sendId;
+				newMessage.ChatId = chat.Id;
 
 				await context.Messages.AddAsync(newMessage);
 				await context.SaveChangesAsync();

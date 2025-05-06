@@ -1,4 +1,4 @@
-﻿namespace MediCore_API.Models.DTOs
+﻿namespace MediCore_API.Models.DTOs.DTO_Entities
 {
 	public class MedicineDTO
 	{

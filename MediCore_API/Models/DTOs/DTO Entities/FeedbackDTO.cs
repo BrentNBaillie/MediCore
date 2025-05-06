@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
-namespace MediCore_API.Models.Entities
+﻿namespace MediCore_API.Models.DTOs.DTO_Entities
 {
 	public class FeedbackDTO
 	{

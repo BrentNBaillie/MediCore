@@ -3,8 +3,7 @@ using MediCore_API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
-using MediCore_API.Services;
-using MediCore_API.Models.DTOs;
+using MediCore_API.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -14,14 +13,16 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
+		private readonly IModelValidation validate;
 
-		public PrescriptionController(MediCoreContext context)
+		public PrescriptionController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
-			mapper = new ModelMapper();
+			this.mapper = mapper;
+			this.validate = validate;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet("All")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetAllPrescriptions()
 		{
 			try
@@ -35,7 +36,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Patient/{id:Guid}")]
+		[HttpGet("Patient/{id:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetPatientPrescriptions([FromRoute] Guid id)
 		{
 			try
@@ -50,7 +51,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Doctor/{id:Guid}")]
+		[HttpGet("Doctor/{id:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetDoctorPrescriptions([FromRoute] Guid id)
 		{
 			try
@@ -65,7 +66,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("/Doctor/{doctorId:Guid}/Patient/{patientId:Guid}")]
+		[HttpGet("Doctor/{doctorId:Guid}/Patient/{patientId:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetDoctorPrescriptions([FromRoute] Guid doctorId, [FromRoute] Guid patientId)
 		{
 			try
@@ -80,12 +81,12 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("/Create")]
+		[HttpPost("Create")]
 		public async Task<ActionResult> PostPrescription([FromBody] PrescriptionDTO dto)
 		{
 			try
 			{
-				if (dto is null || !PrescriptionIsValid(dto)) return BadRequest("Invalid Prescription Data");
+				if (dto is null || !validate.PrescriptionIsValid(dto)) return BadRequest("Invalid Prescription Data");
 				await context.Prescriptions.AddAsync(mapper.Map<PrescriptionDTO, Prescription>(dto));
 				await context.SaveChangesAsync();
 				return Created();
@@ -96,7 +97,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("/Update")]
+		[HttpPatch("Update")]
 		public async Task<ActionResult> PatchPrescription([FromBody] PrescriptionDTO dto)
 		{
 			try
@@ -120,7 +121,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpDelete("/Delete/{id:Guid}")]
+		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeletePrescription([FromRoute] Guid id)
 		{
 			try
@@ -135,15 +136,6 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
-		}
-
-		public bool PrescriptionIsValid(PrescriptionDTO prescription)
-		{
-			if (prescription.Quantity <= 0) return false;
-			if (prescription.MedicineId == Guid.Empty) return false;
-			if (prescription.DoctorId == Guid.Empty) return false;
-			if (prescription.PatientId == Guid.Empty) return false;
-			return true;
 		}
 	}
 }

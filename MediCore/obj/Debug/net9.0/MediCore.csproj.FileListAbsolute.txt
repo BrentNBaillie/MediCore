@@ -9,6 +9,8 @@ C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\dotnet.
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.hmlshx24j7.pdb
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.e5dcutwsss.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.gf26ou9jj9.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.n0ihslit6r.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.v3fd2n5hlr.wasm
@@ -38,6 +40,7 @@ C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microso
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Win32.Registry.w69ya3jgm7.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\mscorlib.wzkfrp7u5k.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\netstandard.d82br99ghv.wasm
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Newtonsoft.Json.qkbufwhni2.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.AppContext.brstoo7rmv.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Buffers.y31fti4j86.wasm
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Collections.Concurrent.kb0mdoldj7.wasm
@@ -259,6 +262,7 @@ C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Configuration.9b3tsnu5yx.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.vtaucv50wj.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.Logging.Abstractions.mnju7fj288.wasm.gz
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Newtonsoft.Json.qkbufwhni2.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.js.map.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Security.Cryptography.Cng.zisg2o9bw2.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.Configuration.8aq32nyru9.wasm.gz
@@ -322,6 +326,7 @@ C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\dotnet.js.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Web.HttpUtility.13lb3w228t.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.ComponentModel.Annotations.aws0gou7sm.wasm.gz
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.hmlshx24j7.pdb.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Net.Http.Json.2p5w4oxe0m.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Collections.Immutable.selokq9sco.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Reflection.Extensions.a9zrqgxt1b.wasm.gz
@@ -367,6 +372,7 @@ C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Net.NameResolution.hvkv0vmwu0.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Security.AccessControl.5e7zoanr8x.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Net.WebSockets.Client.8c4uwwg311.wasm.gz
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.e5dcutwsss.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Xml.Linq.vpe12reu9r.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\System.Xml.XPath.dhry31foc0.wasm.gz
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.hpstk8kub5.wasm.gz
@@ -428,6 +434,7 @@ C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.Extensions.Optio
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.JSInterop.dll
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.CSharp.dll
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.VisualBasic.Core.dll
 C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Microsoft.VisualBasic.dll
@@ -612,6 +619,7 @@ C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.AssemblyInfoInput
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.AssemblyInfo.cs
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.csproj.CoreCompileInputs.cache
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.sourcelink.json
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.AspNetCore.Components.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm
@@ -634,6 +642,7 @@ C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.Extension
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.Extensions.Primitives.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.JSInterop.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.JSInterop.WebAssembly.wasm
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Newtonsoft.Json.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.CSharp.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.VisualBasic.Core.wasm
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Microsoft.VisualBasic.wasm
@@ -882,6 +891,7 @@ C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\fis5ewg0kp-ug6n
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\f7vt2gfq4a-hkjc7m6x3e.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\xbtvoerwdc-uxfxoah9jv.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\7ddzibyjch-igj3a20jgi.gz
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\9daow86yxd-qkbufwhni2.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\4l9dtfn53f-rtelzgo5qn.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\7eto3rrd75-rov4p20cgi.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\aiuyeoe8pe-yffsxgg1pj.gz
@@ -1060,6 +1070,9 @@ C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\9knt9brpqe-4b0q
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\gogt2q7pm3-tjcz0u77k5.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\tpvds2fl9u-tptq2av103.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\ceu7bl5rh9-lfu7j35m59.gz
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\s7378ohgjt-e5dcutwsss.gz
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\l93aft9h4l-hmlshx24j7.gz
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\67uytvhm16-rodegxo9yg.gz
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\staticwebassets.build.json
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\staticwebassets.development.json
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -1075,15 +1088,3 @@ C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.dll
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\refint\MediCore.dll
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore.pdb
 C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\ref\MediCore.dll
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.4nzk74ad05.pdb
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.vwx7qy4ikg.wasm
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Newtonsoft.Json.qkbufwhni2.wasm
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\Newtonsoft.Json.qkbufwhni2.wasm.gz
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.4nzk74ad05.pdb.gz
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\wwwroot\_framework\MediCore.vwx7qy4ikg.wasm.gz
-C:\Github Projects\MediCore\MediCore\bin\Debug\net9.0\Newtonsoft.Json.dll
-C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\webcil\Newtonsoft.Json.wasm
-C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\9daow86yxd-qkbufwhni2.gz
-C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\s7378ohgjt-vwx7qy4ikg.gz
-C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\l93aft9h4l-4nzk74ad05.gz
-C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\compressed\67uytvhm16-4y61ufqpj5.gz
