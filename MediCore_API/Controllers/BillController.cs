@@ -73,7 +73,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("Add")]
+		[HttpPost("Create")]
 		public async Task<ActionResult> PostBill([FromBody] BillDTO dto)
 		{
 			try

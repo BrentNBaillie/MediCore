@@ -11,5 +11,7 @@ namespace MediCore_API.Interfaces
 		public bool FeedbackIsValid(FeedbackDTO feedback);
 		public bool BillIsValid(BillDTO bill);
 		public bool AppointmentIsValid(AppointmentDTO appointment);
+		public bool MedicineIsValid(MedicineDTO medicine);
+		public bool AddressIsValid(AddressDTO address);
 	}
 }
