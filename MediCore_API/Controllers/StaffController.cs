@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.userManager = userManager;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<StaffDTO>>> GetAllStaff()
 		{
 			try
@@ -52,7 +52,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchStaffMember([FromBody] StaffDTO dto)
 		{
 			try

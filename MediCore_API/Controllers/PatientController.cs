@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.userManager = userManager;
         }
 
-        [HttpGet("All")]
+        [HttpGet]
         public async Task<ActionResult<List<PatientDTO>>> GetAllPatients()
         {
 			try
@@ -52,7 +52,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpPatch("Update")]
+        [HttpPatch]
         public async Task<ActionResult> PatchPatient([FromBody] PatientDTO dto)
         {
 			try

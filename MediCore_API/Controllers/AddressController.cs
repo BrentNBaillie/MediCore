@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.validate = validate;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<AddressDTO>>> GetAllAddresses()
 		{
 			var addresses = await context.Addresses.ToListAsync();

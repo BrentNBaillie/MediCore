@@ -22,7 +22,7 @@ namespace MediCore_API.Controllers
 			this.validate = validate;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<FeedbackDTO>>> GetAllFeedback()
 		{
 			try
@@ -52,7 +52,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("Patient/{id:Guid}")]
+		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<FeedbackDTO>>> GetPatientFeedbacks(Guid id)
 		{
 			try
@@ -68,7 +68,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("Create")]
+		[HttpPost]
 		public async Task<ActionResult> PostFeedback([FromBody] FeedbackDTO dto)
 		{
 			try
@@ -86,7 +86,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchFeedback([FromBody] FeedbackDTO dto)
 		{
 			try

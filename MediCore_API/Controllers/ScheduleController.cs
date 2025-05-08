@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.timeSlotHandler = timeSlotHandler;
         }
 
-        [HttpGet("All")]
+        [HttpGet]
         public async Task<ActionResult<List<ScheduleDTO>>> GetAllSchedules()
         {
 			try
@@ -37,7 +37,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpGet("Doctor/{id:Guid}")]
+        [HttpGet("doctor/{id:Guid}")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetDoctorSchedules([FromRoute] Guid id)
         {
 			try
@@ -66,7 +66,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-        [HttpPost("Create")]
+        [HttpPost]
         public async Task<ActionResult> PostSchedule([FromBody] ScheduleDTO dto)
         {
 			try

@@ -21,14 +21,14 @@ namespace MediCore_API.Controllers
 			this.mapper = mapper;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<TimeSlotDTO>>> GetAllTimeSlots()
 		{
 			var timeSlots = await context.TimeSlots.ToListAsync();
 			return Ok(timeSlots.Select(t => mapper.Map<TimeSlot, TimeSlotDTO>(t)).ToList());
 		}
 
-		[HttpGet("Schedule/{id:Guid}")]
+		[HttpGet("schedule/{id:Guid}")]
 		public async Task<ActionResult<List<TimeSlotDTO>>> GetTimeSlotsBySchedule([FromRoute] Guid id)
 		{
 			var timeSlots = await context.TimeSlots.Where(t => t.ScheduleId == id).ToListAsync();
@@ -43,7 +43,7 @@ namespace MediCore_API.Controllers
 			return Ok(mapper.Map<TimeSlot, TimeSlotDTO>(timeSlot));
 		}
 
-		[HttpPatch("Update/{id:guid}/IsAvailable/{isAvailable:bool}")]
+		[HttpPatch("update/{id:guid}/is-available/{isAvailable:bool}")]
 		public async Task<ActionResult> PatchTimeSlot([FromRoute] Guid id, [FromRoute] bool isAvailable)
 		{
 			var timeSlot = await context.TimeSlots.FirstOrDefaultAsync(t => t.Id == id);

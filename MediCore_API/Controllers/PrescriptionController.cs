@@ -22,7 +22,7 @@ namespace MediCore_API.Controllers
 			this.validate = validate;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetAllPrescriptions()
 		{
 			try
@@ -36,7 +36,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("Patient/{id:Guid}")]
+		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetPatientPrescriptions([FromRoute] Guid id)
 		{
 			try
@@ -51,7 +51,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("Doctor/{id:Guid}")]
+		[HttpGet("doctor/{id:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetDoctorPrescriptions([FromRoute] Guid id)
 		{
 			try
@@ -66,7 +66,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("Doctor/{doctorId:Guid}/Patient/{patientId:Guid}")]
+		[HttpGet("doctor/{doctorId:Guid}/patient/{patientId:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetDoctorPrescriptions([FromRoute] Guid doctorId, [FromRoute] Guid patientId)
 		{
 			try
@@ -81,7 +81,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("Create")]
+		[HttpPost]
 		public async Task<ActionResult> PostPrescription([FromBody] PrescriptionDTO dto)
 		{
 			try
@@ -97,7 +97,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchPrescription([FromBody] PrescriptionDTO dto)
 		{
 			try

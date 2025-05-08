@@ -22,7 +22,7 @@ namespace MediCore_API.Controllers
 			this.validate = validate;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<StaffRoleDTO>>> GetAllRoles()
 		{
 			try
@@ -51,7 +51,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("Create")]
+		[HttpPost]
 		public async Task<ActionResult> PostStaffRole([FromBody] StaffRoleDTO dto)
 		{
 			try
@@ -67,7 +67,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchStaffRole([FromBody] StaffRoleDTO dto)
 		{
 			try

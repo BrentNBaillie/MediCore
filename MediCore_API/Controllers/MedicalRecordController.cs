@@ -20,7 +20,7 @@ namespace MediCore_API.Controllers
 			this.mapper = mapper;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<MedicalRecordDTO>>> GetAllMedicalRecords()
 		{
 			var records = await context.MedicalRecords.ToListAsync();
@@ -36,7 +36,7 @@ namespace MediCore_API.Controllers
 			return Ok(mapper.Map<MedicalRecord, MedicalRecordDTO>(record));
 		}
 
-		[HttpGet("Patient/{id:Guid}")]
+		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<MedicalRecordDTO>> GetPatientMedicalRecord([FromRoute] Guid id)
 		{
 			var record = await context.MedicalRecords.FirstOrDefaultAsync(r => r.PatientId == id);

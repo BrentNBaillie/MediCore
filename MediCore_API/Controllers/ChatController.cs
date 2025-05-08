@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.userManager = userManager;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<ChatDTO>>> GetAllChats()
 		{
 			try
@@ -37,7 +37,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("User/{id}")]
+		[HttpGet("user/{id}")]
 		public async Task<ActionResult<List<ChatDTO>>> GetUserChats([FromRoute] string id)
 		{
 			try
@@ -51,7 +51,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("User/DM/{id:Guid}")]
+		[HttpGet("user/message/{id:Guid}")]
 		public async Task<ActionResult<ChatDTO>> GetChat([FromRoute] Guid id)
 		{
 			try
@@ -73,7 +73,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("User/{sendId}/Send-To/{receiveId}")]
+		[HttpPost("user/{sendId}/send-to/{receiveId}")]
 		public async Task<ActionResult> SendMessage([FromRoute] string sendId, [FromRoute] string receiveId, [FromBody] MessageDTO message)
 		{
 			try

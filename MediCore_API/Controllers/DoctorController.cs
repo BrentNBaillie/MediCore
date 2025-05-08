@@ -24,7 +24,7 @@ namespace MediCore_API.Controllers
 			this.userManager = userManager;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<DoctorDTO>>> GetAllDoctors()
 		{
 			try
@@ -54,7 +54,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchDoctor([FromBody] DoctorDTO dto)
 		{
 			try

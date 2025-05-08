@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.validate = validate;
 		}
 
-		[HttpGet("/All")]
+		[HttpGet]
 		public async Task<ActionResult<List<MedicineDTO>>> GetAllMedicine()
 		{
 			var medicines = await context.Medicines.ToListAsync();
@@ -38,7 +38,7 @@ namespace MediCore_API.Controllers
 			return Ok(mapper.Map<Medicine, MedicineDTO>(medicine));
 		}
 
-		[HttpPost("Create")]
+		[HttpPost]
 		public async Task<ActionResult> PostMedicine([FromBody] MedicineDTO dto)
 		{
 			if (!validate.MedicineIsValid(dto)) return BadRequest("Invalid Medicine Data");
@@ -47,7 +47,7 @@ namespace MediCore_API.Controllers
 			return Created();
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchMedicine([FromBody] MedicineDTO dto)
 		{
 			if (dto is null) return BadRequest("Invalid Medicine Data");

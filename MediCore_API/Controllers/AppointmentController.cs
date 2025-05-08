@@ -23,7 +23,7 @@ namespace MediCore_API.Controllers
 			this.validate = validate;
 		}
 
-		[HttpGet("All")]
+		[HttpGet]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetAllAppointments()
 		{
 			try
@@ -52,7 +52,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("Doctor/{id:Guid}")]
+		[HttpGet("doctor/{id:Guid}")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetDoctorAppointments([FromRoute] Guid id)
 		{
 			try
@@ -72,7 +72,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("Patient/{id:Guid}")]
+		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetPatientAppointments([FromRoute] Guid id)
 		{
 			try
@@ -92,7 +92,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("Create")]
+		[HttpPost]
 		public async Task<ActionResult> PostAppointment([FromBody] AppointmentDTO dto)
 		{
 			try
@@ -111,7 +111,7 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPatch("Update")]
+		[HttpPatch]
 		public async Task<ActionResult> PatchAppointment([FromBody] AppointmentDTO dto)
 		{
 			try

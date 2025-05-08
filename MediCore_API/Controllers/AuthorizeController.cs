@@ -27,7 +27,7 @@ namespace MediCore_API.Controllers
 		}
 
 		//[Authorize(Roles = "admin")]
-		[HttpPost("register-doctor")]
+		[HttpPost("register/doctor")]
 		public async Task<ActionResult> RegisterDoctor([FromBody] Register request)
 		{
 			if (request.Doctor is null) return BadRequest();
@@ -65,7 +65,7 @@ namespace MediCore_API.Controllers
 		}
 
 		//[Authorize(Roles = "admin, doctor, staff")]
-		[HttpPost("register-patient")]
+		[HttpPost("register/patient")]
 		public async Task<ActionResult> RegisterPatient([FromBody] Register request)
 		{
 			if (request.Patient is null) return BadRequest();
@@ -108,7 +108,7 @@ namespace MediCore_API.Controllers
 
 
 		//[Authorize(Roles = "admin")]
-		[HttpPost("register-staff")]
+		[HttpPost("register/staff")]
 		public async Task<ActionResult> RegisterStaff([FromBody] Register request)
 		{
 			if (request.Staff is null) return BadRequest();
