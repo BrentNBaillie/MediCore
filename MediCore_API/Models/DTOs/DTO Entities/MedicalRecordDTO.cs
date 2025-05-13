@@ -4,20 +4,20 @@ namespace MediCore_API.Models.DTOs.DTO_Entities
 {
 	public class MedicalRecordDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
+		public Guid? Id { get; set; }
 		public string Notes { get; set; } = string.Empty;
-		public DateTime Date { get; set; } = DateTime.Now;
-		public Guid PatientId { get; set; } = Guid.Empty;
-		public List<AllergyTestDTO>? AllergyTests { get; set; } = null;
-		public List<BodyMeasurementDTO>? BodyMeasurements { get; set; } = null;
-		public List<CardiacTestDTO>? CardiacTests { get; set; } = null;
-		public List<EndocrineTestDTO>? EndocrineTests { get; set; } = null;
-		public List<GeneticTestDTO>? GeneticTests { get; set; } = null;
-		public List<ImagingReportDTO>? ImagingReports { get; set; } = null;
-		public List<InfectiousDiseaseTestDTO>? InfectiousDiseaseTests { get; set; } = null;
-		public List<LaboratoryTestDTO>? LaboratoryTests { get; set; } = null;
-		public List<NeurologicalTestDTO>? NeurologicalTests { get; set; } = null;
-		public List<RespiratoryTestDTO>? RespiratoryTests { get; set; } = null;
-		public List<VitalSignDTO>? VitalSigns { get; set; } = null;
+		public DateTime? Date { get; set; }
+		public Guid? PatientId { get; set; }
+		public List<AllergyTestDTO>? AllergyTests { get; set; }
+		public List<BodyMeasurementDTO>? BodyMeasurements { get; set; }
+		public List<CardiacTestDTO>? CardiacTests { get; set; }
+		public List<EndocrineTestDTO>? EndocrineTests { get; set; }
+		public List<GeneticTestDTO>? GeneticTests { get; set; }
+		public List<ImagingReportDTO>? ImagingReports { get; set; }
+		public List<InfectiousDiseaseTestDTO>? InfectiousDiseaseTests { get; set; }
+		public List<LaboratoryTestDTO>? LaboratoryTests { get; set; }
+		public List<NeurologicalTestDTO>? NeurologicalTests { get; set; }
+		public List<RespiratoryTestDTO>? RespiratoryTests { get; set; }
+		public List<VitalSignDTO>? VitalSigns { get; set; }
 	}
 }

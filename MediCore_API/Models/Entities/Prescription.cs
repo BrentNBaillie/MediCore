@@ -9,15 +9,15 @@ namespace MediCore_API.Models.Entities
 		public Guid Id { get; set; } = Guid.NewGuid();
 		public int Quantity { get; set; } = 0;
 
-		public Guid MedicineId { get; set; } = Guid.Empty;
-		public Medicine Medicine { get; set; } = null!;
+		public Guid? MedicineId { get; set; }
+		public Medicine? Medicine { get; set; }
 
-		public Guid DoctorId { get; set; } = Guid.Empty;
-		public Doctor Doctor { get; set; } = null!;
+		public Guid? DoctorId { get; set; }
+		public Doctor? Doctor { get; set; }
 
-		public Guid PatientId {  get; set; } = Guid.Empty;
-		public Patient Patient { get; set; } = null!;
+		public Guid? PatientId {  get; set; }
+		public Patient? Patient { get; set; }
 
-		public Guid BillId {  get; set; } = Guid.Empty;
+		public Guid? BillId {  get; set; }
 	}
 }

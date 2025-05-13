@@ -2,10 +2,10 @@
 {
 	public class MessageDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
+		public Guid? Id { get; set; }
 		public string Text { get; set; } = string.Empty;
-		public DateTime? Date { get; set; } = null;
+		public DateTime? Date { get; set; }
 		public string SenderId { get; set; } = string.Empty;
-		public Guid ChatId {  get; set; } = Guid.Empty;
+		public Guid? ChatId { get; set; }
 	}
 }

@@ -1,5 +1,151 @@
 [
   {
+    "ContainingType": "MediCore_API.Controllers.AddressController",
+    "Method": "GetAllAddresses",
+    "RelativePath": "api/Address",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AddressDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AddressController",
+    "Method": "PostAddress",
+    "RelativePath": "api/Address",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AddressDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AddressController",
+    "Method": "PatchAddress",
+    "RelativePath": "api/Address",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AddressDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AddressController",
+    "Method": "GetAddress",
+    "RelativePath": "api/Address/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AddressDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AddressController",
+    "Method": "DeleteAddress",
+    "RelativePath": "api/Address/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AppointmentController",
+    "Method": "GetAllAppointments",
+    "RelativePath": "api/Appointment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AppointmentController",
+    "Method": "PostAppointment",
+    "RelativePath": "api/Appointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AppointmentController",
+    "Method": "PatchAppointment",
+    "RelativePath": "api/Appointment",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MediCore_API.Controllers.AppointmentController",
     "Method": "GetAppointment",
     "RelativePath": "api/Appointment/{id}",
@@ -43,44 +189,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.AppointmentController",
-    "Method": "GetAllAppointments",
-    "RelativePath": "api/Appointment/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.AppointmentController",
-    "Method": "PostAppointment",
-    "RelativePath": "api/Appointment/Create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.AppointmentController",
     "Method": "GetDoctorAppointments",
-    "RelativePath": "api/Appointment/Doctor/{id}",
+    "RelativePath": "api/Appointment/doctor/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -106,7 +216,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.AppointmentController",
     "Method": "GetPatientAppointments",
-    "RelativePath": "api/Appointment/Patient/{id}",
+    "RelativePath": "api/Appointment/patient/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -130,20 +240,24 @@
     ]
   },
   {
-    "ContainingType": "MediCore_API.Controllers.AppointmentController",
-    "Method": "PatchAppointment",
-    "RelativePath": "api/Appointment/Update",
-    "HttpMethod": "PATCH",
+    "ContainingType": "MediCore_API.Controllers.AuthorizeController",
+    "Method": "GetAllUserNames",
+    "RelativePath": "api/Authorize",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
+    "Parameters": [],
+    "ReturnTypes": [
       {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
-        "IsRequired": true
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
@@ -184,7 +298,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
     "Method": "RegisterDoctor",
-    "RelativePath": "api/Authorize/register-doctor",
+    "RelativePath": "api/Authorize/register/doctor",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -200,7 +314,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
     "Method": "RegisterPatient",
-    "RelativePath": "api/Authorize/register-patient",
+    "RelativePath": "api/Authorize/register/patient",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -216,7 +330,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
     "Method": "RegisterStaff",
-    "RelativePath": "api/Authorize/register-staff",
+    "RelativePath": "api/Authorize/register/staff",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -224,6 +338,58 @@
       {
         "Name": "request",
         "Type": "MediCore_API.Models.Identities.Register",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.BillController",
+    "Method": "GetAllBills",
+    "RelativePath": "api/Bill",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.BillDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.BillController",
+    "Method": "PostBill",
+    "RelativePath": "api/Bill",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.BillController",
+    "Method": "PatchBill",
+    "RelativePath": "api/Bill",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
         "IsRequired": true
       }
     ],
@@ -273,44 +439,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.BillController",
-    "Method": "PostBill",
-    "RelativePath": "api/Bill/Add",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.BillController",
-    "Method": "GetAllBills",
-    "RelativePath": "api/Bill/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.BillDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.BillController",
     "Method": "GetPatientBills",
-    "RelativePath": "api/Bill/Patient/{id}",
+    "RelativePath": "api/Bill/patient/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -334,25 +464,9 @@
     ]
   },
   {
-    "ContainingType": "MediCore_API.Controllers.BillController",
-    "Method": "PatchBill",
-    "RelativePath": "api/Bill/Update",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "MediCore_API.Controllers.ChatController",
     "Method": "GetAllChats",
-    "RelativePath": "api/Chat/All",
+    "RelativePath": "api/Chat",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -372,7 +486,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.ChatController",
     "Method": "GetUserChats",
-    "RelativePath": "api/Chat/User/{id}",
+    "RelativePath": "api/Chat/user/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -398,7 +512,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.ChatController",
     "Method": "SendMessage",
-    "RelativePath": "api/Chat/User/{sendId}/Send-To/{receiveId}",
+    "RelativePath": "api/Chat/user/{sendId}/send-to/{receiveId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -424,7 +538,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.ChatController",
     "Method": "GetChat",
-    "RelativePath": "api/Chat/User/DM/{id}",
+    "RelativePath": "api/Chat/user/message/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -446,6 +560,42 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.DoctorController",
+    "Method": "GetAllDoctors",
+    "RelativePath": "api/Doctor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.DoctorController",
+    "Method": "PatchDoctor",
+    "RelativePath": "api/Doctor",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MediCore_API.Controllers.DoctorController",
@@ -490,16 +640,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MediCore_API.Controllers.DoctorController",
-    "Method": "GetAllDoctors",
-    "RelativePath": "api/Doctor/All",
+    "ContainingType": "MediCore_API.Controllers.FeedbackController",
+    "Method": "GetAllFeedback",
+    "RelativePath": "api/Feedback",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -510,16 +660,32 @@
     ]
   },
   {
-    "ContainingType": "MediCore_API.Controllers.DoctorController",
-    "Method": "PatchDoctor",
-    "RelativePath": "api/Doctor/Update",
+    "ContainingType": "MediCore_API.Controllers.FeedbackController",
+    "Method": "PostFeedback",
+    "RelativePath": "api/Feedback",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.FeedbackController",
+    "Method": "PatchFeedback",
+    "RelativePath": "api/Feedback",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
         "IsRequired": true
       }
     ],
@@ -569,44 +735,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.FeedbackController",
-    "Method": "GetAllFeedback",
-    "RelativePath": "api/Feedback/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.FeedbackController",
-    "Method": "PostFeedback",
-    "RelativePath": "api/Feedback/Create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.FeedbackController",
     "Method": "GetPatientFeedbacks",
-    "RelativePath": "api/Feedback/Patient/{id}",
+    "RelativePath": "api/Feedback/patient/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -630,20 +760,24 @@
     ]
   },
   {
-    "ContainingType": "MediCore_API.Controllers.FeedbackController",
-    "Method": "PatchFeedback",
-    "RelativePath": "api/Feedback/Update",
-    "HttpMethod": "PATCH",
+    "ContainingType": "MediCore_API.Controllers.MedicalRecordController",
+    "Method": "GetAllMedicalRecords",
+    "RelativePath": "api/MedicalRecord",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
+    "Parameters": [],
+    "ReturnTypes": [
       {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
-        "IsRequired": true
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.MedicalRecordDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
     "ContainingType": "MediCore_API.Controllers.MedicalRecordController",
@@ -673,28 +807,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.MedicalRecordController",
-    "Method": "GetAllMedicalRecords",
-    "RelativePath": "api/MedicalRecord/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.MedicalRecordDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.MedicalRecordController",
     "Method": "GetPatientMedicalRecord",
-    "RelativePath": "api/MedicalRecord/Patient/{id}",
+    "RelativePath": "api/MedicalRecord/patient/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -716,6 +830,136 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.MedicineController",
+    "Method": "GetAllMedicine",
+    "RelativePath": "api/Medicine",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.MedicineController",
+    "Method": "PostMedicine",
+    "RelativePath": "api/Medicine",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.MedicineController",
+    "Method": "PatchMedicine",
+    "RelativePath": "api/Medicine",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.MedicineController",
+    "Method": "GetMedicine",
+    "RelativePath": "api/Medicine/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.MedicineController",
+    "Method": "DeleteMedicine",
+    "RelativePath": "api/Medicine/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.PatientController",
+    "Method": "GetAllPatients",
+    "RelativePath": "api/Patient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PatientDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.PatientController",
+    "Method": "PatchPatient",
+    "RelativePath": "api/Patient",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PatientDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MediCore_API.Controllers.PatientController",
@@ -761,50 +1005,19 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.PatientController",
-    "Method": "GetAllPatients",
-    "RelativePath": "api/Patient/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PatientDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.PatientController",
-    "Method": "PatchPatient",
-    "RelativePath": "api/Patient/Update",
+    "Method": "SetPatientAddress",
+    "RelativePath": "api/Patient/{patientId}/set-address/{addressId}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PatientDTO",
+        "Name": "patientId",
+        "Type": "System.Guid",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.PrescriptionController",
-    "Method": "DeletePrescription",
-    "RelativePath": "api/Prescription/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+      },
       {
-        "Name": "id",
+        "Name": "addressId",
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -814,7 +1027,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.PrescriptionController",
     "Method": "GetAllPrescriptions",
-    "RelativePath": "api/Prescription/All",
+    "RelativePath": "api/Prescription",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -834,7 +1047,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.PrescriptionController",
     "Method": "PostPrescription",
-    "RelativePath": "api/Prescription/Create",
+    "RelativePath": "api/Prescription",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -849,8 +1062,87 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.PrescriptionController",
+    "Method": "PatchPrescription",
+    "RelativePath": "api/Prescription",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.PrescriptionController",
+    "Method": "GetPrescription",
+    "RelativePath": "api/Prescription/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.PrescriptionController",
+    "Method": "DeletePrescription",
+    "RelativePath": "api/Prescription/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.PrescriptionController",
+    "Method": "SetPrescriptionBill",
+    "RelativePath": "api/Prescription/{prescriptionId}/set-bill/{billId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prescriptionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "billId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.PrescriptionController",
     "Method": "GetDoctorPrescriptions",
-    "RelativePath": "api/Prescription/Doctor/{doctorId}/Patient/{patientId}",
+    "RelativePath": "api/Prescription/doctor/{doctorId}/patient/{patientId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -881,7 +1173,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.PrescriptionController",
     "Method": "GetDoctorPrescriptions",
-    "RelativePath": "api/Prescription/Doctor/{id}",
+    "RelativePath": "api/Prescription/doctor/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -907,7 +1199,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.PrescriptionController",
     "Method": "GetPatientPrescriptions",
-    "RelativePath": "api/Prescription/Patient/{id}",
+    "RelativePath": "api/Prescription/patient/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -931,16 +1223,36 @@
     ]
   },
   {
-    "ContainingType": "MediCore_API.Controllers.PrescriptionController",
-    "Method": "PatchPrescription",
-    "RelativePath": "api/Prescription/Update",
-    "HttpMethod": "PATCH",
+    "ContainingType": "MediCore_API.Controllers.ScheduleController",
+    "Method": "GetAllSchedules",
+    "RelativePath": "api/Schedule",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.ScheduleController",
+    "Method": "PostSchedule",
+    "RelativePath": "api/Schedule",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO",
         "IsRequired": true
       }
     ],
@@ -990,44 +1302,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.ScheduleController",
-    "Method": "GetAllSchedules",
-    "RelativePath": "api/Schedule/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.ScheduleController",
-    "Method": "PostSchedule",
-    "RelativePath": "api/Schedule/Create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.ScheduleController",
     "Method": "GetDoctorSchedules",
-    "RelativePath": "api/Schedule/Doctor/{id}",
+    "RelativePath": "api/Schedule/doctor/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1049,6 +1325,42 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.StaffController",
+    "Method": "GetAllStaff",
+    "RelativePath": "api/Staff",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.StaffDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.StaffController",
+    "Method": "PatchStaffMember",
+    "RelativePath": "api/Staff",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MediCore_API.Controllers.StaffController",
@@ -1094,15 +1406,36 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "GetAllStaff",
-    "RelativePath": "api/Staff/All",
+    "Method": "SetStaffRole",
+    "RelativePath": "api/Staff/{staffId}/set-role/{roleId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "staffId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/StaffRole",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.StaffDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1113,16 +1446,32 @@
     ]
   },
   {
-    "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "PatchStaffMember",
-    "RelativePath": "api/Staff/Update",
+    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
+    "Method": "PostStaffRole",
+    "RelativePath": "api/StaffRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
+    "Method": "PatchStaffRole",
+    "RelativePath": "api/StaffRole",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffDTO",
+        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
         "IsRequired": true
       }
     ],
@@ -1171,16 +1520,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "GetAllRoles",
-    "RelativePath": "api/StaffRole/All",
+    "ContainingType": "MediCore_API.Controllers.TimeSlotController",
+    "Method": "GetAllTimeSlots",
+    "RelativePath": "api/TimeSlot",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1189,38 +1538,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "PostStaffRole",
-    "RelativePath": "api/StaffRole/Create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "PatchStaffRole",
-    "RelativePath": "api/StaffRole/Update",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "MediCore_API.Controllers.TimeSlotController",
@@ -1250,28 +1567,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.TimeSlotController",
-    "Method": "GetAllTimeSlots",
-    "RelativePath": "api/TimeSlot/All",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.TimeSlotController",
     "Method": "GetTimeSlotsBySchedule",
-    "RelativePath": "api/TimeSlot/Schedule/{id}",
+    "RelativePath": "api/TimeSlot/schedule/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1297,7 +1594,7 @@
   {
     "ContainingType": "MediCore_API.Controllers.TimeSlotController",
     "Method": "PatchTimeSlot",
-    "RelativePath": "api/TimeSlot/Update/{id}/IsAvailable/{isAvailable}",
+    "RelativePath": "api/TimeSlot/update/{id}/is-available/{isAvailable}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,

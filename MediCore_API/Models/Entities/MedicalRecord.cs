@@ -10,8 +10,8 @@ namespace MediCore_API.Models.Entities
 		public string Notes { get; set; } = string.Empty;
 		public DateTime Date { get; set; } = DateTime.Now;
 
-		public Guid PatientId { get; set; } = Guid.Empty;
-		public Patient? Patient { get; set; } = null;
+		public Guid? PatientId { get; set; }
+		public Patient? Patient { get; set; }
 
 		public List<AllergyTest> AllergyTests { get; set; } = new List<AllergyTest>();
 		public List<BodyMeasurement> BodyMeasurements { get; set; } = new List<BodyMeasurement>();

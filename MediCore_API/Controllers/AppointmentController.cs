@@ -59,9 +59,9 @@ namespace MediCore_API.Controllers
 			{
 				if (!await context.Doctors.AnyAsync(d => d.Id == id)) return NotFound("Doctor Not Found");
 
-				var appointments = await context.Appointments.Include(a => a.TimeSlot).Include(a => a.Doctor)
-															 .Include(a => a.Patient).Where(a => a.DoctorId == id)
-															 .ToListAsync();
+				var appointments = await context.Appointments.Include(a => a.TimeSlot).ThenInclude(t => t!.Schedule).ThenInclude(s => s!.Doctor)
+															 .Where(a => a.TimeSlot!.Schedule!.DoctorId == id)
+															 .Include(a => a.Patient).ToListAsync();
 				if (!appointments.Any()) return NotFound("No Doctor Appointments Found");
 
 				return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
@@ -79,7 +79,7 @@ namespace MediCore_API.Controllers
 			{
 				if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
 
-				var appointments = await context.Appointments.Include(a => a.TimeSlot).Include(a => a.Doctor)
+				var appointments = await context.Appointments.Include(a => a.TimeSlot)
 															 .Include(a => a.Patient).Where(a => a.PatientId == id)
 															 .ToListAsync();
 				if (!appointments.Any()) return NotFound("No Patient Appointments Found");
@@ -122,9 +122,8 @@ namespace MediCore_API.Controllers
 				if (appointment is null) return NotFound("Appointment Not Found");
 
 				if (dto.Status != string.Empty) appointment.Status = dto.Status;
-				if (dto.TimeSlot!.Id != Guid.Empty) appointment.TimeSlotId = dto.TimeSlot.Id;
-				if (dto.Patient!.Id != Guid.Empty) appointment.PatientId = dto.Patient.Id;
-				if (dto.Doctor!.Id != Guid.Empty) appointment.DoctorId = dto.Doctor.Id;
+				if (dto.TimeSlotId != Guid.Empty) appointment.TimeSlotId = dto.TimeSlotId;
+				if (dto.PatientId != Guid.Empty) appointment.PatientId = dto.PatientId;
 
 				await context.SaveChangesAsync();
 				return Ok();

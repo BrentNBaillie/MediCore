@@ -6,13 +6,13 @@ namespace MediCore_API.Models.Entities
 	{
 		[Key]
 		public Guid Id { get; set; } = Guid.NewGuid();
-		public TimeOnly? Start { get; set; } = null;
-		public TimeOnly? End { get; set; } = null;
+		public TimeOnly? Start { get; set; }
+		public TimeOnly? End { get; set; }
 		public bool IsAvailable { get; set; } = true;
 
-		public Guid ScheduleId { get; set; } = Guid.Empty;
-		public Schedule? Schedule { get; set; } = null;
+		public Guid? ScheduleId { get; set; }
+		public Schedule? Schedule { get; set; }
 
-		public Appointment? Appointment { get; set; } = null;
+		public Appointment? Appointment { get; set; }
 	}
 }

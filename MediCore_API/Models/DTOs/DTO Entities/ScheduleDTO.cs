@@ -2,11 +2,10 @@
 {
 	public class ScheduleDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
-		public DateOnly Date { get; set; } = new DateOnly();
-		public TimeOnly Start { get; set; } = new TimeOnly();
-		public TimeOnly End { get; set; } = new TimeOnly();
-		public Guid DoctorId { get; set; } = Guid.Empty;
-		public List<TimeSlotDTO>? TimeSlots { get; set; } = new List<TimeSlotDTO>();
+		public Guid? Id { get; set; }
+		public DateOnly? Date { get; set; }
+		public TimeOnly? Start { get; set; }
+		public TimeOnly? End { get; set; }
+		public Guid? DoctorId { get; set; }
 	}
 }

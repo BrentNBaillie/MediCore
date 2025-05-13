@@ -62,7 +62,7 @@ namespace MediCore_API.Controllers
 
 				foreach (Bill bill in bills)
 				{
-					bill.Amount = bill.Prescriptions.Sum(p => p.Quantity * p.Medicine.Price);
+					bill.Amount = bill.Prescriptions!.Sum(p => p.Quantity * p.Medicine!.Price);
 				}
 
 				return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
@@ -80,7 +80,7 @@ namespace MediCore_API.Controllers
 			{
 				if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Patient Not Found");
 				if (!await context.Appointments.AnyAsync(d => d.Id == dto.AppointmentId)) return NotFound("Appointment Not Found");
-				if (!dto.Prescriptions.Any()) return BadRequest("No Prescriptions Selected");
+				if (!dto.Prescriptions!.Any()) return BadRequest("No Prescriptions Selected");
 				if (!validate.BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
 				Bill bill = mapper.Map<BillDTO, Bill>(dto);

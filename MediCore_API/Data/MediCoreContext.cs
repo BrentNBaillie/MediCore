@@ -48,12 +48,6 @@ namespace MediCore_API.Data
 				.WithOne(ts => ts.Appointment)
 				.HasForeignKey<Appointment>(a => a.TimeSlotId)
 				.OnDelete(DeleteBehavior.Restrict);
-		
-			modelBuilder.Entity<Appointment>()
-				.HasOne(a => a.Doctor)
-				.WithMany()
-				.HasForeignKey(a => a.DoctorId)
-				.OnDelete(DeleteBehavior.Restrict);
 
 			modelBuilder.Entity<Appointment>()
 				.HasOne(a => a.Patient)
@@ -227,9 +221,9 @@ namespace MediCore_API.Data
 			#endregion
 			#region Staff
 			modelBuilder.Entity<Staff>()
-				.HasOne(s => s.StaffRole)
+				.HasOne(s => s.Role)
 				.WithMany()
-				.HasForeignKey (s => s.StaffRoleId)
+				.HasForeignKey (s => s.RoleId)
 				.OnDelete(DeleteBehavior.Restrict);
 
 			modelBuilder.Entity<Staff>()

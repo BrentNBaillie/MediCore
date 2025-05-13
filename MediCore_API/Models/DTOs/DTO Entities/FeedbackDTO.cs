@@ -2,9 +2,9 @@
 {
 	public class FeedbackDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
-		public DateTime? Date { get; set; } = null;
+		public Guid? Id { get; set; }
+		public DateTime? Date { get; set; }
 		public string Details { get; set; } = string.Empty;
-		public Guid PatientId { get; set; } = Guid.Empty;
+		public Guid? PatientId { get; set; }
 	}
 }

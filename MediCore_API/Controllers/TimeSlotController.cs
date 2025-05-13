@@ -43,7 +43,7 @@ namespace MediCore_API.Controllers
 			return Ok(mapper.Map<TimeSlot, TimeSlotDTO>(timeSlot));
 		}
 
-		[HttpPatch("update/{id:guid}/is-available/{isAvailable:bool}")]
+		[HttpPatch("update/{id:Guid}/is-available/{isAvailable:bool}")]
 		public async Task<ActionResult> PatchTimeSlot([FromRoute] Guid id, [FromRoute] bool isAvailable)
 		{
 			var timeSlot = await context.TimeSlots.FirstOrDefaultAsync(t => t.Id == id);

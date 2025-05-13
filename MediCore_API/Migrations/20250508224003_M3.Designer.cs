@@ -4,6 +4,7 @@ using MediCore_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MediCore_API.Migrations
 {
     [DbContext(typeof(MediCoreContext))]
-    partial class MediCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250508224003_M3")]
+    partial class M3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,6 +65,9 @@ namespace MediCore_API.Migrations
                     b.Property<Guid?>("BillId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("DoctorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("PatientId")
                         .HasColumnType("uniqueidentifier");
 
@@ -77,6 +83,8 @@ namespace MediCore_API.Migrations
                     b.HasIndex("BillId")
                         .IsUnique()
                         .HasFilter("[BillId] IS NOT NULL");
+
+                    b.HasIndex("DoctorId");
 
                     b.HasIndex("PatientId");
 
@@ -402,7 +410,7 @@ namespace MediCore_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("RoleId")
+                    b.Property<Guid?>("StaffRoleId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UserId")
@@ -411,7 +419,7 @@ namespace MediCore_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("StaffRoleId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -1667,6 +1675,11 @@ namespace MediCore_API.Migrations
                         .HasForeignKey("MediCore_API.Models.Entities.Appointment", "BillId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
@@ -1678,6 +1691,8 @@ namespace MediCore_API.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Bill");
+
+                    b.Navigation("Doctor");
 
                     b.Navigation("Patient");
 
@@ -1798,9 +1813,9 @@ namespace MediCore_API.Migrations
 
             modelBuilder.Entity("MediCore_API.Models.Entities.Staff", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.StaffRole", "Role")
+                    b.HasOne("MediCore_API.Models.Entities.StaffRole", "StaffRole")
                         .WithMany()
-                        .HasForeignKey("RoleId")
+                        .HasForeignKey("StaffRoleId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
@@ -1809,7 +1824,7 @@ namespace MediCore_API.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Role");
+                    b.Navigation("StaffRole");
 
                     b.Navigation("User");
                 });

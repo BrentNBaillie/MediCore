@@ -8,14 +8,15 @@ namespace MediCore_API.Models.Entities
 	{
 		[Key]
 		public Guid Id { get; set; } = Guid.NewGuid();
-		public string Name { get; set; } = string.Empty;
+		public string FirstName { get; set; } = string.Empty;
+		public string LastName { get; set; } = string.Empty;
 		public string PhoneNumber { get; set; } = string.Empty;
 
-		public Guid? StaffRoleId { get; set; } = Guid.Empty;
-		public StaffRole? StaffRole { get; set; } = null;
+		public Guid? RoleId { get; set; }
+		public StaffRole? Role { get; set; }
 
 		[ForeignKey("ApplicationUser")]
 		public string UserId { get; set; } = string.Empty;
-		public IdentityUser? User { get; set; } = null;
+		public IdentityUser? User { get; set; }
 	}
 }

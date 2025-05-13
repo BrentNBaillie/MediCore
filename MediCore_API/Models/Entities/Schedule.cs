@@ -6,12 +6,12 @@ namespace MediCore_API.Models.Entities
 	{
 		[Key]
 		public Guid Id { get; set; } = Guid.NewGuid();
-		public DateOnly Date {  get; set; } = DateOnly.FromDateTime(DateTime.Today);
-		public TimeOnly Start {  get; set; } = new TimeOnly(6,0);
-		public TimeOnly End { get; set; } = new TimeOnly(21,0);
+		public DateOnly? Date {  get; set; } = DateOnly.FromDateTime(DateTime.Today);
+		public TimeOnly? Start {  get; set; } = new TimeOnly(6,0);
+		public TimeOnly? End { get; set; } = new TimeOnly(21,0);
 
-		public Guid DoctorId { get; set; } = Guid.Empty;
-		public Doctor? Doctor { get; set; } = null;
+		public Guid? DoctorId { get; set; }
+		public Doctor? Doctor { get; set; }
 
 		public List<TimeSlot>? TimeSlots { get; set; } = new List<TimeSlot>();
 	}

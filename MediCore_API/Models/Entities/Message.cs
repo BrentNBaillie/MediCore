@@ -12,7 +12,7 @@ namespace MediCore_API.Models.Entities
 		public DateTime? Date { get; set; } = DateTime.Now;
 		public string SenderId { get; set; } = string.Empty;
 
-		public Guid ChatId { get; set; } = Guid.Empty;
-		public Chat? Chat { get; set; } = null;
+		public Guid? ChatId { get; set; }
+		public Chat? Chat { get; set; }
 	}
 }

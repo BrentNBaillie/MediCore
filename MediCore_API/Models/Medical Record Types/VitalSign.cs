@@ -11,11 +11,11 @@ namespace MediCore_API.Models.Medical_Record_Types
 		public DateTime Date { get; set; } = DateTime.Now;
 		public string Notes { get; set; } = string.Empty;
 
-		public Guid DoctorId { get; set; } = Guid.Empty;
-		public Doctor? Doctor { get; set; } = null;
+		public Guid? DoctorId { get; set; }
+		public Doctor? Doctor { get; set; }
 
-		public Guid MedicalRecordId { get; set; } = Guid.Empty;
-		public MedicalRecord? MedicalRecord { get; set; } = null;
+		public Guid? MedicalRecordId { get; set; }
+		public MedicalRecord? MedicalRecord { get; set; }
 
 		public float HeartRate { get; set; } = 0;
 		public float BloodPressureSystolic { get; set; } = 0;

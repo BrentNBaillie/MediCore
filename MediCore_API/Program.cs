@@ -55,7 +55,7 @@ builder.Services.AddAuthentication(x =>
 		ValidateIssuerSigningKey = true,
 		ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
 		ValidAudience = builder.Configuration["JwtSettings:Audience"],
-		IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]))
+		IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!))
 	}
 );
 
@@ -67,6 +67,17 @@ builder.Services.AddCors(options =>
 	{
 		policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 	});
+});
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+	options.User.AllowedUserNameCharacters =
+		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 _";
+});
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+	options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never;
 });
 
 var app = builder.Build();
@@ -118,7 +129,7 @@ async Task SeedAdminUserAsync(UserManager<IdentityUser> userManager, RoleManager
 	var adminEmail = configuration["AdminUser:Email"];
 	var adminPassword = configuration["AdminUser:Password"];
 
-	var adminUser = await userManager.FindByEmailAsync(adminEmail);
+	var adminUser = await userManager.FindByEmailAsync(adminEmail!);
 	if (adminUser == null)
 	{
 		adminUser = new IdentityUser
@@ -128,7 +139,7 @@ async Task SeedAdminUserAsync(UserManager<IdentityUser> userManager, RoleManager
 			EmailConfirmed = true
 		};
 
-		var result = await userManager.CreateAsync(adminUser, adminPassword);
+		var result = await userManager.CreateAsync(adminUser, adminPassword!);
 		if (result.Succeeded)
 		{
 			await userManager.AddToRoleAsync(adminUser, "admin");

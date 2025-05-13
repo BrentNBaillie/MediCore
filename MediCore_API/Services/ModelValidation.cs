@@ -41,7 +41,7 @@ namespace MediCore_API.Services
 			if (bill.Date is null || bill.Date <= new DateTime(2025, 1, 1)) return false;
 			if (bill.PatientId == Guid.Empty) return false;
 			if (bill.AppointmentId == Guid.Empty) return false;
-			if (!bill.Prescriptions.Any()) return false;
+			if (!bill.Prescriptions!.Any()) return false;
 			return true;
 		}
 
@@ -49,9 +49,9 @@ namespace MediCore_API.Services
 		{
 			if (appointment is null) return false;
 			if (string.IsNullOrEmpty(appointment.Status)) return false;
-			if (appointment.TimeSlot!.Id == Guid.Empty) return false;
-			if (appointment.Patient!.Id == Guid.Empty) return false;
-			if (appointment.Doctor!.Id == Guid.Empty) return false;
+			if (appointment.TimeSlotId == Guid.Empty) return false;
+			if (appointment.TimeSlotId == Guid.Empty) return false;
+			if (appointment.TimeSlotId == Guid.Empty) return false;
 			return true;
 		}
 

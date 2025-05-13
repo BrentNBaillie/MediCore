@@ -71,10 +71,12 @@ namespace MediCore_API.Controllers
         {
 			try
 			{
-				if (dto.Start < dto.End) return BadRequest("Invlading Schedule Times");
+				if (dto.Start > dto.End) return BadRequest("Invlading Schedule Times");
 				Schedule schedule = mapper.Map<ScheduleDTO, Schedule>(dto);
-				List<TimeSlot> timeSlots = timeSlotHandler.CreateTimeSlots(schedule);
+				await context.Schedules.AddAsync(schedule);
+				await context.SaveChangesAsync();
 
+				List<TimeSlot> timeSlots = timeSlotHandler.CreateTimeSlots(schedule);
 				await context.TimeSlots.AddRangeAsync(timeSlots);
 				await context.SaveChangesAsync();
 

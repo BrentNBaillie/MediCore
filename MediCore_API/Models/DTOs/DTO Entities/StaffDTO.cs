@@ -2,10 +2,11 @@
 {
 	public class StaffDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
-		public string Name { get; set; } = string.Empty;
+		public Guid? Id { get; set; }
+		public string FirstName { get; set; } = string.Empty;
+		public string LastName { get; set; } = string.Empty;
 		public string PhoneNumber { get; set; } = string.Empty;
-		public Guid RoleId { get; set; } = Guid.Empty;
+		public Guid? RoleId { get; set; }
 		public string UserId { get; set; } = string.Empty;
 	}
 }

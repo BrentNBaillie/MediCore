@@ -26,11 +26,18 @@ namespace MediCore_API.Controllers
 			this.context = context;
 		}
 
+		[HttpGet]
+		public async Task<ActionResult<List<string>>> GetAllUserNames()
+		{
+			var usernames = await userManager.Users.Select(u => u.UserName).ToListAsync();
+			return Ok(usernames);
+		}
+
 		//[Authorize(Roles = "admin")]
 		[HttpPost("register/doctor")]
 		public async Task<ActionResult> RegisterDoctor([FromBody] Register request)
 		{
-			if (request.Doctor is null) return BadRequest();
+			if (request.Doctor is null) return BadRequest("Invalid Doctor Data");
 
 			var existingUser = await userManager.FindByEmailAsync(request.Email);
 			if (existingUser != null) return BadRequest("Email already registered!");
@@ -43,7 +50,7 @@ namespace MediCore_API.Controllers
 			};
 
 			var result = await userManager.CreateAsync(user, request.Password);
-			if (!result.Succeeded) return BadRequest();
+			if (!result.Succeeded) return BadRequest(result.Errors.Select(e => e.Description));
 
 			await userManager.AddToRoleAsync(user, "doctor");
 
@@ -131,9 +138,10 @@ namespace MediCore_API.Controllers
 
 			var staff = new Staff
 			{
-				Name= request.Staff.Name,
+				FirstName= request.Staff.FirstName,
+				LastName= request.Staff.LastName,
 				PhoneNumber= request.Staff.PhoneNumber,
-				StaffRoleId = request.Staff.RoleId,
+				RoleId = request.Staff.RoleId,
 				UserId = user.Id
 			};
 
@@ -146,7 +154,7 @@ namespace MediCore_API.Controllers
 		[HttpPost("login")]
 		public async Task<ActionResult<LoginResponse>> Login([FromBody] Login request)
 		{
-			Guid id = Guid.Empty;
+			Guid? id = Guid.Empty;
 			var user = await userManager.FindByEmailAsync(request.Email);
 			if (user is null) return NotFound("User Not Found");
 
@@ -163,13 +171,13 @@ namespace MediCore_API.Controllers
 				if (doctor is null) return NotFound("Doctor does not exist");
 				id = doctor.Id;
 			}
-			else if (role == "staff")
+			if (role == "staff")
 			{
 				var staff = await context.StaffMembers.FirstOrDefaultAsync(d => d.UserId == user.Id);
 				if (staff is null) return NotFound("Staff member does not exist.");
 				id = staff.Id;
 			}
-			else if (role == "patient")
+			if (role == "patient")
 			{
 				var patient = await context.Patients.FirstOrDefaultAsync(d => d.UserId == user.Id);
 				if (patient is null) return NotFound("Patient does not exist.");
@@ -187,18 +195,41 @@ namespace MediCore_API.Controllers
 		[HttpDelete]
 		public async Task<ActionResult> DeleteAllUsers()
 		{
-			var users = userManager.Users.ToList();
+			var users = await userManager.Users.ToListAsync();
 
 			foreach (var user in users)
 			{
-				var result = await userManager.DeleteAsync(user);
-				if (!result.Succeeded)
+				var role = (await userManager.GetRolesAsync(user)).FirstOrDefault();
+				if (role == "doctor")
 				{
-					return BadRequest(new
+					var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.UserId == user.Id);
+					if (doctor is not null)
 					{
-						message = $"Failed to delete user: {user.Email}",
-						errors = result.Errors
-					});
+						context.Doctors.Remove(doctor);
+						await context.SaveChangesAsync();
+					}
+				}
+				if (role == "patient")
+				{
+					var patient = await context.Patients.FirstOrDefaultAsync(p => p.UserId == user.Id);
+					if (patient is not null)
+					{
+						context.Patients.Remove(patient);
+						await context.SaveChangesAsync();
+					}
+				}
+				if (role == "staff")
+				{
+					var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.UserId == user.Id);
+					if (staff is not null)
+					{
+						context.StaffMembers.Remove(staff);
+						await context.SaveChangesAsync();
+					}
+				}
+				if (user is not null)
+				{
+					await userManager.DeleteAsync(user);
 				}
 			}
 

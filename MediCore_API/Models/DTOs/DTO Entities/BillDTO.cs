@@ -2,12 +2,12 @@
 {
 	public class BillDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
+		public Guid? Id { get; set; }
 		public float Amount { get; set; } = 0f;
 		public string PaymentMethod { get; set; } = string.Empty;
-		public DateTime? Date { get; set; } = null;
-		public Guid PatientId { get; set; } = Guid.Empty;
-		public Guid AppointmentId { get; set; } = Guid.Empty;
-		public List<PrescriptionDTO> Prescriptions { get; set; } = new List<PrescriptionDTO>();
+		public DateTime? Date { get; set; }
+		public Guid? PatientId { get; set; }
+		public Guid? AppointmentId { get; set; }
+		public List<PrescriptionDTO>? Prescriptions { get; set; }
 	}
 }

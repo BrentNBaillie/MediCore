@@ -2,10 +2,9 @@
 {
     public class AppointmentDTO
     {
-		public Guid Id { get; set; } = Guid.Empty;
+		public Guid? Id { get; set; }
 		public string Status {  get; set; } = string.Empty;
-        public TimeSlotDTO? TimeSlot { get; set; } = null;
-        public PatientDTO? Patient { get; set; } = null;
-        public DoctorDTO? Doctor { get; set; } = null;
+        public Guid? TimeSlotId { get; set; }
+        public Guid? PatientId { get; set; }
     }
 }

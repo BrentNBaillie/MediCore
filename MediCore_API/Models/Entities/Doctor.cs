@@ -19,6 +19,6 @@ namespace MediCore_API.Models.Entities
 
 		[ForeignKey("ApplicationUser")]
 		public string UserId { get; set; } = string.Empty;
-		public IdentityUser? User { get; set; } = null;
+		public IdentityUser? User { get; set; }
 	}
 }

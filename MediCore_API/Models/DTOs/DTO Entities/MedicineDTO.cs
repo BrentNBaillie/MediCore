@@ -2,7 +2,7 @@
 {
 	public class MedicineDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
+		public Guid? Id { get; set; }
 		public string Name { get; set; } = string.Empty;
 		public string Description { get; set; } = string.Empty;
 		public float Price { get; set; } = 0;

@@ -20,14 +20,14 @@ namespace MediCore_API.Services
 		public async Task<string> GenerateJwtTokenAsync(IdentityUser user)
 		{
 			var roles = await userManager.GetRolesAsync(user);
-			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:Key"]));
+			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:Key"]!));
 			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
 
 
 			var claims = new List<Claim>
 			{
 				new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-				new Claim(JwtRegisteredClaimNames.Email, user.Email),
+				new Claim(JwtRegisteredClaimNames.Email, user.Email!),
 				new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
 			};
 

@@ -10,7 +10,7 @@ namespace MediCore_API.Models.Entities
 		public DateTime? Date { get; set; } = DateTime.Now;
 		public string Details { get; set; } = string.Empty;
 
-		public Guid PatientId { get; set; } = Guid.Empty;
-		public Patient? Patient { get; set; } = null;
+		public Guid? PatientId { get; set; }
+		public Patient? Patient { get; set; }
 	}
 }

@@ -2,10 +2,10 @@
 {
 	public class TimeSlotDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
-		public TimeOnly? Start { get; set; } = null;
-		public TimeOnly? End { get; set; } = null;
+		public Guid? Id { get; set; }
+		public TimeOnly? Start { get; set; }
+		public TimeOnly? End { get; set; }
 		public bool IsAvailable { get; set; } = true;
-		public Guid ScheduleId { get; set; } = Guid.Empty;
+		public Guid? ScheduleId { get; set; }
 	}
 }

@@ -61,9 +61,9 @@ namespace MediCore_API.Controllers
 				var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.Id == dto.Id);
 				if (staff is null) return NotFound("Staff Member Not Found");
 
-				if (!string.IsNullOrEmpty(dto.Name)) staff.Name = dto.Name;
+				if (!string.IsNullOrEmpty(dto.FirstName)) staff.FirstName = dto.FirstName;
 				if (!string.IsNullOrEmpty(dto.PhoneNumber)) staff.PhoneNumber = dto.PhoneNumber;
-				if (dto.RoleId != Guid.Empty) staff.StaffRoleId = dto.RoleId;
+				if (dto.RoleId != Guid.Empty) staff.RoleId = dto.RoleId;
 
 				await context.SaveChangesAsync();
 				return Ok("Staff Member Updated");
@@ -72,6 +72,17 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
+		}
+
+		[HttpPatch("{staffId:Guid}/set-role/{roleId:Guid}")]
+		public async Task<ActionResult> SetStaffRole([FromRoute] Guid staffId, [FromRoute] Guid roleId)
+		{
+			var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.Id == staffId);
+			if (staff is null) return NotFound("Staff Member Not Found");
+			if ((await context.StaffRoles.FirstOrDefaultAsync(r => r.Id == roleId)) is null) return NotFound("Staff Role Not Found");
+			if (roleId != Guid.Empty) staff.RoleId = roleId;
+			await context.SaveChangesAsync();
+			return Ok("Staff Role Set");
 		}
 
 		[HttpDelete("{id:Guid}")]

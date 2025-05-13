@@ -9,9 +9,9 @@ namespace MediCore_API.Services
 		{
 			try
 			{
-				TimeOnly start = schedule.Start;
+				TimeOnly start = (TimeOnly)schedule.Start!;
 				TimeOnly end = start.AddHours(1);
-				int timeSlotCount = (int)(schedule.End.ToTimeSpan() - start.ToTimeSpan()).TotalHours;
+				int timeSlotCount = (int)(((TimeOnly)schedule.End!).ToTimeSpan() - start.ToTimeSpan()).TotalHours;
 				List<TimeSlot> timeSlots = new List<TimeSlot>();
 
 				for (int i = 0; i < timeSlotCount; i++)
@@ -27,7 +27,7 @@ namespace MediCore_API.Services
 				}
 				return timeSlots;
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				return new List<TimeSlot>();
 			}

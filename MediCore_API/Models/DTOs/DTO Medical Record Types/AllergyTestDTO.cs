@@ -4,11 +4,11 @@ namespace MediCore_API.Models.DTOs.DTO_Medical_Record_Types
 {
 	public class AllergyTestDTO
 	{
-		public Guid Id { get; set; } = Guid.Empty;
-		public DateTime? Date { get; set; } = null;
+		public Guid? Id { get; set; }
+		public DateTime? Date { get; set; }
 		public string Notes { get; set; } = string.Empty;
-		public Guid DoctorId { get; set; } = Guid.Empty;
-		public Guid MedicalRecordId { get; set; } = Guid.Empty;
+		public Guid? DoctorId { get; set; }
+		public Guid? MedicalRecordId { get; set; }
 
 		public bool Peanut { get; set; } = false;
 		public bool TreeNut { get; set; } = false;

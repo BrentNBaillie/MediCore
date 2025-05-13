@@ -11,12 +11,12 @@ namespace MediCore_API.Models.Entities
 		public string PaymentMethod { get; set; } = string.Empty;
 		public DateTime? Date { get; set; } = DateTime.Now;
 
-		public Guid PatientId { get; set; } = Guid.Empty;
-		public Patient? Patient { get; set; } = null;
+		public Guid? PatientId { get; set; }
+		public Patient? Patient { get; set; }
 
-		public Guid AppointmentId { get; set; } = Guid.Empty;
-		public Appointment Appointment { get; set; } = null!;
+		public Guid? AppointmentId { get; set; }
+		public Appointment? Appointment { get; set; }
 
-		public List<Prescription> Prescriptions { get; set; } = new List<Prescription>();
+		public List<Prescription>? Prescriptions { get; set; } = new List<Prescription>();
 	}
 }

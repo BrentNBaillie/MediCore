@@ -36,6 +36,14 @@ namespace MediCore_API.Controllers
 			}
 		}
 
+		[HttpGet("{id:Guid}")]
+		public async Task<ActionResult<PrescriptionDTO>> GetPrescription([FromRoute] Guid id)
+		{
+			var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == id);
+			if (prescription is null) return NotFound("Prescription Not Found");
+			return Ok(mapper.Map<Prescription, PrescriptionDTO>(prescription));
+		}
+
 		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<PrescriptionDTO>>> GetPatientPrescriptions([FromRoute] Guid id)
 		{
@@ -119,6 +127,16 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
+		}
+
+		[HttpPatch("{prescriptionId:Guid}/set-bill/{billId:Guid}")]
+		public async Task<ActionResult> SetPrescriptionBill([FromRoute] Guid prescriptionId, [FromRoute] Guid billId)
+		{
+			var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == prescriptionId);
+			if (prescription is null) return NotFound("Prescription Not Found");
+			prescription.BillId = billId;
+			await context.SaveChangesAsync();
+			return Ok("Prescription Bill Id Set");
 		}
 
 		[HttpDelete("{id:Guid}")]

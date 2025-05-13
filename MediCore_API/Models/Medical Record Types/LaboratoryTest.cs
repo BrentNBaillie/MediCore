@@ -12,11 +12,11 @@ namespace MediCore_API.Models.Medical_Record_Types
 		public string Notes { get; set; } = string.Empty;
 		public string TestLab { get; set; } = string.Empty;
 
-		public Guid DoctorId { get; set; } = Guid.Empty;
-		public Doctor? Doctor { get; set; } = null;
+		public Guid? DoctorId { get; set; }
+		public Doctor? Doctor { get; set; }
 
-		public Guid MedicalRecordId { get; set; } = Guid.Empty;
-		public MedicalRecord? MedicalRecord { get; set; } = null;
+		public Guid? MedicalRecordId { get; set; }
+		public MedicalRecord? MedicalRecord { get; set; }
 
 		public double Hemoglobin { get; set; } = 0;
 		public double WhiteBloodCellCount { get; set; } = 0;

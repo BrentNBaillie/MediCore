@@ -4,6 +4,7 @@ using MediCore_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MediCore_API.Migrations
 {
     [DbContext(typeof(MediCoreContext))]
-    partial class MediCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250508234130_M4")]
+    partial class M4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,6 +65,9 @@ namespace MediCore_API.Migrations
                     b.Property<Guid?>("BillId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("DoctorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("PatientId")
                         .HasColumnType("uniqueidentifier");
 
@@ -77,6 +83,8 @@ namespace MediCore_API.Migrations
                     b.HasIndex("BillId")
                         .IsUnique()
                         .HasFilter("[BillId] IS NOT NULL");
+
+                    b.HasIndex("DoctorId");
 
                     b.HasIndex("PatientId");
 
@@ -1667,6 +1675,11 @@ namespace MediCore_API.Migrations
                         .HasForeignKey("MediCore_API.Models.Entities.Appointment", "BillId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
@@ -1678,6 +1691,8 @@ namespace MediCore_API.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Bill");
+
+                    b.Navigation("Doctor");
 
                     b.Navigation("Patient");
 
