@@ -172,3 +172,4 @@ C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore_API.pdb
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore_API.genruntimeconfig.cache
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\ref\MediCore_API.dll
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll

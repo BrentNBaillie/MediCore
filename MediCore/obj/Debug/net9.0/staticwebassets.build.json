@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ClkIM+0Dnlc705jkxhAILEJQ9yqPyQnhsm9k/kyyI/I=",
+  "Hash": "aLrRYE0ecxl5Rur4ILQ5mVH0hWtUeT+6UmZ8rovyG/M=",
   "Source": "MediCore",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "rodegxo9yg",
-      "Integrity": "yzA/4uQIMIhgA0OnQSk4k3pCncUSv3S/jFDJaDkctwY=",
+      "Fingerprint": "n3pwoh9vgv",
+      "Integrity": "7WyPb8coccaAuHqFLhxrP6mA6l/BoaavzzrE7kBUjw8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -262,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "hmlshx24j7",
-      "Integrity": "eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM=",
+      "Fingerprint": "egz6dr9ewa",
+      "Integrity": "An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\MediCore.pdb"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "e5dcutwsss",
-      "Integrity": "kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc=",
+      "Fingerprint": "2v5rydxnqh",
+      "Integrity": "btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\MediCore.wasm"
@@ -395,6 +395,69 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Connections.Abstractions.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Connections.Abstractions#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "byb028jwzs",
+      "Integrity": "g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.Connections.Abstractions.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Client.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Http.Connections.Client#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "kwvr5jo1fy",
+      "Integrity": "ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.Http.Connections.Client.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Common.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Http.Connections.Common#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "w14ri3w66r",
+      "Integrity": "RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.Http.Connections.Common.wasm"
+    },
+    {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.wasm",
       "SourceId": "MediCore",
       "SourceType": "Computed",
@@ -414,6 +477,90 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.Metadata.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.Core.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Client.Core#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "s7j9342lak",
+      "Integrity": "iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.SignalR.Client.Core.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Client#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "c5inbbiber",
+      "Integrity": "YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.SignalR.Client.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Common.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Common#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "mgiueequaf",
+      "Integrity": "9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.SignalR.Common.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Protocols.Json.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "gj3ldi925b",
+      "Integrity": "1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.AspNetCore.SignalR.Protocols.Json.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.CSharp.wasm",
@@ -582,6 +729,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.DependencyInjection.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Features.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Features#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "pxy8kdgcv9",
+      "Integrity": "3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.Features.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.FileProviders.Abstractions.wasm",
@@ -2367,6 +2535,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\System.Net.Security.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.ServerSentEvents.wasm",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Net.ServerSentEvents#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "rtyskzgzjf",
+      "Integrity": "T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\webcil\\System.Net.ServerSentEvents.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.ServicePoint.wasm",
@@ -4343,6 +4532,27 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Xml.Serialization.wasm"
     },
     {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\02lesbjoxo-w14ri3w66r.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Http.Connections.Common#[.{fingerprint=w14ri3w66r}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Common.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ilwp4b58z4",
+      "Integrity": "uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Common.wasm"
+    },
+    {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\075s4we4wo-tdbxkamptv.gz",
       "SourceId": "MediCore",
       "SourceType": "Discovered",
@@ -4467,6 +4677,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\0wepb0sgty-mgiueequaf.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Common#[.{fingerprint=mgiueequaf}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Common.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "0frmx7y370",
+      "Integrity": "tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Common.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\165mmrg19d-jzjf1ui2ck.gz",
@@ -5393,7 +5624,7 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\67uytvhm16-rodegxo9yg.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\67uytvhm16-n3pwoh9vgv.gz",
       "SourceId": "MediCore",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
@@ -5407,8 +5638,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5qkk3jgy65",
-      "Integrity": "7TTlC3rXzXNzFb1lrI+qazdXjMe5gq4hgKuunr3WJvU=",
+      "Fingerprint": "xcvcsv2pfq",
+      "Integrity": "P/4VszsFEVLUn3emc9mX4j8wAHa82BdmxpRGo/bqUG0=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -5580,6 +5811,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.ComponentModel.DataAnnotations.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\70dazuusjq-kwvr5jo1fy.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Http.Connections.Client#[.{fingerprint=kwvr5jo1fy}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Client.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "pxkgroffzs",
+      "Integrity": "/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Client.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\7ddzibyjch-igj3a20jgi.gz",
@@ -5918,6 +6170,27 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Newtonsoft.Json.wasm"
     },
     {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\9iar6hsnh4-byb028jwzs.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Connections.Abstractions#[.{fingerprint=byb028jwzs}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Connections.Abstractions.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "tkmfkgjyi7",
+      "Integrity": "DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Connections.Abstractions.wasm"
+    },
+    {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\9knt9brpqe-4b0q7hpvp2.gz",
       "SourceId": "MediCore",
       "SourceType": "Computed",
@@ -6168,6 +6441,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\bnxvu7tbzk-s7j9342lak.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Client.Core#[.{fingerprint=s7j9342lak}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.Core.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "sfm343x4d5",
+      "Integrity": "qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.Core.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\bwzob7sdll-pp8nwsqj0v.gz",
@@ -7577,12 +7871,12 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-hmlshx24j7.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-egz6dr9ewa.gz",
       "SourceId": "MediCore",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/MediCore#[.{fingerprint=hmlshx24j7}]!.pdb.gz",
+      "RelativePath": "_framework/MediCore#[.{fingerprint=egz6dr9ewa}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -7591,8 +7885,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ac1w385hby",
-      "Integrity": "ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE=",
+      "Fingerprint": "7yg6jw8p54",
+      "Integrity": "sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore.pdb"
@@ -8058,6 +8352,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Reflection.Primitives.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\nxcwis0mkp-pxy8kdgcv9.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Features#[.{fingerprint=pxy8kdgcv9}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Features.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "lfwlbhkw9a",
+      "Integrity": "j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Features.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\nxd9xakiu6-eej9cnpchw.gz",
@@ -8690,12 +9005,12 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.WebSockets.Client.wasm"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-e5dcutwsss.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-2v5rydxnqh.gz",
       "SourceId": "MediCore",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/MediCore#[.{fingerprint=e5dcutwsss}]!.wasm.gz",
+      "RelativePath": "_framework/MediCore#[.{fingerprint=2v5rydxnqh}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -8704,8 +9019,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ygm1tmd1e9",
-      "Integrity": "/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE=",
+      "Fingerprint": "854rfh61hh",
+      "Integrity": "vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore.wasm"
@@ -9194,6 +9509,27 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\v6tko5r9ml-rtyskzgzjf.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Net.ServerSentEvents#[.{fingerprint=rtyskzgzjf}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.ServerSentEvents.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "a74i8pgpba",
+      "Integrity": "Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.ServerSentEvents.wasm"
+    },
+    {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\vcfggtp3ss-r4e9w2rdcm.gz",
       "SourceId": "MediCore",
       "SourceType": "Discovered",
@@ -9446,6 +9782,27 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.wasm"
     },
     {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ynhnr12mkq-c5inbbiber.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Client#[.{fingerprint=c5inbbiber}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "kjrxzilhqk",
+      "Integrity": "UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.wasm"
+    },
+    {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ys74oyd0tk-f3pglyh6di.gz",
       "SourceId": "MediCore",
       "SourceType": "Computed",
@@ -9549,6 +9906,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Core.wasm"
+    },
+    {
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ze2tb8s3mp-gj3ldi925b.gz",
+      "SourceId": "MediCore",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json#[.{fingerprint=gj3ldi925b}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Protocols.Json.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "1277mkasv3",
+      "Integrity": "eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Protocols.Json.wasm"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\zflqnqv9f4-495v6rng83.gz",
@@ -10747,11 +11125,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"yzA/4uQIMIhgA0OnQSk4k3pCncUSv3S/jFDJaDkctwY=\""
+          "Value": "\"7WyPb8coccaAuHqFLhxrP6mA6l/BoaavzzrE7kBUjw8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10761,18 +11139,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-yzA/4uQIMIhgA0OnQSk4k3pCncUSv3S/jFDJaDkctwY="
+          "Value": "sha256-7WyPb8coccaAuHqFLhxrP6mA6l/BoaavzzrE7kBUjw8="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\67uytvhm16-rodegxo9yg.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\67uytvhm16-n3pwoh9vgv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000080541237"
+          "Quality": "0.000077101002"
         }
       ],
       "ResponseHeaders": [
@@ -10782,11 +11160,11 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12415"
+          "Value": "12969"
         },
         {
           "Name": "ETag",
-          "Value": "\"7TTlC3rXzXNzFb1lrI+qazdXjMe5gq4hgKuunr3WJvU=\""
+          "Value": "\"P/4VszsFEVLUn3emc9mX4j8wAHa82BdmxpRGo/bqUG0=\""
         },
         {
           "Name": "Last-Modified",
@@ -10810,19 +11188,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"yzA/4uQIMIhgA0OnQSk4k3pCncUSv3S/jFDJaDkctwY=\""
+          "Value": "W/\"7WyPb8coccaAuHqFLhxrP6mA6l/BoaavzzrE7kBUjw8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-yzA/4uQIMIhgA0OnQSk4k3pCncUSv3S/jFDJaDkctwY="
+          "Value": "sha256-7WyPb8coccaAuHqFLhxrP6mA6l/BoaavzzrE7kBUjw8="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\67uytvhm16-rodegxo9yg.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\67uytvhm16-n3pwoh9vgv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10831,7 +11209,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12415"
+          "Value": "12969"
         },
         {
           "Name": "Content-Type",
@@ -10839,7 +11217,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7TTlC3rXzXNzFb1lrI+qazdXjMe5gq4hgKuunr3WJvU=\""
+          "Value": "\"P/4VszsFEVLUn3emc9mX4j8wAHa82BdmxpRGo/bqUG0=\""
         },
         {
           "Name": "Last-Modified",
@@ -10861,7 +11239,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7TTlC3rXzXNzFb1lrI+qazdXjMe5gq4hgKuunr3WJvU="
+          "Value": "sha256-P/4VszsFEVLUn3emc9mX4j8wAHa82BdmxpRGo/bqUG0="
         }
       ]
     },
@@ -10927,7 +11305,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Fri, 14 Mar 2025 17:04:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10980,7 +11358,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Fri, 14 Mar 2025 17:04:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11072,7 +11450,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11133,7 +11511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11225,7 +11603,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11325,7 +11703,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11386,7 +11764,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11439,7 +11817,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11523,7 +11901,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11576,7 +11954,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12517,7 +12895,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12578,7 +12956,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12715,7 +13093,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12768,7 +13146,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Thu, 13 Mar 2025 22:25:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13685,7 +14063,7 @@
       ]
     },
     {
-      "Route": "_framework/MediCore.e5dcutwsss.wasm",
+      "Route": "_framework/MediCore.2v5rydxnqh.wasm",
       "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13703,11 +14081,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc=\""
+          "Value": "\"btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13717,7 +14095,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "e5dcutwsss"
+          "Value": "2v5rydxnqh"
         },
         {
           "Name": "label",
@@ -13725,18 +14103,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc="
+          "Value": "sha256-btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore.e5dcutwsss.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-e5dcutwsss.gz",
+      "Route": "_framework/MediCore.2v5rydxnqh.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-2v5rydxnqh.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000130838676"
+          "Quality": "0.000130907187"
         }
       ],
       "ResponseHeaders": [
@@ -13746,15 +14124,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7642"
+          "Value": "7638"
         },
         {
           "Name": "ETag",
-          "Value": "\"/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE=\""
+          "Value": "\"vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13774,13 +14152,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc=\""
+          "Value": "W/\"btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "e5dcutwsss"
+          "Value": "2v5rydxnqh"
         },
         {
           "Name": "label",
@@ -13788,13 +14166,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc="
+          "Value": "sha256-btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore.e5dcutwsss.wasm.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-e5dcutwsss.gz",
+      "Route": "_framework/MediCore.2v5rydxnqh.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-2v5rydxnqh.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13803,7 +14181,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7642"
+          "Value": "7638"
         },
         {
           "Name": "Content-Type",
@@ -13811,11 +14189,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE=\""
+          "Value": "\"vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13833,7 +14211,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "e5dcutwsss"
+          "Value": "2v5rydxnqh"
         },
         {
           "Name": "label",
@@ -13841,12 +14219,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE="
+          "Value": "sha256-vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore.hmlshx24j7.pdb",
+      "Route": "_framework/MediCore.egz6dr9ewa.pdb",
       "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13856,7 +14234,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23356"
+          "Value": "23976"
         },
         {
           "Name": "Content-Type",
@@ -13864,11 +14242,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM=\""
+          "Value": "\"An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:05 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13878,7 +14256,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hmlshx24j7"
+          "Value": "egz6dr9ewa"
         },
         {
           "Name": "label",
@@ -13886,18 +14264,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM="
+          "Value": "sha256-An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore.hmlshx24j7.pdb",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-hmlshx24j7.gz",
+      "Route": "_framework/MediCore.egz6dr9ewa.pdb",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-egz6dr9ewa.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000059129612"
+          "Quality": "0.000058142915"
         }
       ],
       "ResponseHeaders": [
@@ -13907,15 +14285,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16911"
+          "Value": "17198"
         },
         {
           "Name": "ETag",
-          "Value": "\"ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE=\""
+          "Value": "\"sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13935,13 +14313,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM=\""
+          "Value": "W/\"An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hmlshx24j7"
+          "Value": "egz6dr9ewa"
         },
         {
           "Name": "label",
@@ -13949,13 +14327,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM="
+          "Value": "sha256-An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore.hmlshx24j7.pdb.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-hmlshx24j7.gz",
+      "Route": "_framework/MediCore.egz6dr9ewa.pdb.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-egz6dr9ewa.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13964,7 +14342,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16911"
+          "Value": "17198"
         },
         {
           "Name": "Content-Type",
@@ -13972,11 +14350,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE=\""
+          "Value": "\"sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13994,7 +14372,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hmlshx24j7"
+          "Value": "egz6dr9ewa"
         },
         {
           "Name": "label",
@@ -14002,7 +14380,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE="
+          "Value": "sha256-sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk="
         }
       ]
     },
@@ -14017,7 +14395,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23356"
+          "Value": "23976"
         },
         {
           "Name": "Content-Type",
@@ -14025,11 +14403,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM=\""
+          "Value": "\"An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:05 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14039,18 +14417,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM="
+          "Value": "sha256-An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74="
         }
       ]
     },
     {
       "Route": "_framework/MediCore.pdb",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-hmlshx24j7.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-egz6dr9ewa.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000059129612"
+          "Quality": "0.000058142915"
         }
       ],
       "ResponseHeaders": [
@@ -14060,15 +14438,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16911"
+          "Value": "17198"
         },
         {
           "Name": "ETag",
-          "Value": "\"ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE=\""
+          "Value": "\"sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14088,19 +14466,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM=\""
+          "Value": "W/\"An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eVH9CRjfVUkzwaaNXhmFOdbrJQt+8CE85XvrnZylDIM="
+          "Value": "sha256-An43L0yHNDHzlLT/JHaWnBekodVxt0vW/BM0vdfdS74="
         }
       ]
     },
     {
       "Route": "_framework/MediCore.pdb.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-hmlshx24j7.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\l93aft9h4l-egz6dr9ewa.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14109,7 +14487,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "16911"
+          "Value": "17198"
         },
         {
           "Name": "Content-Type",
@@ -14117,11 +14495,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE=\""
+          "Value": "\"sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14139,7 +14517,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ymHZPorCCqArQv4eyYD1TeLG7vYzxl1nv8WBVBCpWLE="
+          "Value": "sha256-sTG+dSU+dPD4EhAmTCYgnXfDRYuj3ot1CQWjhm4pOIk="
         }
       ]
     },
@@ -14162,11 +14540,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc=\""
+          "Value": "\"btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14176,18 +14554,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc="
+          "Value": "sha256-btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA="
         }
       ]
     },
     {
       "Route": "_framework/MediCore.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-e5dcutwsss.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-2v5rydxnqh.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000130838676"
+          "Quality": "0.000130907187"
         }
       ],
       "ResponseHeaders": [
@@ -14197,15 +14575,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7642"
+          "Value": "7638"
         },
         {
           "Name": "ETag",
-          "Value": "\"/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE=\""
+          "Value": "\"vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14225,19 +14603,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc=\""
+          "Value": "W/\"btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kj+rZTSVicofs5fALk30O2AnzEtquB0UCOFVVhOmrgc="
+          "Value": "sha256-btyb6zZqJrZj3IN2GhUX4JiT5a1cn8QlYTwNqbsctOA="
         }
       ]
     },
     {
       "Route": "_framework/MediCore.wasm.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-e5dcutwsss.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\s7378ohgjt-2v5rydxnqh.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14246,7 +14624,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7642"
+          "Value": "7638"
         },
         {
           "Name": "Content-Type",
@@ -14254,11 +14632,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE=\""
+          "Value": "\"vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 19:40:06 GMT"
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14276,7 +14654,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/nLZdxzMrJv/cEBlG+OwIIcrojkNthm8xWUPynRxRbE="
+          "Value": "sha256-vEA24grg57Qx2H4zQUUN+zhDx8w5NwbA1BkxpMMWee8="
         }
       ]
     },
@@ -15771,6 +16149,900 @@
       ]
     },
     {
+      "Route": "_framework/Microsoft.AspNetCore.Connections.Abstractions.byb028jwzs.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Connections.Abstractions.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "byb028jwzs"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Connections.Abstractions.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Connections.Abstractions.byb028jwzs.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\9iar6hsnh4-byb028jwzs.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000074973759"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13337"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "byb028jwzs"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Connections.Abstractions.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Connections.Abstractions.byb028jwzs.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\9iar6hsnh4-byb028jwzs.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13337"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "byb028jwzs"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Connections.Abstractions.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Connections.Abstractions.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Connections.Abstractions.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Connections.Abstractions.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\9iar6hsnh4-byb028jwzs.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000074973759"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13337"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-g87ByuVjbNkwBvw6IAkAgUn7vnSkTK70KUOo99amdCU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Connections.Abstractions.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\9iar6hsnh4-byb028jwzs.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13337"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DaQWA1qik+wRSRHIknMZbfxu5E3zC7Or28f0+FEta+g="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Client.kwvr5jo1fy.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Client.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "106261"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwvr5jo1fy"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Http.Connections.Client.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Client.kwvr5jo1fy.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\70dazuusjq-kwvr5jo1fy.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000024070865"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41543"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwvr5jo1fy"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Http.Connections.Client.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Client.kwvr5jo1fy.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\70dazuusjq-kwvr5jo1fy.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwvr5jo1fy"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Http.Connections.Client.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Client.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Client.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "106261"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Client.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\70dazuusjq-kwvr5jo1fy.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000024070865"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41543"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ROt8lUF47clva8MUs9FuhsTjCTE+xC2EF63p2Wi/KJg="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Client.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\70dazuusjq-kwvr5jo1fy.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/djpk6PZg798SEYaQMMW2iSlGvNKIqCh7ZhcOQuB9DE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Common.w14ri3w66r.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Common.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w14ri3w66r"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Http.Connections.Common.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Common.w14ri3w66r.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\02lesbjoxo-w14ri3w66r.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000121862052"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8205"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w14ri3w66r"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Http.Connections.Common.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Common.w14ri3w66r.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\02lesbjoxo-w14ri3w66r.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8205"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w14ri3w66r"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.Http.Connections.Common.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Common.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Http.Connections.Common.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Common.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\02lesbjoxo-w14ri3w66r.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000121862052"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8205"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RAtqLSyExV01Dgh8CnrVCkHWNPzhT+L6chuzD/1hB4w="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.Http.Connections.Common.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\02lesbjoxo-w14ri3w66r.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8205"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uq7hHvZMLC+kPH+x/mMTaztPjaqfihF7ipJahfn3+3s="
+        }
+      ]
+    },
+    {
       "Route": "_framework/Microsoft.AspNetCore.Metadata.ru07a9pbbl.wasm",
       "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.wasm",
       "Selectors": [],
@@ -16065,6 +17337,1198 @@
         {
           "Name": "integrity",
           "Value": "sha256-EMnJTwxSI4Qh504BPQMttyWHfPaWrr4JQtIMTSffXUE="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.c5inbbiber.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10005"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c5inbbiber"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Client.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.c5inbbiber.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ynhnr12mkq-c5inbbiber.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000230574130"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4336"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c5inbbiber"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Client.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.c5inbbiber.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ynhnr12mkq-c5inbbiber.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4336"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c5inbbiber"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Client.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.s7j9342lak.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.Core.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "198933"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s7j9342lak"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.s7j9342lak.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\bnxvu7tbzk-s7j9342lak.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000013736075"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72800"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s7j9342lak"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.s7j9342lak.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\bnxvu7tbzk-s7j9342lak.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s7j9342lak"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.Core.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "198933"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\bnxvu7tbzk-s7j9342lak.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000013736075"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72800"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iJzBWMF9TN9H/FWID5k7YZxNj1yt1qU6s/jPjxn6/2A="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.Core.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\bnxvu7tbzk-s7j9342lak.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qOuLTpM62k/SH15Fs0qketsYbSIJvUksGTU5qT7l1zM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Client.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10005"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ynhnr12mkq-c5inbbiber.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000230574130"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4336"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YG1asqAMvm3vchYpCT5ubmgEKMA6mSicwLy44mGzHHA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Client.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ynhnr12mkq-c5inbbiber.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4336"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UNvuXFUYDRL6nN42fB7DHDMZDBW8UOTpHRGba42Sd6o="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Common.mgiueequaf.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Common.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mgiueequaf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Common.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Common.mgiueequaf.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\0wepb0sgty-mgiueequaf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000068157034"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14671"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mgiueequaf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Common.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Common.mgiueequaf.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\0wepb0sgty-mgiueequaf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mgiueequaf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Common.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Common.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Common.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Common.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\0wepb0sgty-mgiueequaf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000068157034"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14671"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9p76iWFCmRdBz3csMTcAPs4CB2z3BAGQMQyGqp3tBRU="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Common.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\0wepb0sgty-mgiueequaf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tK7FypDOnqnXyil9FjzWxkmpJjI8fkiKqMk/ls+MRjA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.gj3ldi925b.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Protocols.Json.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27925"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gj3ldi925b"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.gj3ldi925b.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ze2tb8s3mp-gj3ldi925b.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000078795997"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12690"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gj3ldi925b"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.gj3ldi925b.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ze2tb8s3mp-gj3ldi925b.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gj3ldi925b"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.AspNetCore.SignalR.Protocols.Json.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27925"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ze2tb8s3mp-gj3ldi925b.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000078795997"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12690"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1DWfqAor7DrY1lC7Jjjbuashz3uGAVnqWfhnDmxA1sQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\ze2tb8s3mp-gj3ldi925b.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eWUOiUnlO4MMu8yOB+mwWUJfnnT0pqdLUgOEWgndeUw="
         }
       ]
     },
@@ -18449,6 +20913,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-KRznYQ2s10+rkLtbNeJvWl4OeGgGe3aBHaYyW6XPiBc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Features.pxy8kdgcv9.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Features.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16149"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pxy8kdgcv9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Features.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Features.pxy8kdgcv9.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\nxcwis0mkp-pxy8kdgcv9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000139431121"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7171"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pxy8kdgcv9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Features.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Features.pxy8kdgcv9.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\nxcwis0mkp-pxy8kdgcv9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pxy8kdgcv9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Features.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Features.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Features.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16149"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Features.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\nxcwis0mkp-pxy8kdgcv9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000139431121"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7171"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3UoQBvxxH1ADs9o1UGngMDw30J5bINL9mhhYCP+j4rk="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Features.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\nxcwis0mkp-pxy8kdgcv9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j1m7pS7r0KyjUvNa467Ql1qBPth/UtbQ9Ti4tW+yQHI="
         }
       ]
     },
@@ -44101,6 +46863,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-dVW6/Frr9lTavGf2LV+EK3WRTDNpFZc5WwTPX2bRObo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/System.Net.ServerSentEvents.rtyskzgzjf.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.ServerSentEvents.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24341"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rtyskzgzjf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/System.Net.ServerSentEvents.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/System.Net.ServerSentEvents.rtyskzgzjf.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\v6tko5r9ml-rtyskzgzjf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000087865741"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11380"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rtyskzgzjf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/System.Net.ServerSentEvents.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/System.Net.ServerSentEvents.rtyskzgzjf.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\v6tko5r9ml-rtyskzgzjf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11380"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rtyskzgzjf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/System.Net.ServerSentEvents.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/System.Net.ServerSentEvents.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.ServerSentEvents.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24341"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/System.Net.ServerSentEvents.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\v6tko5r9ml-rtyskzgzjf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000087865741"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11380"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1+s3/mL36MHmrLHXg8yWaj5etUI05Xx/h6wMoUSeKs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/System.Net.ServerSentEvents.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore\\obj\\Debug\\net9.0\\compressed\\v6tko5r9ml-rtyskzgzjf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11380"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 20:35:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Os5zLK6tyWaUmtqrhw9bKaAKNb7axE62+bz1e+aUDm0="
         }
       ]
     },
