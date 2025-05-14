@@ -50,7 +50,6 @@ namespace MediCore_API.Controllers
 			try
 			{
 				var prescriptions = await context.Prescriptions.Where(p => p.PatientId == id).ToListAsync();
-				if (!prescriptions.Any()) return NotFound("Prescriptions Not Found");
 				return Ok(prescriptions.Select(p => mapper.Map<Prescription, PrescriptionDTO>(p)).ToList());
 			}
 			catch (Exception e)
@@ -97,6 +96,7 @@ namespace MediCore_API.Controllers
 				if (dto is null || !validate.PrescriptionIsValid(dto)) return BadRequest("Invalid Prescription Data");
 				await context.Prescriptions.AddAsync(mapper.Map<PrescriptionDTO, Prescription>(dto));
 				await context.SaveChangesAsync();
+
 				return Created();
 			}
 			catch (Exception e)
@@ -132,9 +132,15 @@ namespace MediCore_API.Controllers
 		[HttpPatch("{prescriptionId:Guid}/set-bill/{billId:Guid}")]
 		public async Task<ActionResult> SetPrescriptionBill([FromRoute] Guid prescriptionId, [FromRoute] Guid billId)
 		{
-			var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == prescriptionId);
+			var prescription = await context.Prescriptions.Include(p => p.Medicine).FirstOrDefaultAsync(p => p.Id == prescriptionId);
 			if (prescription is null) return NotFound("Prescription Not Found");
 			prescription.BillId = billId;
+
+			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == billId);
+			if (bill is null) return NotFound("Bill Not Found");
+			var prescriptions = await context.Prescriptions.Include(p => p.Medicine).ToListAsync();
+			bill.Amount = prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
+
 			await context.SaveChangesAsync();
 			return Ok("Prescription Bill Id Set");
 		}

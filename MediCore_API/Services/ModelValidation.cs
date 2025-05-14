@@ -39,7 +39,6 @@ namespace MediCore_API.Services
 			if (bill.Amount <= 0) return false;
 			if (string.IsNullOrEmpty(bill.PaymentMethod)) return false;
 			if (bill.Date is null || bill.Date <= new DateTime(2025, 1, 1)) return false;
-			if (bill.PatientId == Guid.Empty) return false;
 			if (bill.AppointmentId == Guid.Empty) return false;
 			if (!bill.Prescriptions!.Any()) return false;
 			return true;

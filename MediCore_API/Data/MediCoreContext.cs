@@ -67,12 +67,6 @@ namespace MediCore_API.Data
 				.WithOne()
 				.HasForeignKey(p => p.BillId)
 				.OnDelete(DeleteBehavior.Restrict);
-
-			modelBuilder.Entity<Bill>()
-				.HasOne(b => b.Patient)
-				.WithMany()
-				.HasForeignKey(b => b.PatientId)
-				.OnDelete(DeleteBehavior.Restrict);
 			#endregion
 			#region Doctor
 			modelBuilder.Entity<Doctor>()

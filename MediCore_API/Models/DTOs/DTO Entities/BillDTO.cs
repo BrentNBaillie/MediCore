@@ -6,8 +6,7 @@
 		public float Amount { get; set; } = 0f;
 		public string PaymentMethod { get; set; } = string.Empty;
 		public DateTime? Date { get; set; }
-		public Guid? PatientId { get; set; }
 		public Guid? AppointmentId { get; set; }
-		public List<PrescriptionDTO>? Prescriptions { get; set; }
+		public List<Guid>? Prescriptions { get; set; }
 	}
 }

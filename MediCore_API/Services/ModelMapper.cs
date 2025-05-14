@@ -21,7 +21,7 @@ namespace MediCore_API.Services
 				cfg.CreateMap<Appointment, AppointmentDTO>();
 				cfg.CreateMap<AppointmentDTO, Appointment>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<Bill, BillDTO>();
-				cfg.CreateMap<BillDTO, Bill>().ForMember(dest => dest.Id, opt => opt.Ignore());
+				cfg.CreateMap<BillDTO, Bill>().ForMember(dest => dest.Id, opt => opt.Ignore()).ForMember(dest => dest.Prescriptions, opt => opt.Ignore());
 				cfg.CreateMap<Doctor, DoctorDTO>();
 				cfg.CreateMap<DoctorDTO, Doctor>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<Feedback, FeedbackDTO>();

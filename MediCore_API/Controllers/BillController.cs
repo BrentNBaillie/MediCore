@@ -57,7 +57,7 @@ namespace MediCore_API.Controllers
 			try
 			{
 				if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
-				var bills = await context.Bills.Include(b => b.Patient).Include(b => b.Prescriptions).Where(b => b.PatientId == id).ToListAsync();
+				var bills = await context.Bills.Include(b => b.Appointment).Include(b => b.Prescriptions).Where(b => b.Appointment!.PatientId == id).ToListAsync();
 				if (!bills.Any()) return NotFound("No Bills Found");
 
 				foreach (Bill bill in bills)
@@ -78,15 +78,23 @@ namespace MediCore_API.Controllers
 		{
 			try
 			{
-				if (!await context.Patients.AnyAsync(p => p.Id == dto.PatientId)) return NotFound("Patient Not Found");
 				if (!await context.Appointments.AnyAsync(d => d.Id == dto.AppointmentId)) return NotFound("Appointment Not Found");
 				if (!dto.Prescriptions!.Any()) return BadRequest("No Prescriptions Selected");
 				if (!validate.BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
 				Bill bill = mapper.Map<BillDTO, Bill>(dto);
-
 				await context.Bills.AddAsync(bill);
 				await context.SaveChangesAsync();
+
+				var prescriptions = await context.Prescriptions.Include(p => p.Medicine).Where(p => dto.Prescriptions!.Contains(p.Id)).ToListAsync();
+				foreach (Prescription p in prescriptions)
+				{
+					p.BillId = bill.Id;
+				}
+
+				bill.Amount = prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
+				await context.SaveChangesAsync();
+
 				return Created();
 			}
 			catch (Exception e)
@@ -105,7 +113,6 @@ namespace MediCore_API.Controllers
 
 				if (!string.IsNullOrEmpty(dto.PaymentMethod)) bill.PaymentMethod = dto.PaymentMethod;
 				if (dto.Date is not null) bill.Date = dto.Date;
-				if (dto.PatientId != Guid.Empty) bill.PatientId = dto.PatientId;
 				if (dto.AppointmentId != Guid.Empty) bill.AppointmentId = dto.AppointmentId;
 
 				await context.SaveChangesAsync();

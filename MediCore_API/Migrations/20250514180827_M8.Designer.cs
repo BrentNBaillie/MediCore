@@ -4,6 +4,7 @@ using MediCore_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MediCore_API.Migrations
 {
     [DbContext(typeof(MediCoreContext))]
-    partial class MediCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250514180827_M8")]
+    partial class M8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,11 +105,16 @@ namespace MediCore_API.Migrations
                     b.Property<DateTime?>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("PatientId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("PaymentMethod")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PatientId");
 
                     b.ToTable("Bills");
                 });
@@ -1677,6 +1685,16 @@ namespace MediCore_API.Migrations
                     b.Navigation("Patient");
 
                     b.Navigation("TimeSlot");
+                });
+
+            modelBuilder.Entity("MediCore_API.Models.Entities.Bill", b =>
+                {
+                    b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("MediCore_API.Models.Entities.Doctor", b =>

@@ -11,9 +11,6 @@ namespace MediCore_API.Models.Entities
 		public string PaymentMethod { get; set; } = string.Empty;
 		public DateTime? Date { get; set; } = DateTime.Now;
 
-		public Guid? PatientId { get; set; }
-		public Patient? Patient { get; set; }
-
 		public Guid? AppointmentId { get; set; }
 		public Appointment? Appointment { get; set; }
 
