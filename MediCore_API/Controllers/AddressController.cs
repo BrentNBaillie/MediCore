@@ -26,52 +26,87 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<AddressDTO>>> GetAllAddresses()
 		{
-			var addresses = await context.Addresses.ToListAsync();
-			return Ok(addresses.Select(a => mapper.Map<Address, AddressDTO>(a)).ToList());
+			try
+			{
+				var addresses = await context.Addresses.ToListAsync();
+				return Ok(addresses.Select(a => mapper.Map<Address, AddressDTO>(a)).ToList());
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<AddressDTO>> GetAddress([FromRoute] Guid id)
 		{
-			var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == id);
-			if (address is null) return NotFound("Address Not Found");
-			return Ok(mapper.Map<Address, AddressDTO>(address));
+			try
+			{
+				var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == id);
+				if (address is null) return NotFound("Address Not Found");
+				return Ok(mapper.Map<Address, AddressDTO>(address));
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpPost]
 		public async Task<ActionResult> PostAddress([FromBody] AddressDTO dto)
 		{
-			if (!validate.AddressIsValid(dto)) return BadRequest("Invalid Address Data");
-			await context.Addresses.AddAsync(mapper.Map<AddressDTO, Address>(dto));
-			await context.SaveChangesAsync();
-			return Created();
+			try
+			{
+				if (!validate.AddressIsValid(dto)) return BadRequest("Invalid Address Data");
+				await context.Addresses.AddAsync(mapper.Map<AddressDTO, Address>(dto));
+				await context.SaveChangesAsync();
+				return Created();
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpPatch]
 		public async Task<ActionResult> PatchAddress([FromBody] AddressDTO dto)
 		{
-			if (dto is null) return BadRequest("Invalid Address Data");
-			var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == dto.Id);
-			if (address is null) return NotFound("Address Not Found");
+			try
+			{
+				if (dto is null) return BadRequest("Invalid Address Data");
+				var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == dto.Id);
+				if (address is null) return NotFound("Address Not Found");
 
-			if (!string.IsNullOrEmpty(dto.Street)) address.Street = dto.Street;
-			if (!string.IsNullOrEmpty(dto.City)) address.City = dto.City;
-			if (!string.IsNullOrEmpty(dto.ProvinceOrState)) address.ProvinceOrState = dto.ProvinceOrState;
-			if (!string.IsNullOrEmpty(dto.Country)) address.Country = dto.Country;
-			if (!string.IsNullOrEmpty(dto.PostalCode)) address.PostalCode = dto.PostalCode;
+				if (!string.IsNullOrEmpty(dto.Street)) address.Street = dto.Street;
+				if (!string.IsNullOrEmpty(dto.City)) address.City = dto.City;
+				if (!string.IsNullOrEmpty(dto.ProvinceOrState)) address.ProvinceOrState = dto.ProvinceOrState;
+				if (!string.IsNullOrEmpty(dto.Country)) address.Country = dto.Country;
+				if (!string.IsNullOrEmpty(dto.PostalCode)) address.PostalCode = dto.PostalCode;
 
-			await context.SaveChangesAsync();
-			return Ok("Address Updated");
+				await context.SaveChangesAsync();
+				return Ok("Address Updated");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteAddress([FromRoute] Guid id)
 		{
-			var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == id);
-			if (address is null) return NotFound("Address Not Found");
-			context.Addresses.Remove(address);
-			await context.SaveChangesAsync();
-			return Ok("Address Deleted");
+			try
+			{
+				var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == id);
+				if (address is null) return NotFound("Address Not Found");
+				context.Addresses.Remove(address);
+				await context.SaveChangesAsync();
+				return Ok("Address Deleted");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 	}
 }

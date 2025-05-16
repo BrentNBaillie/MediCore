@@ -8,16 +8,16 @@ namespace MediCore_API.Models.DTOs.DTO_Entities
 		public string Notes { get; set; } = string.Empty;
 		public DateTime? Date { get; set; }
 		public Guid? PatientId { get; set; }
-		public List<AllergyTestDTO>? AllergyTests { get; set; }
-		public List<BodyMeasurementDTO>? BodyMeasurements { get; set; }
-		public List<CardiacTestDTO>? CardiacTests { get; set; }
-		public List<EndocrineTestDTO>? EndocrineTests { get; set; }
-		public List<GeneticTestDTO>? GeneticTests { get; set; }
-		public List<ImagingReportDTO>? ImagingReports { get; set; }
-		public List<InfectiousDiseaseTestDTO>? InfectiousDiseaseTests { get; set; }
-		public List<LaboratoryTestDTO>? LaboratoryTests { get; set; }
-		public List<NeurologicalTestDTO>? NeurologicalTests { get; set; }
-		public List<RespiratoryTestDTO>? RespiratoryTests { get; set; }
-		public List<VitalSignDTO>? VitalSigns { get; set; }
+		public List<Guid>? AllergyTests { get; set; }
+		public List<Guid>? BodyMeasurements { get; set; }
+		public List<Guid>? CardiacTests { get; set; }
+		public List<Guid>? EndocrineTests { get; set; }
+		public List<Guid>? GeneticTests { get; set; }
+		public List<Guid>? ImagingReports { get; set; }
+		public List<Guid>? InfectiousDiseaseTests { get; set; }
+		public List<Guid>? LaboratoryTests { get; set; }
+		public List<Guid>? NeurologicalTests { get; set; }
+		public List<Guid>? RespiratoryTests { get; set; }
+		public List<Guid>? VitalSigns { get; set; }
 	}
 }

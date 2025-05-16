@@ -79,12 +79,19 @@ namespace MediCore_API.Controllers
 		[HttpPatch("{patientId:Guid}/set-address/{addressId:Guid}")]
 		public async Task<ActionResult> SetPatientAddress([FromRoute] Guid patientId, [FromRoute] Guid addressId)
 		{
-			var patient = await context.Patients.FirstOrDefaultAsync(p => p.Id == patientId);
-			if (patient is null) return NotFound("Patient Not Found");
-			if ((await context.Addresses.FirstOrDefaultAsync(a => a.Id == addressId)) is null) return NotFound("Address Not Found");
-			if (addressId != Guid.Empty) patient.AddressId = addressId;
-			await context.SaveChangesAsync();
-			return Ok("Patient Address Set");
+			try
+			{
+				var patient = await context.Patients.FirstOrDefaultAsync(p => p.Id == patientId);
+				if (patient is null) return NotFound("Patient Not Found");
+				if ((await context.Addresses.FirstOrDefaultAsync(a => a.Id == addressId)) is null) return NotFound("Address Not Found");
+				if (addressId != Guid.Empty) patient.AddressId = addressId;
+				await context.SaveChangesAsync();
+				return Ok("Patient Address Set");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
         [HttpDelete("{id:Guid}")]

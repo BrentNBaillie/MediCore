@@ -39,9 +39,16 @@ namespace MediCore_API.Controllers
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<PrescriptionDTO>> GetPrescription([FromRoute] Guid id)
 		{
-			var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == id);
-			if (prescription is null) return NotFound("Prescription Not Found");
-			return Ok(mapper.Map<Prescription, PrescriptionDTO>(prescription));
+			try
+			{
+				var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == id);
+				if (prescription is null) return NotFound("Prescription Not Found");
+				return Ok(mapper.Map<Prescription, PrescriptionDTO>(prescription));
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpGet("patient/{id:Guid}")]
@@ -132,17 +139,24 @@ namespace MediCore_API.Controllers
 		[HttpPatch("{prescriptionId:Guid}/set-bill/{billId:Guid}")]
 		public async Task<ActionResult> SetPrescriptionBill([FromRoute] Guid prescriptionId, [FromRoute] Guid billId)
 		{
-			var prescription = await context.Prescriptions.Include(p => p.Medicine).FirstOrDefaultAsync(p => p.Id == prescriptionId);
-			if (prescription is null) return NotFound("Prescription Not Found");
-			prescription.BillId = billId;
+			try
+			{
+				var prescription = await context.Prescriptions.Include(p => p.Medicine).FirstOrDefaultAsync(p => p.Id == prescriptionId);
+				if (prescription is null) return NotFound("Prescription Not Found");
+				prescription.BillId = billId;
 
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == billId);
-			if (bill is null) return NotFound("Bill Not Found");
-			var prescriptions = await context.Prescriptions.Include(p => p.Medicine).ToListAsync();
-			bill.Amount = prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
+				var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == billId);
+				if (bill is null) return NotFound("Bill Not Found");
+				var prescriptions = await context.Prescriptions.Include(p => p.Medicine).ToListAsync();
+				bill.Amount = prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
 
-			await context.SaveChangesAsync();
-			return Ok("Prescription Bill Id Set");
+				await context.SaveChangesAsync();
+				return Ok("Prescription Bill Id Set");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpDelete("{id:Guid}")]

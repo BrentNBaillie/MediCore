@@ -77,12 +77,19 @@ namespace MediCore_API.Controllers
 		[HttpPatch("{staffId:Guid}/set-role/{roleId:Guid}")]
 		public async Task<ActionResult> SetStaffRole([FromRoute] Guid staffId, [FromRoute] Guid roleId)
 		{
-			var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.Id == staffId);
-			if (staff is null) return NotFound("Staff Member Not Found");
-			if ((await context.StaffRoles.FirstOrDefaultAsync(r => r.Id == roleId)) is null) return NotFound("Staff Role Not Found");
-			if (roleId != Guid.Empty) staff.RoleId = roleId;
-			await context.SaveChangesAsync();
-			return Ok("Staff Role Set");
+			try
+			{
+				var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.Id == staffId);
+				if (staff is null) return NotFound("Staff Member Not Found");
+				if ((await context.StaffRoles.FirstOrDefaultAsync(r => r.Id == roleId)) is null) return NotFound("Staff Role Not Found");
+				if (roleId != Guid.Empty) staff.RoleId = roleId;
+				await context.SaveChangesAsync();
+				return Ok("Staff Role Set");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
 		}
 
 		[HttpDelete("{id:Guid}")]

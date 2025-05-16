@@ -111,5 +111,40 @@ namespace MediCore_API.Controllers
 				return StatusCode(500, $"Error: {e}");
 			}
 		}
+
+		[HttpDelete("{id:Guid}")]
+		public async Task<ActionResult> DeleteChat([FromRoute] Guid id)
+		{
+			try
+			{
+				var chat = await context.Chats.Include(c => c.Messages).FirstOrDefaultAsync(c => c.Id == id);
+				if (chat is null) return NotFound("Chat Not Found");
+				context.Messages.RemoveRange(chat.Messages);
+				context.Chats.Remove(chat);
+				await context.SaveChangesAsync();
+				return Ok("Chat Deleted");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
+
+		[HttpDelete("message/{id:Guid}")]
+		public async Task<ActionResult> DeleteMessage([FromRoute] Guid id)
+		{
+			try
+			{
+				var message = await context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+				if (message is null) return NotFound("Message Not Found");
+				context.Messages.Remove(message);
+				await context.SaveChangesAsync();
+				return Ok("Message Deleted");
+			}
+			catch (Exception e)
+			{
+				return StatusCode(500, $"Error: {e}");
+			}
+		}
 	}
 }
