@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eMDpKhw4u/M=",
+  "dgSpecHash": "oY6/3K7rGK4=",
   "success": true,
-  "projectFilePath": "C:\\Github Projects\\MediCore\\MediCore\\MediCore.csproj",
+  "projectFilePath": "C:\\Github Projects\\MediCore\\MediCore\\MediCore_Blazor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.4\\microsoft.aspnetcore.authorization.9.0.4.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.4\\microsoft.aspnetcore.components.9.0.4.nupkg.sha512",

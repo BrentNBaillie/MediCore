@@ -2369,9 +2369,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github Projects\\MediCore\\MediCore\\MediCore.csproj",
-      "projectName": "MediCore",
-      "projectPath": "C:\\Github Projects\\MediCore\\MediCore\\MediCore.csproj",
+      "projectUniqueName": "C:\\Github Projects\\MediCore\\MediCore\\MediCore_Blazor.csproj",
+      "projectName": "MediCore_Blazor",
+      "projectPath": "C:\\Github Projects\\MediCore\\MediCore\\MediCore_Blazor.csproj",
       "packagesPath": "C:\\Users\\cools\\.nuget\\packages\\",
       "outputPath": "C:\\Github Projects\\MediCore\\MediCore\\obj\\",
       "projectStyle": "PackageReference",

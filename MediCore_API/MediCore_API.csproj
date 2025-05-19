@@ -21,4 +21,8 @@
     <PackageReference Include="Scalar.AspNetCore" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ModelLibrary\MediCoreLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

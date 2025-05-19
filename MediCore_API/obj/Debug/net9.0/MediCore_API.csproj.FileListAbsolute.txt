@@ -173,3 +173,9 @@ C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore_API.genruntim
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\ref\MediCore_API.dll
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\EntityFramework.SqlServer.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\EntityFramework.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\Microsoft.AspNet.Identity.Core.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\MediCoreLibrary.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\MediCoreLibrary.pdb

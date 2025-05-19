@@ -1,0 +1,7 @@
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.csproj.AssemblyReference.cache
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.AssemblyInfoInputs.cache
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.AssemblyInfo.cs
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.csproj.CoreCompileInputs.cache
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.MvcApplicationPartsAssemblyInfo.cache
+C:\Github Projects\MediCore\MediCore\obj\Debug\net9.0\MediCore_Blazor.sourcelink.json
