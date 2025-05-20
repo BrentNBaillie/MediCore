@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1sKRaIcGYc6u2SrFowyMn62qcfMqxNL+qlUgTZigq4s=",
+  "Hash": "GovntDLPGyvh5myK0BRKLTVLACMhAdRs4Xj/8wmhGCk=",
   "Source": "MediCore_Blazor",
   "BasePath": "/",
   "Mode": "Root",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "k8iav10o0q",
-      "Integrity": "1J3apuJnFkceYQEL6VAJpAGEMWd/Rzilna4WA0eXyoI=",
+      "Fingerprint": "cbd735azs7",
+      "Integrity": "2EmXYeW73RvbeH/DfSchYhlO8bFEVxDjM1m063kHMdc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -1102,8 +1102,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "6z7x118oa4",
-      "Integrity": "omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc=",
+      "Fingerprint": "1ugerbxryz",
+      "Integrity": "R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\MediCore_Blazor.pdb"
@@ -1123,8 +1123,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "tacmudmlu9",
-      "Integrity": "xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4=",
+      "Fingerprint": "nu2jr4kah9",
+      "Integrity": "L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\webcil\\MediCore_Blazor.wasm"
@@ -1144,11 +1144,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "3ei0r1is0e",
-      "Integrity": "GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ=",
+      "Fingerprint": "57wh0gw7fs",
+      "Integrity": "v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\ModelLibrary\\bin\\Debug\\net9.0\\MediCore_Library.pdb"
+      "OriginalItemSpec": "C:\\Github Projects\\MediCore\\Model_Library\\bin\\Debug\\net9.0\\MediCore_Library.pdb"
     },
     {
       "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.wasm",
@@ -1165,8 +1165,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "aper3j6xhr",
-      "Integrity": "LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0=",
+      "Fingerprint": "6u4pa9sf0x",
+      "Integrity": "vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\webcil\\MediCore_Library.wasm"
@@ -7073,12 +7073,12 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\tr\\Microsoft.CodeAnalysis.resources.wasm"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-aper3j6xhr.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-6u4pa9sf0x.gz",
       "SourceId": "MediCore_Blazor",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/MediCore_Library#[.{fingerprint=aper3j6xhr}]!.wasm.gz",
+      "RelativePath": "_framework/MediCore_Library#[.{fingerprint=6u4pa9sf0x}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -7087,8 +7087,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "i7x40xvxpg",
-      "Integrity": "4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0=",
+      "Fingerprint": "nmoppkoxeb",
+      "Integrity": "EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.wasm"
@@ -10832,7 +10832,7 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\j7rhd0rau7-k8iav10o0q.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\j7rhd0rau7-cbd735azs7.gz",
       "SourceId": "MediCore_Blazor",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\",
@@ -10846,8 +10846,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zdbcj4qymy",
-      "Integrity": "WZjb97XhZaucqITTnBAK42f9+jpLgHfJvwxPvfX8vHY=",
+      "Fingerprint": "kje6netvhi",
+      "Integrity": "4HHBq7Dt/iCNnXNMC7J2dBm2g2PaBdcpvazDzmctEtQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -11105,12 +11105,12 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\es\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.wasm"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-6z7x118oa4.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-1ugerbxryz.gz",
       "SourceId": "MediCore_Blazor",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/MediCore_Blazor#[.{fingerprint=6z7x118oa4}]!.pdb.gz",
+      "RelativePath": "_framework/MediCore_Blazor#[.{fingerprint=1ugerbxryz}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -11119,8 +11119,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zbpo74lxbw",
-      "Integrity": "weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY=",
+      "Fingerprint": "nijk05klzx",
+      "Integrity": "MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.pdb"
@@ -13352,12 +13352,12 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.IO.FileSystem.DriveInfo.wasm"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-tacmudmlu9.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-nu2jr4kah9.gz",
       "SourceId": "MediCore_Blazor",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/MediCore_Blazor#[.{fingerprint=tacmudmlu9}]!.wasm.gz",
+      "RelativePath": "_framework/MediCore_Blazor#[.{fingerprint=nu2jr4kah9}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -13366,8 +13366,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "915d8zdlrb",
-      "Integrity": "vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY=",
+      "Fingerprint": "k12lj6inqd",
+      "Integrity": "mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.wasm"
@@ -13772,12 +13772,12 @@
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Composition.Hosting.wasm"
     },
     {
-      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-3ei0r1is0e.gz",
+      "Identity": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-57wh0gw7fs.gz",
       "SourceId": "MediCore_Blazor",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/MediCore_Library#[.{fingerprint=3ei0r1is0e}]!.pdb.gz",
+      "RelativePath": "_framework/MediCore_Library#[.{fingerprint=57wh0gw7fs}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -13786,8 +13786,8 @@
       "RelatedAsset": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "tyxy2c2gtd",
-      "Integrity": "dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM=",
+      "Fingerprint": "8sq9xj8pl3",
+      "Integrity": "KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.pdb"
@@ -16417,7 +16417,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "68060"
+          "Value": "67731"
         },
         {
           "Name": "Content-Type",
@@ -16425,11 +16425,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1J3apuJnFkceYQEL6VAJpAGEMWd/Rzilna4WA0eXyoI=\""
+          "Value": "\"2EmXYeW73RvbeH/DfSchYhlO8bFEVxDjM1m063kHMdc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16439,18 +16439,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1J3apuJnFkceYQEL6VAJpAGEMWd/Rzilna4WA0eXyoI="
+          "Value": "sha256-2EmXYeW73RvbeH/DfSchYhlO8bFEVxDjM1m063kHMdc="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\j7rhd0rau7-k8iav10o0q.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\j7rhd0rau7-cbd735azs7.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000049541739"
+          "Quality": "0.000049554014"
         }
       ],
       "ResponseHeaders": [
@@ -16460,15 +16460,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20184"
+          "Value": "20179"
         },
         {
           "Name": "ETag",
-          "Value": "\"WZjb97XhZaucqITTnBAK42f9+jpLgHfJvwxPvfX8vHY=\""
+          "Value": "\"4HHBq7Dt/iCNnXNMC7J2dBm2g2PaBdcpvazDzmctEtQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 00:51:09 GMT"
+          "Value": "Tue, 20 May 2025 01:25:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16488,19 +16488,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"1J3apuJnFkceYQEL6VAJpAGEMWd/Rzilna4WA0eXyoI=\""
+          "Value": "W/\"2EmXYeW73RvbeH/DfSchYhlO8bFEVxDjM1m063kHMdc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1J3apuJnFkceYQEL6VAJpAGEMWd/Rzilna4WA0eXyoI="
+          "Value": "sha256-2EmXYeW73RvbeH/DfSchYhlO8bFEVxDjM1m063kHMdc="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\j7rhd0rau7-k8iav10o0q.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\j7rhd0rau7-cbd735azs7.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -16509,7 +16509,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20184"
+          "Value": "20179"
         },
         {
           "Name": "Content-Type",
@@ -16517,11 +16517,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WZjb97XhZaucqITTnBAK42f9+jpLgHfJvwxPvfX8vHY=\""
+          "Value": "\"4HHBq7Dt/iCNnXNMC7J2dBm2g2PaBdcpvazDzmctEtQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 00:51:09 GMT"
+          "Value": "Tue, 20 May 2025 01:25:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16539,7 +16539,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WZjb97XhZaucqITTnBAK42f9+jpLgHfJvwxPvfX8vHY="
+          "Value": "sha256-4HHBq7Dt/iCNnXNMC7J2dBm2g2PaBdcpvazDzmctEtQ="
         }
       ]
     },
@@ -30687,7 +30687,7 @@
       ]
     },
     {
-      "Route": "_framework/MediCore_Blazor.6z7x118oa4.pdb",
+      "Route": "_framework/MediCore_Blazor.1ugerbxryz.pdb",
       "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -30705,11 +30705,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc=\""
+          "Value": "\"R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:57 GMT"
+          "Value": "Tue, 20 May 2025 01:30:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -30719,7 +30719,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6z7x118oa4"
+          "Value": "1ugerbxryz"
         },
         {
           "Name": "label",
@@ -30727,13 +30727,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc="
+          "Value": "sha256-R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Blazor.6z7x118oa4.pdb",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-6z7x118oa4.gz",
+      "Route": "_framework/MediCore_Blazor.1ugerbxryz.pdb",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-1ugerbxryz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -30752,11 +30752,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY=\""
+          "Value": "\"MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -30776,13 +30776,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc=\""
+          "Value": "W/\"R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6z7x118oa4"
+          "Value": "1ugerbxryz"
         },
         {
           "Name": "label",
@@ -30790,13 +30790,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc="
+          "Value": "sha256-R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Blazor.6z7x118oa4.pdb.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-6z7x118oa4.gz",
+      "Route": "_framework/MediCore_Blazor.1ugerbxryz.pdb.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-1ugerbxryz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -30813,11 +30813,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY=\""
+          "Value": "\"MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -30835,7 +30835,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6z7x118oa4"
+          "Value": "1ugerbxryz"
         },
         {
           "Name": "label",
@@ -30843,7 +30843,168 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY="
+          "Value": "sha256-MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/MediCore_Blazor.nu2jr4kah9.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17685"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 01:30:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nu2jr4kah9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/MediCore_Blazor.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/MediCore_Blazor.nu2jr4kah9.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-nu2jr4kah9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000130480167"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7663"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nu2jr4kah9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/MediCore_Blazor.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/MediCore_Blazor.nu2jr4kah9.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-nu2jr4kah9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7663"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nu2jr4kah9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/MediCore_Blazor.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U="
         }
       ]
     },
@@ -30866,11 +31027,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc=\""
+          "Value": "\"R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:57 GMT"
+          "Value": "Tue, 20 May 2025 01:30:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -30880,13 +31041,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc="
+          "Value": "sha256-R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Blazor.pdb",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-6z7x118oa4.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-1ugerbxryz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -30905,11 +31066,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY=\""
+          "Value": "\"MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -30929,19 +31090,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc=\""
+          "Value": "W/\"R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc="
+          "Value": "sha256-R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Blazor.pdb.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-6z7x118oa4.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\k6iwzpoae9-1ugerbxryz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -30958,11 +31119,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY=\""
+          "Value": "\"MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -30980,168 +31141,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-weKibt7zB+7UQgLJMucsFnf6AEunAEoefaxwBgLoXPY="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/MediCore_Blazor.tacmudmlu9.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Blazor.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "17685"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tacmudmlu9"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/MediCore_Blazor.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/MediCore_Blazor.tacmudmlu9.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-tacmudmlu9.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000130565348"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7658"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tacmudmlu9"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/MediCore_Blazor.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/MediCore_Blazor.tacmudmlu9.wasm.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-tacmudmlu9.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7658"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tacmudmlu9"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/MediCore_Blazor.wasm.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY="
+          "Value": "sha256-MawsEs83OGKD6kQa2POzBhccVGZWthaCNL8yxlMJ/F8="
         }
       ]
     },
@@ -31164,11 +31164,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4=\""
+          "Value": "\"L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:57 GMT"
+          "Value": "Tue, 20 May 2025 01:30:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31178,18 +31178,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4="
+          "Value": "sha256-L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Blazor.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-tacmudmlu9.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-nu2jr4kah9.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000130565348"
+          "Quality": "0.000130480167"
         }
       ],
       "ResponseHeaders": [
@@ -31199,15 +31199,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7658"
+          "Value": "7663"
         },
         {
           "Name": "ETag",
-          "Value": "\"vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY=\""
+          "Value": "\"mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31227,19 +31227,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4=\""
+          "Value": "W/\"L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4="
+          "Value": "sha256-L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Blazor.wasm.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-tacmudmlu9.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\u0s8k6kwlz-nu2jr4kah9.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -31248,7 +31248,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7658"
+          "Value": "7663"
         },
         {
           "Name": "Content-Type",
@@ -31256,11 +31256,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY=\""
+          "Value": "\"mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31278,12 +31278,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vd5glcDfOxNvYL1ogMI/NG63IsSYlqI9fJlAgmViVFY="
+          "Value": "sha256-mKiqAeItQwh6tjzT5zM+z+3bseK3zX/0od0NWQLhj5U="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Library.3ei0r1is0e.pdb",
+      "Route": "_framework/MediCore_Library.57wh0gw7fs.pdb",
       "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -31301,11 +31301,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ=\""
+          "Value": "\"v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:55 GMT"
+          "Value": "Tue, 20 May 2025 01:30:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31315,7 +31315,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3ei0r1is0e"
+          "Value": "57wh0gw7fs"
         },
         {
           "Name": "label",
@@ -31323,18 +31323,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ="
+          "Value": "sha256-v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Library.3ei0r1is0e.pdb",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-3ei0r1is0e.gz",
+      "Route": "_framework/MediCore_Library.57wh0gw7fs.pdb",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-57wh0gw7fs.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000045314483"
+          "Quality": "0.000045316536"
         }
       ],
       "ResponseHeaders": [
@@ -31344,15 +31344,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22067"
+          "Value": "22066"
         },
         {
           "Name": "ETag",
-          "Value": "\"dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM=\""
+          "Value": "\"KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31372,13 +31372,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ=\""
+          "Value": "W/\"v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3ei0r1is0e"
+          "Value": "57wh0gw7fs"
         },
         {
           "Name": "label",
@@ -31386,13 +31386,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ="
+          "Value": "sha256-v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Library.3ei0r1is0e.pdb.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-3ei0r1is0e.gz",
+      "Route": "_framework/MediCore_Library.57wh0gw7fs.pdb.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-57wh0gw7fs.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -31401,7 +31401,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22067"
+          "Value": "22066"
         },
         {
           "Name": "Content-Type",
@@ -31409,11 +31409,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM=\""
+          "Value": "\"KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31431,7 +31431,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3ei0r1is0e"
+          "Value": "57wh0gw7fs"
         },
         {
           "Name": "label",
@@ -31439,12 +31439,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM="
+          "Value": "sha256-KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Library.aper3j6xhr.wasm",
+      "Route": "_framework/MediCore_Library.6u4pa9sf0x.wasm",
       "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\bin\\Debug\\net9.0\\wwwroot\\_framework\\MediCore_Library.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -31462,11 +31462,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0=\""
+          "Value": "\"vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:57 GMT"
+          "Value": "Tue, 20 May 2025 01:30:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31476,7 +31476,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aper3j6xhr"
+          "Value": "6u4pa9sf0x"
         },
         {
           "Name": "label",
@@ -31484,18 +31484,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0="
+          "Value": "sha256-vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Library.aper3j6xhr.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-aper3j6xhr.gz",
+      "Route": "_framework/MediCore_Library.6u4pa9sf0x.wasm",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-6u4pa9sf0x.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000025236593"
+          "Quality": "0.000025231499"
         }
       ],
       "ResponseHeaders": [
@@ -31505,15 +31505,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39624"
+          "Value": "39632"
         },
         {
           "Name": "ETag",
-          "Value": "\"4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0=\""
+          "Value": "\"EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31533,13 +31533,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0=\""
+          "Value": "W/\"vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aper3j6xhr"
+          "Value": "6u4pa9sf0x"
         },
         {
           "Name": "label",
@@ -31547,13 +31547,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0="
+          "Value": "sha256-vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0="
         }
       ]
     },
     {
-      "Route": "_framework/MediCore_Library.aper3j6xhr.wasm.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-aper3j6xhr.gz",
+      "Route": "_framework/MediCore_Library.6u4pa9sf0x.wasm.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-6u4pa9sf0x.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -31562,7 +31562,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39624"
+          "Value": "39632"
         },
         {
           "Name": "Content-Type",
@@ -31570,11 +31570,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0=\""
+          "Value": "\"EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31592,7 +31592,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aper3j6xhr"
+          "Value": "6u4pa9sf0x"
         },
         {
           "Name": "label",
@@ -31600,7 +31600,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0="
+          "Value": "sha256-EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ="
         }
       ]
     },
@@ -31623,11 +31623,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ=\""
+          "Value": "\"v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:55 GMT"
+          "Value": "Tue, 20 May 2025 01:30:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31637,18 +31637,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ="
+          "Value": "sha256-v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Library.pdb",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-3ei0r1is0e.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-57wh0gw7fs.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000045314483"
+          "Quality": "0.000045316536"
         }
       ],
       "ResponseHeaders": [
@@ -31658,15 +31658,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22067"
+          "Value": "22066"
         },
         {
           "Name": "ETag",
-          "Value": "\"dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM=\""
+          "Value": "\"KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31686,19 +31686,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ=\""
+          "Value": "W/\"v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ="
+          "Value": "sha256-v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Library.pdb.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-3ei0r1is0e.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\vzjrszpo3d-57wh0gw7fs.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -31707,7 +31707,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22067"
+          "Value": "22066"
         },
         {
           "Name": "Content-Type",
@@ -31715,11 +31715,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM=\""
+          "Value": "\"KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31737,7 +31737,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-dfLe/CLz5XZaRLo/PmxwMafpXSuZzySsvB9J2fK0TpM="
+          "Value": "sha256-KGMjmbn0PnmnpqJtzUx1kdLtsawOgOWD9150s8sOBlQ="
         }
       ]
     },
@@ -31760,11 +31760,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0=\""
+          "Value": "\"vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:57 GMT"
+          "Value": "Tue, 20 May 2025 01:30:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31774,18 +31774,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0="
+          "Value": "sha256-vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Library.wasm",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-aper3j6xhr.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-6u4pa9sf0x.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000025236593"
+          "Quality": "0.000025231499"
         }
       ],
       "ResponseHeaders": [
@@ -31795,15 +31795,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39624"
+          "Value": "39632"
         },
         {
           "Name": "ETag",
-          "Value": "\"4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0=\""
+          "Value": "\"EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31823,19 +31823,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0=\""
+          "Value": "W/\"vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0="
+          "Value": "sha256-vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0="
         }
       ]
     },
     {
       "Route": "_framework/MediCore_Library.wasm.gz",
-      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-aper3j6xhr.gz",
+      "AssetFile": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\obj\\Debug\\net9.0\\compressed\\0zwe2iyl2a-6u4pa9sf0x.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -31844,7 +31844,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39624"
+          "Value": "39632"
         },
         {
           "Name": "Content-Type",
@@ -31852,11 +31852,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0=\""
+          "Value": "\"EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 01:12:58 GMT"
+          "Value": "Tue, 20 May 2025 01:30:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -31874,7 +31874,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4ipL3zbaiAqUQlroxLv0MGAIptCwQHGt6sdjklmFGG0="
+          "Value": "sha256-EW5eRodo3dvTx2ewN14Frzzj3RqjBgpAex7DOD9UOMQ="
         }
       ]
     },

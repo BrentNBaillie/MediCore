@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ModelLibrary\MediCore_Library.csproj" />
+    <ProjectReference Include="..\Model_Library\MediCore_Library.csproj" />
   </ItemGroup>
 
 </Project>

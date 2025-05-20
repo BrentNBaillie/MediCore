@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MediCore_Blazor",
   "resources": {
-    "hash": "sha256-HFk92DCW6M041hP6CtwMAKQe9dMzXwFfbu2/F7ULA0c=",
+    "hash": "sha256-yaRgB4f2qpOlkeUkkOS31jUpNI1xoXzb9rFhbEWOrH0=",
     "fingerprinting": {
       "Azure.Core.92q6rqqhly.wasm": "Azure.Core.wasm",
       "Azure.Identity.b6ekoqlu3w.wasm": "Azure.Identity.wasm",
@@ -321,10 +321,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "MediCore_Library.aper3j6xhr.wasm": "MediCore_Library.wasm",
-      "MediCore_Library.3ei0r1is0e.pdb": "MediCore_Library.pdb",
-      "MediCore_Blazor.tacmudmlu9.wasm": "MediCore_Blazor.wasm",
-      "MediCore_Blazor.6z7x118oa4.pdb": "MediCore_Blazor.pdb"
+      "MediCore_Library.6u4pa9sf0x.wasm": "MediCore_Library.wasm",
+      "MediCore_Library.57wh0gw7fs.pdb": "MediCore_Library.pdb",
+      "MediCore_Blazor.nu2jr4kah9.wasm": "MediCore_Blazor.wasm",
+      "MediCore_Blazor.1ugerbxryz.pdb": "MediCore_Blazor.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hvg7u8bimp.js": "sha256-LX9rFEWGVxhkOkAVPG0w5RxPwzPBlEUz6dQNjWS7M+M="
@@ -589,12 +589,12 @@
       "WindowsBase.5lai2eowco.wasm": "sha256-GcDi5293y2A7oSiFYTbBTUe0d+ISbvgeel4ZNd8KkPM=",
       "mscorlib.wzkfrp7u5k.wasm": "sha256-9PjsU0gaxxz5Vyw++p9DeYUWLsaXbaMS2RbX6wmTUmk=",
       "netstandard.d82br99ghv.wasm": "sha256-DS8keXxU4eQpa1kIoiFxOA2Ii2g9hoNWSaVi8F8AnIE=",
-      "MediCore_Library.aper3j6xhr.wasm": "sha256-LjLIu/bTRhcSFDhkqYRJ7wgtYrpaBNPvMEYty10ZK/0=",
-      "MediCore_Blazor.tacmudmlu9.wasm": "sha256-xbmDjOWPvzMBkamJFNxpjP+ZqMc4lydQNRPOrpgzdK4="
+      "MediCore_Library.6u4pa9sf0x.wasm": "sha256-vnJxUmK+IelLxMNjKCBYby7va/NrS/gj+IvkkGRnNg0=",
+      "MediCore_Blazor.nu2jr4kah9.wasm": "sha256-L+CsSONYMqI6Hec2Y3QAvTg7XWyVQxcISZlTKJ3xgxI="
     },
     "pdb": {
-      "MediCore_Library.3ei0r1is0e.pdb": "sha256-GxzFQWAN1Lge0MI3dqwOiWuUE8cnWacIO2iGnVkWLXQ=",
-      "MediCore_Blazor.6z7x118oa4.pdb": "sha256-omvECkNINIwKHmNfo2HEDemDtkrwtZ/WK9lZl1tZOcc="
+      "MediCore_Library.57wh0gw7fs.pdb": "sha256-v0KUi9Qo+C3+A4HA0t9DBxMEIuR+4FMvZs7lCy3iMjM=",
+      "MediCore_Blazor.1ugerbxryz.pdb": "sha256-R9zMUwmwVieWHv3M1QBHBFie84b6JrqD59s/JFMBovQ="
     },
     "satelliteResources": {
       "cs": {

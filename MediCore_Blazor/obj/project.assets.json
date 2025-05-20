@@ -8019,6 +8019,9 @@
           "projectReferences": {
             "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj": {
               "projectPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj"
+            },
+            "C:\\Github Projects\\MediCore\\Model_Library\\MediCore_Library.csproj": {
+              "projectPath": "C:\\Github Projects\\MediCore\\Model_Library\\MediCore_Library.csproj"
             }
           }
         }

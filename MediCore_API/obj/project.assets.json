@@ -5870,8 +5870,8 @@
     },
     "MediCore_Library/1.0.0": {
       "type": "project",
-      "path": "../ModelLibrary/MediCore_Library.csproj",
-      "msbuildProject": "../ModelLibrary/MediCore_Library.csproj"
+      "path": "../Model_Library/MediCore_Library.csproj",
+      "msbuildProject": "../Model_Library/MediCore_Library.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5921,8 +5921,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj": {
-              "projectPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj"
+            "C:\\Github Projects\\MediCore\\Model_Library\\MediCore_Library.csproj": {
+              "projectPath": "C:\\Github Projects\\MediCore\\Model_Library\\MediCore_Library.csproj"
             }
           }
         }
