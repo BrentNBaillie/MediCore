@@ -1,11 +1,11 @@
 ﻿using MediCore_API.Interfaces;
-using MediCore_API.Models.Entities;
-using MediCore_API.Models.Identities;
 using MediCore_API.Services;
 using MediCore_API.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MediCore_Library.Models.Identities;
+using MediCore_Library.Models.Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -13,12 +13,12 @@ namespace MediCore_API.Controllers
 	[ApiController]
 	public class AuthorizeController : ControllerBase
 	{
-		private readonly UserManager<IdentityUser> userManager;
-		private readonly SignInManager<IdentityUser> signInManager;
+		private readonly UserManager<ApplicationUser> userManager;
+		private readonly SignInManager<ApplicationUser> signInManager;
 		private readonly IJwtTokenService jwtTokenService;
 		private readonly MediCoreContext context;
 
-		public AuthorizeController(MediCoreContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IConfiguration config)
+		public AuthorizeController(MediCoreContext context, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration config)
 		{
 			this.userManager = userManager;
 			this.signInManager = signInManager;
@@ -37,7 +37,7 @@ namespace MediCore_API.Controllers
 				var existingUser = await userManager.FindByEmailAsync(request.Email);
 				if (existingUser != null) return BadRequest("Email already registered!");
 
-				var user = new IdentityUser
+				var user = new ApplicationUser
 				{
 					UserName = request.UserName,
 					Email = request.Email,
@@ -84,7 +84,7 @@ namespace MediCore_API.Controllers
 				var existingUser = await userManager.FindByEmailAsync(request.Email);
 				if (existingUser != null) return BadRequest("Email already registered!");
 
-				var user = new IdentityUser
+				var user = new ApplicationUser
 				{
 					UserName = request.UserName,
 					Email = request.Email,
@@ -132,7 +132,7 @@ namespace MediCore_API.Controllers
 				var existingUser = await userManager.FindByEmailAsync(request.Email);
 				if (existingUser != null) return BadRequest();
 
-				var user = new IdentityUser
+				var user = new ApplicationUser
 				{
 					UserName = request.UserName,
 					Email = request.Email,

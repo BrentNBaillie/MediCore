@@ -17,12 +17,12 @@ namespace MediCore_API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Address", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Address", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Appointment", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Appointment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -87,7 +87,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Appointments");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Bill", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Bill", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -111,7 +111,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Bills");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Chat", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Chat", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -130,7 +130,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Chats");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Doctor", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Doctor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -172,7 +172,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Feedback", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Feedback", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -195,7 +195,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Feedbacks");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.MedicalRecord", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.MedicalRecord", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -220,7 +220,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("MedicalRecords");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Medicine", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Medicine", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -246,7 +246,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Medicines");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Message", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Message", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -273,7 +273,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Patient", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Patient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -315,7 +315,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Patients");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Prescription", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Prescription", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -349,7 +349,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Prescriptions");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Schedule", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Schedule", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -379,7 +379,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("Schedules");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Staff", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Staff", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -414,7 +414,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("StaffMembers");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.StaffRole", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.StaffRole", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -433,7 +433,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("StaffRoles");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.TimeSlot", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.TimeSlot", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -458,7 +458,72 @@ namespace MediCore_API.Migrations
                     b.ToTable("TimeSlots");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.AllergyTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Identities.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.AllergyTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -554,7 +619,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("AllergyTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.BodyMeasurement", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.BodyMeasurement", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -623,7 +688,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("BodyMeasurements");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.CardiacTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.CardiacTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -716,7 +781,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("CardiacTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.EndocrineTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.EndocrineTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -827,7 +892,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("EndocrineTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.GeneticTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.GeneticTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -932,7 +997,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("GeneticTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.ImagingReport", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.ImagingReport", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1016,7 +1081,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("ImagingReports");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.InfectiousDiseaseTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.InfectiousDiseaseTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1102,7 +1167,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("InfectiousDiseaseTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.LaboratoryTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.LaboratoryTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1193,7 +1258,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("LaboratoryTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.NeurologicalTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.NeurologicalTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1311,7 +1376,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("NeurologicalTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.RespiratoryTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.RespiratoryTest", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1402,7 +1467,7 @@ namespace MediCore_API.Migrations
                     b.ToTable("RespiratoryTests");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.VitalSign", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.VitalSign", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1509,71 +1574,6 @@ namespace MediCore_API.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -1655,21 +1655,21 @@ namespace MediCore_API.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Appointment", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Appointment", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Bill", "Bill")
+                    b.HasOne("MediCore_Library.Models.Entities.Bill", "Bill")
                         .WithOne("Appointment")
-                        .HasForeignKey("MediCore_API.Models.Entities.Appointment", "BillId")
+                        .HasForeignKey("MediCore_Library.Models.Entities.Appointment", "BillId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
+                    b.HasOne("MediCore_Library.Models.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.TimeSlot", "TimeSlot")
+                    b.HasOne("MediCore_Library.Models.Entities.TimeSlot", "TimeSlot")
                         .WithOne("Appointment")
-                        .HasForeignKey("MediCore_API.Models.Entities.Appointment", "TimeSlotId")
+                        .HasForeignKey("MediCore_Library.Models.Entities.Appointment", "TimeSlotId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Bill");
@@ -1679,20 +1679,20 @@ namespace MediCore_API.Migrations
                     b.Navigation("TimeSlot");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Doctor", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Doctor", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", "User")
                         .WithOne()
-                        .HasForeignKey("MediCore_API.Models.Entities.Doctor", "UserId")
+                        .HasForeignKey("MediCore_Library.Models.Entities.Doctor", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Feedback", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Feedback", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
+                    b.HasOne("MediCore_Library.Models.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -1700,19 +1700,19 @@ namespace MediCore_API.Migrations
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.MedicalRecord", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.MedicalRecord", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
+                    b.HasOne("MediCore_Library.Models.Entities.Patient", "Patient")
                         .WithOne()
-                        .HasForeignKey("MediCore_API.Models.Entities.MedicalRecord", "PatientId")
+                        .HasForeignKey("MediCore_Library.Models.Entities.MedicalRecord", "PatientId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Message", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Message", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Chat", "Chat")
+                    b.HasOne("MediCore_Library.Models.Entities.Chat", "Chat")
                         .WithMany("Messages")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -1720,16 +1720,16 @@ namespace MediCore_API.Migrations
                     b.Navigation("Chat");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Patient", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Patient", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Address", "Address")
+                    b.HasOne("MediCore_Library.Models.Entities.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", "User")
                         .WithOne()
-                        .HasForeignKey("MediCore_API.Models.Entities.Patient", "UserId")
+                        .HasForeignKey("MediCore_Library.Models.Entities.Patient", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -1738,24 +1738,24 @@ namespace MediCore_API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Prescription", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Prescription", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Bill", null)
+                    b.HasOne("MediCore_Library.Models.Entities.Bill", null)
                         .WithMany("Prescriptions")
                         .HasForeignKey("BillId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.Medicine", "Medicine")
+                    b.HasOne("MediCore_Library.Models.Entities.Medicine", "Medicine")
                         .WithMany()
                         .HasForeignKey("MedicineId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.Patient", "Patient")
+                    b.HasOne("MediCore_Library.Models.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -1767,30 +1767,30 @@ namespace MediCore_API.Migrations
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Schedule", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Schedule", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", null)
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", null)
                         .WithMany("Schedules")
                         .HasForeignKey("DoctorId1");
 
                     b.Navigation("Doctor");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Staff", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Staff", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.StaffRole", "Role")
+                    b.HasOne("MediCore_Library.Models.Entities.StaffRole", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", "User")
                         .WithOne()
-                        .HasForeignKey("MediCore_API.Models.Entities.Staff", "UserId")
+                        .HasForeignKey("MediCore_Library.Models.Entities.Staff", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -1799,9 +1799,9 @@ namespace MediCore_API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.TimeSlot", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.TimeSlot", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Schedule", "Schedule")
+                    b.HasOne("MediCore_Library.Models.Entities.Schedule", "Schedule")
                         .WithMany("TimeSlots")
                         .HasForeignKey("ScheduleId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -1809,18 +1809,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("Schedule");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.AllergyTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.AllergyTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("AllergyTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1829,18 +1829,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.BodyMeasurement", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.BodyMeasurement", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("BodyMeasurements")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1849,18 +1849,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.CardiacTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.CardiacTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("CardiacTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1869,18 +1869,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.EndocrineTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.EndocrineTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("EndocrineTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1889,18 +1889,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.GeneticTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.GeneticTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("GeneticTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1909,18 +1909,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.ImagingReport", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.ImagingReport", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("ImagingReports")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1929,18 +1929,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.InfectiousDiseaseTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.InfectiousDiseaseTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("InfectiousDiseaseTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1949,18 +1949,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.LaboratoryTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.LaboratoryTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("LaboratoryTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1969,18 +1969,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.NeurologicalTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.NeurologicalTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("NeurologicalTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -1989,18 +1989,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.RespiratoryTest", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.RespiratoryTest", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("RespiratoryTests")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -2009,18 +2009,18 @@ namespace MediCore_API.Migrations
                     b.Navigation("MedicalRecord");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Medical_Record_Types.VitalSign", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Medical_Record_Types.VitalSign", b =>
                 {
-                    b.HasOne("MediCore_API.Models.Entities.Doctor", "Doctor")
+                    b.HasOne("MediCore_Library.Models.Entities.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId");
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", null)
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", null)
                         .WithMany("VitalSigns")
                         .HasForeignKey("MedicalRecordId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("MediCore_API.Models.Entities.MedicalRecord", "MedicalRecord")
+                    b.HasOne("MediCore_Library.Models.Entities.MedicalRecord", "MedicalRecord")
                         .WithMany()
                         .HasForeignKey("MedicalRecordId1");
 
@@ -2040,7 +2040,7 @@ namespace MediCore_API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2049,7 +2049,7 @@ namespace MediCore_API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2064,7 +2064,7 @@ namespace MediCore_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2073,31 +2073,31 @@ namespace MediCore_API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Bill", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Bill", b =>
                 {
                     b.Navigation("Appointment");
 
                     b.Navigation("Prescriptions");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Chat", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Chat", b =>
                 {
                     b.Navigation("Messages");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Doctor", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Doctor", b =>
                 {
                     b.Navigation("Schedules");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.MedicalRecord", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.MedicalRecord", b =>
                 {
                     b.Navigation("AllergyTests");
 
@@ -2122,12 +2122,12 @@ namespace MediCore_API.Migrations
                     b.Navigation("VitalSigns");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.Schedule", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Schedule", b =>
                 {
                     b.Navigation("TimeSlots");
                 });
 
-            modelBuilder.Entity("MediCore_API.Models.Entities.TimeSlot", b =>
+            modelBuilder.Entity("MediCore_Library.Models.Entities.TimeSlot", b =>
                 {
                     b.Navigation("Appointment");
                 });

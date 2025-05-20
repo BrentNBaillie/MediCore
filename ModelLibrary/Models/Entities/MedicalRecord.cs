@@ -1,7 +1,7 @@
-﻿using MediCore_API.Models.Medical_Record_Types;
+﻿using MediCore_Library.Models.Medical_Record_Types;
 using System.ComponentModel.DataAnnotations;
 
-namespace MediCore_API.Models.Entities
+namespace MediCore_Library.Models.Entities
 {
 	public class MedicalRecord
 	{

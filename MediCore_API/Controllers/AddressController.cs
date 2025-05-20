@@ -1,8 +1,7 @@
 ﻿using MediCore_API.Data;
 using MediCore_API.Interfaces;
-using MediCore_API.Models.DTOs.DTO_Entities;
-using MediCore_API.Models.Entities;
-using Microsoft.AspNetCore.Http;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

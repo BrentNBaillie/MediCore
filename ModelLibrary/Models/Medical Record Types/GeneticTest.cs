@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using MediCore_API.Models.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using MediCore_Library.Models.Entities;
 
-namespace MediCore_API.Models.Medical_Record_Types
+namespace MediCore_Library.Models.Medical_Record_Types
 {
 	public class GeneticTest
 	{

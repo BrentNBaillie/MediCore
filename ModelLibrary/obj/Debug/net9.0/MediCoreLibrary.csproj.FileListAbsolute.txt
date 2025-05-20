@@ -11,3 +11,5 @@ C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\MediCoreLibrary.dll
 C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\refint\MediCoreLibrary.dll
 C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\MediCoreLibrary.pdb
 C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ref\MediCoreLibrary.dll
+C:\Github Projects\MediCore\ModelLibrary\bin\Debug\net9.0\MediCoreLibrary.runtimeconfig.json
+C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\MediCoreLibrary.genruntimeconfig.cache

@@ -1,13 +1,12 @@
-﻿using MediCore_API.Models.Entities;
-using MediCore_API.Models.Medical_Record_Types;
-using Microsoft.AspNetCore.Identity;
+﻿using MediCore_Library.Models.Entities;
+using MediCore_Library.Models.Identities;
+using MediCore_Library.Models.Medical_Record_Types;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace MediCore_API.Data
 {
-	public class MediCoreContext :IdentityDbContext<IdentityUser>
+	public class MediCoreContext :IdentityDbContext<ApplicationUser>
 	{
 		public MediCoreContext(DbContextOptions<MediCoreContext> options) : base(options) { }
 

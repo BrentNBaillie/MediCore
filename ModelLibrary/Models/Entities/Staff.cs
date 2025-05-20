@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNet.Identity.EntityFramework;
+using MediCore_Library.Models.Identities;
 
-namespace MediCore_API.Models.Entities
+namespace MediCore_Library.Models.Entities
 {
 	public class Staff
 	{
@@ -17,6 +17,6 @@ namespace MediCore_API.Models.Entities
 
 		[ForeignKey("ApplicationUser")]
 		public string UserId { get; set; } = string.Empty;
-		public IdentityUser? User { get; set; }
+		public ApplicationUser? User { get; set; }
 	}
 }

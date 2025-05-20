@@ -1,7 +1,7 @@
-﻿using MediCore_API.Models.DTOs.DTO_Entities;
+﻿using MediCore_Library.Models.DTOs.DTO_Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace MediCore_API.Models.Identities
+namespace MediCore_Library.Models.Identities
 {
 	public class Register
 	{

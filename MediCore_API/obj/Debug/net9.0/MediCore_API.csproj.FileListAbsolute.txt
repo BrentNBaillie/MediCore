@@ -177,5 +177,7 @@ C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\EntityFramework.SqlSer
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\EntityFramework.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\Microsoft.AspNet.Identity.Core.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\MediCoreLibrary.dll
-C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\MediCoreLibrary.pdb
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Formats.Asn1.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Text.Json.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\MediCore_Library.dll
+C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\MediCore_Library.pdb

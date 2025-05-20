@@ -1,6 +1,6 @@
 ﻿using MediCore_API.Data;
-using MediCore_API.Models.DTOs.DTO_Entities;
-using MediCore_API.Models.Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Entities;
 
 namespace MediCore_API.Interfaces
 {

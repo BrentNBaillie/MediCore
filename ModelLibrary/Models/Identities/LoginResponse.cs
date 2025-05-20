@@ -1,4 +1,4 @@
-﻿namespace MediCore_API.Models.Identities
+﻿namespace MediCore_Library.Models.Identities
 {
 	public class LoginResponse
 	{

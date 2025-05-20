@@ -1,10 +1,10 @@
-﻿using MediCore_API.Models.Entities;
-using MediCore_API.Data;
+﻿using MediCore_API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
-using MediCore_API.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Entities;
 
 namespace MediCore_API.Controllers
 {

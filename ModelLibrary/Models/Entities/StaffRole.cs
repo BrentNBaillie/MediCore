@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MediCore_API.Models.Entities
+namespace MediCore_Library.Models.Entities
 {
 	public class StaffRole
 	{

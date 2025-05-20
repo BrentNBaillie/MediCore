@@ -1,13 +1,12 @@
 ﻿using MediCore_API.Interfaces;
 using AutoMapper;
-using MediCore_API.Models.DTOs;
-using MediCore_API.Models.Entities;
-using MediCore_API.Models.DTOs.DTO_Entities;
-using MediCore_API.Models.Medical_Record_Types;
-using MediCore_API.Models.DTOs.DTO_Medical_Record_Types;
-using MediCore_API.Models.DTOs.DTO_Entities.Full;
 using MediCore_API.Data;
 using Microsoft.EntityFrameworkCore;
+using MediCore_Library.Models.Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities.Full;
+using MediCore_Library.Models.Medical_Record_Types;
+using MediCore_Library.Models.DTOs.DTO_Medical_Record_Types;
 
 namespace MediCore_API.Services
 {
@@ -34,7 +33,8 @@ namespace MediCore_API.Services
 				cfg.CreateMap<Chat, ChatDTO>();
 				cfg.CreateMap<ChatDTO, Chat>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<Message, MessageDTO>();
-				cfg.CreateMap<MessageDTO, Message>().ForMember(dest => dest.Id, opt => opt.Ignore());
+				cfg.CreateMap<MessageDTO, Message>().ForMember(dest => dest.Id, opt => opt.Ignore())
+													.ForMember(dest => dest.Date, opt => opt.Ignore());
 				cfg.CreateMap<Patient, PatientDTO>();
 				cfg.CreateMap<PatientDTO, Patient>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<Prescription, PrescriptionDTO>();

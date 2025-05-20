@@ -1,4 +1,4 @@
-﻿namespace MediCore_API.Models.DTOs.DTO_Entities
+﻿namespace MediCore_Library.Models.DTOs.DTO_Entities
 {
 	public class PrescriptionDTO
 	{

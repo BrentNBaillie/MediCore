@@ -1,4 +1,5 @@
 ﻿using MediCore_API.Interfaces;
+using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,14 +11,14 @@ namespace MediCore_API.Services
 	public class JwtTokenService : IJwtTokenService
 	{
 		private readonly IConfiguration config;
-		private readonly UserManager<IdentityUser> userManager;
+		private readonly UserManager<ApplicationUser> userManager;
 
-		public JwtTokenService(IConfiguration config, UserManager<IdentityUser> userManager)
+		public JwtTokenService(IConfiguration config, UserManager<ApplicationUser> userManager)
 		{
 			this.config = config;
 			this.userManager = userManager;
 		}
-		public async Task<string> GenerateJwtTokenAsync(IdentityUser user)
+		public async Task<string> GenerateJwtTokenAsync(ApplicationUser user)
 		{
 			var roles = await userManager.GetRolesAsync(user);
 			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:Key"]!));

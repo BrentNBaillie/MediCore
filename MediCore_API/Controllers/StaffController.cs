@@ -1,10 +1,11 @@
-﻿using MediCore_API.Models.Entities;
-using MediCore_API.Data;
+﻿using MediCore_API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MediCore_API.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using MediCore_API.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Entities;
+using MediCore_Library.Models.Identities;
 
 namespace MediCore_API.Controllers
 {
@@ -14,9 +15,9 @@ namespace MediCore_API.Controllers
 	{
 		private readonly MediCoreContext context;
 		private readonly IModelMapper mapper;
-		private readonly UserManager<IdentityUser> userManager;
+		private readonly UserManager<ApplicationUser> userManager;
 
-		public StaffController(MediCoreContext context, UserManager<IdentityUser> userManager, IModelMapper mapper)
+		public StaffController(MediCoreContext context, UserManager<ApplicationUser> userManager, IModelMapper mapper)
 		{
 			this.context = context;
 			this.mapper = mapper;

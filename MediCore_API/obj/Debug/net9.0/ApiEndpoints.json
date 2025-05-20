@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AddressDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.AddressDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AddressDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.AddressDTO",
         "IsRequired": true
       }
     ],
@@ -45,7 +45,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AddressDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.AddressDTO",
         "IsRequired": true
       }
     ],
@@ -67,7 +67,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AddressDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.AddressDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -103,7 +103,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -123,7 +123,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.AppointmentDTO",
         "IsRequired": true
       }
     ],
@@ -139,7 +139,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.AppointmentDTO",
         "IsRequired": true
       }
     ],
@@ -161,7 +161,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.AppointmentDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -203,7 +203,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -229,27 +229,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.AuthorizeController",
-    "Method": "GetAllUserNames",
-    "RelativePath": "api/Authorize",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.AppointmentDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -279,13 +259,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "MediCore_API.Models.Identities.Login",
+        "Type": "MediCore_Library.Models.Identities.Login",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.Identities.LoginResponse",
+        "Type": "MediCore_Library.Models.Identities.LoginResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -305,7 +285,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "MediCore_API.Models.Identities.Register",
+        "Type": "MediCore_Library.Models.Identities.Register",
         "IsRequired": true
       }
     ],
@@ -321,7 +301,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "MediCore_API.Models.Identities.Register",
+        "Type": "MediCore_Library.Models.Identities.Register",
         "IsRequired": true
       }
     ],
@@ -337,7 +317,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "MediCore_API.Models.Identities.Register",
+        "Type": "MediCore_Library.Models.Identities.Register",
         "IsRequired": true
       }
     ],
@@ -353,7 +333,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.BillDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.BillDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -373,7 +353,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.BillDTO",
         "IsRequired": true
       }
     ],
@@ -389,7 +369,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.BillDTO",
         "IsRequired": true
       }
     ],
@@ -411,7 +391,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.BillDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.BillDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -453,7 +433,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.BillDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.BillDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -473,7 +453,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.ChatDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.ChatDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -531,7 +511,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.ChatDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.ChatDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -561,7 +541,7 @@
       },
       {
         "Name": "message",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MessageDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.MessageDTO",
         "IsRequired": true
       }
     ],
@@ -583,7 +563,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.ChatDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.ChatDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -603,7 +583,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.DoctorDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -623,7 +603,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.DoctorDTO",
         "IsRequired": true
       }
     ],
@@ -645,7 +625,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.DoctorDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.DoctorDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -681,7 +661,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.FeedbackDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -701,7 +681,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.FeedbackDTO",
         "IsRequired": true
       }
     ],
@@ -717,7 +697,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.FeedbackDTO",
         "IsRequired": true
       }
     ],
@@ -739,7 +719,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.FeedbackDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -781,7 +761,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.FeedbackDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.FeedbackDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -801,7 +781,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.MedicalRecordDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.MedicalRecordDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -827,7 +807,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicalRecordDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.MedicalRecordDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -853,7 +833,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicalRecordDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.MedicalRecordDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -873,7 +853,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.MedicineDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -893,7 +873,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.MedicineDTO",
         "IsRequired": true
       }
     ],
@@ -909,7 +889,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.MedicineDTO",
         "IsRequired": true
       }
     ],
@@ -931,7 +911,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.MedicineDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.MedicineDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -967,7 +947,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PatientDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.PatientDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -987,7 +967,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PatientDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.PatientDTO",
         "IsRequired": true
       }
     ],
@@ -1009,7 +989,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PatientDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.PatientDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1066,7 +1046,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1086,7 +1066,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO",
         "IsRequired": true
       }
     ],
@@ -1102,7 +1082,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO",
         "IsRequired": true
       }
     ],
@@ -1124,7 +1104,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1192,7 +1172,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1218,7 +1198,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1244,7 +1224,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.PrescriptionDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1264,7 +1244,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.ScheduleDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1284,7 +1264,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.ScheduleDTO",
         "IsRequired": true
       }
     ],
@@ -1306,7 +1286,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.ScheduleDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1348,7 +1328,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.ScheduleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.ScheduleDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1368,7 +1348,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.StaffDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.StaffDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1388,7 +1368,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffDTO",
         "IsRequired": true
       }
     ],
@@ -1410,7 +1390,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1467,7 +1447,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1487,7 +1467,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO",
         "IsRequired": true
       }
     ],
@@ -1503,7 +1483,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO",
         "IsRequired": true
       }
     ],
@@ -1525,7 +1505,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.StaffRoleDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1561,7 +1541,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1587,7 +1567,33 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MediCore_API.Models.DTOs.DTO_Entities.TimeSlotDTO",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.TimeSlotDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.TimeSlotController",
+    "Method": "GetTimeSlotByDoctor",
+    "RelativePath": "api/TimeSlot/doctor/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1613,7 +1619,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_API.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.TimeSlotDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

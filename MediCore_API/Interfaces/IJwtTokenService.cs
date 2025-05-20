@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using MediCore_Library.Models.Identities;
 
 namespace MediCore_API.Interfaces
 {
 	public interface IJwtTokenService
 	{
-		public Task<string> GenerateJwtTokenAsync(IdentityUser user);
+		public Task<string> GenerateJwtTokenAsync(ApplicationUser user);
 	}
 }

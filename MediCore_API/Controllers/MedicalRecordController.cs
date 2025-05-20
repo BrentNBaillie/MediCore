@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MediCore_API.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using MediCore_API.Models.Entities;
-using MediCore_API.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Controllers
 {

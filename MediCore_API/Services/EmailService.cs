@@ -1,23 +1,24 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using MediCore_Library.Models.Identities;
+using Microsoft.AspNetCore.Identity;
 
-public class EmailService : IEmailSender<IdentityUser>
+public class EmailService : IEmailSender<ApplicationUser>
 {
-	public Task SendConfirmationLinkAsync(IdentityUser user, string email, string confirmationLink)
+	public Task SendConfirmationLinkAsync(ApplicationUser user, string email, string confirmationLink)
 	{
 		return SendEmailAsync(email, "Confirm your email", $"<a href='{confirmationLink}'>Click here to confirm</a>");
 	}
 
-	public Task SendPasswordResetLinkAsync(IdentityUser user, string email, string resetLink)
+	public Task SendPasswordResetLinkAsync(ApplicationUser user, string email, string resetLink)
 	{
 		return SendEmailAsync(email, "Reset your password", $"<a href='{resetLink}'>Click here to reset your password</a>");
 	}
 
-	public Task SendPasswordChangedConfirmationAsync(IdentityUser user, string email)
+	public Task SendPasswordChangedConfirmationAsync(ApplicationUser user, string email)
 	{
 		return SendEmailAsync(email, "Password changed", "Your password has been successfully changed.");
 	}
 
-	public Task SendPasswordResetCodeAsync(IdentityUser user, string email, string resetCode)
+	public Task SendPasswordResetCodeAsync(ApplicationUser user, string email, string resetCode)
 	{
 		return SendEmailAsync(email, "Password reset code", $"Your password reset code is: <strong>{resetCode}</strong>");
 	}

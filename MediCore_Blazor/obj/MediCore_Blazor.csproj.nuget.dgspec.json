@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCoreLibrary.csproj": {
-                "projectPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCoreLibrary.csproj"
+              "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj": {
+                "projectPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj"
               }
             }
           }
@@ -56,12 +56,30 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -107,12 +125,12 @@
         }
       }
     },
-    "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCoreLibrary.csproj": {
+    "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCoreLibrary.csproj",
-        "projectName": "MediCoreLibrary",
-        "projectPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCoreLibrary.csproj",
+        "projectUniqueName": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj",
+        "projectName": "MediCore_Library",
+        "projectPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\MediCore_Library.csproj",
         "packagesPath": "C:\\Users\\cools\\.nuget\\packages\\",
         "outputPath": "C:\\Github Projects\\MediCore\\ModelLibrary\\obj\\",
         "projectStyle": "PackageReference",
@@ -156,6 +174,28 @@
             "Microsoft.AspNet.Identity.EntityFramework": {
               "target": "Package",
               "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[9.0.5, )"
             }
           },
           "imports": [

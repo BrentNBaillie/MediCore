@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MediCore_API.Models.Entities
+namespace MediCore_Library.Models.Entities
 {
 	public class Medicine
 	{

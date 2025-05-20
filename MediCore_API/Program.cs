@@ -1,6 +1,7 @@
 using MediCore_API.Data;
 using MediCore_API.Interfaces;
 using MediCore_API.Services;
+using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -34,11 +35,11 @@ builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddDbContext<MediCoreContext>(options =>
 				options.UseSqlServer(builder.Configuration.GetConnectionString("MediCoreContext")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 				.AddEntityFrameworkStores<MediCoreContext>()
 				.AddDefaultTokenProviders();
 
-builder.Services.AddScoped<IEmailSender<IdentityUser>, EmailService>();
+builder.Services.AddScoped<IEmailSender<ApplicationUser>, EmailService>();
 
 builder.Services.AddAuthentication(x =>
 {
@@ -86,7 +87,7 @@ using (var scope = app.Services.CreateScope())
 {
 	var services = scope.ServiceProvider;
 	var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-	var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+	var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 	var configuration = services.GetRequiredService<IConfiguration>();
 
 	await SeedRolesAsync(roleManager);
@@ -123,7 +124,7 @@ async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
 	}
 }
 
-async Task SeedAdminUserAsync(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+async Task SeedAdminUserAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
 {
 	var adminUserName = configuration["AdminUser:UserName"];
 	var adminEmail = configuration["AdminUser:Email"];
@@ -132,7 +133,7 @@ async Task SeedAdminUserAsync(UserManager<IdentityUser> userManager, RoleManager
 	var adminUser = await userManager.FindByEmailAsync(adminEmail!);
 	if (adminUser == null)
 	{
-		adminUser = new IdentityUser
+		adminUser = new ApplicationUser
 		{
 			UserName = adminUserName,
 			Email = adminEmail,
