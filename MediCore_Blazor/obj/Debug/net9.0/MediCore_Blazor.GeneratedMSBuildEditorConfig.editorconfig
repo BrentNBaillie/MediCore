@@ -4,20 +4,12 @@ build_property.EnableSingleFileAnalyzer =
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.TargetFramework = net9.0
-build_property.TargetFramework = net9.0
-build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
-build_property.UsingMicrosoftNETSdkWeb = 
-build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = false
-build_property.InvariantGlobalization = false
-build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = browser
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = MediCore_Blazor
 build_property.RootNamespace = MediCore_Blazor
@@ -36,16 +28,24 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Admin/HomePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSG9tZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Doctor/HomePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yXEhvbWVQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+[C:/Github Projects/MediCore/MediCore_Blazor/Pages/LoginPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Patient/HomePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF0aWVudFxIb21lUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Staff/HomePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhZmZcSG9tZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Github Projects/MediCore/MediCore_Blazor/_Imports.razor]
@@ -55,7 +55,3 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Github Projects/MediCore/MediCore_Blazor/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-xap5xlbc40
-
-[C:/Github Projects/MediCore/MediCore_Blazor/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-e1xjw8aj6u

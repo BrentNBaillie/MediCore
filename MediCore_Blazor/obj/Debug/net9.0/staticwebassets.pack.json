@@ -13,14 +13,6 @@
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
-    },
-    {
-      "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\icon-192.png",
-      "PackagePath": "staticwebassets\\icon-192.png"
-    },
-    {
       "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
@@ -199,10 +191,6 @@
     {
       "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
-    },
-    {
-      "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\sample-data\\weather.json",
-      "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.MediCore_Blazor.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

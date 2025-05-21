@@ -1,6 +1,0 @@
-C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ModelLibrary.GeneratedMSBuildEditorConfig.editorconfig
-C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ModelLibrary.AssemblyInfoInputs.cache
-C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ModelLibrary.AssemblyInfo.cs
-C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ModelLibrary.csproj.CoreCompileInputs.cache
-C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ModelLibrary.sourcelink.json
-C:\Github Projects\MediCore\ModelLibrary\obj\Debug\net9.0\ModelLibrary.csproj.AssemblyReference.cache

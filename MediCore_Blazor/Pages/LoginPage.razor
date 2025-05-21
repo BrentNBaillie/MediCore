@@ -1,0 +1,34 @@
+﻿@page "/"
+
+@using MediCore_Library.Models.Identities
+
+<h1>Login</h1>
+
+<EditForm Model="login" OnValidSubmit="LoginUser">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+
+	<div>
+		<label>Email</label>
+		<br />
+		<InputText @bind-Value="login.Email" />
+	</div>
+	<div>
+		<label>Password</label>
+		<br />
+		<InputText @bind-Value="login.Password" />
+	</div>
+	<div>
+		<button type="submit">Login</button>
+	</div>
+</EditForm>
+
+@code
+{
+	private Login login = new Login();
+
+	private void LoginUser()
+	{
+		
+	}
+}
