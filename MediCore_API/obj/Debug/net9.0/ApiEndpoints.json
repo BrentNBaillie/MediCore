@@ -505,7 +505,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -531,12 +531,12 @@
     "Parameters": [
       {
         "Name": "sendId",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
         "Name": "receiveId",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {

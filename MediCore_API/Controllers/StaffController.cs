@@ -100,7 +100,7 @@ namespace MediCore_API.Controllers
 			{
 				var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.Id == id);
 				if (staff is null) return NotFound("Staff Member Not Found");
-				var user = await userManager.FindByIdAsync(staff.UserId);
+				var user = await userManager.FindByIdAsync(staff.UserId.ToString()!);
 				if (user is null) return NotFound("User Not Found");
 
 				context.StaffMembers.Remove(staff);

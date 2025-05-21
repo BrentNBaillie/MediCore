@@ -16,7 +16,7 @@ namespace MediCore_Library.Models.Entities
 		public StaffRole? Role { get; set; }
 
 		[ForeignKey("ApplicationUser")]
-		public string UserId { get; set; } = string.Empty;
+		public Guid? UserId { get; set; }
 		public ApplicationUser? User { get; set; }
 	}
 }

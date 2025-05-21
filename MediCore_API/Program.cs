@@ -35,7 +35,7 @@ builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddDbContext<MediCoreContext>(options =>
 				options.UseSqlServer(builder.Configuration.GetConnectionString("MediCoreContext")));
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
 				.AddEntityFrameworkStores<MediCoreContext>()
 				.AddDefaultTokenProviders();
 
@@ -86,7 +86,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
 	var services = scope.ServiceProvider;
-	var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+	var roleManager = services.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
 	var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 	var configuration = services.GetRequiredService<IConfiguration>();
 
@@ -112,19 +112,25 @@ app.MapControllers();
 
 app.Run();
 
-async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
+async Task SeedRolesAsync(RoleManager<IdentityRole<Guid>> roleManager)
 {
 	string[] roles = { "admin", "doctor", "staff", "patient" };
 	foreach (string role in roles)
 	{
 		if (!await roleManager.RoleExistsAsync(role))
 		{
-			await roleManager.CreateAsync(new IdentityRole(role));
+			var newRole = new IdentityRole<Guid>
+			{
+				Id = Guid.NewGuid(),
+				Name = role,
+				NormalizedName = role.ToUpper()
+			};
+			await roleManager.CreateAsync(newRole);
 		}
 	}
 }
 
-async Task SeedAdminUserAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+async Task SeedAdminUserAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole<Guid>> roleManager, IConfiguration configuration)
 {
 	var adminUserName = configuration["AdminUser:UserName"];
 	var adminEmail = configuration["AdminUser:Email"];

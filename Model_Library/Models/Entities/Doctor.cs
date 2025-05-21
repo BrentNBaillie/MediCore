@@ -18,7 +18,7 @@ namespace MediCore_Library.Models.Entities
 		public List<Schedule> Schedules { get; set; } = new List<Schedule>();
 
 		[ForeignKey("ApplicationUser")]
-		public string UserId { get; set; } = string.Empty;
+		public Guid? UserId { get; set; }
 		public ApplicationUser? User { get; set; }
 	}
 }

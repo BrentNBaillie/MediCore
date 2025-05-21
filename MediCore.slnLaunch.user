@@ -1,0 +1,37 @@
+[
+  {
+    "Name": "Full Start",
+    "Projects": [
+      {
+        "Path": "MediCore_API\\MediCore_API.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "MediCore_Blazor\\MediCore_Blazor.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  },
+  {
+    "Name": "API",
+    "Projects": [
+      {
+        "Path": "MediCore_API\\MediCore_API.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  },
+  {
+    "Name": "Blazor",
+    "Projects": [
+      {
+        "Path": "MediCore_Blazor\\MediCore_Blazor.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

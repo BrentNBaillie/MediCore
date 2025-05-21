@@ -9,6 +9,6 @@
 		public DateOnly? DateOfBirth { get; set; }
 		public string PhoneNumber { get; set; } = string.Empty;
 		public Guid? AddressId { get; set; }
-		public string UserId { get; set; } = string.Empty;
+		public Guid? UserId { get; set; }
 	}
 }

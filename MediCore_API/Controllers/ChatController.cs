@@ -38,8 +38,8 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpGet("user/{id}")]
-		public async Task<ActionResult<List<ChatDTO>>> GetUserChats([FromRoute] string id)
+		[HttpGet("user/{id:Guid}")]
+		public async Task<ActionResult<List<ChatDTO>>> GetUserChats([FromRoute] Guid id)
 		{
 			try
 			{
@@ -74,8 +74,8 @@ namespace MediCore_API.Controllers
 			}
 		}
 
-		[HttpPost("user/{sendId}/send-to/{receiveId}")]
-		public async Task<ActionResult> SendMessage([FromRoute] string sendId, [FromRoute] string receiveId, [FromBody] MessageDTO message)
+		[HttpPost("user/{sendId:Guid}/send-to/{receiveId:Guid}")]
+		public async Task<ActionResult> SendMessage([FromRoute] Guid sendId, [FromRoute] Guid receiveId, [FromBody] MessageDTO message)
 		{
 			try
 			{
@@ -92,7 +92,7 @@ namespace MediCore_API.Controllers
 					chat = new Chat
 					{
 						Ids = [sendId, receiveId],
-						Names = [(await userManager.FindByIdAsync(sendId))!.UserName!, (await userManager.FindByIdAsync(receiveId))!.UserName!]
+						Names = [(await userManager.FindByIdAsync(sendId.ToString()))!.UserName!, (await userManager.FindByIdAsync(receiveId.ToString()))!.UserName!]
 					};
 					await context.Chats.AddAsync(chat);
 					await context.SaveChangesAsync();

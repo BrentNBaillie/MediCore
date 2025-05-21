@@ -102,7 +102,7 @@ namespace MediCore_API.Controllers
 			{
 				var patient = await context.Patients.FirstOrDefaultAsync(p => p.Id == id);
 				if (patient is null) return NotFound("Patient Not Found");
-				var user = await userManager.FindByIdAsync(patient.UserId);
+				var user = await userManager.FindByIdAsync(patient.UserId.ToString()!);
 				if (user is null) return NotFound("User Not Found");
 
 				context.Patients.Remove(patient);

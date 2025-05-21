@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MediCore_API.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class M1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,7 +31,7 @@ namespace MediCore_API.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -45,7 +45,7 @@ namespace MediCore_API.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -64,6 +64,21 @@ namespace MediCore_API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Bills",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Amount = table.Column<float>(type: "real", nullable: false),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    AppointmentId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bills", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,7 +128,7 @@ namespace MediCore_API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -134,7 +149,7 @@ namespace MediCore_API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -156,7 +171,7 @@ namespace MediCore_API.Migrations
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -173,8 +188,8 @@ namespace MediCore_API.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -197,7 +212,7 @@ namespace MediCore_API.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -224,7 +239,7 @@ namespace MediCore_API.Migrations
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HospitalName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProfessionalBio = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -248,7 +263,7 @@ namespace MediCore_API.Migrations
                     DateOfBirth = table.Column<DateOnly>(type: "date", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -274,8 +289,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    SenderId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ChatId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    SenderId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ChatId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -293,10 +308,11 @@ namespace MediCore_API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StaffRoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -308,8 +324,8 @@ namespace MediCore_API.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StaffMembers_StaffRoles_StaffRoleId",
-                        column: x => x.StaffRoleId,
+                        name: "FK_StaffMembers_StaffRoles_RoleId",
+                        column: x => x.RoleId,
                         principalTable: "StaffRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -320,10 +336,10 @@ namespace MediCore_API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Date = table.Column<DateOnly>(type: "date", nullable: false),
-                    Start = table.Column<TimeOnly>(type: "time", nullable: false),
-                    End = table.Column<TimeOnly>(type: "time", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Date = table.Column<DateOnly>(type: "date", nullable: true),
+                    Start = table.Column<TimeOnly>(type: "time", nullable: true),
+                    End = table.Column<TimeOnly>(type: "time", nullable: true),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     DoctorId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
@@ -343,35 +359,13 @@ namespace MediCore_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Bills",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Amount = table.Column<float>(type: "real", nullable: false),
-                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AppointmentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Bills", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Bills_Patients_PatientId",
-                        column: x => x.PatientId,
-                        principalTable: "Patients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Feedbacks",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Details = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -391,7 +385,7 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -405,36 +399,15 @@ namespace MediCore_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TimeSlots",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Start = table.Column<TimeOnly>(type: "time", nullable: true),
-                    End = table.Column<TimeOnly>(type: "time", nullable: true),
-                    IsAvailable = table.Column<bool>(type: "bit", nullable: false),
-                    ScheduleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TimeSlots", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TimeSlots_Schedules_ScheduleId",
-                        column: x => x.ScheduleId,
-                        principalTable: "Schedules",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Prescriptions",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    MedicineId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BillId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    MedicineId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    BillId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -466,14 +439,35 @@ namespace MediCore_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TimeSlots",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Start = table.Column<TimeOnly>(type: "time", nullable: true),
+                    End = table.Column<TimeOnly>(type: "time", nullable: true),
+                    IsAvailable = table.Column<bool>(type: "bit", nullable: false),
+                    ScheduleId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TimeSlots", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TimeSlots_Schedules_ScheduleId",
+                        column: x => x.ScheduleId,
+                        principalTable: "Schedules",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AllergyTests",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Peanut = table.Column<bool>(type: "bit", nullable: false),
                     TreeNut = table.Column<bool>(type: "bit", nullable: false),
@@ -504,8 +498,7 @@ namespace MediCore_API.Migrations
                         name: "FK_AllergyTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_AllergyTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -526,8 +519,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Height = table.Column<double>(type: "float", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false),
@@ -549,8 +542,7 @@ namespace MediCore_API.Migrations
                         name: "FK_BodyMeasurements_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_BodyMeasurements_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -571,8 +563,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Electrocardiogram = table.Column<bool>(type: "bit", nullable: false),
                     Echocardiogram = table.Column<bool>(type: "bit", nullable: false),
@@ -602,8 +594,7 @@ namespace MediCore_API.Migrations
                         name: "FK_CardiacTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_CardiacTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -624,8 +615,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ThyroidFunctionTest = table.Column<bool>(type: "bit", nullable: false),
                     CortisolTest = table.Column<bool>(type: "bit", nullable: false),
@@ -661,8 +652,7 @@ namespace MediCore_API.Migrations
                         name: "FK_EndocrineTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_EndocrineTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -683,8 +673,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CarrierScreening = table.Column<bool>(type: "bit", nullable: false),
                     WholeExomeSequencing = table.Column<bool>(type: "bit", nullable: false),
@@ -715,8 +705,7 @@ namespace MediCore_API.Migrations
                         name: "FK_GeneticTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_GeneticTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -737,8 +726,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     XRay = table.Column<bool>(type: "bit", nullable: false),
                     CTScan = table.Column<bool>(type: "bit", nullable: false),
@@ -764,8 +753,7 @@ namespace MediCore_API.Migrations
                         name: "FK_ImagingReports_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_ImagingReports_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -786,8 +774,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Covid19 = table.Column<bool>(type: "bit", nullable: false),
                     Influenza = table.Column<bool>(type: "bit", nullable: false),
@@ -814,8 +802,7 @@ namespace MediCore_API.Migrations
                         name: "FK_InfectiousDiseaseTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_InfectiousDiseaseTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -837,8 +824,8 @@ namespace MediCore_API.Migrations
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TestLab = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Hemoglobin = table.Column<double>(type: "float", nullable: false),
                     WhiteBloodCellCount = table.Column<double>(type: "float", nullable: false),
@@ -866,8 +853,7 @@ namespace MediCore_API.Migrations
                         name: "FK_LaboratoryTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_LaboratoryTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -888,8 +874,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     BabinskiSign = table.Column<bool>(type: "bit", nullable: false),
                     RombergTest = table.Column<bool>(type: "bit", nullable: false),
@@ -926,8 +912,7 @@ namespace MediCore_API.Migrations
                         name: "FK_NeurologicalTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_NeurologicalTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -948,8 +933,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     SpirometryPerformed = table.Column<bool>(type: "bit", nullable: false),
                     FEV1 = table.Column<float>(type: "real", nullable: false),
@@ -977,8 +962,7 @@ namespace MediCore_API.Migrations
                         name: "FK_RespiratoryTests_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_RespiratoryTests_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -999,8 +983,8 @@ namespace MediCore_API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicalRecordId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     MedicalRecordId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     HeartRate = table.Column<float>(type: "real", nullable: false),
                     BloodPressureSystolic = table.Column<float>(type: "real", nullable: false),
@@ -1017,8 +1001,7 @@ namespace MediCore_API.Migrations
                         name: "FK_VitalSigns_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_VitalSigns_MedicalRecords_MedicalRecordId",
                         column: x => x.MedicalRecordId,
@@ -1038,10 +1021,9 @@ namespace MediCore_API.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TimeSlotId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BillId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    TimeSlotId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    BillId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1050,12 +1032,6 @@ namespace MediCore_API.Migrations
                         name: "FK_Appointments_Bills_BillId",
                         column: x => x.BillId,
                         principalTable: "Bills",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Appointments_Doctors_DoctorId",
-                        column: x => x.DoctorId,
-                        principalTable: "Doctors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -1091,12 +1067,8 @@ namespace MediCore_API.Migrations
                 name: "IX_Appointments_BillId",
                 table: "Appointments",
                 column: "BillId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Appointments_DoctorId",
-                table: "Appointments",
-                column: "DoctorId");
+                unique: true,
+                filter: "[BillId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Appointments_PatientId",
@@ -1107,7 +1079,8 @@ namespace MediCore_API.Migrations
                 name: "IX_Appointments_TimeSlotId",
                 table: "Appointments",
                 column: "TimeSlotId",
-                unique: true);
+                unique: true,
+                filter: "[TimeSlotId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -1149,11 +1122,6 @@ namespace MediCore_API.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bills_PatientId",
-                table: "Bills",
-                column: "PatientId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_BodyMeasurements_DoctorId",
                 table: "BodyMeasurements",
                 column: "DoctorId");
@@ -1187,7 +1155,8 @@ namespace MediCore_API.Migrations
                 name: "IX_Doctors_UserId",
                 table: "Doctors",
                 column: "UserId",
-                unique: true);
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EndocrineTests_DoctorId",
@@ -1273,7 +1242,8 @@ namespace MediCore_API.Migrations
                 name: "IX_MedicalRecords_PatientId",
                 table: "MedicalRecords",
                 column: "PatientId",
-                unique: true);
+                unique: true,
+                filter: "[PatientId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_ChatId",
@@ -1304,7 +1274,8 @@ namespace MediCore_API.Migrations
                 name: "IX_Patients_UserId",
                 table: "Patients",
                 column: "UserId",
-                unique: true);
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Prescriptions_BillId",
@@ -1352,15 +1323,16 @@ namespace MediCore_API.Migrations
                 column: "DoctorId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StaffMembers_StaffRoleId",
+                name: "IX_StaffMembers_RoleId",
                 table: "StaffMembers",
-                column: "StaffRoleId");
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StaffMembers_UserId",
                 table: "StaffMembers",
                 column: "UserId",
-                unique: true);
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TimeSlots_ScheduleId",

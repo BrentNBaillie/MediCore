@@ -1,6 +1,11 @@
 ﻿@page "/"
 
+@using MediCore_Blazor.Services
 @using MediCore_Library.Models.Identities
+@inject HttpClient http
+@inject GlobalConfig config
+@inject NavigationManager nav
+@inject AppState state
 
 <h1>Login</h1>
 
@@ -27,8 +32,36 @@
 {
 	private Login login = new Login();
 
-	private void LoginUser()
+	private async Task LoginUser()
 	{
+		var response = await http.PostAsJsonAsync($"{config.BaseUrl}/api/authorize/login", login);
+		Console.WriteLine(response);
+
+		if (response.IsSuccessStatusCode)
+		{
+			var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+			state.LoginResponse = result;
+
+			if (result is not null)
+			{
+				switch (result.Role.ToLowerInvariant())
+				{
+					case "admin":
+						nav.NavigateTo("/admin");
+						break;
+					case "doctor":
+						nav.NavigateTo("/doctor");
+						break;
+					case "staff":
+						nav.NavigateTo("/staff");
+						break;
+					case "patient":
+						nav.NavigateTo("/patient");
+						break;
+				}
+			}
+		}
+
 		
 	}
 }

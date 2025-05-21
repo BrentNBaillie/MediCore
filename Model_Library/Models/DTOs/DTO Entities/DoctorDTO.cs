@@ -9,6 +9,6 @@
 		public string PhoneNumber { get; set; } = string.Empty;
 		public string HospitalName { get; set; } = string.Empty;
 		public string ProfessionalBio { get; set; } = string.Empty;
-		public string UserId { get; set; } = string.Empty;
+		public Guid? UserId { get; set; }
 	}
 }

@@ -85,7 +85,7 @@ namespace MediCore_API.Controllers
 			{
 				var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == id);
 				if (doctor is null) return NotFound("Doctor Not Found");
-				var user = await userManager.FindByIdAsync(doctor.UserId);
+				var user = await userManager.FindByIdAsync(doctor.UserId.ToString()!);
 				if (user is null) return NotFound("User Not Found");
 
 				context.Doctors.Remove(doctor);

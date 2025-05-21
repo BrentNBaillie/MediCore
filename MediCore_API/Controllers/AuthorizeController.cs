@@ -204,7 +204,8 @@ namespace MediCore_API.Controllers
 				{
 					Token = token,
 					Role = role,
-					Id = id
+					UserId = user.Id,
+					TypeId = id
 				});
 			}
 			catch (Exception e)

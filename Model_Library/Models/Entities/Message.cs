@@ -8,7 +8,7 @@ namespace MediCore_Library.Models.Entities
 		public Guid Id { get; set; } = Guid.NewGuid();
 		public string Text { get; set; } = string.Empty;
 		public DateTime? Date { get; set; } = DateTime.Now;
-		public string SenderId { get; set; } = string.Empty;
+		public Guid? SenderId { get; set; }
 
 		public Guid? ChatId { get; set; }
 		public Chat? Chat { get; set; }

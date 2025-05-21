@@ -9,10 +9,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.68jc2fpsu1.pdb
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.7ua3m5meye.wasm
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.pyv53a2kaf.pdb
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.sejih71n9i.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.n7we7nbch1.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.nkegowssc4.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.waskkzx0nn.wasm
@@ -215,7 +211,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Xml.XPath.XDocument.dvarvms6fh.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\WindowsBase.5lai2eowco.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\blazor.webassembly.js.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.sejih71n9i.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\Microsoft.VisualBasic.Core.rov4p20cgi.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.IO.Compression.Brotli.k5ptxcu8oa.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.Abstractions.mxyhp8w354.wasm.gz
@@ -322,7 +317,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Xml.ReaderWriter.xtg8i55xwr.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Security.Principal.Windows.8sirrf1ijn.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.ServiceProcess.e7xr9fy1fu.wasm.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.68jc2fpsu1.pdb.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Linq.Parallel.pca2fk0v6a.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Net.Security.wtosy0w12b.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Security.Cryptography.Primitives.ulrjke3m9v.wasm.gz
@@ -383,7 +377,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.cymp1amu5g.js.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.IO.FileSystem.DriveInfo.0zghtgeywx.wasm.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.7ua3m5meye.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.ComponentModel.DataAnnotations.99b06olh0j.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.kwdybu2ptu.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Xml.XmlSerializer.uarlhvhlht.wasm.gz
@@ -397,7 +390,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Reflection.Extensions.a9zrqgxt1b.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Diagnostics.Contracts.vahp5ntdnv.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Xml.Linq.vpe12reu9r.wasm.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.pyv53a2kaf.pdb.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Net.Requests.vg192fvph6.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Runtime.Numerics.fy7c28mkpw.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\System.Runtime.Loader.er8lbvj98m.wasm.gz
@@ -1120,11 +1112,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\o2ao9swe
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\o083cw0bf0-tjcz0u77k5.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\j7o33zqr46-tptq2av103.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\t53fdnoqdj-lfu7j35m59.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\0zwe2iyl2a-sejih71n9i.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\vzjrszpo3d-pyv53a2kaf.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\u0s8k6kwlz-7ua3m5meye.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\k6iwzpoae9-68jc2fpsu1.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\j7rhd0rau7-067rq7blyy.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\staticwebassets.build.json
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\staticwebassets.development.json
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -1140,3 +1127,16 @@ C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\MediCore_Blazor.dll
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\refint\MediCore_Blazor.dll
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\MediCore_Blazor.pdb
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\ref\MediCore_Blazor.dll
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.mlbvudotj0.pdb
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.ugqsr7z2z9.wasm
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.ugqsr7z2z9.wasm.gz
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Library.mlbvudotj0.pdb.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\0zwe2iyl2a-ugqsr7z2z9.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\vzjrszpo3d-mlbvudotj0.gz
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.7epk7luefq.pdb
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.wtwfao1eut.wasm
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.7epk7luefq.pdb.gz
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net9.0\wwwroot\_framework\MediCore_Blazor.wtwfao1eut.wasm.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\u0s8k6kwlz-wtwfao1eut.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\k6iwzpoae9-7epk7luefq.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net9.0\compressed\j7rhd0rau7-995s1ax9jq.gz

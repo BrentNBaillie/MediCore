@@ -1,12 +1,13 @@
 ﻿using MediCore_Library.Models.Entities;
 using MediCore_Library.Models.Identities;
 using MediCore_Library.Models.Medical_Record_Types;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Data
 {
-	public class MediCoreContext :IdentityDbContext<ApplicationUser>
+	public class MediCoreContext :IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 	{
 		public MediCoreContext(DbContextOptions<MediCoreContext> options) : base(options) { }
 
