@@ -8,7 +8,7 @@
 		public string Gender { get; set; } = string.Empty;
 		public DateOnly? DateOfBirth { get; set; }
 		public string PhoneNumber { get; set; } = string.Empty;
-		public AddressDTO? AddressId { get; set; }
+		public AddressDTO? Address { get; set; }
 		public string UserId { get; set; } = string.Empty;
 	}
 }

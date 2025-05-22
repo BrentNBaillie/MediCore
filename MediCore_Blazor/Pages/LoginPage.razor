@@ -1,11 +1,12 @@
 ﻿@page "/"
 
 @using MediCore_Blazor.Services
+@using MediCore_Library.Models.DTOs.DTO_Entities
 @using MediCore_Library.Models.Identities
 @inject HttpClient http
 @inject GlobalConfig config
 @inject NavigationManager nav
-@inject AppState state
+@inject SessionState state
 
 <h1>Login</h1>
 
@@ -31,11 +32,11 @@
 @code
 {
 	private Login login = new Login();
+	private HttpResponseMessage? response;
 
 	private async Task LoginUser()
 	{
-		var response = await http.PostAsJsonAsync($"{config.BaseUrl}/api/authorize/login", login);
-		Console.WriteLine(response);
+		response = await http.PostAsJsonAsync($"{config.BaseUrl}/authorize/login", login);
 
 		if (response.IsSuccessStatusCode)
 		{
@@ -44,19 +45,36 @@
 
 			if (result is not null)
 			{
+
 				switch (result.Role.ToLowerInvariant())
 				{
 					case "admin":
 						nav.NavigateTo("/admin");
 						break;
 					case "doctor":
-						nav.NavigateTo("/doctor");
+						var doctor = await http.GetFromJsonAsync<DoctorDTO>($"{config.BaseUrl}/doctor/{result.ProfileId}");
+						if (doctor is not null)
+						{
+							state.Profile = doctor;
+							nav.NavigateTo("/doctor");
+						}
+
 						break;
 					case "staff":
-						nav.NavigateTo("/staff");
+						var staff = await http.GetFromJsonAsync<StaffDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
+						if (staff is not null)
+						{
+							state.Profile = staff;
+							nav.NavigateTo("/staff");
+						}
 						break;
 					case "patient":
-						nav.NavigateTo("/patient");
+						var patient = await http.GetFromJsonAsync<PatientDTO>($"{config.BaseUrl}/patient/{result.ProfileId}");
+						if (patient is not null)
+						{
+							state.Profile = patient;
+							nav.NavigateTo("/patient");
+						}
 						break;
 				}
 			}

@@ -39,7 +39,7 @@ namespace MediCore_API.Controllers
 
 				var user = new ApplicationUser
 				{
-					UserName = request.UserName,
+					UserName = $"{request.Doctor.FirstName} {request.Doctor.LastName}",
 					Email = request.Email,
 					EmailConfirmed = true
 				};
@@ -77,7 +77,7 @@ namespace MediCore_API.Controllers
 		{
 			try
 			{
-				if (request.Patient is null) return BadRequest();
+				if (request.Patient is null) return BadRequest("Patient is null");
 
 				if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -86,7 +86,7 @@ namespace MediCore_API.Controllers
 
 				var user = new ApplicationUser
 				{
-					UserName = request.UserName,
+					UserName = $"{request.Patient.FirstName} {request.Patient.LastName}",
 					Email = request.Email,
 					EmailConfirmed = true
 				};
@@ -94,7 +94,7 @@ namespace MediCore_API.Controllers
 				var result = await userManager.CreateAsync(user, request.Password);
 				if (!result.Succeeded)
 				{
-					return BadRequest(new { message = "User creation failed", errors = result.Errors });
+					return BadRequest("Creation Failed");
 				}
 
 				await userManager.AddToRoleAsync(user, "patient");
@@ -106,6 +106,7 @@ namespace MediCore_API.Controllers
 					DateOfBirth = request.Patient.DateOfBirth,
 					PhoneNumber = request.Patient.PhoneNumber,
 					Gender = request.Patient.Gender,
+					AddressId = request.Patient.Address!.Id,
 					UserId = user.Id
 				};
 
@@ -134,7 +135,7 @@ namespace MediCore_API.Controllers
 
 				var user = new ApplicationUser
 				{
-					UserName = request.UserName,
+					UserName = $"{request.Staff.FirstName} {request.Staff.LastName}",
 					Email = request.Email,
 					EmailConfirmed = true
 
@@ -150,7 +151,7 @@ namespace MediCore_API.Controllers
 					FirstName = request.Staff.FirstName,
 					LastName = request.Staff.LastName,
 					PhoneNumber = request.Staff.PhoneNumber,
-					RoleId = request.Staff.RoleId,
+					RoleId = request.Staff.Role!.Id,
 					UserId = user.Id
 				};
 
@@ -205,7 +206,7 @@ namespace MediCore_API.Controllers
 					Token = token,
 					Role = role,
 					UserId = user.Id,
-					TypeId = id
+					ProfileId = id
 				});
 			}
 			catch (Exception e)

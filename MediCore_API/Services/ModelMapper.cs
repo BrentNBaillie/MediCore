@@ -54,6 +54,8 @@ namespace MediCore_API.Services
 				cfg.CreateMap<BillFullDTO, Bill>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<Feedback, FeedbackFullDTO>();
 				cfg.CreateMap<FeedbackFullDTO, Feedback>().ForMember(dest => dest.Id, opt => opt.Ignore());
+				cfg.CreateMap<Patient, PatientFullDTO>();
+				cfg.CreateMap<PatientFullDTO, Patient>().ForMember(dest => dest.Id, opt => opt.Ignore());
 
 				cfg.CreateMap<AllergyTest, AllergyTestDTO>();
 				cfg.CreateMap<AllergyTestDTO, AllergyTest>().ForMember(dest => dest.Id, opt => opt.Ignore());

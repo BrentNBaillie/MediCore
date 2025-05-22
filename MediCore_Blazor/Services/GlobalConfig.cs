@@ -2,6 +2,6 @@
 {
 	public class GlobalConfig
 	{
-		public string BaseUrl { get; set; } = "https://localhost:7279";
+		public string BaseUrl { get; set; } = "https://localhost:7279/api";
 	}
 }

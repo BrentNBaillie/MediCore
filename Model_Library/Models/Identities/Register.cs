@@ -1,19 +1,18 @@
 ﻿using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.DTOs.DTO_Entities.Full;
 using System.ComponentModel.DataAnnotations;
 
 namespace MediCore_Library.Models.Identities
 {
 	public class Register
 	{
-		[Required]
-		public string UserName { get; set; } = string.Empty;
-		[Required]
+		[Required, EmailAddress]
 		public string Email { get; set; } = string.Empty;
-		[Required]
+		[Required, Length(8,20)]
 		public string Password { get; set; } = string.Empty;
 
 		public DoctorDTO? Doctor { get; set; }
-		public StaffDTO? Staff { get; set; }
-		public PatientDTO? Patient { get; set; }
+		public StaffFullDTO? Staff { get; set; }
+		public PatientFullDTO? Patient { get; set; }
 	}
 }
