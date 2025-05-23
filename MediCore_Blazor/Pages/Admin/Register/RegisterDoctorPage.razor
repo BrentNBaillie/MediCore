@@ -1,11 +1,30 @@
 ﻿@page "/admin/register/doctor"
 
+@using MediCore_Blazor.Components.Register
+@using MediCore_Blazor.Services
+@using MediCore_Library.Models.Identities
+@using MediCore_Library.Models.DTOs.DTO_Entities
+
+@inject HttpClient http
+@inject NavigationManager navigationManager
+@inject GlobalConfig config
+
 <h3>Register Doctor</h3>
 
-<EditForm>
-
-</EditForm>
+<RegisterDoctorForm Request="request" OnSubmit="RegisterDoctor"></RegisterDoctorForm>
 
 @code {
+	private Register request = new Register
+	{
+		Doctor = new DoctorDTO()
+	};
 
+	private async Task RegisterDoctor()
+	{
+		var response = await http.PostAsJsonAsync($"{config.BaseUrl}/authorize/register/doctor", request);
+		if (response.IsSuccessStatusCode)
+		{
+			navigationManager.NavigateTo("/admin/register");
+		}
+	}
 }

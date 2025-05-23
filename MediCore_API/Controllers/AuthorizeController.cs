@@ -99,6 +99,18 @@ namespace MediCore_API.Controllers
 
 				await userManager.AddToRoleAsync(user, "patient");
 
+				Address address = new Address
+				{
+					Street  =request.Patient.Address!.Street,
+					City = request.Patient.Address.City,
+					ProvinceOrState = request.Patient.Address.ProvinceOrState,
+					Country = request.Patient.Address.Country,
+					PostalCode = request.Patient.Address.PostalCode,
+				};
+
+				await context.Addresses.AddAsync(address);
+				await context.SaveChangesAsync();
+
 				Patient patient = new Patient
 				{
 					FirstName = request.Patient.FirstName,
@@ -106,7 +118,7 @@ namespace MediCore_API.Controllers
 					DateOfBirth = request.Patient.DateOfBirth,
 					PhoneNumber = request.Patient.PhoneNumber,
 					Gender = request.Patient.Gender,
-					AddressId = request.Patient.Address!.Id,
+					AddressId = address.Id,
 					UserId = user.Id
 				};
 
@@ -174,6 +186,7 @@ namespace MediCore_API.Controllers
 				Guid? id = Guid.Empty;
 				var user = await userManager.FindByEmailAsync(request.Email);
 				if (user is null) return NotFound("User Not Found");
+				if (user.IsLoggedIn) return Conflict("User already logged in");
 
 				var result = await signInManager.PasswordSignInAsync(user, request.Password, false, false);
 				if (!result.Succeeded) return Unauthorized();
@@ -201,6 +214,9 @@ namespace MediCore_API.Controllers
 					id = patient.Id;
 				}
 
+				user.IsLoggedIn = true;
+				await context.SaveChangesAsync();
+
 				return Ok(new LoginResponse
 				{
 					Token = token,
@@ -213,6 +229,17 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
+		}
+
+		[HttpPost("logout")]
+		public async Task<ActionResult> LoogOut([FromBody] Guid id)
+		{
+			var user = await userManager.FindByIdAsync(id.ToString());
+			if (user is null) return NotFound("User not found");
+			user.IsLoggedIn = false;
+
+			await context.SaveChangesAsync();
+			return Ok("User logged out");
 		}
 
 		[HttpDelete]
@@ -252,13 +279,9 @@ namespace MediCore_API.Controllers
 							await context.SaveChangesAsync();
 						}
 					}
-					if (user is not null)
-					{
-						await userManager.DeleteAsync(user);
-					}
 				}
 
-				return Ok("All Users Deleted");
+				return Ok($"{users.Count - 1} Users Deleted");
 			}
 			catch (Exception e)
 			{

@@ -28,6 +28,22 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Github Projects/MediCore/MediCore_Blazor/Components/Register/RegisterDoctorForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZWdpc3RlclxSZWdpc3RlckRvY3RvckZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github Projects/MediCore/MediCore_Blazor/Components/Register/RegisterPatientForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZWdpc3RlclxSZWdpc3RlclBhdGllbnRGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github Projects/MediCore/MediCore_Blazor/Components/Register/RegisterStaffForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZWdpc3RlclxSZWdpc3RlclN0YWZmRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Github Projects/MediCore/MediCore_Blazor/Pages/Admin/CreateStaffRole.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlU3RhZmZSb2xlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Github Projects/MediCore/MediCore_Blazor/Pages/Admin/HomePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSG9tZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

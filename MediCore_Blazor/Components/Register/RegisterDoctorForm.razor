@@ -1,0 +1,61 @@
+﻿@using MediCore_Library.Models.Identities
+
+<EditForm Model="Request" OnValidSubmit="OnSubmit">
+	<DataAnnotationsValidator/>
+	<ValidationSummary/>
+
+	<div>
+		<label>Email</label>
+		<InputText @bind-Value="Request.Email"/>
+	</div>
+	<div>
+		<label>Password</label>
+		<InputText @bind-Value="Request.Password"/>
+	</div>
+	<div>
+		<label>First Name</label>
+		<InputText @bind-Value="Request.Doctor!.FirstName"/>
+	</div>
+	<div>
+		<label>Last Name</label>
+		<InputText @bind-Value="Request.Doctor.LastName"/>
+	</div>
+	<div>
+		<label>Specialization</label>
+		<InputText @bind-Value="Request.Doctor.Specialization"/>
+	</div>
+	<div>
+		<label>Phone Number</label>
+		<InputText @bind-Value="Request.Doctor.PhoneNumber"/>
+	</div>
+	<div>
+		<label>Hospital Name</label>
+		<InputText @bind-Value="Request.Doctor.HospitalName"/>
+	</div>
+	<div>
+		<label>Professional Biography</label>
+		<InputTextArea @bind-Value="Request.Doctor.ProfessionalBio"/>
+	</div>
+	<div>
+		<button type="submit">Register</button>
+	</div>
+</EditForm>
+
+@code {
+	[Parameter]
+	public Register Request { get; set; } = new();
+
+	[Parameter]
+	public EventCallback OnSubmit { get; set; }
+
+	private async Task HandleSubmit()
+	{
+		Request.Patient = null;
+		Request.Staff = null;
+
+		if (OnSubmit.HasDelegate)
+		{
+			await OnSubmit.InvokeAsync();
+		}
+	}
+}

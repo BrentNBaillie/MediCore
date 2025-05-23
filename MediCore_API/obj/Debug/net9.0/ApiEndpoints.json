@@ -277,6 +277,22 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
+    "Method": "LoogOut",
+    "RelativePath": "api/Authorize/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.AuthorizeController",
     "Method": "RegisterDoctor",
     "RelativePath": "api/Authorize/register/doctor",
     "HttpMethod": "POST",
