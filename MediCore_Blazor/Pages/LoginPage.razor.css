@@ -1,0 +1,45 @@
+﻿.title {
+    display: flex;
+    justify-content: center;
+}
+
+.title > h1 {
+    margin: 0;
+}
+
+.input {
+    margin-top: 10px;
+}
+
+.submit {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(0, 153, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+    button:active {
+        background-color: rgb(0, 105, 205);
+        transform: scale(0.98);
+    }
+
+.login-div {
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(41, 49, 61);
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.input-field {
+    border: 2px solid black;
+}

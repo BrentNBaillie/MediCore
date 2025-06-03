@@ -1,0 +1,42 @@
+﻿.nav-menu {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu h2 {
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: inherit;
+    background-color: rgb(41, 49, 61);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    user-select: none;
+}
+
+    .nav-menu a:active {
+        background-color: rgb(29, 34, 43);
+        transform: scale(0.98);
+    }
+
+.nav-menu button {
+    color: inherit;
+    background-color: rgb(81, 109, 154);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: inherit;
+    font-family: inherit;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+    .nav-menu button:active {
+        background-color: rgb(57, 76, 108);
+        transform: scale(0.98);
+    }

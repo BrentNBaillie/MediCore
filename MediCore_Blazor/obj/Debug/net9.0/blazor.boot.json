@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MediCore_Blazor",
   "resources": {
-    "hash": "sha256-g75DJ0f5B8aJODNkGgCsQsCI85VIIbIMzGFX7K7GsYw=",
+    "hash": "sha256-FcIBlvmOZZLYy6kEi8vQN5ABQDR4LPyo4ocrXKLhOW8=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.n7we7nbch1.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.waskkzx0nn.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -211,10 +211,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "MediCore_Library.bhu54m4df6.wasm": "MediCore_Library.wasm",
-      "MediCore_Library.0a4nn2x1mr.pdb": "MediCore_Library.pdb",
-      "MediCore_Blazor.kwg80dsqc1.wasm": "MediCore_Blazor.wasm",
-      "MediCore_Blazor.9jg9ujh7pc.pdb": "MediCore_Blazor.pdb"
+      "MediCore_Library.0feq9bbrh3.wasm": "MediCore_Library.wasm",
+      "MediCore_Library.x8tokmq2vf.pdb": "MediCore_Library.pdb",
+      "MediCore_Blazor.8yn5tqlytv.wasm": "MediCore_Blazor.wasm",
+      "MediCore_Blazor.s84dcqz9v5.pdb": "MediCore_Blazor.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hvg7u8bimp.js": "sha256-LX9rFEWGVxhkOkAVPG0w5RxPwzPBlEUz6dQNjWS7M+M="
@@ -434,12 +434,12 @@
       "WindowsBase.5lai2eowco.wasm": "sha256-GcDi5293y2A7oSiFYTbBTUe0d+ISbvgeel4ZNd8KkPM=",
       "mscorlib.wzkfrp7u5k.wasm": "sha256-9PjsU0gaxxz5Vyw++p9DeYUWLsaXbaMS2RbX6wmTUmk=",
       "netstandard.d82br99ghv.wasm": "sha256-DS8keXxU4eQpa1kIoiFxOA2Ii2g9hoNWSaVi8F8AnIE=",
-      "MediCore_Library.bhu54m4df6.wasm": "sha256-j0WRe2VxC4x+vuKubdEHhfjIRxLmQQMKm1qAQn+yVPI=",
-      "MediCore_Blazor.kwg80dsqc1.wasm": "sha256-bGSnx+iZQATxg2ZbyDc4RGih44YxJm+iTL5r+eVmbzA="
+      "MediCore_Library.0feq9bbrh3.wasm": "sha256-fPAxf+R8rwNb70ZJGc1yeSCMhBKXLmgfQAzbpV+7Qwg=",
+      "MediCore_Blazor.8yn5tqlytv.wasm": "sha256-gL0JvWD+DscHzY9ryVcS2y7x/lXkGNu9j6G25da3IZs="
     },
     "pdb": {
-      "MediCore_Library.0a4nn2x1mr.pdb": "sha256-aISEklv2fuIhQ/G8vzfTTJjNJqAHAKMgAlwkrh+dG+U=",
-      "MediCore_Blazor.9jg9ujh7pc.pdb": "sha256-9ZWeJHZ9YIROJjdL5XTqqCL7ExJzVwpMA6wBGhWE2Lo="
+      "MediCore_Library.x8tokmq2vf.pdb": "sha256-74m0VFn5fYfsIwRdYJsyyplTFFcyiRxqXJPfrDzw7AI=",
+      "MediCore_Blazor.s84dcqz9v5.pdb": "sha256-vPoz9bnT+Hwsarcauk8JZOt/8seJAYyxdBZhCS5Iiz0="
     }
   },
   "cacheBootResources": true,

@@ -1,0 +1,45 @@
+.title[b-uhlvy33wwi] {
+    display: flex;
+    justify-content: center;
+}
+
+.title > h1[b-uhlvy33wwi] {
+    margin: 0;
+}
+
+.input[b-uhlvy33wwi] {
+    margin-top: 10px;
+}
+
+.submit[b-uhlvy33wwi] {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+button[b-uhlvy33wwi] {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(0, 153, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+    button:active[b-uhlvy33wwi] {
+        background-color: rgb(0, 105, 205);
+        transform: scale(0.98);
+    }
+
+.login-div[b-uhlvy33wwi] {
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(41, 49, 61);
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.input-field[b-uhlvy33wwi] {
+    border: 2px solid black;
+}

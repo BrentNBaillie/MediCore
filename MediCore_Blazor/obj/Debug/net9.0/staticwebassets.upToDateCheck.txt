@@ -1,5 +1,6 @@
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\css\index.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -15,6 +16,7 @@ C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootst
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\index.html
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\css\nav_menu.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
@@ -33,7 +35,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\boots
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\css\app.css
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.js
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
@@ -44,7 +45,8 @@ C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\boots
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 C:\Github Projects\MediCore\MediCore_Blazor\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-wwwroot\css\app.css
+wwwroot\css\index.css
+wwwroot\css\nav_menu.css
 wwwroot\index.html
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

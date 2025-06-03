@@ -186,7 +186,6 @@ namespace MediCore_API.Controllers
 				Guid? id = Guid.Empty;
 				var user = await userManager.FindByEmailAsync(request.Email);
 				if (user is null) return NotFound("User Not Found");
-				if (user.IsLoggedIn) return Conflict("User already logged in");
 
 				var result = await signInManager.PasswordSignInAsync(user, request.Password, false, false);
 				if (!result.Succeeded) return Unauthorized();
@@ -214,7 +213,6 @@ namespace MediCore_API.Controllers
 					id = patient.Id;
 				}
 
-				user.IsLoggedIn = true;
 				await context.SaveChangesAsync();
 
 				return Ok(new LoginResponse
@@ -229,17 +227,6 @@ namespace MediCore_API.Controllers
 			{
 				return StatusCode(500, $"Error: {e}");
 			}
-		}
-
-		[HttpPost("logout")]
-		public async Task<ActionResult> LoogOut([FromBody] Guid id)
-		{
-			var user = await userManager.FindByIdAsync(id.ToString());
-			if (user is null) return NotFound("User not found");
-			user.IsLoggedIn = false;
-
-			await context.SaveChangesAsync();
-			return Ok("User logged out");
 		}
 
 		[HttpDelete]

@@ -1,4 +1,39 @@
 ﻿@inherits LayoutComponentBase
-<main>
-    @Body
-</main>
+@using MediCore_Blazor.Services
+@using MediCore_Blazor.Components.Navigation
+@inject SessionState state
+
+<div class="page-header">
+    <h1>MediCore</h1>
+</div>
+<div class="page">
+    @if (state.LoginResponse is not null)
+    {
+        <nav>
+            <div class="nav-menu">
+                @switch (state.LoginResponse.Role)
+                {
+                    case "admin":
+                        <AdminNavigation></AdminNavigation>
+                        break;
+                    case "doctor":
+                        <DoctorNavigation></DoctorNavigation>
+                        break;
+                    case "staff":
+                        <StaffNavigation></StaffNavigation>
+                        break;
+                    case "patient":
+                        <PatientNavigation></PatientNavigation>
+                        break;
+                }
+            </div>
+        </nav>
+    }
+    <main>
+        @Body
+    </main>
+</div>
+<footer>
+    <p>Frontend Developer: Brent N. Baillie</p>
+    <p>Backend Developer: Brent N. Baillie</p>
+</footer>

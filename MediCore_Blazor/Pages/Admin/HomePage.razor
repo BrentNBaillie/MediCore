@@ -1,32 +1,4 @@
 ﻿@page "/admin"
-@using MediCore_Blazor.Services
-
-@inject HttpClient http
-@inject NavigationManager nav
-@inject GlobalConfig config
-@inject SessionState state
 
 <h1>Admin Home Page</h1>
 
-<NavLink href="/admin/register">Register New User</NavLink>
-<br />
-<NavLink href="/admin/create-role">Create New Staff Role</NavLink>
-<br />
-<button @onclick="Logout">Log Out</button>
-
-@code {
-	private async Task Logout()
-	{
-		var Id = state.LoginResponse!.UserId;
-		if (Id is not null)
-		{
-			var response = await http.PostAsJsonAsync($"{config.BaseUrl}/authorize/logout", Id);
-			if (response.IsSuccessStatusCode)
-			{
-				state.LoginResponse = null;
-				state.Profile = null;
-				nav.NavigateTo("/");
-			}
-		}
-	}
-}

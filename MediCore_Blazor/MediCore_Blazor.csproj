@@ -12,8 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="Components\Icons\" />
+    <Folder Include="Pages\Admin\Addresses\" />
+    <Folder Include="Pages\Admin\Appointments\" />
+    <Folder Include="Pages\Admin\Accounts\" />
+    <Folder Include="Pages\Admin\Billing\" />
+    <Folder Include="Pages\Admin\Chats\" />
+    <Folder Include="Pages\Admin\Feedbacks\" />
+    <Folder Include="Pages\Admin\Medical Records\" />
+    <Folder Include="Pages\Admin\Medicines\" />
+    <Folder Include="Pages\Admin\Staff Roles\" />
+    <Folder Include="Pages\Admin\Schedules\" />
+    <Folder Include="Pages\Admin\Prescriptions\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,8 +9,12 @@
       "PackagePath": "staticwebassets\\MediCore_Blazor.styles.css"
     },
     {
-      "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\css\\app.css",
-      "PackagePath": "staticwebassets\\css\\app.css"
+      "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
+      "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\css\\nav_menu.css",
+      "PackagePath": "staticwebassets\\css\\nav_menu.css"
     },
     {
       "Id": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\wwwroot\\index.html",

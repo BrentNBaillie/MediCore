@@ -1,0 +1,37 @@
+﻿@using MediCore_Blazor.Services
+
+@inject HttpClient http
+@inject NavigationManager nav
+@inject GlobalConfig config
+@inject SessionState state
+
+<h2>Admin Menu</h2>
+
+<NavLink href="/admin">Home</NavLink>
+<NavLink>Addresses</NavLink>
+<NavLink>Appointments</NavLink>
+<NavLink>Accounts</NavLink>
+<NavLink>Billing</NavLink>
+<NavLink>Chats</NavLink>
+<NavLink href="/admin/doctors">Doctors</NavLink>
+<NavLink>Feedbacks</NavLink>
+<NavLink>Medical Records</NavLink>
+<NavLink>Medicines</NavLink>
+<NavLink href="/admin/patients">Patients</NavLink>
+<NavLink>Prescriptions</NavLink>
+<NavLink>Schedules</NavLink>
+<NavLink href="/admin/staff-members">Staff Members</NavLink>
+<NavLink>Staff Roles</NavLink>
+
+<button @onclick="Logout">Log Out</button>
+
+@code {
+	private void Logout()
+	{
+		if (state.LoginResponse is null) return;
+
+		state.LoginResponse = null;
+		state.Profile = null;
+		nav.NavigateTo("/");
+	}
+}

@@ -1,0 +1,18 @@
+﻿html {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(77, 97, 128);
+    color: rgb(232, 232, 232);
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
