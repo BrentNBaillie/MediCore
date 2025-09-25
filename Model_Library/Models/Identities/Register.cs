@@ -12,7 +12,7 @@ namespace MediCore_Library.Models.Identities
 		public string Password { get; set; } = string.Empty;
 
 		public DoctorDTO? Doctor { get; set; }
-		public StaffFullDTO? Staff { get; set; }
+		public NurseFullDTO? Nurse { get; set; }
 		public PatientFullDTO? Patient { get; set; }
 	}
 }

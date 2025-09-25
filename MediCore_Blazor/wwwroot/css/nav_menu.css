@@ -1,13 +1,20 @@
-﻿.nav-menu {
-    height: fit-content;
+﻿nav {
+    min-height: 90vh;
+    max-height: fit-content;
+    width: fit-content;
+    background-color: rgb(60,60,60);
+    padding: 10px;
+    border-right: 2px solid black;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 }
 
-.nav-menu h2 {
+nav h2 {
+    white-space: nowrap;
 }
 
-.nav-menu a {
+nav a {
     text-decoration: none;
     color: inherit;
     background-color: rgb(41, 49, 61);
@@ -20,12 +27,12 @@
     user-select: none;
 }
 
-    .nav-menu a:active {
+    nav a:active {
         background-color: rgb(29, 34, 43);
         transform: scale(0.98);
     }
 
-.nav-menu button {
+nav button {
     color: inherit;
     background-color: rgb(81, 109, 154);
     padding: 10px;
@@ -36,7 +43,7 @@
     margin-top: 20px;
 }
 
-    .nav-menu button:active {
+    nav button:active {
         background-color: rgb(57, 76, 108);
         transform: scale(0.98);
     }

@@ -69,7 +69,7 @@
 	private async Task HandleSubmit()
 	{
 		Request.Doctor = null;
-		Request.Staff = null;
+		Request.Nurse = null;
 		Request.Patient!.DateOfBirth = DateOnly.FromDateTime(date);
 
 		if (OnSubmit.HasDelegate)

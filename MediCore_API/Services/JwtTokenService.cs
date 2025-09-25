@@ -8,7 +8,7 @@ using System.Text;
 
 namespace MediCore_API.Services
 {
-	public class JwtTokenService : IJwtTokenService
+	internal sealed class JwtTokenService : IJwtTokenService
 	{
 		private readonly IConfiguration config;
 		private readonly UserManager<ApplicationUser> userManager;

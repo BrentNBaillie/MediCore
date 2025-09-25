@@ -1,4 +1,28 @@
 ﻿@page "/admin"
 
-<h1>Admin Home Page</h1>
+@using MediCore_Blazor.Services
+@using MediCore_Library.Models.DTOs.DTO_Entities
+@using MediCore_Library.Models.Identities
+@inject HttpClient http
+@inject GlobalConfig config
+@inject NavigationManager nav
+@inject SessionState state
 
+<div>
+	<div>
+		<h1>Admin Dashboard</h1>
+	</div>
+	<div>
+		<h2>Doctors</h2>
+		<h3>@doctorCount</h3>
+	</div>
+</div>
+
+@code
+{
+	private int doctorCount = 0;
+	protected override void OnInitialized()
+	{
+		
+	}
+}

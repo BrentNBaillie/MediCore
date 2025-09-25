@@ -1,7 +1,7 @@
 ﻿using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Identity;
 
-public class EmailService : IEmailSender<ApplicationUser>
+internal sealed class EmailService : IEmailSender<ApplicationUser>
 {
 	public Task SendConfirmationLinkAsync(ApplicationUser user, string email, string confirmationLink)
 	{

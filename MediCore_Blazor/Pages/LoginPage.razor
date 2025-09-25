@@ -68,8 +68,8 @@
 							nav.NavigateTo("/doctor");
 						}
 						break;
-					case "staff":
-						var staff = await http.GetFromJsonAsync<StaffDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
+					case "nurse":
+						var staff = await http.GetFromJsonAsync<NurseDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
 						if (staff is not null)
 						{
 							state.Profile = staff;

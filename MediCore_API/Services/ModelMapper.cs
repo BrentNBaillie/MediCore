@@ -10,7 +10,7 @@ using MediCore_Library.Models.DTOs.DTO_Medical_Record_Types;
 
 namespace MediCore_API.Services
 {
-	public class ModelMapper : IModelMapper
+	internal sealed class ModelMapper : IModelMapper
 	{
 		private readonly IMapper mapper;
 
@@ -41,10 +41,8 @@ namespace MediCore_API.Services
 				cfg.CreateMap<PrescriptionDTO, Prescription>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<Schedule, ScheduleDTO>();
 				cfg.CreateMap<ScheduleDTO, Schedule>().ForMember(dest => dest.Id, opt => opt.Ignore());
-				cfg.CreateMap<Staff, StaffDTO>();
-				cfg.CreateMap<StaffDTO, Staff>().ForMember(dest => dest.Id, opt => opt.Ignore());
-				cfg.CreateMap<StaffRole, StaffRoleDTO>();
-				cfg.CreateMap<StaffRoleDTO, StaffRole>().ForMember(dest => dest.Id, opt => opt.Ignore());
+				cfg.CreateMap<Nurse, NurseDTO>();
+				cfg.CreateMap<NurseDTO, Nurse>().ForMember(dest => dest.Id, opt => opt.Ignore());
 				cfg.CreateMap<TimeSlot, TimeSlotDTO>();
 				cfg.CreateMap<TimeSlotDTO, TimeSlot>().ForMember(dest => dest.Id, opt => opt.Ignore());
 
@@ -108,7 +106,7 @@ namespace MediCore_API.Services
 			return mapper.Map<TDestination>(source);
 		}
 
-		public async Task<MedicalRecord> MapAsync(MedicalRecordDTO dto, MediCoreContext context)
+		public async Task<MedicalRecord> MedRecMapAsync(MedicalRecordDTO dto, MediCoreContext context)
 		{
 			MedicalRecord record = new MedicalRecord
 			{

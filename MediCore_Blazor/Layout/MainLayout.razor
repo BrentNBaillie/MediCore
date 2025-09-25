@@ -10,23 +10,21 @@
     @if (state.LoginResponse is not null)
     {
         <nav>
-            <div class="nav-menu">
-                @switch (state.LoginResponse.Role)
-                {
-                    case "admin":
-                        <AdminNavigation></AdminNavigation>
-                        break;
-                    case "doctor":
-                        <DoctorNavigation></DoctorNavigation>
-                        break;
-                    case "staff":
-                        <StaffNavigation></StaffNavigation>
-                        break;
-                    case "patient":
-                        <PatientNavigation></PatientNavigation>
-                        break;
-                }
-            </div>
+            @switch (state.LoginResponse.Role)
+            {
+                case "admin":
+                    <AdminNavigation></AdminNavigation>
+                    break;
+                case "doctor":
+                    <DoctorNavigation></DoctorNavigation>
+                    break;
+                case "staff":
+                    <StaffNavigation></StaffNavigation>
+                    break;
+                case "patient":
+                    <PatientNavigation></PatientNavigation>
+                    break;
+            }
         </nav>
     }
     <main>

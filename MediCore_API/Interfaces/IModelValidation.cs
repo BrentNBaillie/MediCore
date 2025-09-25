@@ -4,7 +4,6 @@ namespace MediCore_API.Interfaces
 {
 	public interface IModelValidation
 	{
-		public bool RoleIsValid(StaffRoleDTO role);
 		public bool PrescriptionIsValid(PrescriptionDTO prescription);
 		public bool FeedbackIsValid(FeedbackDTO feedback);
 		public bool BillIsValid(BillDTO bill);

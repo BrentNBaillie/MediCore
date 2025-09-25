@@ -3,16 +3,8 @@ using MediCore_Library.Models.DTOs.DTO_Entities;
 
 namespace MediCore_API.Services
 {
-	public class ModelValidation : IModelValidation
+	internal sealed class ModelValidation : IModelValidation
 	{
-		public bool RoleIsValid(StaffRoleDTO role)
-		{
-			if (role is null) return false;
-			if (string.IsNullOrEmpty(role.Title)) return false;
-			if (string.IsNullOrEmpty(role.Description)) return false;
-			return true;
-		}
-
 		public bool PrescriptionIsValid(PrescriptionDTO prescription)
 		{
 			if (prescription is null) return false;

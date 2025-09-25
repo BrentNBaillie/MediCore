@@ -25,104 +25,62 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<FeedbackDTO>>> GetAllFeedback()
 		{
-			try
-			{
-				var feedbacks = await context.Feedbacks.ToListAsync();
-				return Ok(feedbacks.Select(f => mapper.Map<Feedback, FeedbackDTO>(f)).ToList());
-			} 
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			var feedbacks = await context.Feedbacks.ToListAsync();
+			return Ok(feedbacks.Select(f => mapper.Map<Feedback, FeedbackDTO>(f)).ToList());
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<FeedbackDTO>> GetFeedback([FromRoute] Guid id)
 		{
-			try
-			{
-				var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
-				if (feedback is null) return NotFound("Feedback Not Found");
+			var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
+			if (feedback is null) return NotFound("Feedback Not Found");
 
-				return Ok(mapper.Map<Feedback, FeedbackDTO>(feedback));
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Ok(mapper.Map<Feedback, FeedbackDTO>(feedback));
 		}
 
 		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<FeedbackDTO>>> GetPatientFeedbacks(Guid id)
 		{
-			try
-			{
-				var feedbacks = await context.Feedbacks.Where(f => f.PatientId == id).ToListAsync();
-				if (!feedbacks.Any()) return NotFound("Feedback Not Found");
+			var feedbacks = await context.Feedbacks.Where(f => f.PatientId == id).ToListAsync();
+			if (!feedbacks.Any()) return NotFound("Feedback Not Found");
 
-				return Ok(feedbacks.Select(f => mapper.Map<Feedback, FeedbackDTO>(f)).ToList());
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Ok(feedbacks.Select(f => mapper.Map<Feedback, FeedbackDTO>(f)).ToList());
 		}
 
 		[HttpPost]
 		public async Task<ActionResult> PostFeedback([FromBody] FeedbackDTO dto)
 		{
-			try
-			{
-				if (!validate.FeedbackIsValid(dto)) return BadRequest("Invalid Feedback Data");
-				Feedback feedback = mapper.Map<FeedbackDTO, Feedback>(dto);
+			if (!validate.FeedbackIsValid(dto)) return BadRequest("Invalid Feedback Data");
+			Feedback feedback = mapper.Map<FeedbackDTO, Feedback>(dto);
 
-				await context.Feedbacks.AddAsync(feedback);
-				await context.SaveChangesAsync();
-				return Created();
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			await context.Feedbacks.AddAsync(feedback);
+			await context.SaveChangesAsync();
+			return Created();
 		}
 
 		[HttpPatch]
 		public async Task<ActionResult> PatchFeedback([FromBody] FeedbackDTO dto)
 		{
-			try
-			{
-				var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == dto.Id);
-				if (feedback is null) return NotFound("Feedback Not Found");
+			var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == dto.Id);
+			if (feedback is null) return NotFound("Feedback Not Found");
 
-				if (dto.Date is not null) feedback.Date = dto.Date;
-				if (!string.IsNullOrEmpty(dto.Details)) feedback.Details = dto.Details;
-				if (dto.PatientId != Guid.Empty) feedback.PatientId = dto.PatientId;
+			if (dto.Date is not null) feedback.Date = dto.Date;
+			if (!string.IsNullOrEmpty(dto.Details)) feedback.Details = dto.Details;
+			if (dto.PatientId != Guid.Empty) feedback.PatientId = dto.PatientId;
 
-				await context.SaveChangesAsync();
-				return Ok();
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			await context.SaveChangesAsync();
+			return Ok();
 		}
 
 		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteFeedback([FromRoute] Guid id)
 		{
-			try
-			{
-				var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
-				if (feedback is null) return NotFound("Feedback Not Found");
+			var feedback = await context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
+			if (feedback is null) return NotFound("Feedback Not Found");
 
-				context.Feedbacks.Remove(feedback);
-				await context.SaveChangesAsync();
-				return Ok("Feedback Deleted");
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			context.Feedbacks.Remove(feedback);
+			await context.SaveChangesAsync();
+			return Ok("Feedback Deleted");
 		}
 	}
 }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Data
 {
-	public class MediCoreContext :IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
+	public sealed class MediCoreContext :IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 	{
 		public MediCoreContext(DbContextOptions<MediCoreContext> options) : base(options) { }
 
@@ -18,8 +18,7 @@ namespace MediCore_API.Data
 		public DbSet<Patient> Patients { get; set; }
 		public DbSet<Address> Addresses { get; set; }
 		public DbSet<Prescription> Prescriptions { get; set; }
-		public DbSet<Staff> StaffMembers { get; set; }
-		public DbSet<StaffRole> StaffRoles { get; set; }
+		public DbSet<Nurse> Nurses { get; set; }
 		public DbSet<Schedule> Schedules { get; set; }
 		public DbSet<TimeSlot> TimeSlots { get; set; }
 		public DbSet<Message> Messages { get; set; }	
@@ -214,16 +213,11 @@ namespace MediCore_API.Data
 				.OnDelete(DeleteBehavior.Restrict);
 			#endregion
 			#region Staff
-			modelBuilder.Entity<Staff>()
-				.HasOne(s => s.Role)
-				.WithMany()
-				.HasForeignKey (s => s.RoleId)
-				.OnDelete(DeleteBehavior.Restrict);
 
-			modelBuilder.Entity<Staff>()
+			modelBuilder.Entity<Nurse>()
 				.HasOne(s => s.User)
 				.WithOne()
-				.HasForeignKey<Staff>(s => s.UserId)
+				.HasForeignKey<Nurse>(s => s.UserId)
 				.OnDelete(DeleteBehavior.Restrict);
 			#endregion
 		}

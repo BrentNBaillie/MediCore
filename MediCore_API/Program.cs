@@ -1,5 +1,6 @@
 using MediCore_API.Data;
 using MediCore_API.Interfaces;
+using MediCore_API.Middleware;
 using MediCore_API.Services;
 using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,6 +12,15 @@ using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddProblemDetails(conf =>
+{
+	conf.CustomizeProblemDetails = context =>
+	{
+		context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
+	};
+});
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -105,8 +115,11 @@ app.UseRouting();
 
 app.UseCors("AllowAllOrigins");
 
+app.UseExceptionHandler();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 
@@ -114,7 +127,7 @@ app.Run();
 
 async Task SeedRolesAsync(RoleManager<IdentityRole<Guid>> roleManager)
 {
-	string[] roles = { "admin", "doctor", "staff", "patient" };
+	string[] roles = { "admin", "doctor", "nurse", "patient" };
 	foreach (string role in roles)
 	{
 		if (!await roleManager.RoleExistsAsync(role))

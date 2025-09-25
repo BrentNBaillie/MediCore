@@ -26,86 +26,51 @@ namespace MediCore_API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<ScheduleDTO>>> GetAllSchedules()
         {
-			try
-			{
-				var schedules = await context.Schedules.ToListAsync();
-				return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			var schedules = await context.Schedules.ToListAsync();
+			return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
 		}
 
         [HttpGet("doctor/{id:Guid}")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetDoctorSchedules([FromRoute] Guid id)
         {
-			try
-			{
-				var schedules = await context.Schedules.Where(s => s.DoctorId == id).ToListAsync();
-				return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			var schedules = await context.Schedules.Where(s => s.DoctorId == id).ToListAsync();
+			return Ok(schedules.Select(s => mapper.Map<Schedule, ScheduleDTO>(s)).ToList());
 		}
 
         [HttpGet("{id:Guid}")]
         public async Task<ActionResult<ScheduleDTO>> GetSchedule([FromRoute] Guid id)
         {
-			try
-			{
-				var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
-				if (schedule is null) return NotFound("Schedule Not Found");
-				return Ok(mapper.Map<Schedule, ScheduleDTO>(schedule));
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
+			if (schedule is null) return NotFound("Schedule Not Found");
+			return Ok(mapper.Map<Schedule, ScheduleDTO>(schedule));
 		}
 
         [HttpPost]
         public async Task<ActionResult> PostSchedule([FromBody] ScheduleDTO dto)
         {
-			try
-			{
-				if (dto.Start > dto.End) return BadRequest("Invlading Schedule Times");
-				Schedule schedule = mapper.Map<ScheduleDTO, Schedule>(dto);
-				await context.Schedules.AddAsync(schedule);
-				await context.SaveChangesAsync();
+			if (dto.Start > dto.End) return BadRequest("Invlading Schedule Times");
+			Schedule schedule = mapper.Map<ScheduleDTO, Schedule>(dto);
+			await context.Schedules.AddAsync(schedule);
+			await context.SaveChangesAsync();
 
-				List<TimeSlot> timeSlots = timeSlotHandler.CreateTimeSlots(schedule);
-				await context.TimeSlots.AddRangeAsync(timeSlots);
-				await context.SaveChangesAsync();
+			List<TimeSlot> timeSlots = timeSlotHandler.CreateTimeSlots(schedule);
+			await context.TimeSlots.AddRangeAsync(timeSlots);
+			await context.SaveChangesAsync();
 
-				return Created();
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Created();
 		}
 
         [HttpDelete("{id:Guid}")]
         public async  Task<ActionResult> DeleteSchedule([FromRoute] Guid id)
         {
-			try
-			{
-				var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
-				if (schedule is null) return NotFound("Schedule Not Found");
-				var timeSlots = await context.TimeSlots.Where(t => t.ScheduleId == id).ToListAsync();
+			var schedule = await context.Schedules.FirstOrDefaultAsync(s => s.Id == id);
+			if (schedule is null) return NotFound("Schedule Not Found");
+			var timeSlots = await context.TimeSlots.Where(t => t.ScheduleId == id).ToListAsync();
 
-				context.Schedules.Remove(schedule);
-				context.TimeSlots.RemoveRange(timeSlots);
-				await context.SaveChangesAsync();
-				return Ok("Schedule Deleted");
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			context.Schedules.Remove(schedule);
+			context.TimeSlots.RemoveRange(timeSlots);
+			await context.SaveChangesAsync();
+			return Ok("Schedule Deleted");
 		}
     }
 }

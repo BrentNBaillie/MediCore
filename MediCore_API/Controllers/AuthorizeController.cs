@@ -30,250 +30,214 @@ namespace MediCore_API.Controllers
 		[HttpPost("register/doctor")]
 		public async Task<ActionResult> RegisterDoctor([FromBody] Register request)
 		{
-			try
+			if (request.Doctor is null) return BadRequest("Invalid Doctor Data");
+
+			var existingUser = await userManager.FindByEmailAsync(request.Email);
+			if (existingUser != null) return BadRequest("Email already registered!");
+
+			var user = new ApplicationUser
 			{
-				if (request.Doctor is null) return BadRequest("Invalid Doctor Data");
+				UserName = $"{request.Doctor.FirstName} {request.Doctor.LastName}",
+				Email = request.Email,
+				EmailConfirmed = true
+			};
 
-				var existingUser = await userManager.FindByEmailAsync(request.Email);
-				if (existingUser != null) return BadRequest("Email already registered!");
+			var result = await userManager.CreateAsync(user, request.Password);
+			if (!result.Succeeded) return BadRequest(result.Errors.Select(e => e.Description));
 
-				var user = new ApplicationUser
-				{
-					UserName = $"{request.Doctor.FirstName} {request.Doctor.LastName}",
-					Email = request.Email,
-					EmailConfirmed = true
-				};
+			await userManager.AddToRoleAsync(user, "doctor");
 
-				var result = await userManager.CreateAsync(user, request.Password);
-				if (!result.Succeeded) return BadRequest(result.Errors.Select(e => e.Description));
-
-				await userManager.AddToRoleAsync(user, "doctor");
-
-				var doctor = new Doctor
-				{
-					FirstName = request.Doctor.FirstName,
-					LastName = request.Doctor.LastName,
-					Specialization = request.Doctor.Specialization,
-					PhoneNumber = request.Doctor.PhoneNumber,
-					HospitalName = request.Doctor.HospitalName,
-					ProfessionalBio = request.Doctor.ProfessionalBio,
-					UserId = user.Id
-				};
-
-				await context.Doctors.AddAsync(doctor);
-				await context.SaveChangesAsync();
-
-				return Created();
-			}
-			catch (Exception e)
+			var doctor = new Doctor
 			{
-				return StatusCode(500, $"Error: {e}");
-			}
+				FirstName = request.Doctor.FirstName,
+				LastName = request.Doctor.LastName,
+				Specialization = request.Doctor.Specialization,
+				PhoneNumber = request.Doctor.PhoneNumber,
+				HospitalName = request.Doctor.HospitalName,
+				ProfessionalBio = request.Doctor.ProfessionalBio,
+				UserId = user.Id
+			};
+
+			await context.Doctors.AddAsync(doctor);
+			await context.SaveChangesAsync();
+
+			return Created();
 		}
 
-		//[Authorize(Roles = "admin, doctor, staff")]
+		//[Authorize(Roles = "admin, doctor, nurse")]
 		[HttpPost("register/patient")]
 		public async Task<ActionResult> RegisterPatient([FromBody] Register request)
 		{
-			try
+			if (request.Patient is null) return BadRequest("Patient is null");
+
+			if (!ModelState.IsValid) return BadRequest(ModelState);
+
+			var existingUser = await userManager.FindByEmailAsync(request.Email);
+			if (existingUser != null) return BadRequest("Email already registered!");
+
+			var user = new ApplicationUser
 			{
-				if (request.Patient is null) return BadRequest("Patient is null");
+				UserName = $"{request.Patient.FirstName} {request.Patient.LastName}",
+				Email = request.Email,
+				EmailConfirmed = true
+			};
 
-				if (!ModelState.IsValid) return BadRequest(ModelState);
-
-				var existingUser = await userManager.FindByEmailAsync(request.Email);
-				if (existingUser != null) return BadRequest("Email already registered!");
-
-				var user = new ApplicationUser
-				{
-					UserName = $"{request.Patient.FirstName} {request.Patient.LastName}",
-					Email = request.Email,
-					EmailConfirmed = true
-				};
-
-				var result = await userManager.CreateAsync(user, request.Password);
-				if (!result.Succeeded)
-				{
-					return BadRequest("Creation Failed");
-				}
-
-				await userManager.AddToRoleAsync(user, "patient");
-
-				Address address = new Address
-				{
-					Street  =request.Patient.Address!.Street,
-					City = request.Patient.Address.City,
-					ProvinceOrState = request.Patient.Address.ProvinceOrState,
-					Country = request.Patient.Address.Country,
-					PostalCode = request.Patient.Address.PostalCode,
-				};
-
-				await context.Addresses.AddAsync(address);
-				await context.SaveChangesAsync();
-
-				Patient patient = new Patient
-				{
-					FirstName = request.Patient.FirstName,
-					LastName = request.Patient.LastName,
-					DateOfBirth = request.Patient.DateOfBirth,
-					PhoneNumber = request.Patient.PhoneNumber,
-					Gender = request.Patient.Gender,
-					AddressId = address.Id,
-					UserId = user.Id
-				};
-
-				await context.Patients.AddAsync(patient);
-				await context.SaveChangesAsync();
-
-				return Created();
-			}
-			catch (Exception e)
+			var result = await userManager.CreateAsync(user, request.Password);
+			if (!result.Succeeded)
 			{
-				return StatusCode(500, $"Error: {e}");
+				return BadRequest("Creation Failed");
 			}
+
+			await userManager.AddToRoleAsync(user, "patient");
+
+			Address address = new Address
+			{
+				Street = request.Patient.Address!.Street,
+				City = request.Patient.Address.City,
+				ProvinceOrState = request.Patient.Address.ProvinceOrState,
+				Country = request.Patient.Address.Country,
+				PostalCode = request.Patient.Address.PostalCode,
+			};
+
+			await context.Addresses.AddAsync(address);
+			await context.SaveChangesAsync();
+
+			Patient patient = new Patient
+			{
+				FirstName = request.Patient.FirstName,
+				LastName = request.Patient.LastName,
+				DateOfBirth = request.Patient.DateOfBirth,
+				PhoneNumber = request.Patient.PhoneNumber,
+				Gender = request.Patient.Gender,
+				AddressId = address.Id,
+				UserId = user.Id
+			};
+
+			await context.Patients.AddAsync(patient);
+			await context.SaveChangesAsync();
+
+			return Created();
 		}
 
 
 		//[Authorize(Roles = "admin")]
-		[HttpPost("register/staff")]
-		public async Task<ActionResult> RegisterStaff([FromBody] Register request)
+		[HttpPost("register/nurse")]
+		public async Task<ActionResult> RegisterNurse([FromBody] Register request)
 		{
-			try
+			if (request.Nurse is null) return BadRequest();
+
+			var existingUser = await userManager.FindByEmailAsync(request.Email);
+			if (existingUser != null) return BadRequest();
+
+			var user = new ApplicationUser
 			{
-				if (request.Staff is null) return BadRequest();
+				UserName = $"{request.Nurse.FirstName} {request.Nurse.LastName}",
+				Email = request.Email,
+				EmailConfirmed = true
 
-				var existingUser = await userManager.FindByEmailAsync(request.Email);
-				if (existingUser != null) return BadRequest();
+			};
 
-				var user = new ApplicationUser
-				{
-					UserName = $"{request.Staff.FirstName} {request.Staff.LastName}",
-					Email = request.Email,
-					EmailConfirmed = true
+			var result = await userManager.CreateAsync(user, request.Password);
+			if (!result.Succeeded) return BadRequest();
 
-				};
+			await userManager.AddToRoleAsync(user, "nurse");
 
-				var result = await userManager.CreateAsync(user, request.Password);
-				if (!result.Succeeded) return BadRequest();
-
-				await userManager.AddToRoleAsync(user, "staff");
-
-				var staff = new Staff
-				{
-					FirstName = request.Staff.FirstName,
-					LastName = request.Staff.LastName,
-					PhoneNumber = request.Staff.PhoneNumber,
-					RoleId = request.Staff.Role!.Id,
-					UserId = user.Id
-				};
-
-				await context.StaffMembers.AddAsync(staff);
-				await context.SaveChangesAsync();
-
-				return Created();
-			}
-			catch (Exception e)
+			var nurse = new Nurse
 			{
-				return StatusCode(500, $"Error: {e}");
-			}
+				FirstName = request.Nurse.FirstName,
+				LastName = request.Nurse.LastName,
+				PhoneNumber = request.Nurse.PhoneNumber,
+				UserId = user.Id
+			};
+
+			await context.Nurses.AddAsync(nurse);
+			await context.SaveChangesAsync();
+
+			return Created();
 		}
 
 		[HttpPost("login")]
 		public async Task<ActionResult<LoginResponse>> Login([FromBody] Login request)
 		{
-			try
+			Guid? id = Guid.Empty;
+			var user = await userManager.FindByEmailAsync(request.Email);
+			if (user is null) return NotFound("User Not Found");
+
+			var result = await signInManager.PasswordSignInAsync(user, request.Password, false, false);
+			if (!result.Succeeded) return Unauthorized();
+
+			var token = await jwtTokenService.GenerateJwtTokenAsync(user);
+			var role = (await userManager.GetRolesAsync(user)).FirstOrDefault();
+			if (role is null) return NotFound();
+
+			if (role == "doctor")
 			{
-				Guid? id = Guid.Empty;
-				var user = await userManager.FindByEmailAsync(request.Email);
-				if (user is null) return NotFound("User Not Found");
-
-				var result = await signInManager.PasswordSignInAsync(user, request.Password, false, false);
-				if (!result.Succeeded) return Unauthorized();
-
-				var token = await jwtTokenService.GenerateJwtTokenAsync(user);
-				var role = (await userManager.GetRolesAsync(user)).FirstOrDefault();
-				if (role is null) return NotFound();
-
-				if (role == "doctor")
-				{
-					var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.UserId == user.Id);
-					if (doctor is null) return NotFound("Doctor does not exist");
-					id = doctor.Id;
-				}
-				if (role == "staff")
-				{
-					var staff = await context.StaffMembers.FirstOrDefaultAsync(d => d.UserId == user.Id);
-					if (staff is null) return NotFound("Staff member does not exist.");
-					id = staff.Id;
-				}
-				if (role == "patient")
-				{
-					var patient = await context.Patients.FirstOrDefaultAsync(d => d.UserId == user.Id);
-					if (patient is null) return NotFound("Patient does not exist.");
-					id = patient.Id;
-				}
-
-				await context.SaveChangesAsync();
-
-				return Ok(new LoginResponse
-				{
-					Token = token,
-					Role = role,
-					UserId = user.Id,
-					ProfileId = id
-				});
+				var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.UserId == user.Id);
+				if (doctor is null) return NotFound("Doctor does not exist");
+				id = doctor.Id;
 			}
-			catch (Exception e)
+			if (role == "nurse")
 			{
-				return StatusCode(500, $"Error: {e}");
+				var nurse = await context.Nurses.FirstOrDefaultAsync(d => d.UserId == user.Id);
+				if (nurse is null) return NotFound("Nurse does not exist.");
+				id = nurse.Id;
 			}
+			if (role == "patient")
+			{
+				var patient = await context.Patients.FirstOrDefaultAsync(d => d.UserId == user.Id);
+				if (patient is null) return NotFound("Patient does not exist.");
+				id = patient.Id;
+			}
+
+			await context.SaveChangesAsync();
+
+			return Ok(new LoginResponse
+			{
+				Token = token,
+				Role = role,
+				UserId = user.Id,
+				ProfileId = id
+			});
 		}
 
 		[HttpDelete]
 		public async Task<ActionResult> DeleteAllUsers()
 		{
-			try
-			{
-				var users = await userManager.Users.ToListAsync();
+			var users = await userManager.Users.ToListAsync();
 
-				foreach (var user in users)
+			foreach (var user in users)
+			{
+				var role = (await userManager.GetRolesAsync(user)).FirstOrDefault();
+				if (role == "doctor")
 				{
-					var role = (await userManager.GetRolesAsync(user)).FirstOrDefault();
-					if (role == "doctor")
+					var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.UserId == user.Id);
+					if (doctor is not null)
 					{
-						var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.UserId == user.Id);
-						if (doctor is not null)
-						{
-							context.Doctors.Remove(doctor);
-							await context.SaveChangesAsync();
-						}
-					}
-					if (role == "patient")
-					{
-						var patient = await context.Patients.FirstOrDefaultAsync(p => p.UserId == user.Id);
-						if (patient is not null)
-						{
-							context.Patients.Remove(patient);
-							await context.SaveChangesAsync();
-						}
-					}
-					if (role == "staff")
-					{
-						var staff = await context.StaffMembers.FirstOrDefaultAsync(s => s.UserId == user.Id);
-						if (staff is not null)
-						{
-							context.StaffMembers.Remove(staff);
-							await context.SaveChangesAsync();
-						}
+						context.Doctors.Remove(doctor);
+						await context.SaveChangesAsync();
 					}
 				}
+				if (role == "patient")
+				{
+					var patient = await context.Patients.FirstOrDefaultAsync(p => p.UserId == user.Id);
+					if (patient is not null)
+					{
+						context.Patients.Remove(patient);
+						await context.SaveChangesAsync();
+					}
+				}
+				if (role == "nurse")
+				{
+					var nurse = await context.Nurses.FirstOrDefaultAsync(s => s.UserId == user.Id);
+					if (nurse is not null)
+					{
+						context.Nurses.Remove(nurse);
+						await context.SaveChangesAsync();
+					}
+				}
+			}
 
-				return Ok($"{users.Count - 1} Users Deleted");
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Ok($"{users.Count - 1} Users Deleted");
 		}
     }
 }

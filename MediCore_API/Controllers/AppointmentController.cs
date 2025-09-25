@@ -25,131 +25,82 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetAllAppointments()
 		{
-			try
-			{
-				var appointments = await context.Appointments.ToListAsync();
-				return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			var appointments = await context.Appointments.ToListAsync();
+			return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<AppointmentDTO>> GetAppointment([FromRoute] Guid id)
 		{
-			try
-			{
-				var appointment = await context.Appointments.FindAsync(id);
-				if (appointment is null) return NotFound("Appointment Not Found");
-				return Ok(mapper.Map<Appointment, AppointmentDTO>(appointment));
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			var appointment = await context.Appointments.FindAsync(id);
+			if (appointment is null) return NotFound("Appointment Not Found");
+			return Ok(mapper.Map<Appointment, AppointmentDTO>(appointment));
 		}
 
 		[HttpGet("doctor/{id:Guid}")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetDoctorAppointments([FromRoute] Guid id)
 		{
-			try
-			{
-				if (!await context.Doctors.AnyAsync(d => d.Id == id)) return NotFound("Doctor Not Found");
+			if (!await context.Doctors.AnyAsync(d => d.Id == id)) return NotFound("Doctor Not Found");
 
-				var appointments = await context.Appointments.Include(a => a.TimeSlot).ThenInclude(t => t!.Schedule).ThenInclude(s => s!.Doctor)
-															 .Where(a => a.TimeSlot!.Schedule!.DoctorId == id)
-															 .Include(a => a.Patient).ToListAsync();
-				if (!appointments.Any()) return NotFound("No Doctor Appointments Found");
+			var appointments = await context.Appointments.Include(a => a.TimeSlot).ThenInclude(t => t!.Schedule).ThenInclude(s => s!.Doctor)
+														 .Where(a => a.TimeSlot!.Schedule!.DoctorId == id)
+														 .Include(a => a.Patient).ToListAsync();
+			if (!appointments.Any()) return NotFound("No Doctor Appointments Found");
 
-				return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
 		}
 
 		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetPatientAppointments([FromRoute] Guid id)
 		{
-			try
-			{
-				if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
+			if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
 
-				var appointments = await context.Appointments.Include(a => a.TimeSlot)
-															 .Include(a => a.Patient).Where(a => a.PatientId == id)
-															 .ToListAsync();
-				if (!appointments.Any()) return NotFound("No Patient Appointments Found");
+			var appointments = await context.Appointments.Include(a => a.TimeSlot)
+														 .Include(a => a.Patient).Where(a => a.PatientId == id)
+														 .ToListAsync();
+			if (!appointments.Any()) return NotFound("No Patient Appointments Found");
 
-				return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
 		}
 
 		[HttpPost]
 		public async Task<ActionResult> PostAppointment([FromBody] AppointmentDTO dto)
 		{
-			try
-			{
-				if (dto is null) return BadRequest("Appointment Data Null.");
-				if (!validate.AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
+			if (dto is null) return BadRequest("Appointment Data Null.");
+			if (!validate.AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
 
-				await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(dto));
-				await context.SaveChangesAsync();
+			await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(dto));
+			await context.SaveChangesAsync();
 
-				return Created();
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Created();
 		}
 
 		[HttpPatch]
 		public async Task<ActionResult> PatchAppointment([FromBody] AppointmentDTO dto)
 		{
-			try
-			{
-				if (dto is null) return BadRequest("Appointment Data Null.");
+			if (dto is null) return BadRequest("Appointment Data Null.");
 
-				var appointment = await context.Appointments.FirstOrDefaultAsync(a => a.Id == dto.Id);
-				if (appointment is null) return NotFound("Appointment Not Found");
+			var appointment = await context.Appointments.FirstOrDefaultAsync(a => a.Id == dto.Id);
+			if (appointment is null) return NotFound("Appointment Not Found");
 
-				if (dto.Status != string.Empty) appointment.Status = dto.Status;
-				if (dto.TimeSlotId != Guid.Empty) appointment.TimeSlotId = dto.TimeSlotId;
-				if (dto.PatientId != Guid.Empty) appointment.PatientId = dto.PatientId;
+			if (dto.Status != string.Empty) appointment.Status = dto.Status;
+			if (dto.TimeSlotId != Guid.Empty) appointment.TimeSlotId = dto.TimeSlotId;
+			if (dto.PatientId != Guid.Empty) appointment.PatientId = dto.PatientId;
 
-				await context.SaveChangesAsync();
-				return Ok();
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			await context.SaveChangesAsync();
+			return Ok();
 		}
 
 		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteAppointment([FromRoute] Guid id)
 		{
-			try
-			{
-				var appointment = await context.Appointments.FindAsync(id);
-				if (appointment is null) return NotFound("Appointment Not Found");
+			var appointment = await context.Appointments.FindAsync(id);
+			if (appointment is null) return NotFound("Appointment Not Found");
 
-				context.Appointments.Remove(appointment);
-				await context.SaveChangesAsync();
+			context.Appointments.Remove(appointment);
+			await context.SaveChangesAsync();
 
-				return Ok("Appointment Deleted");
-			}
-			catch (Exception e)
-			{
-				return StatusCode(500, $"Error: {e}");
-			}
+			return Ok("Appointment Deleted");
 		}
     }
 }

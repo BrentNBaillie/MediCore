@@ -293,8 +293,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
-    "Method": "RegisterPatient",
-    "RelativePath": "api/Authorize/register/patient",
+    "Method": "RegisterNurse",
+    "RelativePath": "api/Authorize/register/nurse",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -309,8 +309,8 @@
   },
   {
     "ContainingType": "MediCore_API.Controllers.AuthorizeController",
-    "Method": "RegisterStaff",
-    "RelativePath": "api/Authorize/register/staff",
+    "Method": "RegisterPatient",
+    "RelativePath": "api/Authorize/register/patient",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -938,6 +938,84 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MediCore_API.Controllers.NurseController",
+    "Method": "GetAllStaff",
+    "RelativePath": "api/Nurse",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.NurseDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.NurseController",
+    "Method": "PatchStaffMember",
+    "RelativePath": "api/Nurse",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.NurseDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.NurseController",
+    "Method": "GetStaffMember",
+    "RelativePath": "api/Nurse/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.NurseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MediCore_API.Controllers.NurseController",
+    "Method": "DeleteStaffMember",
+    "RelativePath": "api/Nurse/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MediCore_API.Controllers.PatientController",
     "Method": "GetAllPatients",
     "RelativePath": "api/Patient",
@@ -1337,199 +1415,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "GetAllStaff",
-    "RelativePath": "api/Staff",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.StaffDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "PatchStaffMember",
-    "RelativePath": "api/Staff",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "GetStaffMember",
-    "RelativePath": "api/Staff/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "DeleteStaffMember",
-    "RelativePath": "api/Staff/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffController",
-    "Method": "SetStaffRole",
-    "RelativePath": "api/Staff/{staffId}/set-role/{roleId}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "staffId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "roleId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "GetAllRoles",
-    "RelativePath": "api/StaffRole",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO, MediCore_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "PostStaffRole",
-    "RelativePath": "api/StaffRole",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "PatchStaffRole",
-    "RelativePath": "api/StaffRole",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "GetStaffRole",
-    "RelativePath": "api/StaffRole/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MediCore_Library.Models.DTOs.DTO_Entities.StaffRoleDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "MediCore_API.Controllers.StaffRoleController",
-    "Method": "DeleteStaffRole",
-    "RelativePath": "api/StaffRole/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "MediCore_API.Controllers.TimeSlotController",

@@ -3,7 +3,7 @@ using MediCore_Library.Models.Entities;
 
 namespace MediCore_API.Services
 {
-	public class TimeSlotHandler : ITimeSlotHandler
+	internal sealed class TimeSlotHandler : ITimeSlotHandler
 	{
 		public List<TimeSlot> CreateTimeSlots(Schedule schedule)
 		{

@@ -64,14 +64,12 @@ C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Composition.Run
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Drawing.Common.dll
-C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Memory.Data.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Runtime.Caching.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Security.Permissions.dll
-C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Text.Json.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\System.Windows.Extensions.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Github Projects\MediCore\MediCore_API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -164,12 +162,6 @@ C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\scopedcss\bundle\MediC
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.build.json
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.development.json
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets\msbuild.MediCore_API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets\msbuild.MediCore_API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets\msbuild.build.MediCore_API.props
-C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.MediCore_API.props
-C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.MediCore_API.props
-C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore.AC3BF9B9.Up2Date
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore_API.dll
@@ -177,3 +169,8 @@ C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\refint\MediCore_API.dl
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore_API.pdb
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\MediCore_API.genruntimeconfig.cache
 C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\ref\MediCore_API.dll
+C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Github Projects\MediCore\MediCore_API\obj\Debug\net9.0\staticwebassets.build.json.cache
