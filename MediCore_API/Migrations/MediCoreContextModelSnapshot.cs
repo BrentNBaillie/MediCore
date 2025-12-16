@@ -272,6 +272,36 @@ namespace MediCore_API.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Nurse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Nurses");
+                });
+
             modelBuilder.Entity("MediCore_Library.Models.Entities.Patient", b =>
                 {
                     b.Property<Guid>("Id")
@@ -376,60 +406,6 @@ namespace MediCore_API.Migrations
                     b.HasIndex("DoctorId1");
 
                     b.ToTable("Schedules");
-                });
-
-            modelBuilder.Entity("MediCore_Library.Models.Entities.Staff", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
-
-                    b.ToTable("StaffMembers");
-                });
-
-            modelBuilder.Entity("MediCore_Library.Models.Entities.StaffRole", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("StaffRoles");
                 });
 
             modelBuilder.Entity("MediCore_Library.Models.Entities.TimeSlot", b =>
@@ -1717,6 +1693,16 @@ namespace MediCore_API.Migrations
                     b.Navigation("Chat");
                 });
 
+            modelBuilder.Entity("MediCore_Library.Models.Entities.Nurse", b =>
+                {
+                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", "User")
+                        .WithOne()
+                        .HasForeignKey("MediCore_Library.Models.Entities.Nurse", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MediCore_Library.Models.Entities.Patient", b =>
                 {
                     b.HasOne("MediCore_Library.Models.Entities.Address", "Address")
@@ -1775,23 +1761,6 @@ namespace MediCore_API.Migrations
                         .HasForeignKey("DoctorId1");
 
                     b.Navigation("Doctor");
-                });
-
-            modelBuilder.Entity("MediCore_Library.Models.Entities.Staff", b =>
-                {
-                    b.HasOne("MediCore_Library.Models.Entities.StaffRole", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("MediCore_Library.Models.Identities.ApplicationUser", "User")
-                        .WithOne()
-                        .HasForeignKey("MediCore_Library.Models.Entities.Staff", "UserId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Role");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MediCore_Library.Models.Entities.TimeSlot", b =>

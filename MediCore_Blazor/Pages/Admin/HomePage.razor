@@ -12,17 +12,52 @@
 	<div>
 		<h1>Admin Dashboard</h1>
 	</div>
-	<div>
-		<h2>Doctors</h2>
-		<h3>@doctorCount</h3>
+	<div class="grid-container">
+		<div class="grid-item">
+			<h2>Patients</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Doctors</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Nurses</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Appointments</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Prescriptions</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Bills</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Addresses</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Accounts</h2>
+			<h3>@doctorCount</h3>
+		</div>
+		<div class="grid-item">
+			<h2>Medicines</h2>
+			<h3>@doctorCount</h3>
+		</div>
 	</div>
 </div>
 
 @code
 {
 	private int doctorCount = 0;
-	protected override void OnInitialized()
+
+	protected override async Task OnInitializedAsync()
 	{
-		
+		doctorCount = await http.GetFromJsonAsync<int>($"{config.BaseUrl}/doctor/count");
 	}
 }

@@ -7,6 +7,6 @@
 		public string PaymentMethod { get; set; } = string.Empty;
 		public DateTime? Date { get; set; }
 		public Guid? AppointmentId { get; set; }
-		public List<Guid>? Prescriptions { get; set; }
+		public List<PrescriptionDTO>? Prescriptions { get; set; }
 	}
 }

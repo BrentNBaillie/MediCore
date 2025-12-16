@@ -1,9 +1,9 @@
-﻿using MediCore_API.Data;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
+using MediCore_Library.Models.DTOs.DTO_Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MediCore_API.Interfaces;
-using MediCore_Library.Models.DTOs.DTO_Entities;
-using MediCore_Library.Models.Entities;
 
 
 namespace MediCore_API.Controllers
@@ -13,9 +13,9 @@ namespace MediCore_API.Controllers
 	public class TimeSlotController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 
-		public TimeSlotController(MediCoreContext context, IModelMapper mapper)
+		public TimeSlotController(MediCoreContext context, IMapper mapper)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -24,30 +24,41 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<TimeSlotDTO>>> GetAllTimeSlots()
 		{
-			var timeSlots = await context.TimeSlots.ToListAsync();
-			return Ok(timeSlots.Select(t => mapper.Map<TimeSlot, TimeSlotDTO>(t)).ToList());
+			var timeSlots = await context.TimeSlots
+				.ProjectTo<TimeSlotDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok();
 		}
 
 		[HttpGet("schedule/{id:Guid}")]
 		public async Task<ActionResult<List<TimeSlotDTO>>> GetTimeSlotsBySchedule([FromRoute] Guid id)
 		{
-			var timeSlots = await context.TimeSlots.Where(t => t.ScheduleId == id).ToListAsync();
-			return Ok(timeSlots.Select(t => mapper.Map<TimeSlot, TimeSlotDTO>(t)).ToList());
+			var timeSlots = await context.TimeSlots
+				.Where(t => t.ScheduleId == id)
+				.ProjectTo<TimeSlotDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(timeSlots);
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<TimeSlotDTO>> GetTimeSlot([FromRoute] Guid id)
 		{
-			var timeSlot = await context.TimeSlots.FirstOrDefaultAsync(t => t.Id == id);
+			var timeSlot = await context.TimeSlots
+				.ProjectTo<TimeSlotDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(t => t.Id == id);
 			if (timeSlot is null) return NotFound("Time Slot Not Found");
-			return Ok(mapper.Map<TimeSlot, TimeSlotDTO>(timeSlot));
+			return Ok(timeSlot);
 		}
 
 		[HttpGet("doctor/{id:Guid}")]
 		public async Task<ActionResult<List<TimeSlotDTO>>> GetTimeSlotByDoctor([FromRoute] Guid id)
 		{
-			var timeSlots = await context.TimeSlots.Include(t => t.Schedule).Where(t => t.Schedule!.DoctorId == id).ToListAsync();
-			return Ok(timeSlots.Select(t => mapper.Map<TimeSlot, TimeSlotDTO>(t)).ToList());
+			var timeSlots = await context.TimeSlots
+				.Include(t => t.Schedule)
+				.Where(t => t.Schedule!.DoctorId == id)
+				.ProjectTo<TimeSlotDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(timeSlots);
 		}
 
 		[HttpPatch("update/{id:Guid}/is-available/{isAvailable:bool}")]

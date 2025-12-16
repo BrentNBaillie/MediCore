@@ -1,4 +1,6 @@
-﻿using MediCore_API.Data;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
 using MediCore_API.Interfaces;
 using MediCore_Library.Models.DTOs.DTO_Entities;
 using MediCore_Library.Models.Entities;
@@ -12,10 +14,10 @@ namespace MediCore_API.Controllers
 	public class MedicineController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 		private readonly IModelValidation validate;
 
-		public MedicineController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
+		public MedicineController(MediCoreContext context, IMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -25,8 +27,10 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<MedicineDTO>>> GetAllMedicine()
 		{
-			var medicines = await context.Medicines.ToListAsync();
-			return Ok(medicines.Select(m => mapper.Map<Medicine, MedicineDTO>(m)).ToList());
+			var medicines = await context.Medicines
+				.ProjectTo<MedicineDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(medicines);
 		}
 
 		[HttpGet("{id:Guid}")]
@@ -34,14 +38,14 @@ namespace MediCore_API.Controllers
 		{
 			var medicine = await context.Medicines.FirstOrDefaultAsync(m => m.Id == id);
 			if (medicine is null) return NotFound("Medicine Not Found");
-			return Ok(mapper.Map<Medicine, MedicineDTO>(medicine));
+			return Ok(mapper.Map<MedicineDTO>(medicine));
 		}
 
 		[HttpPost]
 		public async Task<ActionResult> PostMedicine([FromBody] MedicineDTO dto)
 		{
 			if (!validate.MedicineIsValid(dto)) return BadRequest("Invalid Medicine Data");
-			await context.Medicines.AddAsync(mapper.Map<MedicineDTO, Medicine>(dto));
+			await context.Medicines.AddAsync(mapper.Map<Medicine>(dto));
 			await context.SaveChangesAsync();
 			return Created();
 		}
@@ -64,7 +68,7 @@ namespace MediCore_API.Controllers
 		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteMedicine([FromRoute] Guid id)
 		{
-			var medicine = await context.Medicines.FirstOrDefaultAsync(m => m.Id == id);
+			var medicine = await context.Medicines.FindAsync(id);
 			if (medicine is null) return NotFound("Medicine Not Found");
 			context.Medicines.Remove(medicine);
 			await context.SaveChangesAsync();

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Data
 {
-	public sealed class MediCoreContext :IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
+	public class MediCoreContext :IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 	{
 		public MediCoreContext(DbContextOptions<MediCoreContext> options) : base(options) { }
 

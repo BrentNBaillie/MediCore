@@ -9,7 +9,7 @@ namespace MediCore_API.Services
 		{
 			if (prescription is null) return false;
 			if (prescription.Quantity <= 0) return false;
-			if (prescription.MedicineId == Guid.Empty) return false;
+			if (prescription.Medicine!.Id == Guid.Empty) return false;
 			if (prescription.DoctorId == Guid.Empty) return false;
 			if (prescription.PatientId == Guid.Empty) return false;
 			return true;

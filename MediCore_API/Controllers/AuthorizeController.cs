@@ -1,11 +1,11 @@
-﻿using MediCore_API.Interfaces;
+﻿using MediCore_API.Data;
+using MediCore_API.Interfaces;
 using MediCore_API.Services;
-using MediCore_API.Data;
+using MediCore_Library.Models.Entities;
+using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MediCore_Library.Models.Identities;
-using MediCore_Library.Models.Entities;
 
 namespace MediCore_API.Controllers
 {
@@ -69,8 +69,6 @@ namespace MediCore_API.Controllers
 		public async Task<ActionResult> RegisterPatient([FromBody] Register request)
 		{
 			if (request.Patient is null) return BadRequest("Patient is null");
-
-			if (!ModelState.IsValid) return BadRequest(ModelState);
 
 			var existingUser = await userManager.FindByEmailAsync(request.Email);
 			if (existingUser != null) return BadRequest("Email already registered!");
@@ -239,5 +237,20 @@ namespace MediCore_API.Controllers
 
 			return Ok($"{users.Count - 1} Users Deleted");
 		}
+
+        [HttpDelete("doctor/{id:Guid}")]
+        public async Task<ActionResult> DeleteDoctor(Guid id)
+        {
+            var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == id);
+            if (doctor is null) return NotFound("Doctor Not Found");
+            var user = await userManager.FindByIdAsync(doctor.UserId.ToString()!);
+            if (user is null) return NotFound("User Not Found");
+
+            context.Doctors.Remove(doctor);
+            await userManager.DeleteAsync(user);
+
+            await context.SaveChangesAsync();
+            return Ok("Doctor Deleted");
+        }
     }
 }

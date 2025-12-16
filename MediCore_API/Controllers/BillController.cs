@@ -1,9 +1,11 @@
-﻿using MediCore_API.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
 using MediCore_API.Interfaces;
 using MediCore_Library.Models.DTOs.DTO_Entities;
 using MediCore_Library.Models.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Controllers
 {
@@ -12,10 +14,10 @@ namespace MediCore_API.Controllers
 	public class BillController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 		private readonly IModelValidation validate;
 
-		public BillController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
+		public BillController(MediCoreContext context, IMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -25,31 +27,40 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<BillDTO>>> GetAllBills()
 		{
-			var bills = await context.Bills.ToListAsync();
-			return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
+			var bills = await context.Bills
+				.ProjectTo<BillDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(bills);
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<BillDTO>> GetBill([FromRoute] Guid id)
 		{
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+			var bill = await context.Bills
+				.ProjectTo<BillDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(b => b.Id == id);
 			if (bill is null) return NotFound("Bill Not Found");
-			return Ok(mapper.Map<Bill, BillDTO>(bill));
+			return Ok(bill);
 		}
 
 		[HttpGet("patient/{id:Guid}")]
 		public async Task<ActionResult<List<BillDTO>>> GetPatientBills([FromRoute] Guid id)
 		{
 			if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
-			var bills = await context.Bills.Include(b => b.Appointment).Include(b => b.Prescriptions).Where(b => b.Appointment!.PatientId == id).ToListAsync();
+			var bills = await context.Bills
+				.Include(b => b.Appointment)
+				.Include(b => b.Prescriptions)
+				.Where(b => b.Appointment!.PatientId == id)
+				.ProjectTo<BillDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
 			if (!bills.Any()) return NotFound("No Bills Found");
 
-			foreach (Bill bill in bills)
+			foreach (BillDTO bill in bills)
 			{
 				bill.Amount = bill.Prescriptions!.Sum(p => p.Quantity * p.Medicine!.Price);
 			}
 
-			return Ok(bills.Select(b => mapper.Map<Bill, BillDTO>(b)).ToList());
+            return Ok(bills);
 		}
 
 		[HttpPost]
@@ -59,17 +70,15 @@ namespace MediCore_API.Controllers
 			if (!dto.Prescriptions!.Any()) return BadRequest("No Prescriptions Selected");
 			if (!validate.BillIsValid(dto)) return BadRequest("Invalid Bill Data");
 
-			Bill bill = mapper.Map<BillDTO, Bill>(dto);
-			await context.Bills.AddAsync(bill);
-			await context.SaveChangesAsync();
-
-			var prescriptions = await context.Prescriptions.Include(p => p.Medicine).Where(p => dto.Prescriptions!.Contains(p.Id)).ToListAsync();
-			foreach (Prescription p in prescriptions)
+			Bill bill = mapper.Map<Bill>(dto);
+			foreach (Prescription p in bill.Prescriptions!)
 			{
 				p.BillId = bill.Id;
 			}
 
-			bill.Amount = prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
+			bill.Amount = bill.Prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
+
+			await context.Bills.AddAsync(bill);
 			await context.SaveChangesAsync();
 
 			return Created();
@@ -78,7 +87,7 @@ namespace MediCore_API.Controllers
 		[HttpPatch]
 		public async Task<ActionResult> PatchBill([FromBody] BillDTO dto)
 		{
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == dto.Id);
+			var bill = await context.Bills.FindAsync(dto.Id);
 			if (bill is null) return NotFound("Bill Not Found");
 
 			if (!string.IsNullOrEmpty(dto.PaymentMethod)) bill.PaymentMethod = dto.PaymentMethod;
@@ -92,7 +101,7 @@ namespace MediCore_API.Controllers
 		[HttpDelete("{id:Guid}")]
 		public async Task<ActionResult> DeleteBill([FromRoute] Guid id)
 		{
-			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == id);
+			var bill = await context.Bills.FindAsync(id);
 			if (bill is null) return NotFound("Bill Not Found");
 
 			context.Bills.Remove(bill);

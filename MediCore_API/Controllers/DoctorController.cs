@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using MediCore_API.Data;
-using MediCore_API.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using MediCore_Library.Models.DTOs.DTO_Entities;
-using MediCore_Library.Models.Entities;
 using MediCore_Library.Models.Identities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Controllers
 {
@@ -14,10 +14,10 @@ namespace MediCore_API.Controllers
 	public class DoctorController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 		private readonly UserManager<ApplicationUser> userManager;
 
-		public DoctorController(MediCoreContext context, UserManager<ApplicationUser> userManager, IModelMapper mapper)
+		public DoctorController(MediCoreContext context, UserManager<ApplicationUser> userManager, IMapper mapper)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -27,20 +27,24 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<DoctorDTO>>> GetAllDoctors()
 		{
-			var doctors = await context.Doctors.ToListAsync();
-			return Ok(doctors.Select(d => mapper.Map<Doctor, DoctorDTO>(d)).ToList());
+			var doctors = await context.Doctors
+				.ProjectTo<DoctorDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(doctors);
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<DoctorDTO>> GetDoctor([FromRoute] Guid id)
 		{
-			var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == id);
+			var doctor = await context.Doctors
+				.ProjectTo<DoctorDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(d => d.Id == id);
 			if (doctor is null) return NotFound("Doctor Not Found");
 
-			return Ok(mapper.Map<Doctor, DoctorDTO>(doctor));
+			return Ok(doctor);
 		}
 
-		[HttpGet("/count")]
+		[HttpGet("count")]
 		public async Task<ActionResult<int>> GetDoctorCount()
 		{
 			return Ok(await context.Doctors.CountAsync());
@@ -61,21 +65,6 @@ namespace MediCore_API.Controllers
 
 			await context.SaveChangesAsync();
 			return Ok();
-		}
-
-		[HttpDelete("{id:Guid}")]
-		public async Task<ActionResult> DeleteDoctor(Guid id)
-		{
-			var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.Id == id);
-			if (doctor is null) return NotFound("Doctor Not Found");
-			var user = await userManager.FindByIdAsync(doctor.UserId.ToString()!);
-			if (user is null) return NotFound("User Not Found");
-
-			context.Doctors.Remove(doctor);
-			await userManager.DeleteAsync(user);
-
-			await context.SaveChangesAsync();
-			return Ok("Doctor Deleted");
 		}
     }
 }

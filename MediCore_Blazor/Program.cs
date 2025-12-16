@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using MediCore_Blazor;
 using MediCore_Blazor.Services;
 using Microsoft.AspNetCore.Components.Web;
@@ -9,6 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddSingleton<GlobalConfig>();
-builder.Services.AddScoped<SessionState>();
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddSingleton<SessionState>();
 
 await builder.Build().RunAsync();

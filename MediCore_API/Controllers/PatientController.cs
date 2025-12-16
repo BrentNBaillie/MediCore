@@ -1,11 +1,11 @@
-﻿using MediCore_API.Data;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Identities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MediCore_API.Interfaces;
-using Microsoft.AspNetCore.Identity;
-using MediCore_Library.Models.DTOs.DTO_Entities;
-using MediCore_Library.Models.Entities;
-using MediCore_Library.Models.Identities;
 
 namespace MediCore_API.Controllers
 {
@@ -14,10 +14,10 @@ namespace MediCore_API.Controllers
     public class PatientController : ControllerBase
     {
         private readonly MediCoreContext context;
-        private readonly IModelMapper mapper;
+        private readonly IMapper mapper;
 		private readonly UserManager<ApplicationUser> userManager;
 
-		public PatientController(MediCoreContext context, UserManager<ApplicationUser> userManager, IModelMapper mapper)
+		public PatientController(MediCoreContext context, UserManager<ApplicationUser> userManager, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
@@ -27,17 +27,21 @@ namespace MediCore_API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<PatientDTO>>> GetAllPatients()
         {
-			var patients = await context.Patients.ToListAsync();
-			if (patients is null) return NotFound("Patients Not Found");
-			return Ok(patients.Select(p => mapper.Map<Patient, PatientDTO>(p)).ToList());
+			var patients = await context.Patients
+				.ProjectTo<PatientDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			if (!patients.Any()) return NotFound("Patients Not Found");
+			return Ok(patients);
 		}
 
         [HttpGet("{id:Guid}")]
         public async Task<ActionResult<PatientDTO>> GetPatient([FromRoute] Guid id)
         {
-			var patient = await context.Patients.FirstOrDefaultAsync(p => p.Id == id);
+			var patient = await context.Patients
+				.ProjectTo<PatientDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(p => p.Id == id);
 			if (patient is null) return NotFound("Patient Not Found");
-			return Ok(mapper.Map<Patient, PatientDTO>(patient));
+			return Ok(patient);
 		}
 
         [HttpPatch]

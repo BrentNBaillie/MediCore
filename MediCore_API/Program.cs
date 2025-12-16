@@ -1,6 +1,5 @@
 using MediCore_API.Data;
 using MediCore_API.Interfaces;
-using MediCore_API.Middleware;
 using MediCore_API.Services;
 using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,14 +12,10 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddProblemDetails(conf =>
+builder.Services.AddAutoMapper(config =>
 {
-	conf.CustomizeProblemDetails = context =>
-	{
-		context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
-	};
+    config.AddProfile<MediCore_API.Services.ModelMapper>();
 });
-builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -30,9 +25,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 	// Optionally, you can configure more JSON serialization settings like enum converters and ignoring nulls
 	options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 	options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+	options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never;
 });
 
-builder.Services.AddScoped<IModelMapper, ModelMapper>();
 builder.Services.AddScoped<IModelValidation, ModelValidation>();
 builder.Services.AddScoped<ITimeSlotHandler, TimeSlotHandler>();
 
@@ -86,11 +81,6 @@ builder.Services.Configure<IdentityOptions>(options =>
 		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 _";
 });
 
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-	options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never;
-});
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -114,8 +104,6 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 
 app.UseCors("AllowAllOrigins");
-
-app.UseExceptionHandler();
 
 app.UseAuthentication();
 app.UseAuthorization();

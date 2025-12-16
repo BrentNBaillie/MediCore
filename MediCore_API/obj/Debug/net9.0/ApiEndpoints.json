@@ -652,6 +652,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MediCore_API.Controllers.DoctorController",
+    "Method": "GetDoctorCount",
+    "RelativePath": "api/Doctor/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "MediCore_API.Controllers.FeedbackController",
     "Method": "GetAllFeedback",
     "RelativePath": "api/Feedback",

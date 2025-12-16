@@ -1,9 +1,11 @@
-﻿using MediCore_API.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
 using MediCore_API.Interfaces;
 using MediCore_Library.Models.DTOs.DTO_Entities;
 using MediCore_Library.Models.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MediCore_API.Controllers
 {
@@ -12,10 +14,10 @@ namespace MediCore_API.Controllers
 	public class AppointmentController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 		private readonly IModelValidation validate;
 
-		public AppointmentController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
+		public AppointmentController(MediCoreContext context, IMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -25,16 +27,20 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<AppointmentDTO>>> GetAllAppointments()
 		{
-			var appointments = await context.Appointments.ToListAsync();
-			return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
+			var appointments = await context.Appointments
+				.ProjectTo<AppointmentDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(appointments);
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<AppointmentDTO>> GetAppointment([FromRoute] Guid id)
 		{
-			var appointment = await context.Appointments.FindAsync(id);
+			var appointment = await context.Appointments
+				.ProjectTo<AppointmentDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(a => a.Id == id);
 			if (appointment is null) return NotFound("Appointment Not Found");
-			return Ok(mapper.Map<Appointment, AppointmentDTO>(appointment));
+			return Ok(appointment);
 		}
 
 		[HttpGet("doctor/{id:Guid}")]
@@ -42,12 +48,16 @@ namespace MediCore_API.Controllers
 		{
 			if (!await context.Doctors.AnyAsync(d => d.Id == id)) return NotFound("Doctor Not Found");
 
-			var appointments = await context.Appointments.Include(a => a.TimeSlot).ThenInclude(t => t!.Schedule).ThenInclude(s => s!.Doctor)
-														 .Where(a => a.TimeSlot!.Schedule!.DoctorId == id)
-														 .Include(a => a.Patient).ToListAsync();
+			var appointments = await context.Appointments.Include(a => a.TimeSlot)
+				.ThenInclude(t => t!.Schedule)
+				.ThenInclude(s => s!.Doctor)
+				.Where(a => a.TimeSlot!.Schedule!.DoctorId == id)
+				.Include(a => a.Patient)
+				.ProjectTo<AppointmentDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
 			if (!appointments.Any()) return NotFound("No Doctor Appointments Found");
 
-			return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
+			return Ok(appointments);
 		}
 
 		[HttpGet("patient/{id:Guid}")]
@@ -55,12 +65,15 @@ namespace MediCore_API.Controllers
 		{
 			if (!await context.Patients.AnyAsync(p => p.Id == id)) return NotFound("Patient Not Found");
 
-			var appointments = await context.Appointments.Include(a => a.TimeSlot)
-														 .Include(a => a.Patient).Where(a => a.PatientId == id)
-														 .ToListAsync();
+			var appointments = await context.Appointments
+				.Include(a => a.TimeSlot)
+				.Include(a => a.Patient)
+				.Where(a => a.PatientId == id)
+				.ProjectTo<AppointmentDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
 			if (!appointments.Any()) return NotFound("No Patient Appointments Found");
 
-			return Ok(appointments.Select(a => mapper.Map<Appointment, AppointmentDTO>(a)).ToList());
+			return Ok(appointments);
 		}
 
 		[HttpPost]
@@ -69,7 +82,7 @@ namespace MediCore_API.Controllers
 			if (dto is null) return BadRequest("Appointment Data Null.");
 			if (!validate.AppointmentIsValid(dto)) return BadRequest("Appointment Data Is Invalid.");
 
-			await context.Appointments.AddAsync(mapper.Map<AppointmentDTO, Appointment>(dto));
+			await context.Appointments.AddAsync(mapper.Map<Appointment>(dto));
 			await context.SaveChangesAsync();
 
 			return Created();

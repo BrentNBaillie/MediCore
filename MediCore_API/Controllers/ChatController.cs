@@ -1,5 +1,6 @@
-﻿using MediCore_API.Data;
-using MediCore_API.Interfaces;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
 using MediCore_Library.Models.DTOs.DTO_Entities;
 using MediCore_Library.Models.Entities;
 using MediCore_Library.Models.Identities;
@@ -14,10 +15,10 @@ namespace MediCore_API.Controllers
 	public class ChatController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 		private readonly UserManager<ApplicationUser> userManager;
 
-		public ChatController(MediCoreContext context, UserManager<ApplicationUser> userManager, IModelMapper mapper)
+		public ChatController(MediCoreContext context, UserManager<ApplicationUser> userManager, IMapper mapper)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -27,30 +28,39 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<ChatDTO>>> GetAllChats()
 		{
-			var chats = await context.Chats.Include(c => c.Messages).ToListAsync();
-			return Ok(chats.Select(c => mapper.Map<Chat, ChatDTO>(c)).ToList());
+			var chats = await context.Chats
+				.Include(c => c.Messages)
+				.ProjectTo<ChatDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(chats);
 		}
 
 		[HttpGet("user/{id:Guid}")]
 		public async Task<ActionResult<List<ChatDTO>>> GetUserChats([FromRoute] Guid id)
 		{
-			var chats = await context.Chats.Where(c => c.Ids.Contains(id)).ToListAsync();
-			return Ok(chats.Select(c => mapper.Map<Chat, ChatDTO>(c)).ToList());
+			var chats = await context.Chats
+				.Where(c => c.Ids.Contains(id))
+				.ProjectTo<ChatDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(chats);
 		}
 
 		[HttpGet("user/message/{id:Guid}")]
 		public async Task<ActionResult<ChatDTO>> GetChat([FromRoute] Guid id)
 		{
-			var chat = await context.Chats.Select(c => new Chat
-			{
-				Id = c.Id,
-				Ids = c.Ids,
-				Names = c.Names,
-				Messages = c.Messages.OrderByDescending(m => m.Date).ToList()
-			}).FirstOrDefaultAsync(c => c.Id == id);
+			var chat = await context.Chats
+				.Select(c => new Chat
+				{
+					Id = c.Id,
+					Ids = c.Ids,
+					Names = c.Names,
+					Messages = c.Messages.OrderByDescending(m => m.Date).ToList()
+				})
+				.ProjectTo<ChatDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(c => c.Id == id);
 			if (chat is null) return NotFound("Chat Not Found");
 
-			return Ok(mapper.Map<Chat, ChatDTO>(chat));
+			return Ok(chat);
 		}
 
 		[HttpPost("user/{sendId:Guid}/send-to/{receiveId:Guid}")]
@@ -75,7 +85,7 @@ namespace MediCore_API.Controllers
 				await context.SaveChangesAsync();
 			}
 
-			Message newMessage = mapper.Map<MessageDTO, Message>(message);
+			Message newMessage = mapper.Map<Message>(message);
 			newMessage.SenderId = sendId;
 			newMessage.ChatId = chat.Id;
 

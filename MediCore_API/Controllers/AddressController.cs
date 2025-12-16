@@ -1,4 +1,6 @@
-﻿using MediCore_API.Data;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Data;
 using MediCore_API.Interfaces;
 using MediCore_Library.Models.DTOs.DTO_Entities;
 using MediCore_Library.Models.Entities;
@@ -12,10 +14,10 @@ namespace MediCore_API.Controllers
 	public class AddressController : ControllerBase
 	{
 		private readonly MediCoreContext context;
-		private readonly IModelMapper mapper;
+		private readonly IMapper mapper;
 		private readonly IModelValidation validate;
 
-		public AddressController(MediCoreContext context, IModelMapper mapper, IModelValidation validate)
+		public AddressController(MediCoreContext context, IMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
 			this.mapper = mapper;
@@ -25,23 +27,27 @@ namespace MediCore_API.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<AddressDTO>>> GetAllAddresses()
 		{
-			var addresses = await context.Addresses.ToListAsync();
-			return Ok(addresses.Select(a => mapper.Map<Address, AddressDTO>(a)).ToList());
+			var addresses = await context.Addresses
+				.ProjectTo<AddressDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(addresses);
 		}
 
 		[HttpGet("{id:Guid}")]
 		public async Task<ActionResult<AddressDTO>> GetAddress([FromRoute] Guid id)
 		{
-			var address = await context.Addresses.FirstOrDefaultAsync(a => a.Id == id);
+			var address = await context.Addresses
+				.ProjectTo<AddressDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(a => a.Id == id);
 			if (address is null) return NotFound("Address Not Found");
-			return Ok(mapper.Map<Address, AddressDTO>(address));
+			return Ok(address);
 		}
 
 		[HttpPost]
 		public async Task<ActionResult> PostAddress([FromBody] AddressDTO dto)
 		{
 			if (!validate.AddressIsValid(dto)) return BadRequest("Invalid Address Data");
-			await context.Addresses.AddAsync(mapper.Map<AddressDTO, Address>(dto));
+			await context.Addresses.AddAsync(mapper.Map<Address>(dto));
 			await context.SaveChangesAsync();
 			return Created();
 		}

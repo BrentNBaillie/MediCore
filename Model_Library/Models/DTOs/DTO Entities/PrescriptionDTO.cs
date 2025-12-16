@@ -4,7 +4,7 @@
 	{
 		public Guid? Id { get; set; }
 		public int Quantity { get; set; } = 0;
-		public Guid? MedicineId { get; set; }
+		public MedicineDTO? Medicine { get; set; }
 		public Guid? DoctorId { get; set; }
 		public Guid? PatientId { get; set; }
 		public Guid? BillId { get; set; }
