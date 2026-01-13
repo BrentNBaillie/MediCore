@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "MediCore_Blazor",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-ERxkuiHintZqQhPArRx6yW2R2NWfnYKRR8IHc+F4zWM=",
+    "hash": "sha256-xisiHv6VY4KRyTQrbYl+P0FpUQoHGiGL4Azf9Zg1vCQ=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.cs8mcre4gh.js"
@@ -56,6 +56,11 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "virtualPath": "Blazored.LocalStorage.wasm",
         "name": "Blazored.LocalStorage.12n6dz54qr.wasm",
         "integrity": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU="
+      },
+      {
+        "virtualPath": "Blazored.SessionStorage.wasm",
+        "name": "Blazored.SessionStorage.34xr2ein7y.wasm",
+        "integrity": "sha256-nQXuCGHos7iwp2WxRUgarKmWgJYChaVQp2NajgNU3V8="
       },
       {
         "virtualPath": "Microsoft.AspNetCore.Authorization.wasm",
@@ -1099,25 +1104,25 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MediCore_Library.wasm",
-        "name": "MediCore_Library.bfvyf8317o.wasm",
-        "integrity": "sha256-l9JQCO0hYEU8c6lrPVNUIqqF/3NjgIGsUMrqCSBWj7w="
+        "name": "MediCore_Library.h8zffnd5gp.wasm",
+        "integrity": "sha256-32RA2IbVk2PwmBd84B29FzabuM1QJ0KUZTCzTXFkRFs="
       },
       {
         "virtualPath": "MediCore_Blazor.wasm",
-        "name": "MediCore_Blazor.nzzvua1iu4.wasm",
-        "integrity": "sha256-DWLgpoEbuOyYfahHiuR3WiqHC2/bDQf+3gDelb8c/IA="
+        "name": "MediCore_Blazor.26kkdchq1g.wasm",
+        "integrity": "sha256-5u8gKRUN00nbILpdazSEcdG4BfOyz5fXW+3ZMFicxs0="
       }
     ],
     "pdb": [
       {
         "virtualPath": "MediCore_Library.pdb",
-        "name": "MediCore_Library.b85w0muwz4.pdb",
-        "integrity": "sha256-hSWA5PAqNv3q5h7CgLwFO3uOuJpJr6MEZQfGrPS7HWk="
+        "name": "MediCore_Library.2ttf1l1xou.pdb",
+        "integrity": "sha256-WlbWB9GZCxSXPf+i0HGyAS22FlZS4lRpjSJxYbn0bsE="
       },
       {
         "virtualPath": "MediCore_Blazor.pdb",
-        "name": "MediCore_Blazor.87mlasbq8j.pdb",
-        "integrity": "sha256-XDL6tng6VJi+nI0Y22iEN/3uI1zyWo1T96u8qtBTyiI="
+        "name": "MediCore_Blazor.fo9ahqrpmf.pdb",
+        "integrity": "sha256-gWfzH2LfILei+/eIawGH/k0IsQ6pyfVRSJdLeHPZqsg="
       }
     ],
     "libraryInitializers": [

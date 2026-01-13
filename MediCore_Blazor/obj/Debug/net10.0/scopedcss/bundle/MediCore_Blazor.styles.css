@@ -1,3 +1,230 @@
 /* /Layout/MainLayout.razor.rz.scp.css */
-/* /Pages/Admin/HomePage.razor.rz.scp.css */
+.page-header[b-xap5xlbc40] {
+    margin: 0;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+h1[b-xap5xlbc40] {
+    margin: 0;
+    margin-left: 1vw;
+}
+
+.page[b-xap5xlbc40]{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+
+nav[b-xap5xlbc40]{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    border-right: 1px hsl(0 0 30) solid;
+    width: 13vw;
+}
+
+nav div[b-xap5xlbc40]{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_item[b-xap5xlbc40]{
+    color:aqua;
+    background-color:aqua;
+}
+
+.btn-div[b-xap5xlbc40] {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 1vw;
+}
+
+button[b-xap5xlbc40] {
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.5rem;
+    font-size: 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    button:hover[b-xap5xlbc40] {
+        background-color: hsl(0 0 25);
+    }
+
+main[b-xap5xlbc40] {
+    padding: 1vw;
+    width: 100%;
+    min-height: 100%;
+    max-height: fit-content;
+}
+
+footer[b-xap5xlbc40] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* /Pages/Admin/AdminHome.razor.rz.scp.css */
+.system-counts[b-r35d4a10m8] {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.system-counts div[b-r35d4a10m8]{
+    height: fit-content;
+    flex: 1 1 7rem;
+    padding: 2%;
+    width: 7rem;
+    max-width: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.system-counts h4[b-r35d4a10m8]{
+    text-align: center;
+    margin: 0;
+}
+
+.system-counts p[b-r35d4a10m8]{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.salaries[b-r35d4a10m8]{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content:center;
+    margin-top: 3rem;
+    color: hsl(0 0 90);
+}
+
+    .salaries table[b-r35d4a10m8]{
+        width: 70%;
+        border-radius: 1rem;
+        border: 1px hsl(0 0 30) solid;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+    }
+
+    .salaries tr[b-r35d4a10m8] {
+        background-color: hsl(0 0 10);
+    }
+
+    .salaries th[b-r35d4a10m8],
+    .salaries td[b-r35d4a10m8] {
+        border: none;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .salaries th[b-r35d4a10m8] {
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .salaries td[b-r35d4a10m8] {
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+/* /Pages/Admin/AdminUser.razor.rz.scp.css */
+body[b-k3vha8mudi] {
+}
 /* /Pages/LoginPage.razor.rz.scp.css */
+.login[b-uhlvy33wwi] {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.login-div[b-uhlvy33wwi] {
+    border-radius: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 60vh;
+}
+
+.title[b-uhlvy33wwi] {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1[b-uhlvy33wwi]{
+
+}
+
+.form[b-uhlvy33wwi]{
+    height: 100%;
+}
+
+.input[b-uhlvy33wwi]{
+    margin-bottom: 10%;
+}
+
+label[b-uhlvy33wwi]{
+  
+}
+
+.input-field[b-uhlvy33wwi]{
+    background-color: hsl(0 0 70);
+}
+
+button[b-uhlvy33wwi] {
+    background: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+button:hover[b-uhlvy33wwi]{
+    background-color: hsl(0 0 25);
+}
+
+.submit[b-uhlvy33wwi] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}

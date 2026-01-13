@@ -3,34 +3,40 @@
 @using MediCore_Blazor.Services
 @using MediCore_Library.Models.DTOs.DTO_Entities
 @using MediCore_Library.Models.Identities
+@using Blazored.SessionStorage
+@using System.Text.Json
+@inject ISessionStorageService sessionStorage
 @inject HttpClient http
 @inject GlobalConfig config
 @inject NavigationManager nav
 @inject SessionState state
 
-<div class="login-div">
-	<div class="title">
-		<h1>Login</h1>
+
+<div class="login">
+	<div class="login-div bg border">
+		<div class="title text">
+			<h1>Login</h1>
+		</div>
+
+		<EditForm class="form" Model="login" OnValidSubmit="LoginUser">
+			<DataAnnotationsValidator />
+			<ValidationSummary />
+
+			<div class="input">
+				<label>Email</label>
+				<br />
+				<InputText @bind-Value="login.Email" class="input-field" />
+			</div>
+			<div class="input">
+				<label>Password</label>
+				<br />
+				<InputText @bind-Value="login.Password" class="input-field" />
+			</div>
+			<div class="submit bg-light border">
+				<button class="bg-light text" type="submit">Login</button>
+			</div>
+		</EditForm>
 	</div>
-
-	<EditForm Model="login" OnValidSubmit="LoginUser">
-		<DataAnnotationsValidator />
-		<ValidationSummary />
-
-		<div class="input">
-			<label>Email</label>
-			<br />
-			<InputText @bind-Value="login.Email" class="input-field" />
-		</div>
-		<div class="input">
-			<label>Password</label>
-			<br />
-			<InputText @bind-Value="login.Password" class="input-field" />
-		</div>
-		<div class="submit">
-			<button type="submit">Login</button>
-		</div>
-	</EditForm>
 </div>
 
 @code
@@ -58,6 +64,7 @@
 				switch (result.Role.ToLowerInvariant())
 				{
 					case "admin":
+						await sessionStorage.SetItemAsync("state", state);
 						nav.NavigateTo("/admin");
 						break;
 					case "doctor":
@@ -65,14 +72,16 @@
 						if (doctor is not null)
 						{
 							state.Profile = doctor;
+							await sessionStorage.SetItemAsync("state", state);
 							nav.NavigateTo("/doctor");
 						}
 						break;
 					case "nurse":
-						var staff = await http.GetFromJsonAsync<NurseDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
-						if (staff is not null)
+						var nurse = await http.GetFromJsonAsync<NurseDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
+						if (nurse is not null)
 						{
-							state.Profile = staff;
+							state.Profile = nurse;
+							await sessionStorage.SetItemAsync("state", state);
 							nav.NavigateTo("/staff");
 						}
 						break;
@@ -81,6 +90,7 @@
 						if (patient is not null)
 						{
 							state.Profile = patient;
+							await sessionStorage.SetItemAsync("state", state);
 							nav.NavigateTo("/patient");
 						}
 						break;

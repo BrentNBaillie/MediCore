@@ -1,0 +1,74 @@
+﻿.system-counts {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.system-counts div{
+    height: fit-content;
+    flex: 1 1 7rem;
+    padding: 2%;
+    width: 7rem;
+    max-width: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.system-counts h4{
+    text-align: center;
+    margin: 0;
+}
+
+.system-counts p{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.salaries{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content:center;
+    margin-top: 3rem;
+    color: hsl(0 0 90);
+}
+
+    .salaries table{
+        width: 70%;
+        border-radius: 1rem;
+        border: 1px hsl(0 0 30) solid;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+    }
+
+    .salaries tr {
+        background-color: hsl(0 0 10);
+    }
+
+    .salaries th,
+    .salaries td {
+        border: none;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .salaries th {
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .salaries td {
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }

@@ -1,0 +1,74 @@
+.system-counts[b-r35d4a10m8] {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.system-counts div[b-r35d4a10m8]{
+    height: fit-content;
+    flex: 1 1 7rem;
+    padding: 2%;
+    width: 7rem;
+    max-width: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.system-counts h4[b-r35d4a10m8]{
+    text-align: center;
+    margin: 0;
+}
+
+.system-counts p[b-r35d4a10m8]{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.salaries[b-r35d4a10m8]{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content:center;
+    margin-top: 3rem;
+    color: hsl(0 0 90);
+}
+
+    .salaries table[b-r35d4a10m8]{
+        width: 70%;
+        border-radius: 1rem;
+        border: 1px hsl(0 0 30) solid;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+    }
+
+    .salaries tr[b-r35d4a10m8] {
+        background-color: hsl(0 0 10);
+    }
+
+    .salaries th[b-r35d4a10m8],
+    .salaries td[b-r35d4a10m8] {
+        border: none;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .salaries th[b-r35d4a10m8] {
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .salaries td[b-r35d4a10m8] {
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }

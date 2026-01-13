@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediCore_Blazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a29a33f27d4e805e4802cd9f180a15f5796971f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520c346d1366740a4424211620eafc417086713e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediCore_Blazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediCore_Blazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

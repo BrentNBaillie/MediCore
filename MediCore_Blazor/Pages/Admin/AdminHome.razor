@@ -1,0 +1,110 @@
+﻿@page "/admin"
+
+@using MediCore_Blazor.Services
+@using MediCore_Library.Models.DTOs.DTO_Entities
+@using MediCore_Library.Models.Identities
+@using System.Text.Json
+@inject HttpClient http
+@inject GlobalConfig config
+@inject NavigationManager nav
+@inject SessionState state
+
+<h3>Dashboard</h3>
+
+<div class="system-counts">
+    <div class="bg border text">
+        <h4>Users</h4>
+        <p>@counts.Users</p>
+    </div>
+    <div class="bg border text">
+        <h4>Doctors</h4>
+        <p>@counts.Doctors</p>
+    </div>
+    <div class="bg border text">
+        <h4>Nurses</h4>
+        <p>@counts.Nurses</p>
+    </div>
+    <div class="bg border text">
+        <h4>Patients</h4>
+        <p>@counts.Patients</p>
+    </div>
+    <div class="bg border text">
+        <h4>Addresses</h4>
+        <p>@counts.Addresses</p>
+    </div>
+    <div class="bg border text">
+        <h4>Appointments</h4>
+        <p>@counts.Appointments</p>
+    </div>
+    <div class="bg border text">
+        <h4>Bills</h4>
+        <p>@counts.Bills</p>
+    </div>
+    <div class="bg border text">
+        <h4>Chats</h4>
+        <p>@counts.Chats</p>
+    </div>
+    <div class="bg border text">
+        <h4>Medical Records</h4>
+        <p>@counts.MedicalRecords</p>
+    </div>
+    <div class="bg border text">
+        <h4>Medicines</h4>
+        <p>@counts.Medicines</p>
+    </div>
+    <div class="bg border text">
+        <h4>Prescriptions</h4>
+        <p>@counts.Prescriptions</p>
+    </div>
+    <div class="bg border text">
+        <h4>Schedules</h4>
+        <p>@counts.Schedules</p>
+    </div>
+    <div class="bg border text">
+        <h4>Feedbacks</h4>
+        <p>@counts.Feedbacks</p>
+    </div>
+</div>
+<div class="salaries">
+    <table>
+        <tr>
+            <th colspan="2">Total Yearly Employment Costs</th>
+        </tr>
+        <tr>
+            <th>Doctors</th>
+            <th>Nurses</th>
+        </tr>
+        <tr>
+            <td>@salaries.TotalDoctorSalaries.ToString("C")</td>
+            <td>@salaries.TotalNurseSalaries.ToString("C")</td>
+        </tr>
+    </table>
+</div>
+
+<button @onclick="DeleteAll">Clear Database</button>
+
+@code {
+    private SystemCountsDTO counts = new();
+    private TotalSalariesDTO salaries = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var countResult = await http.GetFromJsonAsync<SystemCountsDTO>($"{config.BaseUrl}/admin/count");
+        if (countResult is not null)
+        {
+            counts = countResult;
+        }
+
+        var salaryResult = await http.GetFromJsonAsync<TotalSalariesDTO>($"{config.BaseUrl}/admin/salaries");
+        if (salaryResult is not null)
+        {
+            salaries = salaryResult;
+        }
+    }
+
+    private async Task DeleteAll()
+    {
+        await http.DeleteAsync($"{config.BaseUrl}/authorize");
+        StateHasChanged();
+    }
+}

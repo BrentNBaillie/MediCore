@@ -1,0 +1,23 @@
+﻿@page "/admin-user"
+
+@using MediCore_Blazor.Services
+@using MediCore_Library.Models.DTOs.DTO_Entities
+@using MediCore_Library.Models.Identities
+@using System.Text.Json
+@inject HttpClient http
+@inject GlobalConfig config
+@inject NavigationManager nav
+@inject SessionState state
+
+<h3>Users</h3>
+
+<p>@count</p>
+
+@code{
+    int count = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        count = await http.GetFromJsonAsync<int>($"{config.BaseUrl}/admin/user-count");
+    }
+}

@@ -6,6 +6,7 @@
 		public string FirstName { get; set; } = string.Empty;
 		public string LastName { get; set; } = string.Empty;
 		public string PhoneNumber { get; set; } = string.Empty;
-		public Guid? UserId { get; set; }
+        public double Salary { get; set; } = 0;
+        public Guid? UserId { get; set; }
 	}
 }

@@ -55,6 +55,7 @@ namespace MediCore_API.Controllers
 				PhoneNumber = request.Doctor.PhoneNumber,
 				HospitalName = request.Doctor.HospitalName,
 				ProfessionalBio = request.Doctor.ProfessionalBio,
+				Salary = request.Doctor.Salary,
 				UserId = user.Id
 			};
 
@@ -145,6 +146,7 @@ namespace MediCore_API.Controllers
 				FirstName = request.Nurse.FirstName,
 				LastName = request.Nurse.LastName,
 				PhoneNumber = request.Nurse.PhoneNumber,
+				Salary = request.Nurse.Salary,
 				UserId = user.Id
 			};
 
@@ -199,43 +201,44 @@ namespace MediCore_API.Controllers
 		}
 
 		[HttpDelete]
-		public async Task<ActionResult> DeleteAllUsers()
+		public async Task<ActionResult> DeleteAll()
 		{
-			var users = await userManager.Users.ToListAsync();
+            await context.AllergyTests.ExecuteDeleteAsync();
+            await context.BodyMeasurements.ExecuteDeleteAsync();
+            await context.CardiacTests.ExecuteDeleteAsync();
+            await context.EndocrineTests.ExecuteDeleteAsync();
+            await context.GeneticTests.ExecuteDeleteAsync();
+            await context.ImagingReports.ExecuteDeleteAsync();
+            await context.InfectiousDiseaseTests.ExecuteDeleteAsync();
+            await context.LaboratoryTests.ExecuteDeleteAsync();
+            await context.NeurologicalTests.ExecuteDeleteAsync();
+            await context.RespiratoryTests.ExecuteDeleteAsync();
+            await context.VitalSigns.ExecuteDeleteAsync();
+            await context.MedicalRecords.ExecuteDeleteAsync();
+            await context.Prescriptions.ExecuteDeleteAsync();
+            await context.Bills.ExecuteDeleteAsync();
+            await context.Feedbacks.ExecuteDeleteAsync();
+            await context.Appointments.ExecuteDeleteAsync();
+            await context.TimeSlots.ExecuteDeleteAsync();
+            await context.Schedules.ExecuteDeleteAsync();
+            await context.Messages.ExecuteDeleteAsync();
+            await context.Chats.ExecuteDeleteAsync();
+            await context.Patients.ExecuteDeleteAsync();
+            await context.Doctors.ExecuteDeleteAsync();
+            await context.Nurses.ExecuteDeleteAsync();
+            await context.Medicines.ExecuteDeleteAsync();
+            await context.Addresses.ExecuteDeleteAsync();
 
-			foreach (var user in users)
+            var admin = (await userManager.GetUsersInRoleAsync("admin")).FirstOrDefault();
+			if (admin is not null)
 			{
-				var role = (await userManager.GetRolesAsync(user)).FirstOrDefault();
-				if (role == "doctor")
-				{
-					var doctor = await context.Doctors.FirstOrDefaultAsync(d => d.UserId == user.Id);
-					if (doctor is not null)
-					{
-						context.Doctors.Remove(doctor);
-						await context.SaveChangesAsync();
-					}
-				}
-				if (role == "patient")
-				{
-					var patient = await context.Patients.FirstOrDefaultAsync(p => p.UserId == user.Id);
-					if (patient is not null)
-					{
-						context.Patients.Remove(patient);
-						await context.SaveChangesAsync();
-					}
-				}
-				if (role == "nurse")
-				{
-					var nurse = await context.Nurses.FirstOrDefaultAsync(s => s.UserId == user.Id);
-					if (nurse is not null)
-					{
-						context.Nurses.Remove(nurse);
-						await context.SaveChangesAsync();
-					}
-				}
-			}
+                var users = userManager.Users.Where(u => u.Id != admin.Id);
+                await users.ExecuteDeleteAsync();
+            }
 
-			return Ok($"{users.Count - 1} Users Deleted");
+            await context.SaveChangesAsync();
+
+            return Ok();
 		}
 
         [HttpDelete("doctor/{id:Guid}")]

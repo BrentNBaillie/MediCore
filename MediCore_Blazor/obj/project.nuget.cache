@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "N5eNLLEtM/I=",
+  "dgSpecHash": "2qD+uhsewqg=",
   "success": true,
   "projectFilePath": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\MediCore_Blazor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cools\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
+    "C:\\Users\\cools\\.nuget\\packages\\blazored.sessionstorage\\2.4.0\\blazored.sessionstorage.2.4.0.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.1\\microsoft.aspnetcore.app.internal.assets.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.1\\microsoft.aspnetcore.authorization.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.components\\10.0.1\\microsoft.aspnetcore.components.10.0.1.nupkg.sha512",

@@ -14,6 +14,7 @@ namespace MediCore_Library.Models.Entities
 		public string PhoneNumber { get; set; } = string.Empty;
 		public string HospitalName { get; set; } = string.Empty;
 		public string ProfessionalBio { get; set; } = string.Empty;
+		public double Salary { get; set; } = 0;
 
 		public List<Schedule> Schedules { get; set; } = new List<Schedule>();
 

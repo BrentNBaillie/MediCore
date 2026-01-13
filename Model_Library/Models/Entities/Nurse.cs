@@ -11,8 +11,9 @@ namespace MediCore_Library.Models.Entities
 		public string FirstName { get; set; } = string.Empty;
 		public string LastName { get; set; } = string.Empty;
 		public string PhoneNumber { get; set; } = string.Empty;
+        public double Salary { get; set; } = 0;
 
-		[ForeignKey("ApplicationUser")]
+        [ForeignKey("ApplicationUser")]
 		public Guid? UserId { get; set; }
 		public ApplicationUser? User { get; set; }
 	}

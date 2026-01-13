@@ -1,37 +1,64 @@
 ﻿@inherits LayoutComponentBase
+@using Blazored.SessionStorage
 @using MediCore_Blazor.Services
 @using MediCore_Blazor.Components.Navigation
+@using System.Text.Json
+@inject ISessionStorageService sessionStorage
 @inject SessionState state
+@inject NavigationManager nav
 
-<div class="page-header">
-    <h1>MediCore</h1>
+<div class="page-header bg-light border">
+    <h1 class="text">MediCore</h1>
+    <div class="btn-div">
+        @if (state.LoginResponse is not null)
+        {
+            <button class="bg text border" @onclick="Logout">Log Out</button>
+        }
+    </div>
 </div>
 <div class="page">
     @if (state.LoginResponse is not null)
     {
-        <nav>
-            @switch (state.LoginResponse.Role)
-            {
-                case "admin":
-                    <AdminNavigation></AdminNavigation>
+        <nav class="bg text">
+            <div>
+                @switch (state.LoginResponse.Role)
+                {
+                    case "admin":
+                        <AdminNav></AdminNav>
                     break;
-                case "doctor":
-                    <DoctorNavigation></DoctorNavigation>
-                    break;
-                case "nurse":
-                    <StaffNavigation></StaffNavigation>
-                    break;
-                case "patient":
-                    <PatientNavigation></PatientNavigation>
-                    break;
-            }
+                }
+            </div>
+            
         </nav>
     }
     <main>
         @Body
     </main>
 </div>
-<footer>
+<footer class="bg-light border">
     <p>Frontend Developer: Brent N. Baillie</p>
     <p>Backend Developer: Brent N. Baillie</p>
 </footer>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        if (state.LoginResponse is null)
+        {
+            var data = await sessionStorage.GetItemAsync<SessionState>("state");
+            if (data is not null)
+            {
+                state.LoginResponse = data.LoginResponse;
+                state.Profile = data.Profile;
+            }
+        }
+    }
+
+    private async Task Logout()
+    {
+        await sessionStorage.ClearAsync();
+        state.LoginResponse = null;
+        state.Profile = null;
+        nav.NavigateTo("/");
+    }
+}
