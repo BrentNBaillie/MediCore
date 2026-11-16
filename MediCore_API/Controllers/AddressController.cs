@@ -16,19 +16,22 @@ namespace MediCore_API.Controllers
 		private readonly MediCoreContext context;
 		private readonly IMapper mapper;
 		private readonly IModelValidation validate;
+		private readonly AutoMapper.IConfigurationProvider mapConfigProv;
 
 		public AddressController(MediCoreContext context, IMapper mapper, IModelValidation validate)
 		{
 			this.context = context;
 			this.mapper = mapper;
 			this.validate = validate;
-		}
+			mapConfigProv = mapper.ConfigurationProvider;
+
+        }
 
 		[HttpGet]
 		public async Task<ActionResult<List<AddressDTO>>> GetAllAddresses()
 		{
 			var addresses = await context.Addresses
-				.ProjectTo<AddressDTO>(mapper.ConfigurationProvider)
+				.ProjectTo<AddressDTO>(mapConfigProv)
 				.ToListAsync();
 			return Ok(addresses);
 		}
@@ -37,7 +40,7 @@ namespace MediCore_API.Controllers
 		public async Task<ActionResult<AddressDTO>> GetAddress([FromRoute] Guid id)
 		{
 			var address = await context.Addresses
-				.ProjectTo<AddressDTO>(mapper.ConfigurationProvider)
+				.ProjectTo<AddressDTO>(mapConfigProv)
 				.FirstOrDefaultAsync(a => a.Id == id);
 			if (address is null) return NotFound("Address Not Found");
 			return Ok(address);

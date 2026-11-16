@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2qD+uhsewqg=",
+  "dgSpecHash": "0ZN2PUVJDi4=",
   "success": true,
   "projectFilePath": "C:\\Github Projects\\MediCore\\MediCore_Blazor\\MediCore_Blazor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cools\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\blazored.sessionstorage\\2.4.0\\blazored.sessionstorage.2.4.0.nupkg.sha512",
-    "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.1\\microsoft.aspnetcore.app.internal.assets.10.0.1.nupkg.sha512",
+    "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.15\\microsoft.aspnetcore.app.internal.assets.10.0.15.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.1\\microsoft.aspnetcore.authorization.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.components\\10.0.1\\microsoft.aspnetcore.components.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\10.0.1\\microsoft.aspnetcore.components.analyzers.10.0.1.nupkg.sha512",
@@ -18,7 +18,6 @@
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\10.0.1\\microsoft.aspnetcore.cryptography.keyderivation.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.1\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.aspnetcore.metadata\\10.0.1\\microsoft.aspnetcore.metadata.10.0.1.nupkg.sha512",
-    "C:\\Users\\cools\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.101\\microsoft.dotnet.hotreload.webassembly.browser.10.0.101.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.1\\microsoft.entityframeworkcore.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.1\\microsoft.entityframeworkcore.abstractions.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.1\\microsoft.entityframeworkcore.analyzers.10.0.1.nupkg.sha512",
@@ -47,10 +46,10 @@
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.extensions.validation\\10.0.1\\microsoft.extensions.validation.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.jsinterop\\10.0.1\\microsoft.jsinterop.10.0.1.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\microsoft.jsinterop.webassembly\\10.0.1\\microsoft.jsinterop.webassembly.10.0.1.nupkg.sha512",
-    "C:\\Users\\cools\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.1\\microsoft.net.illink.tasks.10.0.1.nupkg.sha512",
-    "C:\\Users\\cools\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.1\\microsoft.net.sdk.webassembly.pack.10.0.1.nupkg.sha512",
+    "C:\\Users\\cools\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.15\\microsoft.net.illink.tasks.10.0.15.nupkg.sha512",
+    "C:\\Users\\cools\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.15\\microsoft.net.sdk.webassembly.pack.10.0.15.nupkg.sha512",
     "C:\\Users\\cools\\.nuget\\packages\\oneof\\3.0.271\\oneof.3.0.271.nupkg.sha512",
-    "C:\\Users\\cools\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\10.0.1\\microsoft.netcore.app.runtime.mono.browser-wasm.10.0.1.nupkg.sha512"
+    "C:\\Users\\cools\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\10.0.15\\microsoft.netcore.app.runtime.mono.browser-wasm.10.0.15.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,5 +1,6 @@
 using MediCore_API.Data;
 using MediCore_API.Interfaces;
+using MediCore_API.Repositories;
 using MediCore_API.Services;
 using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -30,6 +31,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 builder.Services.AddScoped<IModelValidation, ModelValidation>();
 builder.Services.AddScoped<ITimeSlotHandler, TimeSlotHandler>();
+builder.Services.AddScoped<IAuthorizeRep, AuthorizeRepo>();
 
 builder.Services.AddOpenApi();
 
