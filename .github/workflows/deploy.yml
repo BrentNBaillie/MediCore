@@ -9,14 +9,14 @@ jobs:
   call-build:
     uses: ./.github/workflows/build.yml
 
-  call-deploy:
-    needs: call-build
-    uses: ./.github/workflows/deploy-app.yml
-    secrets:
-      AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-
   call-migrate:
-    needs: call-deploy
+    needs: call-build
     uses: ./.github/workflows/migrate-db.yml
     secrets:
       SUPABASE_DB_CONNECTION_STRING: ${{ secrets.SUPABASE_DB_CONNECTION_STRING }}
+
+  call-deploy:
+    needs: call-migrate
+    uses: ./.github/workflows/deploy-app.yml
+    secrets:
+      AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
