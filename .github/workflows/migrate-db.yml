@@ -20,6 +20,9 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: Restore dependencies
+        run: dotnet restore ./MediCore_API/MediCore_API.csproj
+
       - name: Install EF CLI
         run: dotnet tool install --global dotnet-ef
 
