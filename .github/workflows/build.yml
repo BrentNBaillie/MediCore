@@ -18,7 +18,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build MediCore.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ./MediCore_API/MediCore_API.csproj -c Release -o ./publish
