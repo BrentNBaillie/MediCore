@@ -1,0 +1,27 @@
+name: Migrate Database
+
+on:
+  workflow_call:
+    secrets:
+      SUPABASE_DB_CONNECTION_STRING:
+        required: true
+
+env:
+  DOTNET_VERSION: '10'
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install EF CLI
+        run: dotnet tool install --global dotnet-ef
+
+      - name: Run Database Migrations
+        run: dotnet ef database update --project ./MediCore_API --connection "${{ secrets.SUPABASE_DB_CONNECTION_STRING }}"
