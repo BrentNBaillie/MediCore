@@ -676,41 +676,6 @@
         }
       }
     },
-    "/api/Authorize": {
-      "delete": {
-        "tags": [
-          "Authorize"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Authorize/doctor/{id}": {
-      "delete": {
-        "tags": [
-          "Authorize"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Bill": {
       "get": {
         "tags": [
