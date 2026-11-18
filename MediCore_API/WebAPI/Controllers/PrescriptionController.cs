@@ -1,0 +1,130 @@
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using MediCore_API.Domain.Interfaces.Iservices;
+using MediCore_API.Infrastructure.Data;
+using MediCore_Library.Models.DTOs.DTO_Entities;
+using MediCore_Library.Models.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace MediCore_API.WebAPI.Controllers
+{
+	[Route("api/[controller]")]
+	[ApiController]
+	public class PrescriptionController : ControllerBase
+	{
+		private readonly MediCoreContext context;
+		private readonly IMapper mapper;
+		private readonly IModelValidation validate;
+
+		public PrescriptionController(MediCoreContext context, IMapper mapper, IModelValidation validate)
+		{
+			this.context = context;
+			this.mapper = mapper;
+			this.validate = validate;
+		}
+
+		[HttpGet]
+		public async Task<ActionResult<List<PrescriptionDTO>>> GetAllPrescriptions()
+		{
+			var prescriptions = await context.Prescriptions
+				.ProjectTo<PrescriptionDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(prescriptions);
+		}
+
+		[HttpGet("{id:Guid}")]
+		public async Task<ActionResult<PrescriptionDTO>> GetPrescription([FromRoute] Guid id)
+		{
+			var prescription = await context.Prescriptions
+				.ProjectTo<PrescriptionDTO>(mapper.ConfigurationProvider)
+				.FirstOrDefaultAsync(p => p.Id == id);
+			if (prescription is null) return NotFound("Prescription Not Found");
+			return Ok(prescription);
+		}
+
+		[HttpGet("patient/{id:Guid}")]
+		public async Task<ActionResult<List<PrescriptionDTO>>> GetPatientPrescriptions([FromRoute] Guid id)
+		{
+			var prescriptions = await context.Prescriptions
+				.Where(p => p.PatientId == id)
+				.ProjectTo<PrescriptionDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			return Ok(prescriptions);
+		}
+
+		[HttpGet("doctor/{id:Guid}")]
+		public async Task<ActionResult<List<PrescriptionDTO>>> GetDoctorPrescriptions([FromRoute] Guid id)
+		{
+			var prescriptions = await context.Prescriptions
+				.Where(p => p.DoctorId == id)
+				.ProjectTo<PrescriptionDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			if (!prescriptions.Any()) return NotFound("Prescriptions Not Found");
+			return Ok(prescriptions);
+		}
+
+		[HttpGet("doctor/{doctorId:Guid}/patient/{patientId:Guid}")]
+		public async Task<ActionResult<List<PrescriptionDTO>>> GetDoctorPrescriptions([FromRoute] Guid doctorId, [FromRoute] Guid patientId)
+		{
+			var prescriptions = await context.Prescriptions
+				.Where(p => p.DoctorId == doctorId && p.PatientId == patientId)
+				.ProjectTo<PrescriptionDTO>(mapper.ConfigurationProvider)
+				.ToListAsync();
+			if (!prescriptions.Any()) return NotFound("Prescriptions Not Found");
+			return Ok(prescriptions);
+		}
+
+		[HttpPost]
+		public async Task<ActionResult> PostPrescription([FromBody] PrescriptionDTO dto)
+		{
+			if (dto is null || !validate.PrescriptionIsValid(dto)) return BadRequest("Invalid Prescription Data");
+			await context.Prescriptions.AddAsync(mapper.Map<Prescription>(dto));
+			await context.SaveChangesAsync();
+			return Created();
+		}
+
+		[HttpPatch]
+		public async Task<ActionResult> PatchPrescription([FromBody] PrescriptionDTO dto)
+		{
+			if (dto is null) return BadRequest("Invalid Prescription Data");
+			var prescription = await context.Prescriptions.FirstOrDefaultAsync(p => p.Id == dto.Id);
+			if (prescription is null) return NotFound("Prescription Not Found");
+
+			if (dto.Quantity > 0) prescription.Quantity = dto.Quantity;
+			if (dto.Medicine!.Id != Guid.Empty) prescription.MedicineId = dto.Medicine.Id;
+			if (dto.DoctorId != Guid.Empty) prescription.DoctorId = dto.DoctorId;
+			if (dto.PatientId != Guid.Empty) prescription.PatientId = dto.PatientId;
+			if (dto.BillId != Guid.Empty) prescription.BillId = dto.BillId;
+
+			await context.SaveChangesAsync();
+			return Ok("Prescription Updated");
+		}
+
+		[HttpPatch("{prescriptionId:Guid}/set-bill/{billId:Guid}")]
+		public async Task<ActionResult> SetPrescriptionBill([FromRoute] Guid prescriptionId, [FromRoute] Guid billId)
+		{
+			var prescription = await context.Prescriptions.Include(p => p.Medicine).FirstOrDefaultAsync(p => p.Id == prescriptionId);
+			if (prescription is null) return NotFound("Prescription Not Found");
+			prescription.BillId = billId;
+
+			var bill = await context.Bills.FirstOrDefaultAsync(b => b.Id == billId);
+			if (bill is null) return NotFound("Bill Not Found");
+			var prescriptions = await context.Prescriptions.Include(p => p.Medicine).ToListAsync();
+			bill.Amount = prescriptions.Sum(p => p.Quantity * p.Medicine!.Price);
+
+			await context.SaveChangesAsync();
+			return Ok("Prescription Bill Id Set");
+		}
+
+		[HttpDelete("{id:Guid}")]
+		public async Task<ActionResult> DeletePrescription([FromRoute] Guid id)
+		{
+			var prescription = await context.Prescriptions.FindAsync(id);
+			if (prescription is null) return NotFound("Prescription Not Found");
+			context.Prescriptions.Remove(prescription);
+			await context.SaveChangesAsync();
+			return Ok("Prescription Deleted");
+		}
+	}
+}

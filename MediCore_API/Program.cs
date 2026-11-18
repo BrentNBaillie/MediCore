@@ -1,7 +1,8 @@
-using MediCore_API.Data;
-using MediCore_API.Interfaces;
-using MediCore_API.Repositories;
-using MediCore_API.Services;
+using MediCore_API.Application.Services;
+using MediCore_API.Domain.Interfaces.IRepositories;
+using MediCore_API.Domain.Interfaces.Iservices;
+using MediCore_API.Infrastructure.Data;
+using MediCore_API.Infrastructure.Repositories;
 using MediCore_Library.Models.Identities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -13,9 +14,29 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IModelValidation, ModelValidation>();
+builder.Services.AddScoped<ITimeSlotHandler, TimeSlotHandler>();
+builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+builder.Services.AddScoped<IEmailSender<ApplicationUser>, EmailService>();
+builder.Services.AddScoped<IAuthorizeRep, AuthorizeRepo>();
+builder.Services.AddScoped<IAddressRepo, AddressRepo>();
+
+builder.Services.AddDbContext<MediCoreContext>(options =>
+				options.UseNpgsql(builder.Configuration.GetConnectionString("MediCoreContext")));
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
+				.AddEntityFrameworkStores<MediCoreContext>()
+				.AddDefaultTokenProviders();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+	options.User.AllowedUserNameCharacters =
+		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 _";
+});
+
 builder.Services.AddAutoMapper(config =>
 {
-    config.AddProfile<MediCore_API.Services.ModelMapper>();
+    config.AddProfile<ModelMapper>();
 });
 
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -29,42 +50,27 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 	options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never;
 });
 
-builder.Services.AddScoped<IModelValidation, ModelValidation>();
-builder.Services.AddScoped<ITimeSlotHandler, TimeSlotHandler>();
-builder.Services.AddScoped<IAuthorizeRep, AuthorizeRepo>();
-
 builder.Services.AddOpenApi();
 
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
-
-builder.Services.AddDbContext<MediCoreContext>(options =>
-				options.UseSqlServer(builder.Configuration.GetConnectionString("MediCoreContext")));
-
-builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
-				.AddEntityFrameworkStores<MediCoreContext>()
-				.AddDefaultTokenProviders();
-
-builder.Services.AddScoped<IEmailSender<ApplicationUser>, EmailService>();
-
 builder.Services.AddAuthentication(x =>
-{
-	x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-	x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-	x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}
-).AddJwtBearer(options =>
-	options.TokenValidationParameters = new TokenValidationParameters
 	{
-		ValidateIssuer = true,
-		ValidateAudience = true,
-		ValidateLifetime = true,
-		ValidateIssuerSigningKey = true,
-		ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
-		ValidAudience = builder.Configuration["JwtSettings:Audience"],
-		IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!))
-	}
+		x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+		x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+		x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+	})
+	.AddJwtBearer(options =>
+	options.TokenValidationParameters = new TokenValidationParameters
+		{
+			ValidateIssuer = true,
+			ValidateAudience = true,
+			ValidateLifetime = true,
+			ValidateIssuerSigningKey = true,
+			ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+			ValidAudience = builder.Configuration["JwtSettings:Audience"],
+			IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:Key"]!))
+		}
 );
 
 builder.Services.AddAuthorization();
@@ -77,11 +83,6 @@ builder.Services.AddCors(options =>
 	});
 });
 
-builder.Services.Configure<IdentityOptions>(options =>
-{
-	options.User.AllowedUserNameCharacters =
-		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 _";
-});
 
 var app = builder.Build();
 
