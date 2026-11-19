@@ -485,9 +485,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\scopedcss\projectb
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\MediCore_Blazor.genruntimeconfig.cache
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\blazor.build.boot-extension.json
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\dotnet.js
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\tk4rydfghm-{0}-kalwi2r987-kalwi2r987.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\wg2f7x0ic4-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\8oyjvpupgp-{0}-f5xh0rdtkp-f5xh0rdtkp.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\anengwmvay-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\2st66kuw7i-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\bfoqzete91-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -553,8 +550,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\refint\MediCore_Bl
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\MediCore_Blazor.pdb
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\ref\MediCore_Blazor.dll
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\scopedcss\Pages\Admin\AdminUser.razor.rz.scp.css
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\kqzv339qhy-{0}-wt1vm35imc-wt1vm35imc.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\bglb7la5ku-{0}-wt1vm35imc-wt1vm35imc.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\MediCore_Blazor.runtimeconfig.dev.json
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.CSharp.1zdxgb4i6c.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.DotNet.HotReload.WebAssembly.Browser.clic0jpidy.wasm
@@ -1142,8 +1137,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\ijvzfcw
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\g9byefrtzo-{0}-p97bsc9w07-p97bsc9w07.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\cxw0zt3mda-{0}-ulb3f9y4pe-ulb3f9y4pe.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\09ji3rhv11-{0}-0sokop3gu1-0sokop3gu1.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.8r1r3begv9.pdb
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.e9nigkdliw.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Library.q9231aio6e.pdb
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Library.xe94aagqgo.wasm
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.5bxlh6v1r6.wasm
@@ -1173,8 +1166,6 @@ C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.ufbvqn79qg.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Binder.33xxarnbkh.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.2wxueyrecd.wasm.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.e9nigkdliw.wasm.gz
-C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.8r1r3begv9.pdb.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.62i63yalbj.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Abstractions.nepz3dqojh.wasm.gz
 C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Library.q9231aio6e.pdb.gz
@@ -1218,6 +1209,15 @@ C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\yvwme6n
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\8etx345q03-{0}-2wxueyrecd-2wxueyrecd.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\exqkeqiut4-{0}-xe94aagqgo-xe94aagqgo.gz
 C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\e5dobfw3ah-{0}-q9231aio6e-q9231aio6e.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\9fymw3agsg-{0}-e9nigkdliw-e9nigkdliw.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\a51j3mtwuy-{0}-8r1r3begv9-8r1r3begv9.gz
-C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\ov2v6g6167-{0}-fyj2mnylop-fyj2mnylop.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\tk4rydfghm-{0}-wjdnz533dp-wjdnz533dp.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\wg2f7x0ic4-{0}-a93oinnk5k-a93oinnk5k.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\8oyjvpupgp-{0}-t9e1bbk9qj-t9e1bbk9qj.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\kqzv339qhy-{0}-z1tu6nnlbp-z1tu6nnlbp.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\bglb7la5ku-{0}-z1tu6nnlbp-z1tu6nnlbp.gz
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.a3m6x5reqb.pdb
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.kbnnkpz5ur.wasm
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.kbnnkpz5ur.wasm.gz
+C:\Github Projects\MediCore\MediCore_Blazor\bin\Debug\net10.0\wwwroot\_framework\MediCore_Blazor.a3m6x5reqb.pdb.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\9fymw3agsg-{0}-kbnnkpz5ur-kbnnkpz5ur.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\a51j3mtwuy-{0}-a3m6x5reqb-a3m6x5reqb.gz
+C:\Github Projects\MediCore\MediCore_Blazor\obj\Debug\net10.0\compressed\ov2v6g6167-{0}-7iroioxl18-7iroioxl18.gz

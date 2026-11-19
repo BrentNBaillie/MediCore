@@ -3,85 +3,97 @@
 @using MediCore_Blazor.Services
 @using MediCore_Library.Models.DTOs.DTO_Entities
 @using MediCore_Library.Models.Identities
-@using System.Text.Json
 @inject HttpClient http
 @inject GlobalConfig config
 @inject NavigationManager nav
 @inject SessionState state
 
-<h3>Dashboard</h3>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <div>
+            <h2>System Overview</h2>
+            <p class="dashboard-subtitle">Real-time clinical metrics and employment cost analytics</p>
+        </div>
+        <button class="btn-danger" @onclick="DeleteAll">Clear Database</button>
+    </div>
 
-<div class="system-counts">
-    <div class="bg border text">
-        <h4>Users</h4>
-        <p>@counts.Users</p>
+    <div class="system-counts">
+        <div class="stat-card">
+            <span class="stat-label">Users</span>
+            <span class="stat-value">@counts.Users</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Doctors</span>
+            <span class="stat-value">@counts.Doctors</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Nurses</span>
+            <span class="stat-value">@counts.Nurses</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Patients</span>
+            <span class="stat-value">@counts.Patients</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Addresses</span>
+            <span class="stat-value">@counts.Addresses</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Appointments</span>
+            <span class="stat-value">@counts.Appointments</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Bills</span>
+            <span class="stat-value">@counts.Bills</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Chats</span>
+            <span class="stat-value">@counts.Chats</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Medical Records</span>
+            <span class="stat-value">@counts.MedicalRecords</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Medicines</span>
+            <span class="stat-value">@counts.Medicines</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Prescriptions</span>
+            <span class="stat-value">@counts.Prescriptions</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Schedules</span>
+            <span class="stat-value">@counts.Schedules</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Feedbacks</span>
+            <span class="stat-value">@counts.Feedbacks</span>
+        </div>
     </div>
-    <div class="bg border text">
-        <h4>Doctors</h4>
-        <p>@counts.Doctors</p>
-    </div>
-    <div class="bg border text">
-        <h4>Nurses</h4>
-        <p>@counts.Nurses</p>
-    </div>
-    <div class="bg border text">
-        <h4>Patients</h4>
-        <p>@counts.Patients</p>
-    </div>
-    <div class="bg border text">
-        <h4>Addresses</h4>
-        <p>@counts.Addresses</p>
-    </div>
-    <div class="bg border text">
-        <h4>Appointments</h4>
-        <p>@counts.Appointments</p>
-    </div>
-    <div class="bg border text">
-        <h4>Bills</h4>
-        <p>@counts.Bills</p>
-    </div>
-    <div class="bg border text">
-        <h4>Chats</h4>
-        <p>@counts.Chats</p>
-    </div>
-    <div class="bg border text">
-        <h4>Medical Records</h4>
-        <p>@counts.MedicalRecords</p>
-    </div>
-    <div class="bg border text">
-        <h4>Medicines</h4>
-        <p>@counts.Medicines</p>
-    </div>
-    <div class="bg border text">
-        <h4>Prescriptions</h4>
-        <p>@counts.Prescriptions</p>
-    </div>
-    <div class="bg border text">
-        <h4>Schedules</h4>
-        <p>@counts.Schedules</p>
-    </div>
-    <div class="bg border text">
-        <h4>Feedbacks</h4>
-        <p>@counts.Feedbacks</p>
+
+    <div class="salaries-section">
+        <div class="table-card">
+            <div class="table-header">
+                <h3>Total Yearly Employment Costs</h3>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Doctors</th>
+                        <th>Nurses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@salaries.TotalDoctorSalaries.ToString("C")</td>
+                        <td>@salaries.TotalNurseSalaries.ToString("C")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-<div class="salaries">
-    <table>
-        <tr>
-            <th colspan="2">Total Yearly Employment Costs</th>
-        </tr>
-        <tr>
-            <th>Doctors</th>
-            <th>Nurses</th>
-        </tr>
-        <tr>
-            <td>@salaries.TotalDoctorSalaries.ToString("C")</td>
-            <td>@salaries.TotalNurseSalaries.ToString("C")</td>
-        </tr>
-    </table>
-</div>
-
-<button @onclick="DeleteAll">Clear Database</button>
 
 @code {
     private SystemCountsDTO counts = new();
@@ -105,6 +117,8 @@
     private async Task DeleteAll()
     {
         await http.DeleteAsync($"{config.BaseUrl}/authorize");
+        counts = new();
+        salaries = new();
         StateHasChanged();
     }
 }

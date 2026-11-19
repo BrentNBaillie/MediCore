@@ -2,45 +2,80 @@
 @using Blazored.SessionStorage
 @using MediCore_Blazor.Services
 @using MediCore_Blazor.Components.Navigation
-@using System.Text.Json
 @inject ISessionStorageService sessionStorage
 @inject SessionState state
 @inject NavigationManager nav
+@inject IJSRuntime JS
 
-<div class="page-header bg-light border">
-    <h1 class="text">MediCore</h1>
-    <div class="btn-div">
+<div class="layout-shell">
+    <header class="page-header">
+        <div class="brand-area">
+            <div class="brand-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M2 12h20" />
+                </svg>
+            </div>
+            <h1>MediCore</h1>
+        </div>
+        <div class="header-actions">
+            <button class="btn-icon" @onclick="ToggleTheme" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+                @if (isDarkMode)
+                {
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                }
+                else
+                {
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                }
+            </button>
+            @if (state.LoginResponse is not null)
+            {
+                <button class="btn-logout" @onclick="Logout">Log Out</button>
+            }
+        </div>
+    </header>
+
+    <div class="page-body">
         @if (state.LoginResponse is not null)
         {
-            <button class="bg text border" @onclick="Logout">Log Out</button>
+            <nav class="sidebar">
+                <div class="nav-list">
+                    @switch (state.LoginResponse.Role.ToLowerInvariant())
+                    {
+                        case "admin":
+                            <AdminNav></AdminNav>
+                            break;
+                    }
+                </div>
+            </nav>
         }
+        <main class="main-content">
+            @Body
+        </main>
     </div>
+
+    <footer class="page-footer">
+        <span>Frontend Developer: Brent N. Baillie</span>
+        <span class="separator">|</span>
+        <span>Backend Developer: Brent N. Baillie</span>
+    </footer>
 </div>
-<div class="page">
-    @if (state.LoginResponse is not null)
-    {
-        <nav class="bg text">
-            <div>
-                @switch (state.LoginResponse.Role)
-                {
-                    case "admin":
-                        <AdminNav></AdminNav>
-                    break;
-                }
-            </div>
-            
-        </nav>
-    }
-    <main>
-        @Body
-    </main>
-</div>
-<footer class="bg-light border">
-    <p>Frontend Developer: Brent N. Baillie</p>
-    <p>Backend Developer: Brent N. Baillie</p>
-</footer>
 
 @code {
+    private bool isDarkMode;
+
     protected override async Task OnInitializedAsync()
     {
         if (state.LoginResponse is null)
@@ -52,6 +87,22 @@
                 state.Profile = data.Profile;
             }
         }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var currentTheme = await JS.InvokeAsync<string>("themeManager.init");
+            isDarkMode = currentTheme == "dark";
+            StateHasChanged();
+        }
+    }
+
+    private async Task ToggleTheme()
+    {
+        var nextTheme = await JS.InvokeAsync<string>("themeManager.toggle");
+        isDarkMode = nextTheme == "dark";
     }
 
     private async Task Logout()

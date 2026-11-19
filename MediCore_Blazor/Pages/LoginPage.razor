@@ -1,101 +1,130 @@
 ﻿@page "/"
-
 @using MediCore_Blazor.Services
 @using MediCore_Library.Models.DTOs.DTO_Entities
 @using MediCore_Library.Models.Identities
 @using Blazored.SessionStorage
-@using System.Text.Json
 @inject ISessionStorageService sessionStorage
 @inject HttpClient http
 @inject GlobalConfig config
 @inject NavigationManager nav
 @inject SessionState state
 
+<div class="login-viewport">
+    <div class="login-card">
+        <header class="login-header">
+            <div class="brand-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M2 12h20" />
+                </svg>
+            </div>
+            <h1>MediCore</h1>
+            <p class="subtitle">Clinical Management Portal</p>
+        </header>
 
-<div class="login">
-	<div class="login-div bg border">
-		<div class="title text">
-			<h1>Login</h1>
-		</div>
+        <EditForm Model="login" OnValidSubmit="LoginUser" class="login-form">
+            <DataAnnotationsValidator />
+            
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert-error" role="alert">
+                    @errorMessage
+                </div>
+            }
 
-		<EditForm class="form" Model="login" OnValidSubmit="LoginUser">
-			<DataAnnotationsValidator />
-			<ValidationSummary />
+            <ValidationSummary class="validation-summary" />
 
-			<div class="input">
-				<label>Email</label>
-				<br />
-				<InputText @bind-Value="login.Email" class="input-field" />
-			</div>
-			<div class="input">
-				<label>Password</label>
-				<br />
-				<InputText @bind-Value="login.Password" class="input-field" />
-			</div>
-			<div class="submit bg-light border">
-				<button class="bg-light text" type="submit">Login</button>
-			</div>
-		</EditForm>
-	</div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <InputText @bind-Value="login.Email" autocomplete="username" class="input-field" id="email" placeholder="name@clinic.com" />
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <InputText @bind-Value="login.Password" autocomplete="current-password" class="input-field" id="password" placeholder="Enter your password" type="password" />
+            </div>
+
+            <button class="btn-submit" type="submit" disabled="@isLoading">
+                @(isLoading ? "Authenticating..." : "Sign In")
+            </button>
+        </EditForm>
+    </div>
 </div>
 
 @code
 {
-	private Login login = new Login();
-	private HttpResponseMessage? response;
+    private Login login = new();
+    private HttpResponseMessage? response;
+    private bool isLoading;
+    private string? errorMessage;
 
-	protected override void OnInitialized()
-	{
-		state.LoginResponse = null;
-		state.Profile = null;
-	}
+    protected override void OnInitialized()
+    {
+        state.LoginResponse = null;
+        state.Profile = null;
+    }
 
-	private async Task LoginUser()
-	{
-		response = await http.PostAsJsonAsync($"{config.BaseUrl}/authorize/login", login);
+    private async Task LoginUser()
+    {
+        isLoading = true;
+        errorMessage = null;
 
-		if (response.IsSuccessStatusCode)
-		{
-			var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
-			state.LoginResponse = result;
+        try
+        {
+            response = await http.PostAsJsonAsync($"{config.BaseUrl}/authorize/login", login);
 
-			if (result is not null)
-			{
-				switch (result.Role.ToLowerInvariant())
-				{
-					case "admin":
-						await sessionStorage.SetItemAsync("state", state);
-						nav.NavigateTo("/admin");
-						break;
-					case "doctor":
-						var doctor = await http.GetFromJsonAsync<DoctorDTO>($"{config.BaseUrl}/doctor/{result.ProfileId}");
-						if (doctor is not null)
-						{
-							state.Profile = doctor;
-							await sessionStorage.SetItemAsync("state", state);
-							nav.NavigateTo("/doctor");
-						}
-						break;
-					case "nurse":
-						var nurse = await http.GetFromJsonAsync<NurseDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
-						if (nurse is not null)
-						{
-							state.Profile = nurse;
-							await sessionStorage.SetItemAsync("state", state);
-							nav.NavigateTo("/staff");
-						}
-						break;
-					case "patient":
-						var patient = await http.GetFromJsonAsync<PatientDTO>($"{config.BaseUrl}/patient/{result.ProfileId}");
-						if (patient is not null)
-						{
-							state.Profile = patient;
-							await sessionStorage.SetItemAsync("state", state);
-							nav.NavigateTo("/patient");
-						}
-						break;
-				}
-			}
-		}
-	}
+            if (!response.IsSuccessStatusCode)
+            {
+                errorMessage = "Invalid credentials. Verify your email and password.";
+                return;
+            }
+
+            var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+            state.LoginResponse = result;
+
+            if (result is null) return;
+
+            switch (result.Role.ToLowerInvariant())
+            {
+                case "admin":
+                    await sessionStorage.SetItemAsync("state", state);
+                    nav.NavigateTo("/admin");
+                    break;
+                case "doctor":
+                    var doctor = await http.GetFromJsonAsync<DoctorDTO>($"{config.BaseUrl}/doctor/{result.ProfileId}");
+                    if (doctor is not null)
+                    {
+                        state.Profile = doctor;
+                        await sessionStorage.SetItemAsync("state", state);
+                        nav.NavigateTo("/doctor");
+                    }
+                    break;
+                case "nurse":
+                    var nurse = await http.GetFromJsonAsync<NurseDTO>($"{config.BaseUrl}/staff/{result.ProfileId}");
+                    if (nurse is not null)
+                    {
+                        state.Profile = nurse;
+                        await sessionStorage.SetItemAsync("state", state);
+                        nav.NavigateTo("/staff");
+                    }
+                    break;
+                case "patient":
+                    var patient = await http.GetFromJsonAsync<PatientDTO>($"{config.BaseUrl}/patient/{result.ProfileId}");
+                    if (patient is not null)
+                    {
+                        state.Profile = patient;
+                        await sessionStorage.SetItemAsync("state", state);
+                        nav.NavigateTo("/patient");
+                    }
+                    break;
+            }
+        }
+        catch
+        {
+            errorMessage = "Unable to connect to the authentication server.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
 }

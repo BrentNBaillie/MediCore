@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "MediCore_Blazor",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-wZelGjKQvnm8B8eKNXX5x/2r7uWzyIiIdIkriFQY488=",
+    "hash": "sha256-UFhGq/HN61owTozMbb6XQGeziXODcMTJdbnX6W+Uo4c=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.6ilbvndvcf.js"
@@ -1338,8 +1338,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MediCore_Blazor.wasm",
-        "name": "MediCore_Blazor.e9nigkdliw.wasm",
-        "hash": "sha256-QjYdGzv4NsI5t4AA7UvBrkRjgUO1KMlJHfscDG124N4=",
+        "name": "MediCore_Blazor.kbnnkpz5ur.wasm",
+        "hash": "sha256-MCKUiR7xD4Htov+Yn/iuOsMQlQKKMLCMuRvrOYqCCNc=",
         "cache": "force-cache"
       }
     ],
@@ -1352,8 +1352,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MediCore_Blazor.pdb",
-        "name": "MediCore_Blazor.8r1r3begv9.pdb",
-        "hash": "sha256-pBAPU/q9gR98frlo6Hly4cpPcISuFUOMCgjsq3Ml8MI=",
+        "name": "MediCore_Blazor.a3m6x5reqb.pdb",
+        "hash": "sha256-VtoLNOmZFAha3w9l80akCaFi7OXXqCZrxQnb0HOUZN8=",
         "cache": "force-cache"
       }
     ],

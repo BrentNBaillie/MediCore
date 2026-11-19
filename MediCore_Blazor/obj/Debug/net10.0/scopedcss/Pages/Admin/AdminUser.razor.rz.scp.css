@@ -1,2 +1,61 @@
-body[b-k3vha8mudi] {
+.page-container[b-k3vha8mudi] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page-title-bar[b-k3vha8mudi] {
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+    .page-title-bar h2[b-k3vha8mudi] {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text-primary);
+    }
+
+.page-subtitle[b-k3vha8mudi] {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.metrics-row[b-k3vha8mudi] {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.metric-card[b-k3vha8mudi] {
+    flex: 1 1 16rem;
+    max-width: 22rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+.metric-label[b-k3vha8mudi] {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+}
+
+.metric-value[b-k3vha8mudi] {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    line-height: 1.1;
 }

@@ -1,74 +1,139 @@
-.system-counts[b-r35d4a10m8] {
+.dashboard-container[b-r35d4a10m8] {
     width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 0.5rem;
-    font-size: 1rem;
-}
-
-.system-counts div[b-r35d4a10m8]{
-    height: fit-content;
-    flex: 1 1 7rem;
-    padding: 2%;
-    width: 7rem;
-    max-width: 7rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
+    gap: 2rem;
 }
 
-.system-counts h4[b-r35d4a10m8]{
-    text-align: center;
-    margin: 0;
-}
-
-.system-counts p[b-r35d4a10m8]{
-    font-size: 2rem;
-    margin: 0;
-}
-
-.salaries[b-r35d4a10m8]{
+.dashboard-header[b-r35d4a10m8] {
     width: 100%;
-    height: fit-content;
     display: flex;
-    justify-content:center;
-    margin-top: 3rem;
-    color: hsl(0 0 90);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-    .salaries table[b-r35d4a10m8]{
-        width: 70%;
-        border-radius: 1rem;
-        border: 1px hsl(0 0 30) solid;
-        border-collapse: separate;
-        border-spacing: 0;
-        overflow: hidden;
-    }
-
-    .salaries tr[b-r35d4a10m8] {
-        background-color: hsl(0 0 10);
-    }
-
-    .salaries th[b-r35d4a10m8],
-    .salaries td[b-r35d4a10m8] {
-        border: none;
-        text-align: center;
-        padding: 0.5rem;
-    }
-
-    .salaries th[b-r35d4a10m8] {
-        text-align: center;
-        padding: 0.5rem;
+    .dashboard-header h2[b-r35d4a10m8] {
+        margin: 0;
         font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text-primary);
     }
 
-    .salaries td[b-r35d4a10m8] {
-        text-align: center;
-        padding: 0.5rem;
-        font-size: 2rem;
+.dashboard-subtitle[b-r35d4a10m8] {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.btn-danger[b-r35d4a10m8] {
+    padding: 0.625rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--danger-text);
+    background-color: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+    .btn-danger:hover[b-r35d4a10m8] {
+        filter: brightness(0.95);
+    }
+
+    .btn-danger:active[b-r35d4a10m8] {
+        transform: scale(0.98);
+    }
+
+.system-counts[b-r35d4a10m8] {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 1rem;
+}
+
+.stat-card[b-r35d4a10m8] {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+    .stat-card:hover[b-r35d4a10m8] {
+        border-color: var(--accent-primary);
+        transform: translateY(-2px);
+    }
+
+.stat-label[b-r35d4a10m8] {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+}
+
+.stat-value[b-r35d4a10m8] {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.salaries-section[b-r35d4a10m8] {
+    width: 100%;
+}
+
+.table-card[b-r35d4a10m8] {
+    width: 100%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.table-header[b-r35d4a10m8] {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-elevated);
+}
+
+    .table-header h3[b-r35d4a10m8] {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+.data-table[b-r35d4a10m8] {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .data-table th[b-r35d4a10m8] {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-secondary);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .data-table td[b-r35d4a10m8] {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-primary);
     }
